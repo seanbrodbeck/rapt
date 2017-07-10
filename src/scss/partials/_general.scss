@@ -1,0 +1,44 @@
+body {
+	
+}
+
+a {
+	-webkit-transition: color .3s ease;
+  -moz-transition: color .3s ease;
+  -o-transition: color .3s ease;
+  transition: color .3s ease;
+	&:hover {
+		text-decoration:none;
+	}
+}
+
+.nopad {
+	padding:0;
+}
+
+.btn {
+	
+	&.wire {
+		
+	}
+  
+}
+
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 53.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+
+
