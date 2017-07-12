@@ -117,11 +117,22 @@ add_action( 'widgets_init', 'rapt_widgets_init' );
  * Enqueue scripts and styles.
  */
 function rapt_scripts() {
-	wp_enqueue_style( 'rapt-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'rapt-bootstrap', get_stylesheet_uri() . '/dist/css/bootstrap.min.css', array(), null, 'all');
+
+	wp_enqueue_style( 'rapt-underscores', get_stylesheet_uri(), array(), null, 'all' );
+
+	wp_enqueue_style( 'rapt-theme', get_stylesheet_uri() . '/dist/css/styles.css', array(), null, 'all');
 
 	wp_enqueue_script( 'rapt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'rapt-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'rapt-jquery', get_template_directory_uri() . '/dist/js/jquery-1.11.3.min.js', array(), null , true );
+
+	wp_enqueue_script( 'rapt-bootstrap', get_template_directory_uri() . '/dist/js/bootstrap.min.js', array(), null , true );
+
+	wp_enqueue_script( 'rapt-theme-js', get_template_directory_uri() . '/dist/js/scripts.js', array(), null , true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -153,3 +164,67 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+// Register Work Post Type
+function work_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Works', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Work', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'             => __( 'Work', 'text_domain' ),
+		'name_admin_bar'        => __( 'Work', 'text_domain' ),
+		'archives'              => __( 'Work Archives', 'text_domain' ),
+		'attributes'            => __( 'Item Attributes', 'text_domain' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
+		'all_items'             => __( 'All Works', 'text_domain' ),
+		'add_new_item'          => __( 'Add New Work', 'text_domain' ),
+		'add_new'               => __( 'Add New Work', 'text_domain' ),
+		'new_item'              => __( 'New Work', 'text_domain' ),
+		'edit_item'             => __( 'Edit Work', 'text_domain' ),
+		'update_item'           => __( 'Update Work', 'text_domain' ),
+		'view_item'             => __( 'View Work', 'text_domain' ),
+		'view_items'            => __( 'View Works', 'text_domain' ),
+		'search_items'          => __( 'Search Work', 'text_domain' ),
+		'not_found'             => __( 'Work Not found', 'text_domain' ),
+		'not_found_in_trash'    => __( 'Work Not found in Trash', 'text_domain' ),
+		'featured_image'        => __( 'Featured work Image', 'text_domain' ),
+		'set_featured_image'    => __( 'Set featured work image', 'text_domain' ),
+		'remove_featured_image' => __( 'Remove featured work image', 'text_domain' ),
+		'use_featured_image'    => __( 'Use as featured work image', 'text_domain' ),
+		'insert_into_item'      => __( 'Insert into work item', 'text_domain' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this work item', 'text_domain' ),
+		'items_list'            => __( 'Work Items list', 'text_domain' ),
+		'items_list_navigation' => __( 'Work Items list navigation', 'text_domain' ),
+		'filter_items_list'     => __( 'Filter work items list', 'text_domain' ),
+	);
+	$rewrite = array(
+		'slug'                  => 'work',
+		'with_front'            => true,
+		'pages'                 => true,
+		'feeds'                 => true,
+	);
+	$args = array(
+		'label'                 => __( 'Work', 'text_domain' ),
+		'description'           => __( 'The custom post type for the rapt Portfolio', 'text_domain' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions', ),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => 'work-archive',
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'rewrite'               => $rewrite,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'work_post_type', $args );
+
+}
+add_action( 'init', 'work_post_type', 0 );

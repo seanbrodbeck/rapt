@@ -17,13 +17,6 @@
   }
   window.onload = init();
 
-  // Flex Slider
-
-  $('.flexslider').flexslider({
-    controlNav: false,
-    prevText: "",
-    nextText: "" 
-  });
 
   // Add Active Class to Tabs on Dermatology Pages
 

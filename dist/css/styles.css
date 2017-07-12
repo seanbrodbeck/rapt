@@ -1,3 +1,10 @@
+body {
+  font-family: Fakt;
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 1;
+  text-align: left; }
+
 h1 {
   -webkit-font-smoothing: antialiased; }
 

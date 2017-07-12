@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: Home Page
+ * 
  * The template for displaying all pages
  *
  * This is the template that displays all pages by default.
@@ -17,22 +19,23 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<?php
-			while ( have_posts() ) : the_post();
+				<?php if(get_field('home_page_word_wall')): ?>
 
-				get_template_part( 'template-parts/content', 'page' );
+				<div id="word-wall-wrap">
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+				<?php while(has_sub_field('home_page_word_wall')): ?>
 
-			endwhile; // End of the loop.
-			?>
+					<span class="word-wall-text"><?php the_sub_field('word_wall_item_text'); ?></span>
+					<img src="<?php the_sub_field('word_wall_item_image'); ?>"/>
+
+				<?php endwhile; ?>
+
+				</div>
+
+			<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-// get_sidebar();
 get_footer();
