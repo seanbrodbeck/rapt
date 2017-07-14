@@ -19,38 +19,32 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-				<ul>
-				<!-- Start Repeater -->
+				<?php // open the WordPress loop
+					if (have_posts()) : while (have_posts()) : the_post();
 
-					<?php
-					global $post;
-					$user_id = get_current_user_id();
-					if( have_rows('work_item_grid')): // check for repeater fields ?>
+						// are there any rows within within our flexible content?
+						if( have_rows('work_grid_layout') ): 
 
-					    <?php while ( have_rows('work_item_grid')) : the_row(); // loop through the repeater fields ?>
+							// loop through all the rows of flexible content
+							while ( have_rows('work_grid_layout') ) : the_row();
 
-					    <?php // set up post object
-					        $post_object = get_sub_field('work_item');
-					        if( $post_object ) :
-					        $post = $post_object;
-					        setup_postdata($post);
-					        ?>
+							// 1/3 2/3
+							if( get_row_layout() == 'work_row_13_23' )
+								get_template_part('template-parts/content', 'work-row-12-23');
 
-					       <div class="<?php the_sub_field('grid_item_width'); ?>"> 
-					       	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-					       	<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> <?php the_excerpt(); ?> </a></h2>
-					       	Get the Work Category List Here
-					       </div>
+							// 2/3 1/3
+							if( get_row_layout() == 'work_row_23_13' )
+								get_template_part('template-parts/content', 'work-row-23-12');
 
-					    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+							// Full Width
+							if( get_row_layout() == 'work_row_full_width' )
+								get_template_part('template-parts/content', 'work-row-full');
 
-					    <?php endif; ?>
 
-					    <?php endwhile; ?>
+							endwhile; // close the loop of flexible content
+						endif; // close flexible content conditional
 
-					<!-- End Repeater -->
-					<?php endif; ?>
-				</ul>
+					endwhile; endif; // close the WordPress loop ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

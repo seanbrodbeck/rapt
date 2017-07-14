@@ -1,7 +1,12 @@
 main {
 	
 	section {
-		
+
+		.work-row {
+			@include flexbox;
+			@include align-items(center);
 		}
+		
+	}
 
 }
