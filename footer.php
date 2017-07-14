@@ -14,8 +14,9 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
+		FOOTER STARTS HERE
 		<div class="site-info">
-			Footer Content Here
+			<?php wp_nav_menu( array( 'menu_id' => 'primary-menu', )); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
