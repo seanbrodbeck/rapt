@@ -1,7 +1,15 @@
 footer {
+
+	background:$black;
 	
 	a, a:visited {
-		
+		color:$white;
+	}
+
+	ul {
+		margin:0;
+		padding:0;
+		list-style: none;
 	}
 	
 }

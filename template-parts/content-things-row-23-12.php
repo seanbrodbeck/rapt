@@ -8,7 +8,7 @@
 
           <?php
 
-            $post_object = get_sub_field('left_work_item_2');
+            $post_object = get_sub_field('left_things_item_2');
 
             if( $post_object ): 
 
@@ -30,7 +30,7 @@
          	
           <?php
 
-            $post_object = get_sub_field('right_work_item_2');
+            $post_object = get_sub_field('right_things_item_2');
 
             if( $post_object ): 
 

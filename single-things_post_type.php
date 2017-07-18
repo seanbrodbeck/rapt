@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying "work"
+ * The template for displaying "things"
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -12,7 +12,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			THIS IS THE SINGLE WORK POST TEMPLATE
+			THIS IS THE THINGS POST TYPE TEMPLATE
 
 		<?php
 		while ( have_posts() ) : the_post();

@@ -6,7 +6,7 @@
 
       <?php
 
-        $post_object = get_sub_field('full_width_work_item');
+        $post_object = get_sub_field('full_width_things_item');
 
         if( $post_object ): 
 

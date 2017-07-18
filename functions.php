@@ -132,6 +132,8 @@ function rapt_scripts() {
 
 	wp_enqueue_script( 'rapt-bootstrap', get_template_directory_uri() . '/dist/js/bootstrap.min.js', array(), null , true );
 
+	wp_enqueue_script( 'rapt-waypoints', get_template_directory_uri() . '/dist/js/waypoint.js', array(), null , true );
+
 	wp_enqueue_script( 'rapt-theme-js', get_template_directory_uri() . '/dist/js/scripts.js', array(), null , true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -228,3 +230,81 @@ function work_post_type() {
 
 }
 add_action( 'init', 'work_post_type', 0 );
+
+// Register Things Post Type
+function things_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Things', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Thing', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'             => __( 'Things', 'text_domain' ),
+		'name_admin_bar'        => __( 'Thing', 'text_domain' ),
+		'archives'              => __( 'Thing Archives', 'text_domain' ),
+		'attributes'            => __( 'Item Attributes', 'text_domain' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
+		'all_items'             => __( 'All Things', 'text_domain' ),
+		'add_new_item'          => __( 'Add New Thing', 'text_domain' ),
+		'add_new'               => __( 'Add New Thing', 'text_domain' ),
+		'new_item'              => __( 'New Thing', 'text_domain' ),
+		'edit_item'             => __( 'Edit Thing', 'text_domain' ),
+		'update_item'           => __( 'Update Thing', 'text_domain' ),
+		'view_item'             => __( 'View Thing', 'text_domain' ),
+		'view_items'            => __( 'View Thing', 'text_domain' ),
+		'search_items'          => __( 'Search Thing', 'text_domain' ),
+		'not_found'             => __( 'Thing Not found', 'text_domain' ),
+		'not_found_in_trash'    => __( 'Thing Not found in Trash', 'text_domain' ),
+		'featured_image'        => __( 'Featured thing image', 'text_domain' ),
+		'set_featured_image'    => __( 'Set featured thing image', 'text_domain' ),
+		'remove_featured_image' => __( 'Remove featured thing image', 'text_domain' ),
+		'use_featured_image'    => __( 'Use as featured thing image', 'text_domain' ),
+		'insert_into_item'      => __( 'Insert into thing item', 'text_domain' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this thing item', 'text_domain' ),
+		'items_list'            => __( 'Thing items list', 'text_domain' ),
+		'items_list_navigation' => __( 'Thing items list navigation', 'text_domain' ),
+		'filter_items_list'     => __( 'Filter thing items list', 'text_domain' ),
+	);
+	$rewrite = array(
+		'slug'                  => 'things',
+		'with_front'            => false,
+		'pages'                 => true,
+		'feeds'                 => true,
+	);
+	$args = array(
+		'label'                 => __( 'Thing', 'text_domain' ),
+		'description'           => __( 'The custom post type for the rapt Things collection', 'text_domain' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions', ),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 6,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => 'things-archive',
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'rewrite'               => $rewrite,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'things_post_type', $args );
+
+}
+add_action( 'init', 'things_post_type', 0 );
+
+
+// Options Page
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Footer Info',
+		'menu_title'	=> 'Footer Info',
+		'menu_slug' 	=> 'theme-footer-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+}

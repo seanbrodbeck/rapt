@@ -2,9 +2,25 @@ main {
 	
 	section {
 
+		padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400));
+
+		&.home-perspectives {
+			background: $peach;
+		}
+
+		&.work-row-full {
+			padding:0;
+		}
+
 		.work-row {
-			@include flexbox;
-			@include align-items(center);
+			@media (min-width: $bp-sm-min) {
+				@include flexbox;
+				@include align-items(center);
+			}
+			img {
+				width:100%;
+				height:auto;
+			}
 		}
 		
 	}

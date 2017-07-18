@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+}
+@font-face {
+  font-family: 'noe-display-medium';
+  src: url('fonts/noe-display-medium.otf');
+}
+@font-face {
+  font-family: 'noe-display';
+  src: url('fonts/noe-display-regular.ttf');
+}
+* {
+  box-sizing: border-box;
+}
+.intro {
+  width: 100%;
+  height: 100vh;
+  font-family: 'noe-display-medium';
+  font-size: calc(25px + (64 - 25) * (100vw - 400px) / (1440 - 400));
+  line-height: 1;
+  padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400));
+}
+.intro-questions {
+  position: relative;
+}
+.intro-question {
+  color: #d1d1d1;
+  cursor: pointer;
+  transition: .3s;
+}
+.intro-question.is-off {
+  opacity: 0;
+}
+.intro-question:hover:not(:last-of-type) {
+  color: white;
+  transition: none;
+}
+.intro-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.04);
+  transition: .2s;
+}
+.intro-image.is-active {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+  transition: .8s ease-out;
+}
+
+.intro-logo {
+  position: relative;
+  font-family: 'noe-display';
+  font-size: calc(14px + (25 - 14) * (100vw - 400px) / (2000 - 400));;
+  color: #37383c;
+  margin-top: 7vh;
+  transition: .3s;
+}
+.intro-logo.is-white {
+  color: white;
+}
+
+.black {
+  color: black;
+}

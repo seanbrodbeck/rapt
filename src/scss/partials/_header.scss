@@ -1,3 +1,26 @@
 header {
-	
+	padding:35px 0 105px;
+	.main-navigation {
+		#primary-menu {
+			@media (min-width: $bp-sm-min) {
+				@include flexbox;
+				text-align: center;
+				@include justify-content(space-between);
+				li {
+					a, a:visited {
+						color:#999999;
+						&:hover {
+							color:$black;
+						}
+					}
+					&.current-menu-item, &.current_page_parent {
+						a, a:visited {
+							color:$black;
+						}
+					}
+				}
+
+			}
+		}
+	}
 }
