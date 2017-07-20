@@ -16,14 +16,13 @@
 	<footer id="colophon" class="site-footer">
 		<div class="container">
 
-			<hr>
 
 			<div class="row clearfix footer-top">
 				<div class="col-sm-9 footer-nav">
 					<?php wp_nav_menu( array( 'menu_id' => 'primary-menu', )); ?>
 				</div><!-- .site-info -->
 				<div class="col-sm-3 footer-subscribe">
-					<a href="#">Join our newsletter</a> <a href="#">Subscribe</a>
+					<p><a href="#">Join our newsletter</a></p>
 				</div>
 			</div>
 
@@ -34,7 +33,7 @@
 					<?php if(get_field('social_links', 'option')): ?>
 						<ul>
 						<?php while(has_sub_field('social_links', 'option')): ?>
-							<a href="<?php the_sub_field('social_link_url', 'option'); ?>"><?php the_sub_field('social_link_title', 'option'); ?></a>
+							<li><a href="<?php the_sub_field('social_link_url', 'option'); ?>"><?php the_sub_field('social_link_title', 'option'); ?></a></li>
 						<?php endwhile; ?>
 						</ul>
 					<?php endif; ?>			

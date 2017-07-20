@@ -12,7 +12,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			THIS IS THE THINGS POST TYPE TEMPLATE
+			THIS IS THE PRODUCT POST TYPE TEMPLATE
 
 		<?php
 		while ( have_posts() ) : the_post();

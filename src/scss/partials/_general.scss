@@ -38,6 +38,18 @@ a {
 	background:$black;
 }
 
+.more-link-wrapper {
+	text-align: center;
+	margin:50px 0 0;
+	.more-link {
+		font-family: 'noe-display';
+		font-size: 40px;
+		display:inline-block;
+		color:$black;
+		opacity:.2;
+	}
+}
+
 .videoWrapper {
 	position: relative;
 	padding-bottom: 53.25%; /* 16:9 */
@@ -125,6 +137,80 @@ a {
 	.filter-search-btn {
 		display:inline-block;
 		float:right;
+	}
+}
+
+.work-cats {
+	margin:0;
+	font-size:14px;
+	color:$light-gray; 
+}
+
+.search-filter-overlay {
+	background:$white;
+	position:fixed;
+	left:0;
+	right:0;
+	bottom:0;
+	top:0;
+	width:100%;
+	z-index: 999;
+	padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400));
+	.close-filter-overlay, .close-search-overlay {
+		float:right;
+	}
+	.filter-options {
+		.filter-option {
+			font-family: 'noe-display';
+			font-size: 40px;
+			line-height: 46px;
+			&:after {
+				display:inline-block;
+				content: "/";
+				margin:0 8px;
+				color:$light-gray;
+			}
+			&:last-of-type {
+				&:after {
+					content: "";
+					margin-right:0;
+				}
+			}
+			a {
+				color:$light-gray;
+				&:hover {
+					color:$black;
+				}
+			}
+		}
+	}
+	.filter-listings {
+		margin-top: 70px;
+		.filter-listing {
+			h2 {
+				font-size:24px;
+				a {
+					color:$black;
+				}
+			}
+		}
+	}
+	&#search-overlay {
+		input {
+			display:block;
+			font-family: 'noe-display';
+			font-size: 40px;
+			line-height: 46px;
+			color:$black;
+			border:none;
+			outline:none;
+			&::placeholder {
+				font-family: 'noe-display';
+				font-size: 40px;
+				line-height: 46px;
+				color:$light-gray;
+			}
+		}
 	}
 }
 

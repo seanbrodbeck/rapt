@@ -47,6 +47,8 @@ function rapt_setup() {
 		'menu-1' => esc_html__( 'Primary', 'rapt' ),
 	) );
 
+	add_image_size( 'filter-thumb', 300, 160, true ); // 300 pixels wide
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -211,7 +213,7 @@ function work_post_type() {
 		'description'           => __( 'The custom post type for the rapt Portfolio', 'text_domain' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions', ),
-		'taxonomies'            => array( 'category', 'post_tag' ),
+		'taxonomies'            => false,
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -231,50 +233,86 @@ function work_post_type() {
 }
 add_action( 'init', 'work_post_type', 0 );
 
-// Register Things Post Type
+// create taxonomies for work post type
+
+add_action( 'init', 'create_work_taxonomies', 0 );
+
+
+function create_work_taxonomies() {
+
+	$labels = array(
+		'name'              => _x( 'Work Categories', 'taxonomy general name', 'textdomain' ),
+		'singular_name'     => _x( 'Work Category', 'taxonomy singular name', 'textdomain' ),
+		'search_items'      => __( 'Search Work Categories', 'textdomain' ),
+		'all_items'         => __( 'All Work Categories', 'textdomain' ),
+		'parent_item'       => __( 'Parent Work Category', 'textdomain' ),
+		'parent_item_colon' => __( 'Parent Work Category:', 'textdomain' ),
+		'edit_item'         => __( 'Edit Work Category', 'textdomain' ),
+		'update_item'       => __( 'Update Work Category', 'textdomain' ),
+		'add_new_item'      => __( 'Add New Work Category', 'textdomain' ),
+		'new_item_name'     => __( 'New Work Category Name', 'textdomain' ),
+		'menu_name'         => __( 'Work Categories', 'textdomain' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'work-category' ),
+	);
+
+	register_taxonomy( 'work_categories', array( 'work_post_type' ), $args );
+
+}
+
+
+
+// Register Products Post Type
 function things_post_type() {
 
 	$labels = array(
-		'name'                  => _x( 'Things', 'Post Type General Name', 'text_domain' ),
-		'singular_name'         => _x( 'Thing', 'Post Type Singular Name', 'text_domain' ),
-		'menu_name'             => __( 'Things', 'text_domain' ),
-		'name_admin_bar'        => __( 'Thing', 'text_domain' ),
-		'archives'              => __( 'Thing Archives', 'text_domain' ),
+		'name'                  => _x( 'Products', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Product', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'             => __( 'Products', 'text_domain' ),
+		'name_admin_bar'        => __( 'Product', 'text_domain' ),
+		'archives'              => __( 'Product Archives', 'text_domain' ),
 		'attributes'            => __( 'Item Attributes', 'text_domain' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
-		'all_items'             => __( 'All Things', 'text_domain' ),
-		'add_new_item'          => __( 'Add New Thing', 'text_domain' ),
-		'add_new'               => __( 'Add New Thing', 'text_domain' ),
-		'new_item'              => __( 'New Thing', 'text_domain' ),
-		'edit_item'             => __( 'Edit Thing', 'text_domain' ),
-		'update_item'           => __( 'Update Thing', 'text_domain' ),
-		'view_item'             => __( 'View Thing', 'text_domain' ),
-		'view_items'            => __( 'View Thing', 'text_domain' ),
-		'search_items'          => __( 'Search Thing', 'text_domain' ),
-		'not_found'             => __( 'Thing Not found', 'text_domain' ),
-		'not_found_in_trash'    => __( 'Thing Not found in Trash', 'text_domain' ),
-		'featured_image'        => __( 'Featured thing image', 'text_domain' ),
-		'set_featured_image'    => __( 'Set featured thing image', 'text_domain' ),
-		'remove_featured_image' => __( 'Remove featured thing image', 'text_domain' ),
-		'use_featured_image'    => __( 'Use as featured thing image', 'text_domain' ),
-		'insert_into_item'      => __( 'Insert into thing item', 'text_domain' ),
-		'uploaded_to_this_item' => __( 'Uploaded to this thing item', 'text_domain' ),
-		'items_list'            => __( 'Thing items list', 'text_domain' ),
-		'items_list_navigation' => __( 'Thing items list navigation', 'text_domain' ),
-		'filter_items_list'     => __( 'Filter thing items list', 'text_domain' ),
+		'all_items'             => __( 'All Products', 'text_domain' ),
+		'add_new_item'          => __( 'Add New Product', 'text_domain' ),
+		'add_new'               => __( 'Add New Product', 'text_domain' ),
+		'new_item'              => __( 'New Product', 'text_domain' ),
+		'edit_item'             => __( 'Edit Product', 'text_domain' ),
+		'update_item'           => __( 'Update Product', 'text_domain' ),
+		'view_item'             => __( 'View Product', 'text_domain' ),
+		'view_items'            => __( 'View Product', 'text_domain' ),
+		'search_items'          => __( 'Search Product', 'text_domain' ),
+		'not_found'             => __( 'Product Not found', 'text_domain' ),
+		'not_found_in_trash'    => __( 'Product Not found in Trash', 'text_domain' ),
+		'featured_image'        => __( 'Featured product image', 'text_domain' ),
+		'set_featured_image'    => __( 'Set featured product image', 'text_domain' ),
+		'remove_featured_image' => __( 'Remove featured product image', 'text_domain' ),
+		'use_featured_image'    => __( 'Use as featured product image', 'text_domain' ),
+		'insert_into_item'      => __( 'Insert into product item', 'text_domain' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this product item', 'text_domain' ),
+		'items_list'            => __( 'Product items list', 'text_domain' ),
+		'items_list_navigation' => __( 'Product items list navigation', 'text_domain' ),
+		'filter_items_list'     => __( 'Filter product items list', 'text_domain' ),
 	);
 	$rewrite = array(
-		'slug'                  => 'things',
+		'slug'                  => 'products',
 		'with_front'            => false,
 		'pages'                 => true,
 		'feeds'                 => true,
 	);
 	$args = array(
-		'label'                 => __( 'Thing', 'text_domain' ),
-		'description'           => __( 'The custom post type for the rapt Things collection', 'text_domain' ),
+		'label'                 => __( 'Product', 'text_domain' ),
+		'description'           => __( 'The custom post type for the rapt Product collection', 'text_domain' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions', ),
-		'taxonomies'            => array( 'category', 'post_tag' ),
+		'taxonomies'            => false,
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -283,7 +321,7 @@ function things_post_type() {
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
-		'has_archive'           => 'things-archive',
+		'has_archive'           => 'product-archive',
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'rewrite'               => $rewrite,
@@ -293,6 +331,40 @@ function things_post_type() {
 
 }
 add_action( 'init', 'things_post_type', 0 );
+
+// create taxonomies for products post type
+
+add_action( 'init', 'create_product_taxonomies', 0 );
+
+
+function create_product_taxonomies() {
+
+	$labels = array(
+		'name'              => _x( 'Product Categories', 'taxonomy general name', 'textdomain' ),
+		'singular_name'     => _x( 'Product Category', 'taxonomy singular name', 'textdomain' ),
+		'search_items'      => __( 'Search Product Categories', 'textdomain' ),
+		'all_items'         => __( 'All Product Categories', 'textdomain' ),
+		'parent_item'       => __( 'Parent Product Category', 'textdomain' ),
+		'parent_item_colon' => __( 'Parent Product Category:', 'textdomain' ),
+		'edit_item'         => __( 'Edit Product Category', 'textdomain' ),
+		'update_item'       => __( 'Update Product Category', 'textdomain' ),
+		'add_new_item'      => __( 'Add New Product Category', 'textdomain' ),
+		'new_item_name'     => __( 'New Product Category Name', 'textdomain' ),
+		'menu_name'         => __( 'Product Categories', 'textdomain' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'product-category' ),
+	);
+
+	register_taxonomy( 'product_categories', array( 'things_post_type' ), $args );
+
+}
 
 
 // Options Page

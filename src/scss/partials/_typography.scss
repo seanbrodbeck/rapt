@@ -27,7 +27,8 @@ body {
 }
 
 h1 {
-
+	font-family: 'noe-display';
+	font-size: 48px;
 	-webkit-font-smoothing: antialiased;
 	@media (min-width: $bp-sm-min) {
 		
@@ -37,6 +38,7 @@ h1 {
 h2 {
 	font-family: 'Fakt-Blond';
 	font-size: 40px;
+	-webkit-font-smoothing: antialiased;
 	a, a:visited {
 		color:$black;
 	}
@@ -66,6 +68,7 @@ p {
 		
 	}
 }
+
 
 blockquote {
 	

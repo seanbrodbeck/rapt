@@ -60,9 +60,35 @@ get_header('home'); ?>
 
 			<section class="home-work">
 
-				<div class="container">
-					This is where the work will show up on the home page
-				</div>
+					<div class="work-grid">
+						<?php 
+							if (have_posts()) : while (have_posts()) : the_post();
+
+								if( have_rows('work_grid_layout') ): 
+
+									while ( have_rows('work_grid_layout') ) : the_row();
+
+									// 1/3 2/3
+									if( get_row_layout() == 'work_row_13_23' )
+										get_template_part('template-parts/content', 'work-row-12-23');
+
+									// 2/3 1/3
+									if( get_row_layout() == 'work_row_23_13' )
+										get_template_part('template-parts/content', 'work-row-23-12');
+
+									// Full Width
+									if( get_row_layout() == 'work_row_full_width' )
+										get_template_part('template-parts/content', 'work-row-full');
+
+									endwhile; 
+								endif; 
+
+							endwhile; endif; ?>
+					</div>
+
+					<div class="clearfix"></div>
+					<div class="more-link-wrapper"><a class="more-link" href="/work">More</a></div>
+				
 
 			</section>
 
@@ -70,50 +96,52 @@ get_header('home'); ?>
 
 				<div class="container">
 
-					<h2>Perspectives</h2>
+					<h1>Perspectives</h1>
 
 					<div class="row clearfix">
 
 						<div class="primary-articles col-sm-7">
-						<?php
+								<?php
 
-							global $post;
-							$args = array( 'posts_per_page' => 1, 'order'=> 'ASC', 'orderby' => 'date', 'category' => 3 );
+									global $post;
+									$args = array( 'posts_per_page' => 1, 'order'=> 'ASC', 'orderby' => 'date', 'category' => 3 );
 
-							$myposts = get_posts( $args );
-							foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
-									<header class="entry-header">
-										<?php echo get_the_category_list(); ?>
-										<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-									</header>
-									<div class="entry-content">
-										<?php the_excerpt(); ?>
-									</div>
-								</article>
-							<?php endforeach; 
-							wp_reset_postdata();?>
-				</div>
+									$myposts = get_posts( $args );
+									foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+										<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
+											<header class="entry-header">
+												<?php echo get_the_category_list(); ?>
+												<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+											</header>
+											<div class="entry-content">
+												<?php the_excerpt(); ?>
+											</div>
+										</article>
+									<?php endforeach; 
+									wp_reset_postdata();?>
+						</div>
 
-				<div class="secondary-articles col-sm-3 col-sm-offset-2">
-					<?php
+						<div class="secondary-articles col-sm-3 col-sm-offset-2">
+							<?php
 
-							global $post;
-							$args = array( 'posts_per_page' => 2, 'order'=> 'ASC', 'orderby' => 'date', 'category' => 4 );
+									global $post;
+									$args = array( 'posts_per_page' => 2, 'order'=> 'ASC', 'orderby' => 'date', 'category' => 4 );
 
-							$myposts = get_posts( $args );
-							foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
-									<header class="entry-header">
-										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-										<?php echo get_the_category_list(); ?>
-									</header>
-								</article>
-							<?php endforeach; 
-							wp_reset_postdata();?>
-				</div>
+									$myposts = get_posts( $args );
+									foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+										<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
+											<header class="entry-header">
+												<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+												<?php echo get_the_category_list(); ?>
+											</header>
+										</article>
+									<?php endforeach; 
+									wp_reset_postdata();?>
+						</div>
+						<div class="clearfix"></div>
+						<div class="more-link-wrapper"><a class="more-link" href="/perspectives">More</a></div>
 
 					</div>
 
@@ -127,11 +155,15 @@ get_header('home'); ?>
 
 					<div class="row clearfix">
 
-						<div class="col-sm-9">
+						<div class="col-sm-8">
 
-							<h2>Rapt is a group of designers, architects and strategists who believe everything is connected, and that anything is possible.</h2>
+							<h1>Rapt is a group of designers, architects and strategists who believe everything is connected, and that anything is possible.</h1>
 
 						</div>
+
+						<div class="clearfix"></div>
+
+						<div class="more-link-wrapper"><a class="more-link" href="/about">More</a></div>
 
 					</div>
 

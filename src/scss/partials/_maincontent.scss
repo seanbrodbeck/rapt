@@ -4,15 +4,36 @@ main {
 
 		padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400));
 
+		&.home-work {
+			padding:0;
+			padding-bottom:90px;
+		}
+
 		&.home-perspectives {
 			background: $peach;
+			h1 {
+				color:$black;
+			}
+		}
+
+		&.home-about {
+			color:$white;
+			.more-link {
+				color:$white;
+				opacity:.2;
+			}
 		}
 
 		&.work-row-full {
 			padding:0;
 		}
 
+		
+	}
+
+	.work-grid {
 		.work-row {
+			margin-bottom:50px;
 			@media (min-width: $bp-sm-min) {
 				@include flexbox;
 				@include align-items(center);
@@ -21,8 +42,29 @@ main {
 				width:100%;
 				height:auto;
 			}
+			h2 {
+				font-size: 22px;
+				color:$black;
+				font-family: 'noe-display';
+				span {
+					font-family: 'Fakt-Blond';
+				}
+			}
+			&.work-row-full {
+				margin-bottom:100px;
+				padding:500px 0 80px;
+				h2 {
+					font-size: 48px;
+					color:$white;
+					a {
+						color:$white;
+					}
+				}
+				.work-cats {
+					color:$white;
+				}
+			}
 		}
-		
 	}
 
 }
