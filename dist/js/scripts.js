@@ -38,7 +38,7 @@
 	}
 
 	let scrollQuestionText = i => {
-		qScrollPositions[i] = qScrollPositions[i] - 1
+		qScrollPositions[i] = qScrollPositions[i] - 10
 		questions[i].querySelector('.intro-question-text').style.transform = 'translate3d(' + qScrollPositions[i] + 'px,0,0)'
 		scrollRequest = requestAnimationFrame( () => { scrollQuestionText(i)})
 	}
