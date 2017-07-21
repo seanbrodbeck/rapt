@@ -450,8 +450,9 @@ main .work-grid .work-row {
       color: #FFFFFF; }
 
 main .secondary-articles {
-  /*position:fixed;
-		right:0;*/ }
+  position: fixed;
+  right: calc((100vw - 1290px) / 2);
+  width: calc(1290px * .25); }
 
 footer {
   background: #000000;

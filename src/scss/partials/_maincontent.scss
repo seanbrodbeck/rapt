@@ -1,5 +1,5 @@
 main {
-	
+
 	section {
 
 		padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400));
@@ -17,7 +17,7 @@ main {
 		}
 
 		&.home-about {
-			
+
 		}
 
 		&.work-row-full {
@@ -82,7 +82,7 @@ main {
 			.work-row {
 				h2 {
 					margin-bottom: 15px;
-				}			
+				}
 			}
 		}
 
@@ -112,7 +112,7 @@ main {
 			padding:340px 0;
 		}
 
-		
+
 	}
 
 	.work-grid {
@@ -152,8 +152,9 @@ main {
 	}
 
 	.secondary-articles {
-		/*position:fixed;
-		right:0;*/
+		position: fixed;
+		right: calc((100vw - 1290px) / 2);
+		width: calc(1290px * .25);
 	}
 
 }
