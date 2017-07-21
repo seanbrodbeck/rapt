@@ -25,8 +25,8 @@
     "dev": "npm run watch:styles",
     "prod": "npm run build:styles"
   },
-  "repository": { 
-    "type" : "git"
-  , "url" : "https://github.com/seanbrodbeck/rapt.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seanbrodbeck/rapt.git"
   }
 }

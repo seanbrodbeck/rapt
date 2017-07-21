@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Home Page
- * 
+ *
  * The template for displaying all pages
  *
  * This is the template that displays all pages by default.
@@ -32,7 +32,11 @@ get_header('home'); ?>
 			<?php if(get_field('home_page_word_wall')): ?>
 				<div class="intro-questions">
 				<?php while(has_sub_field('home_page_word_wall')): ?>
-					<span class="intro-question"><?php the_sub_field('word_wall_item_text'); ?></span>
+					<div class="intro-question">
+						<div class="intro-question-text">
+							<?php the_sub_field('word_wall_item_text'); ?> <?php the_sub_field('word_wall_item_text'); ?> <?php the_sub_field('word_wall_item_text'); ?>
+						</div>
+					</div>
 				<?php endwhile; ?>
 				</div>
 			<?php endif; ?>
@@ -42,7 +46,7 @@ get_header('home'); ?>
 			<header id="masthead" class="site-header home-navigation">
 
 				<div class="container">
-					
+
 					<nav id="site-navigation" class="main-navigation">
 						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'rapt' ); ?></button>
 						<?php
@@ -54,17 +58,17 @@ get_header('home'); ?>
 					</nav><!-- #site-navigation -->
 
 					</div>
-				
+
 			</header><!-- #masthead -->
 
 
 			<section class="home-work">
 
 					<div class="work-grid">
-						<?php 
+						<?php
 							if (have_posts()) : while (have_posts()) : the_post();
 
-								if( have_rows('work_grid_layout') ): 
+								if( have_rows('work_grid_layout') ):
 
 									while ( have_rows('work_grid_layout') ) : the_row();
 
@@ -80,15 +84,15 @@ get_header('home'); ?>
 									if( get_row_layout() == 'work_row_full_width' )
 										get_template_part('template-parts/content', 'work-row-full');
 
-									endwhile; 
-								endif; 
+									endwhile;
+								endif;
 
 							endwhile; endif; ?>
 					</div>
 
 					<div class="clearfix"></div>
 					<div class="more-link-wrapper"><a class="more-link" href="/work">More</a></div>
-				
+
 
 			</section>
 
@@ -118,7 +122,7 @@ get_header('home'); ?>
 												<?php the_excerpt(); ?>
 											</div>
 										</article>
-									<?php endforeach; 
+									<?php endforeach;
 									wp_reset_postdata();?>
 						</div>
 
@@ -137,7 +141,7 @@ get_header('home'); ?>
 												<?php echo get_the_category_list(); ?>
 											</header>
 										</article>
-									<?php endforeach; 
+									<?php endforeach;
 									wp_reset_postdata();?>
 						</div>
 						<div class="clearfix"></div>

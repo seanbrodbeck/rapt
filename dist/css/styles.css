@@ -52,42 +52,82 @@ p {
 .aligncenter {
   text-align: center; }
 
-body {
-  margin: 0; }
-
-@font-face {
-  font-family: 'noe-display-medium';
-  src: url("/wp-content/themes/rapt/dist/fonts/noe-display-medium.otf"); }
-
-@font-face {
-  font-family: 'noe-display';
-  src: url("/wp-content/themes/rapt/dist/fonts/noe-display-regular.ttf"); }
-
-* {
-  box-sizing: border-box; }
-
 .intro {
-  width: 100%;
-  /*height: 100vh;*/
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   font-family: 'noe-display-medium';
   font-size: calc(25px + (64 - 25) * (100vw - 400px) / (1440 - 400));
   line-height: 1;
-  padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400)); }
+  padding: calc(10px + (30 - 10) * (100vw - 400px) / (1440 - 400)) 0;
+  box-sizing: border-box; }
 
 .intro-questions {
-  position: relative; }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%; }
 
 .intro-question {
-  color: #d1d1d1;
+  position: relative;
+  color: #000000;
   cursor: pointer;
-  transition: .3s; }
+  transition: .3s;
+  white-space: nowrap;
+  padding: 30px 0;
+  background: white;
+  margin-top: -44px;
+  backface-visibility: hidden;
+  will-change: transform, color, background;
+  flex-shrink: 2; }
+
+.intro-question-text {
+  backface-visibility: hidden;
+  will-change: transform; }
+
+.intro-question:nth-of-type(1) {
+  transform: rotate(-1deg); }
+
+.intro-question:nth-of-type(2) {
+  transform: rotate(1deg); }
+
+.intro-question:nth-of-type(3) {
+  transform: rotate(2deg); }
+
+.intro-question:nth-of-type(4) {
+  transform: rotate(-3deg); }
+
+.intro-question:nth-of-type(5) {
+  transform: rotate(0); }
+
+.intro-question:nth-of-type(6) {
+  transform: rotate(-3deg); }
+
+.intro-question:nth-of-type(7) {
+  transform: rotate(5deg); }
+
+.intro-question:nth-of-type(8) {
+  transform: rotate(2deg); }
+
+.intro-question:nth-of-type(9) {
+  transform: rotate(-3deg); }
 
 .intro-question.is-off {
   opacity: 0; }
 
-.intro-question:hover:not(:last-of-type) {
+.intro-question:hover {
   color: white;
-  transition: none; }
+  transition: none;
+  background: transparent; }
+
+.intro-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
 
 .intro-image {
   position: absolute;
@@ -118,9 +158,6 @@ body {
 .intro-logo.is-white {
   color: white; }
 
-.black {
-  color: black; }
-
 a {
   -webkit-transition: color .3s ease;
   -moz-transition: color .3s ease;
@@ -145,6 +182,9 @@ a {
 
 .light-gray-bkg {
   background: #f8f8f8; }
+
+.black {
+  color: #000000; }
 
 .more-link-wrapper {
   text-align: center;

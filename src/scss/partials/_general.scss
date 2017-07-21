@@ -43,6 +43,11 @@ a {
 	background:#f8f8f8;
 }
 
+.black {
+  color: $black;
+}
+
+
 .more-link-wrapper {
 	text-align: center;
 	margin:50px 0 0;
@@ -155,7 +160,7 @@ a {
 .work-cats {
 	margin:0;
 	font-size:14px;
-	color:$light-gray; 
+	color:$light-gray;
 }
 
 .search-filter-overlay {
