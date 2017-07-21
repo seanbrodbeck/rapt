@@ -45,6 +45,11 @@ h2 {
 	@media (min-width: $bp-sm-min) {
 		
 	}
+	&.large {
+		font-family: 'noe-display';
+		font-size: 48px;
+		margin-top:0;
+	}
 }
 
 h3 {
@@ -63,7 +68,10 @@ h4 {
 }
 
 p {
-	
+	font-size: 20px;
+  line-height: 1.6;
+  color:$black;
+  font-family: 'Fakt-Blond';
 	&.large {
 		
 	}

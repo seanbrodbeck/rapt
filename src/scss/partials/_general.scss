@@ -36,6 +36,11 @@ a {
 
 .black-bkg {
 	background:$black;
+	color:$white;
+}
+
+.light-gray-bkg {
+	background:#f8f8f8;
 }
 
 .more-link-wrapper {
@@ -46,6 +51,13 @@ a {
 		font-size: 40px;
 		display:inline-block;
 		color:$black;
+		opacity:.2;
+	}
+}
+
+.black-bkg {
+	.more-link {
+		color:$white;
 		opacity:.2;
 	}
 }

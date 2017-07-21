@@ -39,7 +39,7 @@ get_header('home'); ?>
 
 			</section>
 
-			<header id="masthead" class="site-header">
+			<header id="masthead" class="site-header home-navigation">
 
 				<div class="container">
 					

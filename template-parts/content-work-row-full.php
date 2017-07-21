@@ -24,7 +24,7 @@
                     $work_cat_list[] = $term->name;
                 }
                                      
-                $work_cats = join( " • ", $work_cat_list );
+                $work_cats = join( " · ", $work_cat_list );
                 ?>
              
                 <p class="work-cats category-list">
