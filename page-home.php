@@ -15,12 +15,20 @@
  */
 
 get_header('home'); ?>
-
+	<div class="transition-wipe">
+		<h1><span>A reflection of you A reflection of you A reflection of you</span></h1>
+		<h1><span>A reflection of you A reflection of you A reflection of you</span></h1>
+		<h1><span>A reflection of you A reflection of you A reflection of you</span></h1>
+		<h1><span>A reflection of you A reflection of you A reflection of you</span></h1>
+		<h1><span>A reflection of you A reflection of you A reflection of you</span></h1>
+		<h1><span>A reflection of you A reflection of you A reflection of you</span></h1>
+		<h1><span>A reflection of you A reflection of you A reflection of you</span></h1>
+		<h1><span>A reflection of you A reflection of you A reflection of you</span></h1>
+	</div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
 			<section class="intro">
-
 			<?php if(get_field('home_page_word_wall')): ?>
 				<div class="intro-images">
 				<?php while(has_sub_field('home_page_word_wall')): ?>

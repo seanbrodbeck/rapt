@@ -1,3 +1,41 @@
+.transition-wipe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background: white;
+  display: none;
+}
+
+.transition-wipe h1 {
+  position: relative;
+  top: -35%;
+  left: -25%;
+  width: 100%;
+  height: 167.1px;
+  transform: rotate(-45deg);
+  opacity: 0.4;
+  font-family: 'noe-display-medium';
+  font-size: 200px;
+  font-weight: 500;
+  line-height: 0.86;
+  text-align: center;
+  color: #d1d1d1;
+  white-space: nowrap;
+}
+
+.transition-wipe h1 {
+  transform: rotate(-45deg) translate3d(-100%,0,0);
+  backface-visibility: hidden;
+}
+.transition-wipe h1 span {
+  position: relative;
+  display: block;
+  backface-visibility: hidden;
+}
+
 .intro {
   width: 100vw;
   height: 100vh;

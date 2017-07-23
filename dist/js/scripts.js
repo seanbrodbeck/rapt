@@ -1,3 +1,22 @@
+
+// Page Transition Wipe
+var transitionWipeX = 0;
+let el_transitionText = document.querySelectorAll('.transition-wipe h1 span');
+animateTransition()
+function animateTransition() {
+  requestAnimationFrame(function(){
+    transitionWipeX -= 3;
+    for (var i=0;i<el_transitionText.length;i++) {
+      // Reverse odd lines direction
+      // if (i%1 - 1) {
+      //   transitionWipeX = -transitionWipeX
+      // }
+      el_transitionText[i].style.transform = 'translate3d(' + (transitionWipeX) + 'px,0,0)'
+    }
+    animateTransition();
+  })
+}
+
 (function($) {
 
   // Home Page Feature
@@ -38,7 +57,7 @@
   }
 
   let scrollQuestionText = i => {
-    qScrollPositions[i] = qScrollPositions[i] - 10
+    qScrollPositions[i] = qScrollPositions[i] - 8
     questions[i].querySelector('.intro-question-text').style.transform = 'translate3d(' + qScrollPositions[i] + 'px,0,0)'
     scrollRequest = requestAnimationFrame( () => { scrollQuestionText(i)})
   }
