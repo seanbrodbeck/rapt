@@ -454,6 +454,9 @@ main .secondary-articles {
   right: calc((100vw - 1290px) / 2);
   width: calc(1290px * .25); }
 
+main * {
+  outline: 1px solid red; }
+
 footer {
   background: #000000;
   margin-top: 90px;

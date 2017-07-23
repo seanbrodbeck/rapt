@@ -49,15 +49,15 @@
 var WIN_H = window.innerHeight,
     el_primary_list,
     el_secondary_list,
+    scrollHeight,
+    scrollPercent,
     primaryHeight,
     secondaryHeight,
-    primaryScrollHeight,
-    secondaryScrollHeight,
+    heightDifference,
     newY,
     targY;
 
 var detectRenderInterval = setInterval(function(){
-  console.log(document.querySelector('.primary-articles').offsetHeight)
   if (document.querySelector('.primary-articles') && document.querySelector('.primary-articles').offsetHeight > WIN_H * 2) {
     initScroll();
   }
@@ -65,13 +65,14 @@ var detectRenderInterval = setInterval(function(){
 
 function initScroll() {
   clearInterval(detectRenderInterval);
-  el_primary_list = document.querySelector('.primary-articles')
-  el_secondary_list = document.querySelector('.secondary-articles')
+  el_primary_list = document.querySelector('.primary-articles');
+  el_secondary_list = document.querySelector('.secondary-articles');
   document.addEventListener('wheel',scrollHandler)
+  scrollHeight = document.body.offsetHeight - WIN_H;
   primaryHeight = el_primary_list.offsetHeight;
   secondaryHeight = el_secondary_list.offsetHeight;
-  primaryScrollHeight = primaryHeight-WIN_H;
-  secondaryScrollHeight = secondaryHeight-WIN_H+document.querySelector('.site-footer').offsetHeight;
+  heightDifference = primaryHeight - secondaryHeight;
+  secondaryTargY = scrollHeight - heightDifference
   oldY = 0;
   newY = 0;
   targY = 0;
@@ -79,16 +80,15 @@ function initScroll() {
 function scrollHandler(e) {
   requestAnimationFrame(function(){
     var scrollTop = document.body.scrollTop;
-    var scrollPercent;
+    scrollPercent = scrollTop/scrollHeight;
     if (primaryHeight > secondaryHeight) {
-      scrollPercent = scrollTop/primaryScrollHeight
       el_secondary_list.style.willChange = "transform";
-      el_secondary_list.style.transform = 'translate3d(0, ' + setSecondaryY(secondaryScrollHeight, scrollPercent) + 'px, 0)'
+      el_secondary_list.style.transform = 'translate3d(0, ' + Math.floor(-secondaryTargY*scrollPercent) + 'px, 0)'
     }
   })
 }
 function setSecondaryY(secondaryScrollHeight, scrollPercent) {
   targY = Math.floor(secondaryScrollHeight * scrollPercent);
-  newY = -targY // += .2*(targY - newY); EASED
+  newY += .9*(-targY - newY); // Slightly eased
   return newY;
 }
