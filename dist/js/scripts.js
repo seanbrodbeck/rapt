@@ -77,9 +77,7 @@ var WIN_H = window.innerHeight,
     targY;
 
 var detectRenderInterval = setInterval(function(){
-  if (document.querySelector('.primary-articles') && document.querySelector('.primary-articles').offsetHeight > WIN_H * 2) {
-    initScroll();
-  }
+  initScroll();
 },300);
 
 function initScroll() {
