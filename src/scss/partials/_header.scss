@@ -1,5 +1,8 @@
 header {
 	padding:35px 0 105px;
+	&.entry-header {
+		padding:0;
+	}
 	.main-navigation {
 		#primary-menu {
 			@media (min-width: $bp-sm-min) {

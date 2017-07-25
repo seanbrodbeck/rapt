@@ -28,12 +28,44 @@ get_header(); ?>
 							<h1><?php the_field('team_header'); ?></h1>
 						</div>
 					</div>
-					<div class="row clearfix">
-						<div class="col-sm-6">
+					<div class="row team-sort clearfix">
+						<div class="col-sm-6 team-sort-links">
 							<?php the_field('team_filter_list'); ?>
 						</div>
-						<div class="col-sm-6">
-							Team Members Here (nested repeater)
+						<div class="col-sm-9 col-sm-offset-3 team-members">
+								<div class="col-sm-4"></div>
+
+								<?php if( have_rows('team_member_groups') ): ?>
+									
+									<?php while( have_rows('team_member_groups') ): the_row(); ?>
+
+										<div id="<?php the_sub_field('team_member_group_slug'); ?>">
+											
+											<?php if( have_rows('team_members') ): ?>
+												
+												<?php while( have_rows('team_members') ): the_row(); ?>
+
+													<div class="col-sm-4 team-member">
+														<div class="inner">
+															<?php $image = get_sub_field('team_member_image'); if( !empty($image) ): ?>
+															<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+															<?php endif; ?>
+															<div class="team-member-info">
+																<h3><?php the_sub_field('team_member_name'); ?></h3>
+																<p><?php the_sub_field('team_member_title'); ?></p>
+															</div>
+														</div>
+													</div>
+
+												<?php endwhile; ?>
+												
+											<?php endif; ?>
+										</div>	
+
+									<?php endwhile; ?>
+									
+								<?php endif; ?>
+
 						</div>
 					</div>
 				</div>
@@ -41,22 +73,21 @@ get_header(); ?>
 
 			<section class="we">
 				<div class="container">
-					<div class="row clearfix">
-						<div class="col-sm-7">
+					<div class="row we-wrapper clearfix">
+						<div class="col-sm-7 we-large-text">
 							<h2 class="large"><?php the_field('we_large_text'); ?></h2>
 						</div>
-						<div class="col-sm-4 col-sm-offset-1">
-							<?php the_field('we_ask_why'); ?>
-						</div>
-					</div>
-					<div class="row clearfix">
-						<div class="col-sm-4 col-sm-offset-4">
-							<h1><?php the_field('we_dont_design_things'); ?></h1>
-						</div>
-						<div class="col-sm-4">
-							<?php the_field('we_tell_your_truth'); ?>
-						</div>
-					</div>
+						<div class="col-sm-9 col-sm-offset-3">
+							<div class="col-sm-6 col-sm-offset-6 we-block">
+								<?php the_field('we_ask_why'); ?>
+							</div>
+							<div class="col-sm-6 we-block">
+								<?php the_field('we_dont_design_things'); ?>
+							</div>
+							<div class="col-sm-6 we-block">
+								<?php the_field('we_tell_your_truth'); ?>
+							</div>
+						</div>	
 				</div>
 			</section>
 
@@ -100,6 +131,11 @@ get_header(); ?>
 
 						<?php endif; ?>
 					</div>
+				</div>
+			</section>
+
+			<section class="video-section">
+				<div class="container">
 					<div class="row clearfix">
 						<div class="col-sm-10 col-sm-offset-1">
 							<?php the_field('upload_section'); ?>
@@ -110,18 +146,18 @@ get_header(); ?>
 
 			<section class="contact-info">
 				<div class="container">
-					<div class="row clearfix">
-						<div class="col-sm-4">
+					<div class="row contact-info-wrapper clearfix">
+						<div class="col-sm-5 contact-info-header">
 							<h2 class="large"><?php the_field('contact_section_header'); ?></h2>
 						</div>
-						<div class="col-sm-8">
+						<div class="col-sm-8 col-sm-offset-4">
 							<div class="row clearfix">
 								<div class="col-sm-6"></div>
 								<?php if(get_field('contact_info_grid')): ?>
 
 									<?php while(has_sub_field('contact_info_grid')): ?>
 
-									<div class="col-sm-6">
+									<div class="col-sm-6 contact-info-listing">
 										<h4><?php the_sub_field('contact_info_header'); ?></h4>
 										<?php the_sub_field('contact_info'); ?>
 									</div>
