@@ -45,6 +45,7 @@
   line-height: 1;
   padding: calc(10px + (30 - 10) * (100vw - 400px) / (1440 - 400)) 0;
   box-sizing: border-box;
+  position:relative;
 }
 
 .intro-questions {

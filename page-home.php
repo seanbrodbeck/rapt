@@ -48,7 +48,7 @@ get_header('home'); ?>
 				<?php endwhile; ?>
 				</div>
 			<?php endif; ?>
-
+			<div class="rapt-logo-wrap rapt-logo-wrap-home clearfix"><img class="rapt-logo" src="/wp-content/themes/rapt/dist/images/logo.svg" width="18" height="auto" /></div>
 			</section>
 
 			<header id="masthead" class="site-header home-navigation">
@@ -123,7 +123,22 @@ get_header('home'); ?>
 										<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
 											<header class="entry-header">
-												<?php echo get_the_category_list(); ?>
+												<div class="category-list">
+													<ul>
+														<?php
+															$categories = get_the_category();
+															$separator = ' · ';
+															$output = '';
+															if($categories){
+															    foreach($categories as $category) {
+															if($category->name !== 'Primary'){
+															        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
+															    }
+															echo trim($output, $separator);
+															}
+														?>
+													</ul>
+												</div>
 												<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 											</header>
 											<div class="entry-content">
@@ -146,7 +161,22 @@ get_header('home'); ?>
 											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
 											<header class="entry-header">
 												<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-												<?php echo get_the_category_list(); ?>
+												<div class="category-list">
+													<ul>
+														<?php
+															$categories = get_the_category();
+															$separator = ' · ';
+															$output = '';
+															if($categories){
+															    foreach($categories as $category) {
+															if($category->name !== 'Secondary'){
+															        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
+															    }
+															echo trim($output, $separator);
+															}
+														?>
+													</ul>
+												</div>
 											</header>
 										</article>
 									<?php endforeach;
@@ -175,7 +205,7 @@ get_header('home'); ?>
 
 						<div class="clearfix"></div>
 
-						<div class="more-link-wrapper"><a class="more-link" href="/about">More</a></div>
+						<div class="more-link-wrapper"><a class="more-link" href="/studio">More</a></div>
 
 					</div>
 

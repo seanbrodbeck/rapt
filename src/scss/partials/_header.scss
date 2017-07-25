@@ -27,3 +27,18 @@ header {
 		}
 	}
 }
+
+.home {
+	header {
+		padding:120px 0;
+		.main-navigation {
+			#primary-menu {
+				li {
+					a {
+						color:$black;
+					}
+				}
+			}
+		}
+	}
+}

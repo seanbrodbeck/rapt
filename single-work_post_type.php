@@ -25,7 +25,7 @@ get_header(); ?>
 
 	    <section class="single-intro">
 	      <div class="container">
-	        <div class="row clearfix">
+	        <div class="row single-intro-row clearfix">
 	          <div class="col-sm-6">
 	            <h2><?php the_field("work_header_text"); ?></h2>
 	            <?php $terms = get_the_terms( get_the_ID(), 'work_categories' );
@@ -38,7 +38,7 @@ get_header(); ?>
                     $work_cat_list[] = $term->name;
                 }
                                      
-                $work_cats = join( " • ", $work_cat_list );
+                $work_cats = join( " · ", $work_cat_list );
                 ?>
              
                 <p class="work-cats category-list">
@@ -50,7 +50,9 @@ get_header(); ?>
 	          <div class="col-sm-5 col-sm-offset-1">
 	            <p><?php the_field("work_subheader_text"); ?></p>
 	          </div>
+	          <div class="rapt-logo-wrap rapt-logo-wrap-work-single clearfix"><img class="rapt-logo" src="/wp-content/themes/rapt/dist/images/logo.svg" width="18" height="auto" /></div>
 	        </div>
+	        
 	      </div>
 	    </section>
 

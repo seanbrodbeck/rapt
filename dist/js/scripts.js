@@ -63,6 +63,79 @@ function animateTransition() {
   }
   init();
 
+  // Toggle Search and Filter
+  $( ".filter-toggle" ).click(function() {
+    $( "#filter-overlay" ).fadeIn( "fast", "linear" );
+
+    // init Isotope
+    var $grid = $('.filter-listings-filters').isotope({
+      itemSelector: '.filter-listing-filter',
+      percentPosition: true,
+      masonry: {
+        columnWidth: '.filter-listing-filter'
+      },
+    });
+    // bind filter button click
+    $('.filter-options').on( 'click', '.filter-option', function() {
+      var filterValue = $( this ).attr('data-filter');
+      $grid.isotope({ filter: filterValue });
+    });
+    // change is-checked class on buttons
+    $('.filter-options').each( function( i, buttonGroup ) {
+      var $buttonGroup = $( buttonGroup );
+      $buttonGroup.on( 'click', '.filter-option', function() {
+        $buttonGroup.find('.is-checked').removeClass('is-checked');
+        $( this ).addClass('is-checked');
+      });
+    });
+
+
+  });
+  $( ".filter-search-btn" ).click(function() {
+    $( "#search-overlay" ).fadeIn( "fast", "linear" );
+    // Isotope Search 
+
+      var qsRegex;
+
+      var $grid = $('.filter-listings-search').imagesLoaded( function() {
+        $grid.isotope({
+          itemSelector: '.filter-listing-search',
+          percentPosition: true,
+          masonry: {
+            columnWidth: '.filter-listing-search'
+          },
+          filter: function() {
+            return qsRegex ? $(this).text().match( qsRegex ) : true;
+          }
+        });
+      });
+
+      var $quicksearch = $('.quicksearch').keyup( debounce( function() {
+        qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+        $grid.isotope();
+      }, 200 ) );
+
+      function debounce( fn, threshold ) {
+        var timeout;
+        return function debounced() {
+          if ( timeout ) {
+            clearTimeout( timeout );
+          }
+          function delayed() {
+            fn();
+            timeout = null;
+          }
+          timeout = setTimeout( delayed, threshold || 100 );
+        }
+      }
+  });
+  $( ".close-filter-overlay" ).click(function() {
+    $( "#filter-overlay" ).fadeOut( "fast", "linear" );
+  });
+  $( ".close-search-overlay" ).click(function() {
+    $( "#search-overlay" ).fadeOut( "fast", "linear" );
+  });
+
 })( jQuery );
 
 var WIN_H = window.innerHeight,
@@ -109,3 +182,4 @@ function setSecondaryY(secondaryScrollHeight, scrollPercent) {
   newY += .9*(-targY - newY); // Slightly eased
   return newY;
 }
+

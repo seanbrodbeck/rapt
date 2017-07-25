@@ -41,6 +41,15 @@ main {
 			.work-cats {
 				font-size: 18px;
 			}
+			.single-intro-row {
+				position:relative;
+				.rapt-logo-wrap-work-single {
+					position:absolute;
+					right:-45px;
+					top:5px;
+					padding:0;
+				}
+			}
 		}
 		&.awards-press {
 			h2 {
@@ -283,7 +292,7 @@ main {
 	}
 }
 
-.single {
+.single-post {
 	.category-list {
 		margin-top:20px;
 	}

@@ -69,7 +69,7 @@ get_header(); ?>
 						?>
 
 			        <?php foreach ( $terms as $term ) { ?>
-			            <span class="filter-option"><a href="#<?php echo $term->slug; ?>"><?php echo $term->name; ?></a></span>
+			            <span class="filter-option" data-filter=".<?php echo $term->slug; ?>"><?php echo $term->name; ?></span>
 			        <?php } ?>
 						    
 						<?php endif;?>
@@ -78,8 +78,8 @@ get_header(); ?>
 
 					</div>
 				</div>
-				<div class="col-sm-12 filter-listings">
-					<div class="row clearfix">
+				<div class="col-sm-12">
+					<div class="row filter-listings filter-listings-filters clearfix">
 						<?php
 
 							global $post;
@@ -100,11 +100,11 @@ get_header(); ?>
                     $work_cat_slug[] = $term->slug;
                 }
                                      
-                $work_cats = join( " • ", $work_cat_list );
+                $work_cats = join( " · ", $work_cat_list );
                 $work_cats_slugs = join( " ", $work_cat_slug );
 
                 ?>
-								<div class="col-sm-4 filter-listing <?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats_slugs ) ); ?>">
+								<div class="col-sm-4 filter-listing filter-listing-filter <?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats_slugs ) ); ?>" data-category="<?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats_slugs ) ); ?>">
 						 				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('filter-thumb'); ?></a>
 						 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		                <p class="work-cats category-list"><?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats ) ); ?></p>
@@ -113,15 +113,58 @@ get_header(); ?>
 							 	</div>
 							<?php endforeach; 
 							wp_reset_postdata();?>
+							<div class="clearfix"></div>
 					</div>		
 				</div>
 			</div>
 		</div>
 
-		<div id="search-overlay" class="search-filter-overlay" style="display:none">
+		<div id="search-overlay" class="search-filter-overlay" style="display:none;">
 			<div class="container">
 				<img class="close-search-overlay" src="/wp-content/themes/rapt/dist/images/close.svg" width="32" height="auto"/>
-				<input type="text" placeholder="Start Typing...">
+				<input type="text" class="quicksearch" placeholder="Start Typing...">
+
+				<div class="clearfix"></div>
+				<div class="col-sm-12">
+					<div class="row clearfix filter-listings filter-listings-search">
+						<?php
+
+							global $post;
+							$args = array( 'posts_per_page' => -1, 'order'=> 'ASC', 'orderby' => 'date', 'post_type' => 'work_post_type' );
+
+							$myposts = get_posts( $args );
+							foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+
+							<?php $terms = get_the_terms( get_the_ID(), 'work_categories' );
+			                                     
+              if ( $terms && ! is_wp_error( $terms ) ) : 
+             
+                $work_cat_list = array();
+              	$work_cat_slug = array();
+             
+                foreach ( $terms as $term ) {
+                    $work_cat_list[] = $term->name;
+                    $work_cat_slug[] = $term->slug;
+                }
+                                     
+                $work_cats = join( " · ", $work_cat_list );
+                $work_cats_slugs = join( " ", $work_cat_slug );
+
+                ?>
+								<div class="col-sm-4 filter-listing filter-listing-search <?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats_slugs ) ); ?>">
+						 				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('filter-thumb'); ?></a>
+						 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		                <p class="work-cats category-list"><?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats ) ); ?></p>
+
+			              <?php endif; ?>
+							 	</div>
+							<?php endforeach; 
+							wp_reset_postdata();?>
+							<div class="clearfix"></div>
+					</div>		
+				</div>
+
+
 			</div>
 		</div>
 
