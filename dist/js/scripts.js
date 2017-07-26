@@ -155,8 +155,8 @@ var detectRenderInterval = setInterval(function(){
 
 function initScroll() {
   clearInterval(detectRenderInterval);
-  el_primary_list = document.querySelector('.primary-articles');
-  el_secondary_list = document.querySelector('.secondary-articles');
+  el_primary_list = document.querySelector('.blog .primary-articles');
+  el_secondary_list = document.querySelector('.blog .secondary-articles');
   document.addEventListener('wheel',scrollHandler)
   scrollHeight = document.body.offsetHeight - WIN_H;
   primaryHeight = el_primary_list.offsetHeight;
