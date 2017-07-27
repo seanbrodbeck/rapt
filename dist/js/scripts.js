@@ -93,6 +93,7 @@ function animateTransition() {
   });
   $( ".filter-search-btn" ).click(function() {
     $( "#search-overlay" ).fadeIn( "fast", "linear" );
+    $(".quicksearch").focus();
     // Isotope Search 
 
       var qsRegex;

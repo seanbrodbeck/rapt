@@ -12,7 +12,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<div class="container">
+			<div class="container main-blog-wrap">
 
 			<?php
 			while ( have_posts() ) : the_post();

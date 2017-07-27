@@ -1,7 +1,9 @@
 header {
-	padding:35px 0 105px;
 	&.entry-header {
 		padding:0;
+	}
+	.nav-wrap {
+		padding:35px 70px 105px;
 	}
 	.main-navigation {
 		#primary-menu {
@@ -28,9 +30,20 @@ header {
 	}
 }
 
+
+.rapt-logo-wrap {
+	display:block;
+	position:fixed;
+	bottom:60px;
+	right:60px;
+}
+
+
 .home {
 	header {
-		padding:120px 0;
+		.nav-wrap {
+			padding:100px 70px ;
+		}
 		.main-navigation {
 			#primary-menu {
 				li {

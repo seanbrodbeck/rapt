@@ -25,7 +25,7 @@
 
 	<header id="masthead" class="site-header">
 
-		<div class="container">
+		<div class="nav-wrap">
 			
 			<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'rapt' ); ?></button>
@@ -38,7 +38,9 @@
 			</nav><!-- #site-navigation -->
 
 			</div>
-		
+			<a class="rapt-logo-wrap" href="/">
+				<img class="rapt-logo" src="/wp-content/themes/rapt/dist/images/logo.svg" width="18" height="auto" />
+			</a>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

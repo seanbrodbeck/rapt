@@ -19,7 +19,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<div class="container">
+			<div class="full-width-wrap">
 				<div class="filters row clearfix">
 					<div class="col-sm-12">
 						<span class="filter-toggle">Filter</span>
@@ -57,7 +57,7 @@ get_header(); ?>
 				</div>
 
 				<div id="filter-overlay" class="search-filter-overlay" style="display:none">
-			<div class="container">
+			<div class="full-width-wrap">
 				<img class="close-filter-overlay" src="/wp-content/themes/rapt/dist/images/close.svg" width="32" height="auto"/>
 				<div class="col-sm-10">
 					<div class="filter-options">
@@ -80,6 +80,8 @@ get_header(); ?>
 
 					</div>
 				</div>
+			</div>
+			<div class="container">
 				<div class="col-sm-12">
 					<div class="row filter-listings filter-listings-filters clearfix">
 						<?php
@@ -122,10 +124,11 @@ get_header(); ?>
 		</div>
 
 			<div id="search-overlay" class="search-filter-overlay" style="display:none;">
-			<div class="container">
+			<div class="full-width-wrap">
 				<img class="close-search-overlay" src="/wp-content/themes/rapt/dist/images/close.svg" width="32" height="auto"/>
 				<input type="text" class="quicksearch" placeholder="Start Typing...">
-
+			</div>
+			<div class="container">
 				<div class="clearfix"></div>
 				<div class="col-sm-12">
 					<div class="row clearfix filter-listings filter-listings-search">

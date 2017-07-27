@@ -50,8 +50,7 @@ get_header(); ?>
 	          <div class="col-sm-5 col-sm-offset-1">
 	            <p><?php the_field("work_subheader_text"); ?></p>
 	          </div>
-	          <div class="rapt-logo-wrap rapt-logo-wrap-work-single clearfix"><img class="rapt-logo" src="/wp-content/themes/rapt/dist/images/logo.svg" width="18" height="auto" /></div>
-	        </div>
+	          
 	        
 	      </div>
 	    </section>

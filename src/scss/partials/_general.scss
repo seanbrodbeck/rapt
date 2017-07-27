@@ -24,6 +24,10 @@ a {
 
 }
 
+.full-width-wrap {
+	padding:0 70px;
+}
+
 .container {
 	@media (min-width: $bp-xlg-min) {
 		width:1290px;
@@ -78,18 +82,6 @@ a {
 		left: 0;
 		width: 100%;
 		height: 100%;
-	}
-}
-
-.rapt-logo-wrap {
-	padding:20px 40px;
-	&.rapt-logo-wrap-home {
-		position:absolute;
-		bottom:0;
-		right:0;
-	}
-	.rapt-logo {
-		float:right;
 	}
 }
 
@@ -168,6 +160,7 @@ a {
 	.filter-search-btn {
 		display:inline-block;
 		float:right;
+		cursor:pointer;
 	}
 }
 
@@ -187,9 +180,10 @@ a {
 	width:100%;
 	height:100%;
 	z-index: 999;
-	padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400));
+	padding: 70px 0;
 	.close-filter-overlay, .close-search-overlay {
 		float:right;
+		cursor:pointer;
 	}
 	.filter-options {
 		.filter-option {
@@ -250,6 +244,7 @@ a {
 			color:$black;
 			border:none;
 			outline:none;
+			width:70%;
 			&::placeholder {
 				font-family: 'noe-display';
 				font-size: 40px;

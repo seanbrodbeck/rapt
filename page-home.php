@@ -48,12 +48,11 @@ get_header('home'); ?>
 				<?php endwhile; ?>
 				</div>
 			<?php endif; ?>
-			<div class="rapt-logo-wrap rapt-logo-wrap-home clearfix"><img class="rapt-logo" src="/wp-content/themes/rapt/dist/images/logo.svg" width="18" height="auto" /></div>
 			</section>
 
 			<header id="masthead" class="site-header home-navigation">
 
-				<div class="container">
+				<div class="nav-wrap">
 
 					<nav id="site-navigation" class="main-navigation">
 						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'rapt' ); ?></button>
@@ -66,7 +65,9 @@ get_header('home'); ?>
 					</nav><!-- #site-navigation -->
 
 					</div>
-
+					<a class="rapt-logo-wrap" href="/">
+						<img class="rapt-logo" src="/wp-content/themes/rapt/dist/images/logo.svg" width="18" height="auto" />
+					</a>
 			</header><!-- #masthead -->
 
 
