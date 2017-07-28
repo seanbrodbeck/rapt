@@ -62,9 +62,9 @@
   cursor: pointer;
   transition: .3s;
   white-space: nowrap;
-  padding: 30px 0;
+  padding: calc(5px + 1.8vw) 0;
   background: white;
-  margin-top: -44px;
+  margin-top: calc(10px - 3.3vw);
   backface-visibility: hidden;
   will-change: transform, color, background;
   flex-shrink: 2;

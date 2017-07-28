@@ -29,7 +29,7 @@ body {
 
 h1 {
 	font-family: 'noe-display';
-	font-size: 48px;
+	font-size: calc(32px + (48 - 32) * (100vw - 320px) / (1440 - 320));
 	-webkit-font-smoothing: antialiased;
 	@media (min-width: $bp-sm-min) {
 
