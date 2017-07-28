@@ -107,10 +107,14 @@
   opacity: 0;
 }
 
-.intro-question:hover {
-  color: white;
-  transition: none;
+.intro-question.is-active {
   background: transparent;
+  color: white;
+}
+
+.intro-question:hover {
+  transition: none;
+  z-index: 5;
 }
 
 .intro-images {

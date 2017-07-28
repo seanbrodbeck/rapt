@@ -32,7 +32,7 @@ h1 {
 	font-size: 48px;
 	-webkit-font-smoothing: antialiased;
 	@media (min-width: $bp-sm-min) {
-		
+
 	}
 }
 
@@ -44,7 +44,7 @@ h2 {
 		color:$black;
 	}
 	@media (min-width: $bp-sm-min) {
-		
+
 	}
 	&.large {
 		font-family: 'noe-display';
@@ -60,12 +60,12 @@ h3 {
 		color:$black;
 	}
 	@media (min-width: $bp-sm-min) {
-		
+
 	}
 }
 
 h4 {
-	
+
 }
 
 p {
@@ -73,14 +73,15 @@ p {
   line-height: 1.6;
   color:$black;
   font-family: 'Fakt-Blond';
+  -webkit-font-smoothing: antialiased;
 	&.large {
-		
+
 	}
 }
 
 
 blockquote {
-	
+
 
 }
 

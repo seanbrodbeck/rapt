@@ -4,6 +4,11 @@ header {
 	}
 	.nav-wrap {
 		padding:35px 70px 105px;
+		#site-navigation {
+			position: relative;
+			transform: translate3d(0,0,0);
+			transition: .2s transform ease-out;
+		}
 	}
 	.main-navigation {
 		#primary-menu {
@@ -30,7 +35,6 @@ header {
 	}
 }
 
-
 .rapt-logo-wrap {
 	display:block;
 	position:fixed;
@@ -51,6 +55,23 @@ header {
 						color:$black;
 					}
 				}
+			}
+		}
+	}
+}
+
+.is-nav-fixed {
+	header {
+		.nav-wrap {
+			#site-navigation {
+				padding: 15px 70px 15px;
+				position: fixed;
+				left: 0;
+				top: -30px;
+				transform: translate3d(0,30px,0);
+				width: 100%;
+				background: inherit inherit;
+				z-index: 20;
 			}
 		}
 	}
