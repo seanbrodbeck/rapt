@@ -24,7 +24,7 @@ body {
 
 h1 {
   font-family: 'noe-display';
-  font-size: 48px;
+  font-size: calc(32px + (48 - 32) * (100vw - 320px) / (1440 - 320));
   -webkit-font-smoothing: antialiased; }
 
 h2 {
@@ -113,9 +113,9 @@ p {
   cursor: pointer;
   transition: .3s;
   white-space: nowrap;
-  padding: 30px 0;
+  padding: calc(5px + 1.8vw) 0;
   background: white;
-  margin-top: -44px;
+  margin-top: calc(10px - 3.3vw);
   backface-visibility: hidden;
   will-change: transform, color, background;
   flex-shrink: 2; }
@@ -635,7 +635,7 @@ main .work-grid .work-row {
     margin-bottom: 100px;
     padding: 500px 0 80px; }
     main .work-grid .work-row.work-row-full h2 {
-      font-size: 48px;
+      font-size: calc(32px + (48 - 32) * (100vw - 320px) / (1440 - 320));
       color: #FFFFFF; }
       main .work-grid .work-row.work-row-full h2 a {
         color: #FFFFFF; }

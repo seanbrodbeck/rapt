@@ -270,7 +270,7 @@ main {
 				margin-bottom:100px;
 				padding:500px 0 80px;
 				h2 {
-					font-size: 48px;
+					font-size: calc(32px + (48 - 32) * (100vw - 320px) / (1440 - 320));
 					color:$white;
 					a {
 						color:$white;
