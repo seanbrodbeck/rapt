@@ -24,7 +24,7 @@ body {
 
 h1 {
   font-family: 'noe-display';
-  font-size: calc(32px + (48 - 32) * (100vw - 320px) / (1440 - 320));
+  font-size: calc(24px + (48 - 24) * (100vw - 320px) / (1440 - 320));
   -webkit-font-smoothing: antialiased; }
 
 h2 {
@@ -235,7 +235,7 @@ a {
   margin: 50px 0 0; }
   .more-link-wrapper .more-link {
     font-family: 'noe-display';
-    font-size: 40px;
+    font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
     display: inline-block;
     color: #000000;
     opacity: .2; }
@@ -688,7 +688,7 @@ footer {
     margin-top: 0; }
   footer .menu {
     font-family: 'noe-display';
-    font-size: 40px;
+    font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
     margin: 0;
     padding: 0;
     list-style: none; }

@@ -3,7 +3,7 @@ footer {
 	background:$black;
 	margin-top:90px;
 	padding-top:0;
-	
+
 	a, a:visited {
 		color:$white;
 	}
@@ -15,10 +15,10 @@ footer {
 
 	.menu {
 		font-family: 'noe-display';
-  	font-size: 40px;
+  	font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
   	margin:0;
 		padding:0;
-		list-style: none;	
+		list-style: none;
 		li {
 			a {
 				color:$white;
@@ -49,7 +49,7 @@ footer {
 			ul {
 				margin:0;
 				padding:0;
-				list-style: none;	
+				list-style: none;
 				li {
 					display:block;
 					a {
@@ -69,7 +69,7 @@ footer {
 			}
 		}
 	}
-	
+
 }
 
 .home, .single-work_post_type {

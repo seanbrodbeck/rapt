@@ -57,7 +57,7 @@ a {
 	margin:50px 0 0;
 	.more-link {
 		font-family: 'noe-display';
-		font-size: 40px;
+		font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
 		display:inline-block;
 		color:$black;
 		opacity:.2;
