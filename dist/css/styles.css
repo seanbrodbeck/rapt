@@ -416,6 +416,15 @@ header .nav-wrap {
     header .main-navigation #primary-menu li.current-menu-item a, header .main-navigation #primary-menu li.current-menu-item a:visited, header .main-navigation #primary-menu li.current_page_parent a, header .main-navigation #primary-menu li.current_page_parent a:visited {
       color: #000000; } }
 
+@media (max-width: 680px) {
+  .menu-toggle {
+    width: 24px;
+    height: 17px;
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none; } }
+
 .rapt-logo-wrap {
   display: block;
   position: fixed;

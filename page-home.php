@@ -55,7 +55,13 @@ get_header('home'); ?>
 				<div class="nav-wrap">
 
 					<nav id="site-navigation" class="main-navigation">
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'rapt' ); ?></button>
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+							<svg x="0px" y="0px" viewBox="0 0 24 17" enable-background="new 0 0 24 17" xml:space="preserve">
+							<rect width="24" height="1"/>
+							<rect y="8" width="24" height="1"/>
+							<rect y="16" width="24" height="1"/>
+							</svg>
+						</button>
 						<?php
 							wp_nav_menu( array(
 								'theme_location' => 'menu-1',

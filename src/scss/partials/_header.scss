@@ -29,9 +29,19 @@ header {
 						}
 					}
 				}
-
 			}
 		}
+	}
+}
+
+@media (max-width: $bp-xs2-min) {
+	.menu-toggle {
+		width: 24px;
+		height: 17px;
+		padding: 0;
+		background: none;
+		border: none;
+		outline: none;
 	}
 }
 
