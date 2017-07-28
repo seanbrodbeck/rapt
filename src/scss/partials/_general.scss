@@ -188,8 +188,8 @@ a {
 	.filter-options {
 		.filter-option {
 			font-family: 'noe-display';
-			font-size: 40px;
-			line-height: 46px;
+			font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
+			line-height: 1.15;
 			color:$light-gray;
 			@include transition(color .4s ease);
 			&:hover, &.is-checked {
@@ -239,16 +239,16 @@ a {
 		input {
 			display:block;
 			font-family: 'noe-display';
-			font-size: 40px;
-			line-height: 46px;
+			font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
+			line-height: 1.15;
 			color:$black;
 			border:none;
 			outline:none;
 			width:70%;
 			&::placeholder {
 				font-family: 'noe-display';
-				font-size: 40px;
-				line-height: 46px;
+				font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
+				line-height: 1.15;
 				color:$light-gray;
 			}
 		}

@@ -25,16 +25,17 @@ main {
 		}
 
 		&.single-hero {
-			padding:500px 0 60px;
+			padding: calc(400px + (534 - 400) * (100vw - 320px) / (1440 - 320)) 0 calc(24px + (80 - 24) * (100vw - 320px) / (1440 - 320));
 			h1 {
-				font-size: 64px;
+				font-size: calc(32px + (64 - 32) * (100vw - 320px) / (1440 - 320));
+				margin: 0;
 				color:$white;
 			}
 		}
 		&.single-intro {
 			h2 {
 				color:$black;
-				font-size: 48px;
+				font-size: calc(24px + (48 - 24) * (100vw - 320px) / (1440 - 320));
 				font-family: 'noe-display';
 				margin-top:0;
 			}
@@ -53,7 +54,7 @@ main {
 		}
 		&.awards-press {
 			h2 {
-				font-size: 40px;
+				font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
 				color:$black;
 				font-family: 'noe-display';
 				margin-bottom:40px;
@@ -83,7 +84,7 @@ main {
 		}
 		&.featured-products {
 			h2 {
-				font-size: 40px;
+				font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
 				color:$black;
 				font-family: 'noe-display';
 				margin-bottom:40px;
@@ -97,7 +98,7 @@ main {
 
 		&.also-see{
 			h2 {
-				font-size: 40px;
+				font-size: calc(32px + (40 - 32) * (100vw - 320px) / (1440 - 320));
 				color:$white;
 				font-family: 'noe-display';
 				margin-bottom:40px;
@@ -118,7 +119,7 @@ main {
 		}
 
 		&.studio-hero {
-			padding:340px 0;
+			padding: calc(164px + (320 - 164) * (100vw - 320px) / (1440 - 320)) 0;
 		}
 
 		&.team {
@@ -314,7 +315,7 @@ main {
 	}
 	h1 {
 		font-family: 'Fakt-Blond';
-		font-size: 48px;
+		font-size: calc(32px + (48 - 32) * (100vw - 320px) / (1440 - 320));
 		color:$black;
 		margin:20px 0;
 	}

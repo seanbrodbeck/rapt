@@ -35,7 +35,7 @@ h2 {
     color: #000000; }
   h2.large {
     font-family: 'noe-display';
-    font-size: 48px;
+    font-size: calc(24px + (48 - 24) * (100vw - 320px) / (1440 - 320));
     margin-top: 0; }
 
 h3 {
@@ -337,8 +337,8 @@ a {
     cursor: pointer; }
   .search-filter-overlay .filter-options .filter-option {
     font-family: 'noe-display';
-    font-size: 40px;
-    line-height: 46px;
+    font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
+    line-height: 1.15;
     color: #a5a8a8;
     -moz-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
@@ -374,16 +374,16 @@ a {
   .search-filter-overlay#search-overlay input {
     display: block;
     font-family: 'noe-display';
-    font-size: 40px;
-    line-height: 46px;
+    font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
+    line-height: 1.15;
     color: #000000;
     border: none;
     outline: none;
     width: 70%; }
     .search-filter-overlay#search-overlay input::placeholder {
       font-family: 'noe-display';
-      font-size: 40px;
-      line-height: 46px;
+      font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
+      line-height: 1.15;
       color: #a5a8a8; }
 
 header.entry-header {
@@ -457,13 +457,14 @@ main section {
   main section.work-row-full {
     padding: 0; }
   main section.single-hero {
-    padding: 500px 0 60px; }
+    padding: calc(400px + (534 - 400) * (100vw - 320px) / (1440 - 320)) 0 calc(24px + (80 - 24) * (100vw - 320px) / (1440 - 320)); }
     main section.single-hero h1 {
-      font-size: 64px;
+      font-size: calc(32px + (64 - 32) * (100vw - 320px) / (1440 - 320));
+      margin: 0;
       color: #FFFFFF; }
   main section.single-intro h2 {
     color: #000000;
-    font-size: 48px;
+    font-size: calc(24px + (48 - 24) * (100vw - 320px) / (1440 - 320));
     font-family: 'noe-display';
     margin-top: 0; }
   main section.single-intro .work-cats {
@@ -476,7 +477,7 @@ main section {
       top: 5px;
       padding: 0; }
   main section.awards-press h2 {
-    font-size: 40px;
+    font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
     color: #000000;
     font-family: 'noe-display';
     margin-bottom: 40px; }
@@ -497,14 +498,14 @@ main section {
         main section.awards-press .awards-press-entry h4 a span {
           font-family: 'Fakt-Blond'; }
   main section.featured-products h2 {
-    font-size: 40px;
+    font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
     color: #000000;
     font-family: 'noe-display';
     margin-bottom: 40px; }
   main section.featured-products .work-row h2 {
     margin-bottom: 15px; }
   main section.also-see h2 {
-    font-size: 40px;
+    font-size: calc(32px + (40 - 32) * (100vw - 320px) / (1440 - 320));
     color: #FFFFFF;
     font-family: 'noe-display';
     margin-bottom: 40px; }
@@ -518,7 +519,7 @@ main section {
     main section.also-see .work-row .work-cats {
       color: #555555; }
   main section.studio-hero {
-    padding: 340px 0; }
+    padding: calc(164px + (320 - 164) * (100vw - 320px) / (1440 - 320)) 0; }
   main section.team h1 {
     color: #000000; }
   main section.team .team-sort {
@@ -660,7 +661,7 @@ main .work-grid .work-row {
 
 .single-post h1 {
   font-family: 'Fakt-Blond';
-  font-size: 48px;
+  font-size: calc(32px + (48 - 32) * (100vw - 320px) / (1440 - 320));
   color: #000000;
   margin: 20px 0; }
 

@@ -48,7 +48,7 @@ h2 {
 	}
 	&.large {
 		font-family: 'noe-display';
-		font-size: 48px;
+		font-size: calc(24px + (48 - 24) * (100vw - 320px) / (1440 - 320));
 		margin-top:0;
 	}
 }
