@@ -247,6 +247,12 @@ main {
 			@media (min-width: $bp-sm-min) {
 				@include flexbox;
 				@include align-items(flex-start);
+				&.work-row-onethird-twothirds + .work-row-twothirds-onethird .work-row {
+					@include align-items(flex-end);
+				}
+				&.work-row-twothirds-onethird + .work-row-onethird-twothirds .work-row {
+					@include align-items(flex-end);
+				}
 			}
 			img {
 				width:100%;
@@ -259,12 +265,6 @@ main {
 				span {
 					font-family: 'Fakt-Blond';
 				}
-			}
-			&.work-row-onethird-twothirds + .work-row-twothirds-onethird .work-row {
-				@include align-items(flex-end);
-			}
-			&.work-row-twothirds-onethird + .work-row-onethird-twothirds .work-row {
-				@include align-items(flex-end);
 			}
 			&.work-row-full {
 				margin-bottom:100px;
