@@ -537,6 +537,10 @@ main section {
     main section.team .team-sort .team-members {
       position: relative;
       z-index: 1; }
+      main section.team .team-sort .team-members .team-member-group {
+        display: none; }
+      main section.team .team-sort .team-members .active .team-member:first-child {
+        margin-left: 33.3333%; }
       main section.team .team-sort .team-members .team-member {
         margin-bottom: 30px; }
         main section.team .team-sort .team-members .team-member .inner {

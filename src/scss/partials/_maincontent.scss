@@ -145,6 +145,16 @@ main {
 				.team-members {
 					position:relative;
 					z-index:1;
+					.team-member-group {
+						display:none;
+					}
+					.active {
+						.team-member {
+							&:first-child {
+								margin-left:33.3333%;
+							}
+						}
+					}
 					.team-member {
 						margin-bottom:30px;
 						.inner {

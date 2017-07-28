@@ -164,6 +164,21 @@ function animateTransition() {
     $( "#search-overlay" ).fadeOut( "fast", "linear" );
   });
 
+
+  // Team Sort
+  $('.team-members .team-member-group:first').css("display", "block");
+
+  $(".team-sort-links a").click(function (e) {
+      var idname= $(this).data('divid');
+      $("#"+idname).delay(300).fadeIn(300).addClass('active').siblings().fadeOut(300);
+      e.preventDefault();
+      $(this).addClass('active').siblings().removeClass('active');
+  });
+  $( ".show-everyone" ).click(function() {
+    $( ".team-members div" ).fadeIn().removeClass('active');
+    $('.team-members .team-member-group:first').addClass("active");
+  });
+
 })( jQuery );
 
 var WIN_H = window.innerHeight,

@@ -33,13 +33,13 @@ get_header(); ?>
 							<?php the_field('team_filter_list'); ?>
 						</div>
 						<div class="col-sm-9 col-sm-offset-3 team-members">
-								<div class="col-sm-4"></div>
+								<!-- <div class="col-sm-4"></div> -->
 
 								<?php if( have_rows('team_member_groups') ): ?>
 									
 									<?php while( have_rows('team_member_groups') ): the_row(); ?>
 
-										<div id="<?php the_sub_field('team_member_group_slug'); ?>">
+										<div id="<?php the_sub_field('team_member_group_slug'); ?>" class="team-member-group active">
 											
 											<?php if( have_rows('team_members') ): ?>
 												
