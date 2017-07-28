@@ -435,8 +435,14 @@ header .nav-wrap {
   top: -30px;
   transform: translate3d(0, 30px, 0);
   width: 100%;
-  background: inherit inherit;
+  background: white;
   z-index: 20; }
+
+.is-nav-fixed header .nav-wrap #site-navigation {
+  background: white; }
+
+.blog.is-nav-fixed header .nav-wrap #site-navigation {
+  background: #ffefdd; }
 
 main section {
   padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400)); }
