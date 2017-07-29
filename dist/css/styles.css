@@ -718,17 +718,22 @@ footer {
     line-height: 1.5;
     font-family: 'Fakt-Blond';
     color: #555555;
-    margin: 90px -15px 60px; }
+    margin: 90px -15px 60px;
+    display: flex; }
     footer .footer-bottom .footer-social ul {
       margin: 0;
       padding: 0;
-      list-style: none; }
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%; }
       footer .footer-bottom .footer-social ul li {
         display: block; }
         footer .footer-bottom .footer-social ul li a {
           color: #555555; }
     footer .footer-bottom p {
-      margin-bottom: 8px;
+      margin-bottom: 0;
       font-size: 16px;
       color: #555555; }
       footer .footer-bottom p strong {
