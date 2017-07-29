@@ -3,7 +3,7 @@ header {
 		padding:0;
 	}
 	.nav-wrap {
-		padding:35px 70px 105px;
+		padding:35px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 105px;
 		#site-navigation {
 			position: relative;
 			transform: translate3d(0,0,0);
@@ -57,7 +57,7 @@ header {
 .home {
 	header {
 		.nav-wrap {
-			padding:100px 70px ;
+			padding:100px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
 		}
 		.main-navigation {
 			#primary-menu {
@@ -75,7 +75,7 @@ header {
 	header {
 		.nav-wrap {
 			#site-navigation {
-				padding: 31px 70px 36px;
+				padding: 31px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 36px;
 				position: fixed;
 				left: 0;
 				top: -30px;
