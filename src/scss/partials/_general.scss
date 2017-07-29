@@ -8,12 +8,12 @@ a {
   -o-transition: color .3s ease;
   transition: color .3s ease;
 	&:hover {
-		text-decoration:none;
+		text-decoration: none;
 	}
 }
 
 .nopad {
-	padding:0;
+	padding: 0;
 }
 
 .btn {
@@ -25,26 +25,26 @@ a {
 }
 
 .full-width-wrap {
-	padding:0 calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
+	padding: 0 calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
 }
 
 .container {
 	@media (min-width: $bp-xlg-min) {
-		width:1290px;
+		width: 1290px;
 	}
 }
 
 .peach-bkg {
-	background:$peach;
+	background: $peach;
 }
 
 .black-bkg {
-	background:$black;
-	color:$white;
+	background: $black;
+	color: $white;
 }
 
 .light-gray-bkg {
-	background:#f8f8f8;
+	background: #f8f8f8;
 }
 
 .black {
@@ -54,20 +54,20 @@ a {
 
 .more-link-wrapper {
 	text-align: center;
-	margin:50px 0 0;
+	margin: 50px 0 0;
 	.more-link {
 		font-family: 'noe-display';
 		font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
-		display:inline-block;
-		color:$black;
-		opacity:.2;
+		display: inline-block;
+		color: $black;
+		opacity: .2;
 	}
 }
 
 .black-bkg {
 	.more-link {
-		color:$white;
-		opacity:.2;
+		color: $white;
+		opacity: .2;
 	}
 }
 
@@ -86,40 +86,40 @@ a {
 }
 
 .blog {
-	background:$tan;
+	background: $tan;
 }
 
 .primary-articles {
 	p {
 		font-family: 'noe-display';
-		color:$black;
+		color: $black;
 		font-size: 24px;
 		line-height: 1.33;
 	}
 	.entry-header {
-		padding:20px 0 0;
+		padding: 20px 0 0;
 		h2 {
-			margin:15px 0;
+			margin: 15px 0;
 		}
 	}
 	.entry-content {
-		margin:0;
+		margin: 0;
 	}
 }
 
 .category-list {
 	ul {
 		list-style: none;
-		margin:0;
-		padding:0;
-		color:$light-gray;
+		margin: 0;
+		padding: 0;
+		color: $light-gray;
 		li {
-			display:inline-block;
-			margin:0;
+			display: inline-block;
+			margin: 0;
 			font-size: 14px;
-			color:$light-gray;
+			color: $light-gray;
 			a {
-				color:$light-gray;
+				color: $light-gray;
 			}
 		}
 	}
@@ -127,129 +127,129 @@ a {
 
 .secondary-articles {
 	.entry-header {
-		padding:20px 0 0;
+		padding: 20px 0 0;
 		h3 {
-			margin:0;
+			margin: 0;
 		}
 	}
 	.entry-content {
-		margin:0;
+		margin: 0;
 	}
 }
 
 .post-template-default {
-	background:$peach;
+	background: $peach;
 }
 
 .filters {
-	margin-bottom:55px;
+	margin-bottom: 55px;
 	.filter-toggle {
-		display:inline-block;
-		float:left;
-		color:$light-gray;
-		cursor:pointer;
+		display: inline-block;
+		float: left;
+		color: $light-gray;
+		cursor: pointer;
 	}
 	.filter-search-field {
-		display:inline-block;
-		float:left;
-		cursor:pointer;
+		display: inline-block;
+		float: left;
+		cursor: pointer;
 	}
 	.filter-options {
-		clear:both;
+		clear: both;
 	}
 	.filter-search-btn {
-		display:inline-block;
-		float:right;
-		cursor:pointer;
+		display: inline-block;
+		float: right;
+		cursor: pointer;
 	}
 }
 
 .work-cats {
-	margin:0;
-	font-size:14px;
-	color:$light-gray;
+	margin: 0;
+	font-size: 14px;
+	color: $light-gray;
 }
 
 .search-filter-overlay {
-	background:$white;
-	position:fixed;
-	left:0;
-	right:0;
-	bottom:0;
-	top:0;
-	width:100%;
-	height:100%;
+	background: $white;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
 	z-index: 999;
 	padding: 70px 0;
 	.close-filter-overlay, .close-search-overlay {
-		float:right;
-		cursor:pointer;
+		float: right;
+		cursor: pointer;
 	}
 	.filter-options {
 		.filter-option {
 			font-family: 'noe-display';
 			font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
 			line-height: 1.15;
-			color:$light-gray;
+			color: $light-gray;
 			@include transition(color .4s ease);
 			&:hover, &.is-checked {
-				color:$black;
-				cursor:pointer;
+				color: $black;
+				cursor: pointer;
 			}
 			&:after {
 				display:inline-block;
 				content: "/";
-				margin:0 8px;
-				color:$light-gray;
+				margin: 0 8px;
+				color: $light-gray;
 			}
 			&:last-of-type {
 				&:after {
 					content: "";
-					margin-right:0;
+					margin-right: 0;
 				}
 			}
 			a {
-				color:$light-gray;
+				color: $light-gray;
 				&:hover {
-					color:$black;
+					color: $black;
 				}
 			}
 		}
 	}
 	.filter-listings {
 		margin-top: 70px;
-		width:100%;
-		height:auto;
+		width: 100%;
+		height: auto;
 		.filter-listing {
 			h2 {
-				font-size:24px;
+				font-size: 24px;
 				a {
-					color:$black;
+					color: $black;
 				}
 			}
 			a {
-				display:block;
+				display: block;
 				img {
-					display:block;
+					display: block;
 				}
 			}
 		}
 	}
 	&#search-overlay {
 		input {
-			display:block;
+			display: block;
 			font-family: 'noe-display';
 			font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
 			line-height: 1.15;
-			color:$black;
-			border:none;
-			outline:none;
-			width:70%;
+			color: $black;
+			border: none;
+			outline: none;
+			width: 70%;
 			&::placeholder {
 				font-family: 'noe-display';
 				font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
 				line-height: 1.15;
-				color:$light-gray;
+				color: $light-gray;
 			}
 		}
 	}

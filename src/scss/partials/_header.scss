@@ -1,9 +1,9 @@
 header {
 	&.entry-header {
-		padding:0;
+		padding: 0;
 	}
 	.nav-wrap {
-		padding:35px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 105px;
+		padding: 35px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 105px;
 		#site-navigation {
 			position: relative;
 			transform: translate3d(0,0,0);
@@ -14,18 +14,18 @@ header {
 		#primary-menu {
 			@media (min-width: $bp-sm-min) {
 				@include flexbox;
-				text-align: center;
+				text-align:center;
 				@include justify-content(space-between);
 				li {
 					a, a:visited {
-						color:#999999;
+						color: #999999;
 						&:hover {
-							color:$black;
+							color: $black;
 						}
 					}
 					&.current-menu-item, &.current_page_parent {
 						a, a:visited {
-							color:$black;
+							color: $black;
 						}
 					}
 				}
@@ -46,10 +46,10 @@ header {
 }
 
 .rapt-logo-wrap {
-	display:block;
-	position:fixed;
-	bottom:60px;
-	right:60px;
+	display: block;
+	position: fixed;
+	bottom: 60px;
+	right: 31px;
 	z-index: 20;
 }
 
@@ -57,13 +57,13 @@ header {
 .home {
 	header {
 		.nav-wrap {
-			padding:100px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
+			padding: 100px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
 		}
 		.main-navigation {
 			#primary-menu {
 				li {
 					a {
-						color:$black;
+						color: $black;
 					}
 				}
 			}
