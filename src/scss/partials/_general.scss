@@ -51,6 +51,18 @@ a {
   color: $black;
 }
 
+.desktop-only {
+	display:none;
+	@media (min-width: $bp-sm3-min) {
+		display:block;
+	}
+}
+.mobile-only {
+	@media (min-width: $bp-sm3-min) {
+		display:none!important;
+	}
+}
+
 
 .more-link-wrapper {
 	text-align: center;
@@ -198,6 +210,9 @@ a {
 		float: right;
 		cursor: pointer;
 	}
+	.container {
+		margin-top:60px;
+	}
 	.filter-options {
 		.filter-option {
 			font-family: 'noe-display';
@@ -234,8 +249,13 @@ a {
 		width: 100%;
 		height: auto;
 		.filter-listing {
+			margin-bottom:30px;
+			@media (min-width: $bp-sm-min) { 
+				margin-bottom:80px;
+			}
 			h2 {
 				font-size: 24px;
+				margin-bottom:0;
 				a {
 					color: $black;
 				}

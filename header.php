@@ -41,11 +41,16 @@
 						'menu_id'        => 'primary-menu',
 					) );
 				?>
-			</nav><!-- #site-navigation -->
-			<a class="rapt-logo-wrap" href="/">
+				<a class="rapt-logo-wrap mobile-only" href="/">
 					<img class="rapt-logo" src="/wp-content/themes/rapt/dist/images/logo.svg" width="18" height="auto" />
-			</a>
+				</a>
+			</nav><!-- #site-navigation -->
 			</div>
+
+			<a class="rapt-logo-wrap desktop-only" href="/">
+				<img class="rapt-logo" src="/wp-content/themes/rapt/dist/images/logo.svg" width="18" height="auto" />
+			</a>
+
 			
 	</header><!-- #masthead -->
 
