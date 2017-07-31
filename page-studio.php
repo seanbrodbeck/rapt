@@ -45,7 +45,7 @@ get_header(); ?>
 												
 												<?php while( have_rows('team_members') ): the_row(); ?>
 
-													<div class="col-sm-4 team-member">
+													<div class="col-sm-4 col-xs-6 team-member">
 														<div class="inner">
 															<?php $image = get_sub_field('team_member_image'); if( !empty($image) ): ?>
 															<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
@@ -102,7 +102,7 @@ get_header(); ?>
 
 							<?php while(has_sub_field('client_logos')): ?>
 
-								<div class="carousel-item col-sm-3"><img src="<?php the_sub_field('client_logo'); ?>"/></div>
+								<div class="carousel-item col-sm-3 col-xs-6"><img src="<?php the_sub_field('client_logo'); ?>"/></div>
 
 							<?php endwhile; ?>
 

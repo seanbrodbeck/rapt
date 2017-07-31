@@ -20,11 +20,13 @@
 				foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<?php the_post_thumbnail("full"); ?>
-						<header class="entry-header">
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-						</header>
-						<div class="entry-content">
-							<?php the_excerpt(); ?>
+						<div class="entry-text">
+							<header class="entry-header">
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							</header>
+							<div class="entry-content">
+								<?php the_excerpt(); ?>
+							</div>
 						</div>
 					</article>
 				<?php endforeach; 

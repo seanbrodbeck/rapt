@@ -42,11 +42,11 @@
 					) );
 				?>
 			</nav><!-- #site-navigation -->
-
-			</div>
 			<a class="rapt-logo-wrap" href="/">
-				<img class="rapt-logo" src="/wp-content/themes/rapt/dist/images/logo.svg" width="18" height="auto" />
+					<img class="rapt-logo" src="/wp-content/themes/rapt/dist/images/logo.svg" width="18" height="auto" />
 			</a>
+			</div>
+			
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

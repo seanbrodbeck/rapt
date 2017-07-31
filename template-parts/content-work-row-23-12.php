@@ -4,7 +4,7 @@
 
     <div class="row clearfix work-row">
 
-        <div class="col-sm-7">
+        <div class="col-sm-7 grid-item">
 
           <?php
 
@@ -45,7 +45,7 @@
      		</div>
 
 
-       <div class="col-sm-4 col-sm-offset-1">     
+       <div class="col-sm-4 col-sm-offset-1 grid-item">     
          	
           <?php
 

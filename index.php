@@ -42,27 +42,29 @@ get_header(); ?>
 							foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
-									<header class="entry-header">
-										<div class="category-list">
-											<ul>
-												<?php
-													$categories = get_the_category();
-													$separator = ' · ';
-													$output = '';
-													if($categories){
-													    foreach($categories as $category) {
-													if($category->name !== 'Primary'){
-													        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
-													    }
-													echo trim($output, $separator);
-													}
-												?>
-											</ul>
+									<div class="entry-text">
+										<header class="entry-header">
+											<div class="category-list">
+												<ul>
+													<?php
+														$categories = get_the_category();
+														$separator = ' · ';
+														$output = '';
+														if($categories){
+														    foreach($categories as $category) {
+														if($category->name !== 'Primary'){
+														        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
+														    }
+														echo trim($output, $separator);
+														}
+													?>
+												</ul>
+											</div>
+											<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+										</header>
+										<div class="entry-content">
+											<?php the_excerpt(); ?>
 										</div>
-										<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-									</header>
-									<div class="entry-content">
-										<?php the_excerpt(); ?>
 									</div>
 								</article>
 							<?php endforeach; 

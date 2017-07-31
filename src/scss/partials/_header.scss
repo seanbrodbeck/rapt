@@ -11,8 +11,33 @@ header {
 		}
 	}
 	.main-navigation {
+		width:auto;
+		float:left;
+		@media (min-width: $bp-sm3-min) {
+			width:100%;
+			float:none;
+		}
+		&.toggled {
+			#primary-menu {
+				position:fixed!important;
+				left:0;
+				right:0;
+				top:0;
+				bottom:0;
+				background:$black;
+				@media screen and (min-width: 37.5em) {
+					display:block;
+				}
+				@media (min-width: $bp-sm3-min) {
+					position:static;
+				}
+			}
+		}
 		#primary-menu {
-			@media (min-width: $bp-sm-min) {
+			@media screen and (min-width: 37.5em) {
+				display:none;
+			}
+			@media (min-width: $bp-sm3-min) {
 				@include flexbox;
 				text-align:center;
 				@include justify-content(space-between);
@@ -34,23 +59,40 @@ header {
 	}
 }
 
-@media (max-width: $bp-xs2-min) {
-	.menu-toggle {
-		width: 24px;
-		height: 17px;
-		padding: 0;
-		background: none;
-		border: none;
-		outline: none;
+.menu-toggle {
+	width: 24px;
+	height: 17px;
+	padding: 0;
+	background: none;
+	border: none;
+	outline: none;
+	@media screen and (min-width: 37.5em) {
+		display:block;
+	}
+	@media (min-width: $bp-sm3-min) {
+		display:none;
 	}
 }
 
+
 .rapt-logo-wrap {
-	display: block;
-	position: fixed;
-	bottom: 60px;
-	right: 31px;
-	z-index: 20;
+	float:right;
+	@media (min-width: $bp-sm3-min) {
+		display: block;
+		position: fixed;
+		bottom: 60px;
+		right: 31px;
+		z-index: 20;
+		float:none;
+	}
+	img {
+		width:15px;
+		height:auto;
+		@media (min-width: $bp-sm3-min) {
+			width:18px;
+			height:auto;
+		}
+	}
 }
 
 

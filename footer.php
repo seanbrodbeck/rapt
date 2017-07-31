@@ -29,7 +29,24 @@
 
 			<div class="row clearfix footer-bottom">
 
-				<div class="col-sm-3 footer-social">
+				<div class="col-md-9 footer-contact-addresses">
+						<div class="row clearfix">
+							<div class="col-sm-4 footer-location footer-bottom-column">
+								<?php the_field('footer_location_1', 'option'); ?>
+							</div>
+
+							<div class="col-sm-4 footer-location footer-bottom-column">
+								<?php the_field('footer_location_2', 'option'); ?>
+							</div>
+
+							<div class="col-sm-4 footer-location footer-bottom-column">
+								<?php the_field('footer_location_3', 'option'); ?>
+							</div>
+						</div>
+				</div>
+
+
+				<div class="col-md-3 col-sm-12 footer-social footer-bottom-column">
 					<?php if(get_field('social_links', 'option')): ?>
 						<ul>
 						<?php while(has_sub_field('social_links', 'option')): ?>
@@ -39,17 +56,6 @@
 					<?php endif; ?>			
 				</div><!-- .site-info -->
 
-				<div class="col-sm-3 footer-location">
-					<?php the_field('footer_location_1', 'option'); ?>
-				</div>
-
-				<div class="col-sm-3 footer-location">
-					<?php the_field('footer_location_2', 'option'); ?>
-				</div>
-
-				<div class="col-sm-3 footer-location">
-					<?php the_field('footer_location_3', 'option'); ?>
-				</div>
 			</div>
 
 		</div>

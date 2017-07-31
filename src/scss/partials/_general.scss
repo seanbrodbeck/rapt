@@ -90,6 +90,11 @@ a {
 }
 
 .primary-articles {
+	padding:0;
+	@media (min-width: $bp-sm-min) {
+		padding-right: 15px;
+    padding-left: 15px;
+	}
 	p {
 		font-family: 'noe-display';
 		color: $black;
@@ -104,6 +109,14 @@ a {
 	}
 	.entry-content {
 		margin: 0;
+	}
+	.entry-text {
+		padding-right: 15px;
+	  padding-left: 15px;
+		@media (min-width: $bp-sm-min) {
+			padding-right: 0;
+	    padding-left: 0;
+		}
 	}
 }
 

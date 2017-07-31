@@ -1,9 +1,11 @@
 footer {
 
 	background: $black;
-	margin-top: 90px;
+	margin-top: 30px;
 	padding-top: 0;
-
+	@media (min-width: $bp-sm-min) {
+		margin-top: 90px;
+	}
 	a, a:visited {
 		color: $white;
 	}
@@ -27,7 +29,10 @@ footer {
 	}
 
 	.footer-top {
-		margin-top: 80px;
+		margin-top: 30px;
+		@media (min-width: $bp-sm-min) {
+			margin-top: 80px;
+		}
 		p {
 			font-size: 16px;
 	  	line-height: 1.5;
@@ -44,19 +49,49 @@ footer {
   	line-height: 1.5;
   	font-family: 'Fakt-Blond';
   	color: $footer-gray;
-  	margin: 90px -15px 60px;
-  	display: flex;
+  	margin: 30px -15px 30px;
+  	@media (min-width: $bp-sm-min) {
+  		margin: 90px -15px 60px;
+  	}
+  	.footer-contact-addresses {
+  		display:none;
+  		@media (min-width: $bp-sm-min) {
+  			display:block;
+  			float:none;
+  		}
+  		@media (min-width: $bp-sm3-min) {
+  			display:block;
+  			float:right;
+  		}
+  	}
+  	.footer-social {
+			float:none;
+			margin-top:40px;
+			@media (min-width: $bp-sm3-min) {
+				float:left;
+				margin-top: 0;
+			}
+
+		}
+
   	.footer-social {
 			ul {
 				margin: 0;
 				padding: 0;
 				list-style: none;
-				display: flex;
-		    flex-direction: column;
-		    justify-content: space-between;
-		    height: 100%;
+				@include flexbox;
+				@include justify-content(space-between);
+				@media (min-width: $bp-sm3-min) {
+					@include flexbox;
+					@include flex-direction(column);
+			    @include justify-content(space-between);
+			    height: 100%;
+				}	
 				li {
-					display: block;
+					display: inline-block;
+					@media (min-width: $bp-sm3-min) {
+						display: block;
+					}
 					a {
 						color: $footer-gray;
 					}
