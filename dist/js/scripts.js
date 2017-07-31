@@ -19,8 +19,10 @@ function animateTransition() {
   })
 
   setTimeout(function(){
-    cancelAnimationFrame(transitionRAF);
     el_transition.classList.add('is-off')
+    setTimeout(function(){
+      cancelAnimationFrame(transitionRAF);
+    },1000)
   },1500)
 }
 
