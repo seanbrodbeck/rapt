@@ -466,6 +466,10 @@ header .main-navigation {
     float: none;
     font-size: 32px;
     font-family: 'noe-display'; }
+    @media (min-width: 768px) {
+      header .main-navigation #primary-menu li {
+        font-size: 40px;
+        line-height: 1.2; } }
     header .main-navigation #primary-menu li a, header .main-navigation #primary-menu li a:visited {
       color: #FFFFFF; }
       header .main-navigation #primary-menu li a:hover, header .main-navigation #primary-menu li a:visited:hover {
