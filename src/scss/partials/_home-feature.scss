@@ -40,7 +40,7 @@
 }
 .transition-wipe h1 span {
   position: relative;
-  display: block;
+  display: inline-block;
   backface-visibility: hidden;
 }
 
@@ -81,6 +81,8 @@
 .intro-question-text {
   backface-visibility: hidden;
   will-change: transform;
+  position: relative;
+  display: inline-block;
 }
 
 .intro-question:nth-of-type(1) {

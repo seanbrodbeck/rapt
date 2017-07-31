@@ -83,8 +83,12 @@ function animateTransition() {
   }
 
   let scrollQuestionText = i => {
-    qScrollPositions[i] = qScrollPositions[i] - 5
-    questions[i].querySelector('.intro-question-text').style.transform = 'translate3d(' + qScrollPositions[i] + 'px,0,0)'
+    let el_text = questions[i].querySelector('.intro-question-text');
+    qScrollPositions[i] = qScrollPositions[i] - 5;
+    if (qScrollPositions[i] < -el_text.clientWidth / 3 - 5) {
+      qScrollPositions[i] = 0;
+    }
+    el_text.style.transform = 'translate3d(' + qScrollPositions[i] + 'px,0,0)'
     scrollRequest = requestAnimationFrame( () => { scrollQuestionText(i)})
   }
   let navScrollHandler = (e) => {
