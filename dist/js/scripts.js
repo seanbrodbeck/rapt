@@ -1,9 +1,23 @@
 
 // Page Transition Wipe
-let transitionWipeX = 0;
-const el_transitionText = document.querySelectorAll('.transition-wipe h1 span');
-const el_transition = document.querySelector('.transition-wipe');
-let transitionRAF;
+var transitionWipeX = 0;
+var el_transitionText = document.querySelectorAll('.transition-wipe h1 span');
+var el_transition = document.querySelector('.transition-wipe');
+var transitionRAF;
+
+var WIN_H,
+    WIN_W,
+    el_primary_list,
+    el_secondary_list,
+    scrollHeight,
+    scrollTop,
+    scrollPercent,
+    primaryHeight,
+    secondaryHeight,
+    heightDifference,
+    newY,
+    targY;
+
 animateTransition()
 function animateTransition() {
   transitionRAF = requestAnimationFrame(function(){
@@ -30,48 +44,50 @@ function animateTransition() {
 
   // Home Page Feature
 
-  let questions = document.querySelectorAll('.intro-question');
-  let images = document.querySelectorAll('.intro-image');
-  let scrollRequest;
-  let qScrollPositions = [];
-  let isActive = false;
+  var questions = document.querySelectorAll('.intro-question');
+  var images = document.querySelectorAll('.intro-image');
+  var scrollRequest;
+  var qScrollPositions = [];
+  var isActive = false;
 
-  let initIntroScript = () => {
-    Array.prototype.map.call(questions, (q, i) => {
+  function initIntroScript() {
+    Array.prototype.map.call(questions, function(q, i) {
       if (i < questions.length) {
         addImageHover(i);
         addTextClick(i);
       }
     })
-    document.addEventListener('wheel',navScrollHandler)
-    window.addEventListener('click', () => {
+    document.addEventListener('resize', resizeHandler);
+    document.addEventListener('wheel', navScrollHandler)
+    window.addEventListener('click', function() {
       isActive = false;
-      Array.prototype.map.call(images, (image, i) => {
+      Array.prototype.map.call(images, function(image, i) {
         images[i].classList.remove('is-active');
         questions[i].classList.remove('is-active')
         questions[i].classList.remove('is-off')
       })
     })
+    resizeHandler();
   }
 
-  let addImageHover = i => {
-    let testVar = 'whatever';
+  function addImageHover() {
+    var testVar = 'whatever';
     qScrollPositions[i] = 0;
-    questions[i].addEventListener('mouseenter', () => {
+    questions[i].addEventListener('mouseenter', function(){
       scrollQuestionText(i)
     })
-    questions[i].addEventListener('mouseleave', () => {
+    questions[i].addEventListener('mouseleave', function(){
       cancelAnimationFrame(scrollRequest);
     })
   }
 
-  let addTextClick = i => {
-    questions[i].addEventListener('click', (e) => {
+  function addTextClick(i) {
+    questions[i].addEventListener('click', function(e) {
       if (!isActive) {
         e.stopPropagation()
         isActive = true;
         images[i].classList.add('is-active');
-        Array.prototype.map.call(questions, (q, j) => {
+        Array.prototype.map.call(questions, function(q, j) {
           if (i != j) {
             questions[j].classList.add('is-off');
           } else {
@@ -82,20 +98,22 @@ function animateTransition() {
     })
   }
 
-  let scrollQuestionText = i => {
-    let el_text = questions[i].querySelector('.intro-question-text');
+  function scrollQuestionText(i) {
+    var el_text = questions[i].querySelector('.intro-question-text');
     qScrollPositions[i] = qScrollPositions[i] - 5;
     if (qScrollPositions[i] < -el_text.clientWidth / 3 - 5) {
       qScrollPositions[i] = 0;
     }
     el_text.style.transform = 'translate3d(' + qScrollPositions[i] + 'px,0,0)'
-    scrollRequest = requestAnimationFrame( () => { scrollQuestionText(i)})
+    scrollRequest = requestAnimationFrame( function() { scrollQuestionText(i)})
   }
-  let navScrollHandler = (e) => {
-    if (document.querySelector('.home #masthead').getBoundingClientRect().bottom < 105) {
-      document.body.classList.add('is-nav-fixed')
-    } else {
-      document.body.classList.remove('is-nav-fixed')
+  function navScrollHandler(e) {
+    if (document.querySelector('.home #masthead')) {
+      if (document.querySelector('.home #masthead').getBoundingClientRect().bottom < 105) {
+        document.body.classList.add('is-nav-fixed')
+      } else {
+        document.body.classList.remove('is-nav-fixed')
+      }
     }
   }
 
@@ -192,51 +210,47 @@ function animateTransition() {
 
 })( jQuery );
 
-var WIN_H = window.innerHeight,
-    el_primary_list,
-    el_secondary_list,
-    scrollHeight,
-    scrollTop,
-    scrollPercent,
-    primaryHeight,
-    secondaryHeight,
-    heightDifference,
-    newY,
-    targY;
+function resizeHandler() { // NEEDS TO NOT BREAK ON RESIZE
+  WIN_W = window.innerWidth;
+  WIN_H = window.innerHeight;
+  if (window.innerWidth >= 960) {
+    if (document.querySelector('.blog .primary-articles')) {
+      var detectRenderInterval = setInterval(function(){
+        initScroll();
+      },300);
 
-if (document.querySelector('.blog .primary-articles')) {
-  var detectRenderInterval = setInterval(function(){
-    initScroll();
-  },300);
-
-  function initScroll() {
-    clearInterval(detectRenderInterval);
-    el_primary_list = document.querySelector('.blog .primary-articles');
-    el_secondary_list = document.querySelector('.blog .secondary-articles');
-    document.addEventListener('wheel',articlesScrollHandler)
-    scrollHeight = document.body.offsetHeight - WIN_H;
-    primaryHeight = el_primary_list.offsetHeight;
-    secondaryHeight = el_secondary_list.offsetHeight;
-    heightDifference = primaryHeight - secondaryHeight;
-    secondaryTargY = scrollHeight - heightDifference
-    oldY = 0;
-    newY = 0;
-    targY = 0;
-  }
-  function articlesScrollHandler(e) {
-    requestAnimationFrame(function(){
-      scrollTop = document.body.scrollTop; // REDUNDANT
-      scrollPercent = scrollTop/scrollHeight;
-      if (primaryHeight > secondaryHeight) {
-        el_secondary_list.style.willChange = "transform";
-        el_secondary_list.style.transform = 'translate3d(0, ' + Math.floor(-secondaryTargY*scrollPercent) + 'px, 0)'
+      function initScroll() {
+        clearInterval(detectRenderInterval);
+        el_primary_list = document.querySelector('.blog .primary-articles');
+        el_secondary_list = document.querySelector('.blog .secondary-articles');
+        document.addEventListener('wheel',articlesScrollHandler);
+        document.addEventListener('scroll',articlesScrollHandler);
+        scrollHeight = document.body.offsetHeight - WIN_H;
+        primaryHeight = el_primary_list.offsetHeight;
+        secondaryHeight = el_secondary_list.offsetHeight;
+        heightDifference = primaryHeight - secondaryHeight;
+        secondaryTargY = scrollHeight - heightDifference
+        oldY = 0;
+        newY = 0;
+        targY = 0;
       }
-    })
-  }
-  function setSecondaryY(secondaryScrollHeight, scrollPercent) {
-    targY = Math.floor(secondaryScrollHeight * scrollPercent);
-    newY += .9*(-targY - newY); // Slightly eased
-    return newY;
-  }
 
+      function articlesScrollHandler(e) {
+        requestAnimationFrame(function(){
+          scrollTop = document.body.scrollTop; // REDUNDANT
+          scrollPercent = scrollTop/scrollHeight;
+          if (primaryHeight > secondaryHeight) {
+            el_secondary_list.style.willChange = "transform";
+            el_secondary_list.style.transform = 'translate3d(0, ' + Math.floor(-secondaryTargY*scrollPercent) + 'px, 0)'
+          }
+        })
+      }
+
+      function setSecondaryY(secondaryScrollHeight, scrollPercent) {
+        targY = Math.floor(secondaryScrollHeight * scrollPercent);
+        newY += .9*(-targY - newY); // Slightly eased
+        return newY;
+      }
+    }
+  }
 }
