@@ -1,20 +1,27 @@
 
 // Page Transition Wipe
-var transitionWipeX = 0;
-let el_transitionText = document.querySelectorAll('.transition-wipe h1 span');
+let transitionWipeX = 0;
+const el_transitionText = document.querySelectorAll('.transition-wipe h1 span');
+const el_transition = document.querySelector('.transition-wipe');
+let transitionRAF;
 animateTransition()
 function animateTransition() {
-  requestAnimationFrame(function(){
+  transitionRAF = requestAnimationFrame(function(){
     transitionWipeX -= 3;
     for (var i=0;i<el_transitionText.length;i++) {
       // Reverse odd lines direction
-      // if (i%1 - 1) {
-      //   transitionWipeX = -transitionWipeX
-      // }
+      if (i%1 - 1) {
+        transitionWipeX = -transitionWipeX
+      }
       el_transitionText[i].style.transform = 'translate3d(' + (transitionWipeX) + 'px,0,0)'
     }
     animateTransition();
   })
+
+  setTimeout(function(){
+    cancelAnimationFrame(transitionRAF);
+    el_transition.classList.add('is-off')
+  },1500)
 }
 
 (function($) {
@@ -23,8 +30,6 @@ function animateTransition() {
 
   let questions = document.querySelectorAll('.intro-question');
   let images = document.querySelectorAll('.intro-image');
-  let requestAnimationFrame = window.requestAnimationFrame;
-  let cancelAnimationFrame = window.cancelAnimationFrame;
   let scrollRequest;
   let qScrollPositions = [];
   let isActive = false;

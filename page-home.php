@@ -15,16 +15,7 @@
  */
 
 get_header('home'); ?>
-	<div class="transition-wipe">
-		<h1><span>A reflection of you A reflection of you A reflection of you</span></h1>
-		<h1><span>A reflection of you A reflection of you A reflection of you</span></h1>
-		<h1><span>A reflection of you A reflection of you A reflection of you</span></h1>
-		<h1><span>A reflection of you A reflection of you A reflection of you</span></h1>
-		<h1><span>A reflection of you A reflection of you A reflection of you</span></h1>
-		<h1><span>A reflection of you A reflection of you A reflection of you</span></h1>
-		<h1><span>A reflection of you A reflection of you A reflection of you</span></h1>
-		<h1><span>A reflection of you A reflection of you A reflection of you</span></h1>
-	</div>
+	<?php get_template_part('template-parts/transition'); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 

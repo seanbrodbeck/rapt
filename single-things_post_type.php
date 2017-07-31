@@ -8,7 +8,7 @@
  */
 
 get_header(); ?>
-
+	<?php get_template_part('template-parts/transition'); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -29,18 +29,18 @@ get_header(); ?>
 	          <div class="col-sm-6">
 	            <h2><?php the_field("work_header_text"); ?></h2>
 	            <?php $terms = get_the_terms( get_the_ID(), 'work_categories' );
-                                     
-              if ( $terms && ! is_wp_error( $terms ) ) : 
-             
+
+              if ( $terms && ! is_wp_error( $terms ) ) :
+
                 $work_cat_list = array();
-             
+
                 foreach ( $terms as $term ) {
                     $work_cat_list[] = $term->name;
                 }
-                                     
+
                 $work_cats = join( " • ", $work_cat_list );
                 ?>
-             
+
                 <p class="work-cats category-list">
                     <?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats ) ); ?>
                 </p>
@@ -63,14 +63,14 @@ get_header(); ?>
 	    <section class="awards-press">
 	      <div class="container">
 	        <div class="row clearfix">
-	          
+
 	           <?php if(get_field('press')): ?>
 
 								<div class="col-sm-6">
 								<h2>Press</h2>
 								<?php while(has_sub_field('press')): ?>
 
-								<div class="awards-press-entry">				
+								<div class="awards-press-entry">
 									<h4><a href="<?php the_sub_field('press_url'); ?>"><?php the_sub_field('press_title'); ?> <span><?php the_sub_field('press_text'); ?></span></a></h4>
 								</div>
 
@@ -86,7 +86,7 @@ get_header(); ?>
 									<h2>Awards</h2>
 									<?php while(has_sub_field('awards')): ?>
 
-									<div class="awards-press-entry">				
+									<div class="awards-press-entry">
 										<h4><a href="<?php the_sub_field('award_url'); ?>"><?php the_sub_field('award_title'); ?> <span><?php the_sub_field('award_text'); ?></span></a></h4>
 									</div>
 
@@ -95,7 +95,7 @@ get_header(); ?>
 									</div>
 
 								<?php endif; ?>
-		          
+
 	        </div>
 	      </div>
 	    </section>
@@ -109,11 +109,11 @@ get_header(); ?>
 	        </div>
 	      </div>
 	      <div class="work-grid">
-					<?php 
+					<?php
 						if (have_posts()) : while (have_posts()) : the_post();
 
-							if( have_rows('things_grid_layout') ): 
-				
+							if( have_rows('things_grid_layout') ):
+
 								while ( have_rows('things_grid_layout') ) : the_row();
 
 								// 1/3 2/3
@@ -128,8 +128,8 @@ get_header(); ?>
 								// if( get_row_layout() == 'things_row_full_width' )
 								// 	get_template_part('template-parts/content', 'things-row-full');
 
-								endwhile; 
-							endif; 
+								endwhile;
+							endif;
 
 						endwhile; endif; ?>
 	      </div>
@@ -144,10 +144,10 @@ get_header(); ?>
 	       	</div>
 	      </div>
       	<div class="work-grid">
-					<?php 
+					<?php
 						if (have_posts()) : while (have_posts()) : the_post();
 
-							if( have_rows('work_grid_layout') ): 
+							if( have_rows('work_grid_layout') ):
 
 								while ( have_rows('work_grid_layout') ) : the_row();
 
@@ -163,8 +163,8 @@ get_header(); ?>
 								// if( get_row_layout() == 'work_row_full_width' )
 								// 	get_template_part('template-parts/content', 'work-row-full');
 
-								endwhile; 
-							endif; 
+								endwhile;
+							endif;
 
 						endwhile; endif; ?>
 				</div>

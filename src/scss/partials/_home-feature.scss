@@ -6,7 +6,13 @@
   height: 100vh;
   z-index: 100;
   background: white;
-  display: none;
+  display: block;
+  transition: .2s;
+}
+
+.transition-wipe.is-off {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .transition-wipe h1 {
@@ -14,16 +20,18 @@
   top: -35%;
   left: -25%;
   width: 100%;
-  height: 167.1px;
+  height: calc(20px + 11vw);
   transform: rotate(-45deg);
   opacity: 0.4;
   font-family: 'noe-display-medium';
-  font-size: 200px;
+  font-size: calc(50px + 10vw);
   font-weight: 500;
   line-height: 0.86;
   text-align: center;
   color: #d1d1d1;
   white-space: nowrap;
+  opacity: 0;
+  -webkit-animation: fade-in .5s forwards;
 }
 
 .transition-wipe h1 {
@@ -156,4 +164,13 @@
 
 .intro-logo.is-white {
   color: white;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .4;
+  }
 }

@@ -62,23 +62,30 @@ p {
   height: 100vh;
   z-index: 100;
   background: white;
-  display: none; }
+  display: block;
+  transition: .2s; }
+
+.transition-wipe.is-off {
+  opacity: 0;
+  visibility: hidden; }
 
 .transition-wipe h1 {
   position: relative;
   top: -35%;
   left: -25%;
   width: 100%;
-  height: 167.1px;
+  height: calc(20px + 11vw);
   transform: rotate(-45deg);
   opacity: 0.4;
   font-family: 'noe-display-medium';
-  font-size: 200px;
+  font-size: calc(50px + 10vw);
   font-weight: 500;
   line-height: 0.86;
   text-align: center;
   color: #d1d1d1;
-  white-space: nowrap; }
+  white-space: nowrap;
+  opacity: 0;
+  -webkit-animation: fade-in .5s forwards; }
 
 .transition-wipe h1 {
   transform: rotate(-45deg) translate3d(-100%, 0, 0);
@@ -198,6 +205,12 @@ p {
 
 .intro-logo.is-white {
   color: white; }
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: .4; } }
 
 a {
   -webkit-transition: color .3s ease;
@@ -665,23 +678,23 @@ main .work-grid .work-row {
     right: calc((100vw - 1290px) / 2);
     width: calc(1290px * .25); }
 
-.single-post .category-list {
+.single-post .primary .category-list {
   margin-top: 20px; }
 
-.single-post h1 {
+.single-post .primary h1 {
   font-family: 'Fakt-Blond';
   font-size: calc(32px + (48 - 32) * (100vw - 320px) / (1440 - 320));
   color: #000000;
   margin: 20px 0; }
 
-.single-post h2 {
+.single-post .primary h2 {
   font-family: 'noe-display';
   font-size: 24px;
   color: #000000;
   margin: 0 0 40px;
   line-height: 1.33; }
 
-.single-post .post-social a {
+.single-post .primary .post-social a {
   display: block;
   float: right;
   clear: right;
