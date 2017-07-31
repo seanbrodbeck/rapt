@@ -967,7 +967,8 @@ footer {
           -ms-flex-pack: space-between;
           height: 100%; } }
       footer .footer-bottom .footer-social ul li {
-        display: inline-block; }
+        display: inline-block;
+        line-height: 1.6; }
         @media (min-width: 961px) {
           footer .footer-bottom .footer-social ul li {
             display: block; } }

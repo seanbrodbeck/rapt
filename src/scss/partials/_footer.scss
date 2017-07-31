@@ -86,9 +86,10 @@ footer {
 					@include flex-direction(column);
 			    @include justify-content(space-between);
 			    height: 100%;
-				}	
+				}
 				li {
 					display: inline-block;
+					line-height: 1.6;
 					@media (min-width: $bp-sm3-min) {
 						display: block;
 					}
