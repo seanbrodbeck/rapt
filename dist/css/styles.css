@@ -453,7 +453,8 @@ header .main-navigation {
     right: 0;
     top: 0;
     bottom: 0;
-    background: #000000; }
+    background: #000000;
+    padding: 30px; }
     @media screen and (min-width: 37.5em) {
       header .main-navigation.toggled #primary-menu {
         display: block; } }
@@ -553,6 +554,9 @@ body:not(.home) header .nav-wrap #site-navigation {
 
 .is-nav-fixed header .nav-wrap #site-navigation {
   background: white; }
+
+.single-post header .nav-wrap #site-navigation {
+  background: #ffdfd9 !important; }
 
 .blog header .nav-wrap #site-navigation {
   background: #ffefdd !important; }

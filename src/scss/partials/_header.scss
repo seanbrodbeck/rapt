@@ -25,6 +25,7 @@ header {
 				top:0;
 				bottom:0;
 				background:$black;
+				padding:30px;
 				@media screen and (min-width: 37.5em) {
 					display:block;
 				}
@@ -157,6 +158,16 @@ body:not(.home) {
 		.nav-wrap {
 			#site-navigation {
 				background: white;
+			}
+		}
+	}
+}
+
+.single-post{
+	header {
+		.nav-wrap {
+			#site-navigation {
+				background:$peach!important;
 			}
 		}
 	}
