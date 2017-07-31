@@ -92,7 +92,7 @@ function animateTransition() {
     scrollRequest = requestAnimationFrame( () => { scrollQuestionText(i)})
   }
   let navScrollHandler = (e) => {
-    if (document.querySelector('#masthead').getBoundingClientRect().bottom < 105) {
+    if (document.querySelector('.home #masthead').getBoundingClientRect().bottom < 105) {
       document.body.classList.add('is-nav-fixed')
     } else {
       document.body.classList.remove('is-nav-fixed')

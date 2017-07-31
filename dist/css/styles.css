@@ -453,7 +453,8 @@ header .nav-wrap {
 .home header .main-navigation #primary-menu li a {
   color: #000000; }
 
-.is-nav-fixed header .nav-wrap #site-navigation {
+.is-nav-fixed header .nav-wrap #site-navigation,
+body:not(.home) header .nav-wrap #site-navigation {
   padding: 31px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 36px;
   position: fixed;
   left: 0;
@@ -466,8 +467,8 @@ header .nav-wrap {
 .is-nav-fixed header .nav-wrap #site-navigation {
   background: white; }
 
-.blog.is-nav-fixed header .nav-wrap #site-navigation {
-  background: #ffefdd; }
+.blog header .nav-wrap #site-navigation {
+  background: #ffefdd !important; }
 
 main section {
   padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400)); }
