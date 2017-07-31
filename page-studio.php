@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Studio
- * 
+ *
  * The template for displaying all pages
  *
  * This is the template that displays all pages by default.
@@ -15,7 +15,7 @@
  */
 
 get_header(); ?>
-
+	<?php get_template_part('template-parts/transition'); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -36,13 +36,13 @@ get_header(); ?>
 								<!-- <div class="col-sm-4"></div> -->
 
 								<?php if( have_rows('team_member_groups') ): ?>
-									
+
 									<?php while( have_rows('team_member_groups') ): the_row(); ?>
 
 										<div id="<?php the_sub_field('team_member_group_slug'); ?>" class="team-member-group active">
-											
+
 											<?php if( have_rows('team_members') ): ?>
-												
+
 												<?php while( have_rows('team_members') ): the_row(); ?>
 
 													<div class="col-sm-4 col-xs-6 team-member">
@@ -58,12 +58,12 @@ get_header(); ?>
 													</div>
 
 												<?php endwhile; ?>
-												
+
 											<?php endif; ?>
-										</div>	
+										</div>
 
 									<?php endwhile; ?>
-									
+
 								<?php endif; ?>
 
 						</div>
@@ -87,7 +87,7 @@ get_header(); ?>
 							<div class="col-sm-6 we-block">
 								<?php the_field('we_tell_your_truth'); ?>
 							</div>
-						</div>	
+						</div>
 				</div>
 			</section>
 

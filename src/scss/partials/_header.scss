@@ -113,7 +113,8 @@ header {
 	}
 }
 
-.is-nav-fixed {
+.is-nav-fixed,
+body:not(.home) {
 	header {
 		.nav-wrap {
 			#site-navigation {
@@ -140,11 +141,11 @@ header {
 	}
 }
 
-.blog.is-nav-fixed {
+.blog {
 	header {
 		.nav-wrap {
 			#site-navigation {
-				background: #ffefdd;
+				background: #ffefdd !important;
 			}
 		}
 	}

@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Product Landing
- * 
+ *
  * The template for displaying all pages
  *
  * This is the template that displays all pages by default.
@@ -15,7 +15,7 @@
  */
 
 get_header(); ?>
-
+	<?php get_template_part('template-parts/transition'); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -30,11 +30,11 @@ get_header(); ?>
 
 				<div class="work-grid">
 
-				<?php 
+				<?php
 					if (have_posts()) : while (have_posts()) : the_post();
 
-						if( have_rows('things_grid_layout') ): 
-			
+						if( have_rows('things_grid_layout') ):
+
 							while ( have_rows('things_grid_layout') ) : the_row();
 
 							// 1/3 2/3
@@ -49,8 +49,8 @@ get_header(); ?>
 							if( get_row_layout() == 'things_row_full_width' )
 								get_template_part('template-parts/content', 'things-row-full');
 
-							endwhile; 
-						endif; 
+							endwhile;
+						endif;
 
 					endwhile; endif; ?>
 
@@ -65,7 +65,7 @@ get_header(); ?>
 						<?php
 
 						$taxonomy = 'product_categories';
-						$terms = get_terms($taxonomy); 
+						$terms = get_terms($taxonomy);
 
 						if ( $terms && !is_wp_error( $terms ) ) :
 						?>
@@ -73,7 +73,7 @@ get_header(); ?>
 			        <?php foreach ( $terms as $term ) { ?>
 			            <span class="filter-option" data-filter=".<?php echo $term->slug; ?>"><?php echo $term->name; ?></span>
 			        <?php } ?>
-						    
+
 						<?php endif;?>
 
 						<?php wp_reset_postdata();?>
@@ -93,17 +93,17 @@ get_header(); ?>
 							foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 
 							<?php $terms = get_the_terms( get_the_ID(), 'product_categories' );
-			                                     
-              if ( $terms && ! is_wp_error( $terms ) ) : 
-             
+
+              if ( $terms && ! is_wp_error( $terms ) ) :
+
                 $work_cat_list = array();
               	$work_cat_slug = array();
-             
+
                 foreach ( $terms as $term ) {
                     $work_cat_list[] = $term->name;
                     $work_cat_slug[] = $term->slug;
                 }
-                                     
+
                 $work_cats = join( " · ", $work_cat_list );
                 $work_cats_slugs = join( " ", $work_cat_slug );
 
@@ -115,10 +115,10 @@ get_header(); ?>
 
 			              <?php endif; ?>
 							 	</div>
-							<?php endforeach; 
+							<?php endforeach;
 							wp_reset_postdata();?>
 							<div class="clearfix"></div>
-					</div>		
+					</div>
 				</div>
 			</div>
 		</div>
@@ -141,17 +141,17 @@ get_header(); ?>
 							foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 
 							<?php $terms = get_the_terms( get_the_ID(), 'product_categories' );
-			                                     
-              if ( $terms && ! is_wp_error( $terms ) ) : 
-             
+
+              if ( $terms && ! is_wp_error( $terms ) ) :
+
                 $work_cat_list = array();
               	$work_cat_slug = array();
-             
+
                 foreach ( $terms as $term ) {
                     $work_cat_list[] = $term->name;
                     $work_cat_slug[] = $term->slug;
                 }
-                                     
+
                 $work_cats = join( " · ", $work_cat_list );
                 $work_cats_slugs = join( " ", $work_cat_slug );
 
@@ -163,10 +163,10 @@ get_header(); ?>
 
 			              <?php endif; ?>
 							 	</div>
-							<?php endforeach; 
+							<?php endforeach;
 							wp_reset_postdata();?>
 							<div class="clearfix"></div>
-					</div>		
+					</div>
 				</div>
 
 		</main><!-- #main -->
