@@ -140,7 +140,7 @@ get_header(); ?>
 	      <div class="container">
 	        <div class="row clearfix">
 	        	<div class="col-sm-12">
-	        		<h2>Also See</h2>
+	        		<h2>More to see</h2>
 	        	</div>
 	       	</div>
 	      </div>
