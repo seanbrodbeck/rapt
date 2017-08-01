@@ -605,11 +605,10 @@ main section {
     font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
     color: #000000;
     font-family: 'noe-display';
-    margin-bottom: 40px; }
+    margin-bottom: 36px; }
   main section.awards-press .awards-press-entry {
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #EEEEEE; }
+    margin-bottom: 34px;
+    color: #37383c; }
     main section.awards-press .awards-press-entry:last-of-type {
       border: none;
       margin-bottom: 0;
