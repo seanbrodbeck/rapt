@@ -912,8 +912,6 @@ footer {
       line-height: 1.5;
       font-family: 'Fakt-Blond';
       color: #555555; }
-      footer .footer-top p a {
-        color: #555555; }
   footer .footer-bottom {
     font-size: 16px;
     line-height: 1.5;
@@ -987,6 +985,22 @@ footer {
         color: #FFFFFF;
         font-weight: normal;
         -webkit-font-smoothing: antialiased; }
+  footer .footer-subscribe input {
+    background: transparent;
+    color: #FFFFFF !important;
+    flex-basis: 80%;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Fakt-Blond';
+    border: none;
+    outline: none;
+    padding: 0 8px 0 0; }
+  footer .footer-subscribe p {
+    display: flex;
+    justify-content: space-between; }
+  footer .footer-subscribe a {
+    color: white;
+    opacity: 1; }
 
 .home footer, .single-work_post_type footer {
   margin-top: 0; }

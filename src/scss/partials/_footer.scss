@@ -38,9 +38,6 @@ footer {
 	  	line-height: 1.5;
 	  	font-family: 'Fakt-Blond';
 	  	color: $footer-gray;
-	  	a {
-	  		color: $footer-gray;
-	  	}
 		}
 	}
 
@@ -110,7 +107,25 @@ footer {
 			}
 		}
 	}
-
+	.footer-subscribe input {
+		background: transparent;
+		color: $white !important;
+		flex-basis: 80%;
+		font-size: 16px;
+  	line-height: 1.5;
+  	font-family: 'Fakt-Blond';
+  	border: none;
+  	outline: none;
+  	padding: 0 8px 0 0;
+	}
+	.footer-subscribe p {
+		display: flex;
+		justify-content: space-between;
+	}
+	.footer-subscribe a {
+		color: white;
+		opacity: 1;
+	}
 }
 
 .home, .single-work_post_type {

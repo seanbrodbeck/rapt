@@ -22,7 +22,7 @@
 					<?php wp_nav_menu( array( 'menu_id' => 'primary-menu', )); ?>
 				</div><!-- .site-info -->
 				<div class="col-sm-3 footer-subscribe">
-					<p><a href="#">Join our newsletter</a></p>
+					<p><input type="text" placeholder="Join our newsletter"> <a href="#">Subscribe</a></p>
 				</div>
 			</div>
 
@@ -53,7 +53,7 @@
 							<li><a href="<?php the_sub_field('social_link_url', 'option'); ?>"><?php the_sub_field('social_link_title', 'option'); ?></a></li>
 						<?php endwhile; ?>
 						</ul>
-					<?php endif; ?>			
+					<?php endif; ?>
 				</div><!-- .site-info -->
 
 			</div>
