@@ -9,13 +9,13 @@
 
 ?>
 
-<div class="row clearfix">
+<div class="row single-wrapper clearfix">
 
-	<div class="col-sm-7">
+	<div class="col-md-7 single-content">
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<?php the_post_thumbnail('full'); ?>
 			<header class="entry-header">
-				<?php the_post_thumbnail('full'); ?>
 				<div class="category-list">
 					<ul>
 						<?php
@@ -63,13 +63,13 @@
 
 	</div>
 
-	<div class="col-sm-3 col-sm-offset-2">
-		<div class="post-social">
+	<div class="col-md-3 col-md-offset-2 single-sidebar">
+		<div class="post-social clearfix">
 			<a href="#"><img src="/wp-content/themes/rapt/dist/images/icon-twitter.svg" width="38" heith="auto"/></a>
 			<a href="#"><img src="/wp-content/themes/rapt/dist/images/icon-fb.svg" width="38" heith="auto"/></a>
 			<a href="#"><img src="/wp-content/themes/rapt/dist/images/icon-in.svg" width="38" heith="auto"/></a>
 		</div>
-		<div style="clear:both;">
+		<div class="single-related-posts">
 
 
 			<?php

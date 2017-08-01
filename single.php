@@ -19,9 +19,16 @@ get_header(); ?>
 
 				get_template_part( 'template-parts/content-single-blog', get_post_format() );
 
-				the_post_navigation();
+				// the_post_navigation();
 
 			endwhile; // End of the loop.
+			?>
+
+			<?php the_post_navigation( array(
+            'prev_text'                  => __( 'prev chapter: %title' ),
+            'next_text'                  => __( 'More' ),
+            'screen_reader_text' => __( 'Continue Reading' ),
+        ) );
 			?>
 
 		</div>
