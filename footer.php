@@ -18,10 +18,10 @@
 
 
 			<div class="row clearfix footer-top">
-				<div class="col-sm-9 footer-nav">
+				<div class="col-md-9 col-sm-6 footer-nav">
 					<?php wp_nav_menu( array( 'menu_id' => 'primary-menu', )); ?>
 				</div><!-- .site-info -->
-				<div class="col-sm-3 footer-subscribe">
+				<div class="col-md-3 col-sm-6 footer-subscribe">
 					<p><input type="text" placeholder="Join our newsletter"> <a href="#">Subscribe</a></p>
 				</div>
 			</div>

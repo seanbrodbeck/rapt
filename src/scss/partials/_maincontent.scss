@@ -132,7 +132,8 @@ main {
 			.team-sort {
 				position:relative;
 				.team-sort-links {
-					@media (min-width: $bp-sm-min) {
+
+					@media (min-width: $bp-md-min) {
 						position: absolute;
 						top: 0;
 						left: 0;
@@ -163,7 +164,7 @@ main {
 					.active {
 						.team-member {
 							&:first-child {
-								@media (min-width: $bp-sm-min) {
+								@media (min-width: $bp-md-min) {
 									margin-left: 33.3333%;
 								}
 							}
@@ -208,7 +209,7 @@ main {
 				position: relative;
 				.we-large-text {
 					margin-bottom: 30px;
-					@media (min-width: $bp-sm-min) {
+					@media (min-width: $bp-md-min) {
 						position: absolute;
 						top: 0;
 						left: 0;
@@ -218,7 +219,7 @@ main {
 				.we-block {
 					margin-bottom: 30px;
 					padding: 0;
-					@media (min-width: $bp-sm-min) {
+					@media (min-width: $bp-md-min) {
 						padding-right: 15px;
     				padding-left: 15px;
 					}
@@ -258,7 +259,7 @@ main {
 			.contact-info-wrapper {
 				position:relative;
 				.contact-info-header {
-					@media (min-width: $bp-sm-min) {
+					@media (min-width: $bp-md-min) {
 						position:absolute;
 						top: 0;
 						left: 0;
@@ -266,7 +267,7 @@ main {
 				}
 				.contact-info-listing {
 					margin-bottom: 30px;
-					@media (min-width: $bp-sm-min) {
+					@media (min-width: $bp-md-min) {
 						min-height: 220px;
 						margin-bottom: 0;
 					}
@@ -285,9 +286,8 @@ main {
 			margin-bottom: 0;
 			margin: 0;
 			@media (min-width: $bp-sm-min) {
-				margin-bottom: 50px;
-				margin-left: -15px;
-				margin-right: -15px;
+				margin-bottom: 0;
+				padding:0 15px;
 				@include flexbox;
 				@include align-items(flex-start);
 				&.work-row-onethird-twothirds + .work-row-twothirds-onethird .work-row {
@@ -295,7 +295,13 @@ main {
 				}
 				&.work-row-twothirds-onethird + .work-row-onethird-twothirds .work-row {
 					@include align-items(flex-end);
+					margin-bottom:50px;
 				}
+			}
+			@media (min-width: $bp-md-min) {
+				margin-left: -15px;
+				margin-right: -15px;
+				padding:0;
 			}
 			.container {
 				padding:0;
@@ -345,6 +351,10 @@ main {
 				margin-bottom: 0;
 				padding: 350px 0 30px;
 				@media (min-width: $bp-sm-min) {
+					margin-bottom: 50px;
+					padding: 500px 0 80px;
+				}
+				@media (min-width: $bp-md-min) {
 					margin-bottom: 100px;
 					padding: 500px 0 80px;
 					margin-left: -15px;

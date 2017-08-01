@@ -24,15 +24,15 @@ get_header(); ?>
 			<section class="team">
 				<div class="container">
 					<div class="row clearfix">
-						<div class="col-sm-6">
+						<div class="col-md-6">
 							<h1><?php the_field('team_header'); ?></h1>
 						</div>
 					</div>
 					<div class="row team-sort clearfix">
-						<div class="col-sm-6 team-sort-links">
+						<div class="col-md-6 team-sort-links">
 							<?php the_field('team_filter_list'); ?>
 						</div>
-						<div class="col-sm-9 col-sm-offset-3 team-members">
+						<div class="col-md-9 col-md-offset-3 team-members">
 								<!-- <div class="col-sm-4"></div> -->
 
 								<?php if( have_rows('team_member_groups') ): ?>
@@ -45,7 +45,7 @@ get_header(); ?>
 
 												<?php while( have_rows('team_members') ): the_row(); ?>
 
-													<div class="col-sm-4 col-xs-6 team-member">
+													<div class="col-md-4 col-sm-4 col-xs-6 team-member">
 														<div class="inner">
 															<?php $image = get_sub_field('team_member_image'); if( !empty($image) ): ?>
 															<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
@@ -74,17 +74,17 @@ get_header(); ?>
 			<section class="we">
 				<div class="container">
 					<div class="row we-wrapper clearfix">
-						<div class="col-sm-7 we-large-text">
+						<div class="col-md-7 we-large-text">
 							<h2 class="large"><?php the_field('we_large_text'); ?></h2>
 						</div>
-						<div class="col-sm-9 col-sm-offset-3">
-							<div class="col-sm-6 col-sm-offset-6 we-block">
+						<div class="col-md-9 col-md-offset-3">
+							<div class="col-md-6 col-md-offset-6 we-block">
 								<?php the_field('we_ask_why'); ?>
 							</div>
-							<div class="col-sm-6 we-block">
+							<div class="col-md-6 we-block">
 								<?php the_field('we_dont_design_things'); ?>
 							</div>
-							<div class="col-sm-6 we-block">
+							<div class="col-md-6 we-block">
 								<?php the_field('we_tell_your_truth'); ?>
 							</div>
 						</div>
@@ -102,7 +102,7 @@ get_header(); ?>
 
 							<?php while(has_sub_field('client_logos')): ?>
 
-								<div class="carousel-item col-sm-3 col-xs-6"><img src="<?php the_sub_field('client_logo'); ?>"/></div>
+								<div class="carousel-item col-md-3 col-sm-6 col-xs-6"><img src="<?php the_sub_field('client_logo'); ?>"/></div>
 
 							<?php endwhile; ?>
 
@@ -147,12 +147,12 @@ get_header(); ?>
 			<section class="contact-info">
 				<div class="container">
 					<div class="row contact-info-wrapper clearfix">
-						<div class="col-sm-5 contact-info-header">
+						<div class="col-md-5 contact-info-header">
 							<h2 class="large"><?php the_field('contact_section_header'); ?></h2>
 						</div>
-						<div class="col-sm-8 col-sm-offset-4">
+						<div class="col-md-8 col-md-offset-4">
 							<div class="row clearfix">
-								<div class="col-sm-6"></div>
+								<div class="col-md-6 col-sm-12"></div>
 								<?php if(get_field('contact_info_grid')): ?>
 
 									<?php while(has_sub_field('contact_info_grid')): ?>

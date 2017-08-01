@@ -32,7 +32,7 @@ get_header(); ?>
 
 				<div class="row article-feed clearfix">
 
-					<div class="primary-articles col-sm-7">
+					<div class="primary-articles col-md-7">
 						<?php
 
 							global $post;
@@ -71,7 +71,7 @@ get_header(); ?>
 							wp_reset_postdata();?>
 				</div>
 
-				<div class="secondary-articles col-sm-3 col-sm-offset-2">
+				<div class="secondary-articles col-md-3 col-md-offset-2">
 					<?php
 
 							global $post;

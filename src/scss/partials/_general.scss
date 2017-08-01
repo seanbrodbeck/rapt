@@ -12,6 +12,10 @@ a {
 	}
 }
 
+#page {
+	/*overflow: hidden;*/
+}
+
 .nopad {
 	padding: 0;
 }
@@ -151,6 +155,16 @@ a {
 }
 
 .secondary-articles {
+	padding-left:15px;
+	padding-right:15px;
+	@media (min-width: $bp-sm-min) {
+		padding-left:0;
+		padding-right:0;
+	}
+	@media (min-width: $bp-md-min) {
+		padding-left:15px;
+		padding-right:15px;
+	}
 	.entry-header {
 		padding: 20px 0 0;
 		h3 {
@@ -159,6 +173,23 @@ a {
 	}
 	.entry-content {
 		margin: 0;
+	}
+	article {
+		width:100%;
+		@media (min-width: $bp-sm-min) {
+			width:50%;
+			float:left;
+			padding:0 15px;
+		}
+		@media (min-width: $bp-sm3-min) {
+			width:100%;
+			float:none;
+			padding:0
+		}
+		img {
+			width:100%;
+			height:auto;
+		}
 	}
 }
 
