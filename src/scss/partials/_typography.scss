@@ -88,3 +88,10 @@ blockquote {
 .aligncenter {
 	text-align: center;
 }
+
+a {
+	&:hover, &:active {
+		outline:none;
+		text-decoration: none;
+	}
+}

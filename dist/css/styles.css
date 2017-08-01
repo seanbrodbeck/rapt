@@ -54,6 +54,10 @@ p {
 .aligncenter {
   text-align: center; }
 
+a:hover, a:active {
+  outline: none;
+  text-decoration: none; }
+
 .transition-wipe {
   position: fixed;
   top: 0;
