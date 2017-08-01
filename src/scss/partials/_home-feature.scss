@@ -52,6 +52,10 @@
   font-size: calc(25px + (64 - 25) * (100vw - 400px) / (1440 - 400));
   line-height: 1;
   padding: calc(10px + (30 - 10) * (100vw - 400px) / (1440 - 400)) 0;
+  @media (min-width: $bp-xlg-min) {
+    font-size: 64px;
+    padding: 30px 0;
+  }
   box-sizing: border-box;
   position:relative;
 }
@@ -153,19 +157,6 @@
   opacity: 1;
   visibility: visible;
   transition: .8s ease-out;
-}
-
-.intro-logo {
-  position: relative;
-  font-family: 'noe-display';
-  font-size: calc(14px + (25 - 14) * (100vw - 400px) / (2000 - 400));;
-  color: #37383c;
-  margin-top: 7vh;
-  transition: .3s;
-}
-
-.intro-logo.is-white {
-  color: white;
 }
 
 @-webkit-keyframes fade-in {

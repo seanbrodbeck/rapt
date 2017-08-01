@@ -30,6 +30,9 @@ body {
 h1 {
 	font-family: 'noe-display';
 	font-size: calc(24px + (48 - 24) * (100vw - 320px) / (1440 - 320));
+  @media (min-width: $bp-xlg-min) {
+    font-size: 48px;
+  }
 	-webkit-font-smoothing: antialiased;
 	@media (min-width: $bp-sm-min) {
 
@@ -39,6 +42,9 @@ h1 {
 h2 {
 	font-family: 'Fakt-Blond';
 	font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
+  @media (min-width: $bp-xlg-min) {
+    font-size: 40px;
+  }
 	-webkit-font-smoothing: antialiased;
 	a, a:visited {
 		color:$black;
@@ -49,6 +55,9 @@ h2 {
 	&.large {
 		font-family: 'noe-display';
 		font-size: calc(24px + (48 - 24) * (100vw - 320px) / (1440 - 320));
+    @media (min-width: $bp-xlg-min) {
+    font-size: 48px;
+  }
 		margin-top:0;
 	}
 }

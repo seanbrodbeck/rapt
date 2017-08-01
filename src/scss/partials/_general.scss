@@ -43,6 +43,9 @@ a {
 
 .full-width-wrap {
 	padding: 0 calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
+	@media (min-width: $bp-xlg-min) {
+		padding: 0 70px;
+	}
 }
 
 .container {
@@ -87,9 +90,16 @@ a {
 	max-width:1290px;
 	padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400));
 	padding-left:15px;
+	@media (min-width: $bp-xlg-min) {
+		padding: 80px;
+		padding-left:15px;
+	}
 	.more-link {
 		font-family: 'noe-display';
 		font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
+		@media (min-width: $bp-xlg-min) {
+			font-size: 40px;
+		}
 		display: inline-block;
 		color: $black;
 		opacity: .2;
@@ -296,6 +306,9 @@ a {
 		.filter-option {
 			font-family: 'noe-display';
 			font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
+			@media (min-width: $bp-xlg-min) {
+				font-size: 48px;
+			}
 			line-height: 1.15;
 			color: $light-gray;
 			@include transition(color .4s ease);
@@ -389,6 +402,9 @@ a {
 			display: block;
 			font-family: 'noe-display';
 			font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
+			@media (min-width: $bp-xlg-min) {
+				font-size: 48px;
+			}
 			line-height: 1.15;
 			color: $black;
 			border: none;
@@ -397,6 +413,9 @@ a {
 			&::placeholder {
 				font-family: 'noe-display';
 				font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
+				@media (min-width: $bp-xlg-min) {
+					font-size: 48px;
+				}
 				line-height: 1.15;
 				color: $light-gray;
 			}

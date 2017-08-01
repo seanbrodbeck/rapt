@@ -2,6 +2,9 @@ main {
 	section {
 
 		padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400));
+		@media (min-width: $bp-xlg-min) {
+			padding: 80px;
+		}
 
 		&.home-work {
 			padding:0;
@@ -27,9 +30,12 @@ main {
 
 		&.home-perspectives {
 			background: $peach;
-			padding:30px 0;
+			padding: 30px 0;
 			@media (min-width: $bp-sm-min) {
 				padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400));
+			}
+			@media (min-width: $bp-xlg-min) {
+				padding: 80px;
 			}
 
 			h1 {
@@ -69,8 +75,14 @@ main {
 
 		&.single-hero {
 			padding: calc(400px + (534 - 400) * (100vw - 320px) / (1440 - 320)) 0 calc(24px + (80 - 24) * (100vw - 320px) / (1440 - 320));
+			@media (min-width: $bp-xlg-min) {
+				padding: 534px 80px;
+			}
 			h1 {
 				font-size: calc(32px + (64 - 32) * (100vw - 320px) / (1440 - 320));
+				@media (min-width: $bp-xlg-min) {
+					font-size: 64px;
+				}
 				margin: 0;
 				color:$white;
 			}
@@ -79,6 +91,9 @@ main {
 			h2 {
 				color:$black;
 				font-size: calc(24px + (48 - 24) * (100vw - 320px) / (1440 - 320));
+				@media (min-width: $bp-xlg-min) {
+					font-size: 48px;
+				}
 				font-family: 'noe-display';
 				margin-top:0;
 			}
@@ -98,6 +113,9 @@ main {
 		&.awards-press {
 			h2 {
 				font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
+				@media (min-width: $bp-xlg-min) {
+					font-size: 40px;
+				}
 				color: $black;
 				font-family: 'noe-display';
 				margin-bottom: 36px;
@@ -127,6 +145,9 @@ main {
 		&.featured-products {
 			h2 {
 				font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
+				@media (min-width: $bp-xlg-min) {
+					font-size: 40px;
+				}
 				color: $black;
 				font-family: 'noe-display';
 				margin-bottom: 40px;
@@ -141,6 +162,9 @@ main {
 		&.also-see{
 			h2 {
 				font-size: calc(32px + (40 - 32) * (100vw - 320px) / (1440 - 320));
+				@media (min-width: $bp-xlg-min) {
+					font-size: 40px;
+				}
 				color: $white;
 				font-family: 'noe-display';
 				margin-bottom: 40px;
@@ -163,6 +187,9 @@ main {
 
 		&.studio-hero {
 			padding: calc(164px + (320 - 164) * (100vw - 320px) / (1440 - 320)) 0;
+			@media (min-width: $bp-xlg-min) {
+				padding: 320px;
+			}
 		}
 
 		&.team {
@@ -419,6 +446,9 @@ main {
 				}
 				h2 {
 					font-size: calc(32px + (48 - 32) * (100vw - 320px) / (1440 - 320));
+					@media (min-width: $bp-xlg-min) {
+						font-size: 48px;
+					}
 					color: $white;
 					padding: 0;
 					a {
@@ -492,6 +522,9 @@ main {
 				h1 {
 					font-family: 'Fakt-Blond';
 					font-size: calc(32px + (48 - 32) * (100vw - 320px) / (1440 - 320));
+					@media (min-width: $bp-xlg-min) {
+						font-size: 48px;
+					}
 					color: $black;
 					margin: 20px 0;
 				}
@@ -588,6 +621,9 @@ main {
 				a {
 					font-family: 'noe-display';
 					font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
+					@media (min-width: $bp-xlg-min) {
+						font-size: 40px;
+					}
 					display: inline-block;
 					color: $black;
 					opacity: .2;

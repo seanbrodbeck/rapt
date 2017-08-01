@@ -19,6 +19,9 @@ footer {
 	.menu {
 		font-family: 'noe-display';
   	font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
+  	@media (min-width: $bp-xlg-min) {
+  		font-size: 40px;
+  	}
   	margin: 0;
 		padding: 0;
 		list-style: none;
@@ -87,6 +90,9 @@ footer {
 				}
 				li {
 					font-size: calc(12px + (16 - 12) * (100vw - 320px) / (1440 - 320));
+					@media (min-width: $bp-xlg-min) {
+						font-size: 16px;
+					}
 					display: inline-block;
 					line-height: 1.6;
 					@media (min-width: $bp-sm3-min) {
@@ -120,6 +126,9 @@ footer {
 		color: $white !important;
 		flex-basis: 80%;
 		font-size: calc(12px + (16 - 12) * (100vw - 320px) / (1440 - 320));
+		@media (min-width: $bp-xlg-min) {
+			font-size: 16px;
+		}
   	line-height: 1.5;
   	font-family: 'Fakt-Blond';
   	border: none;
@@ -130,6 +139,9 @@ footer {
 		display: flex;
 		justify-content: space-between;
 		font-size: calc(12px + (16 - 12) * (100vw - 320px) / (1440 - 320));
+		@media (min-width: $bp-xlg-min) {
+			font-size: 16px;
+		}
 	}
 	.footer-subscribe a {
 		color: white;
