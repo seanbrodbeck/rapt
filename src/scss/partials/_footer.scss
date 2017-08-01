@@ -3,6 +3,7 @@ footer {
 	background: $black;
 	margin-top: 30px;
 	padding-top: 0;
+	padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400));
 	@media (min-width: $bp-sm-min) {
 		margin-top: 90px;
 	}
@@ -136,6 +137,7 @@ footer {
 	footer {
 		margin-top: 0;
 		.footer-top {
+			border-top:1px solid #4c4c4c;
 			margin-top: 0;
 			padding-top: 80px;
 		}

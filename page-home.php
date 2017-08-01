@@ -59,12 +59,16 @@ get_header('home'); ?>
 								'menu_id'        => 'primary-menu',
 							) );
 						?>
+						<a class="rapt-logo-wrap mobile-only" href="/">
+							<img class="rapt-logo" src="/wp-content/themes/rapt/dist/images/logo.svg" width="18" height="auto" />
+						</a>
 					</nav><!-- #site-navigation -->
-
 					</div>
-					<a class="rapt-logo-wrap" href="/">
+
+					<a class="rapt-logo-wrap desktop-only" href="/">
 						<img class="rapt-logo" src="/wp-content/themes/rapt/dist/images/logo.svg" width="18" height="auto" />
 					</a>
+
 			</header><!-- #masthead -->
 
 
@@ -97,7 +101,9 @@ get_header('home'); ?>
 					</div>
 
 					<div class="clearfix"></div>
-					<div class="more-link-wrapper"><a class="more-link" href="/work">More</a></div>
+					<div class="container">
+						<div class="more-link-wrapper"><a class="more-link" href="/work">More</a></div>
+					</div>
 
 
 			</section>
@@ -110,7 +116,7 @@ get_header('home'); ?>
 
 					<div class="row clearfix">
 
-						<div class="primary-articles col-sm-7">
+						<div class="primary-articles col-md-7">
 								<?php
 
 									global $post;
@@ -147,7 +153,7 @@ get_header('home'); ?>
 									wp_reset_postdata();?>
 						</div>
 
-						<div class="secondary-articles col-sm-3 col-sm-offset-2">
+						<div class="secondary-articles col-md-3 col-md-offset-2">
 							<?php
 
 									global $post;
@@ -181,11 +187,9 @@ get_header('home'); ?>
 									wp_reset_postdata();?>
 						</div>
 						<div class="clearfix"></div>
-						<div class="more-link-wrapper col-sm-8"><a class="more-link" href="/perspectives">More</a></div>
-
 					</div>
-
 				</div>
+				<div class="more-link-wrapper"><a class="more-link" href="/perspectives">More</a></div>
 
 			</section>
 

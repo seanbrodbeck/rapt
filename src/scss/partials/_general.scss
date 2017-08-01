@@ -28,6 +28,19 @@ a {
 
 }
 
+.container {
+	width: auto;
+	@media (min-width: $bp-sm-min) {
+		width: auto;
+	}
+	@media (min-width: $bp-md-min) {
+		width: 970px;
+	}
+	@media (min-width: $bp-lg-min) {
+		width: 1170px;
+	}
+}
+
 .full-width-wrap {
 	padding: 0 calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
 }
@@ -69,8 +82,11 @@ a {
 
 
 .more-link-wrapper {
-	text-align: center;
-	margin: 50px 0 0;
+	text-align: left;
+	margin: 0 auto;
+	max-width:1290px;
+	padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400));
+	padding-left:15px;
 	.more-link {
 		font-family: 'noe-display';
 		font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));

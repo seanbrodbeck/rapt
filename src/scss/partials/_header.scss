@@ -12,7 +12,7 @@ header {
 	}
 	.main-navigation {
 		width:auto;
-		float:left;
+		float:none;
 		@media (min-width: $bp-sm3-min) {
 			width:100%;
 			float:none;
