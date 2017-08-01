@@ -70,7 +70,7 @@ function animateTransition() {
     resizeHandler();
   }
 
-  function addImageHover() {
+  function addImageHover(i) {
     var testVar = 'whatever';
     qScrollPositions[i] = 0;
     questions[i].addEventListener('mouseenter', function(){
