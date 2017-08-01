@@ -16,7 +16,7 @@ get_header(); ?>
 			<section class="single-hero" style="background:url('<?php the_field("work_hero_image"); ?>') no-repeat center;background-size:cover;">
 	      <div class="container">
 	        <div class="row clearfix">
-	          <div class="col-sm-5">
+	          <div class="col-md-5">
 	            <h1><?php the_title(); ?></h1>
 	          </div>
 	        </div>
@@ -26,7 +26,7 @@ get_header(); ?>
 	    <section class="single-intro">
 	      <div class="container">
 	        <div class="row single-intro-row clearfix">
-	          <div class="col-sm-6">
+	          <div class="col-md-6">
 	            <h2><?php the_field("work_header_text"); ?></h2>
 	            <?php $terms = get_the_terms( get_the_ID(), 'work_categories' );
 
@@ -47,7 +47,7 @@ get_header(); ?>
 
               <?php endif; ?>
 	          </div>
-	          <div class="col-sm-5 col-sm-offset-1">
+	          <div class="col-md-5 col-md-offset-1">
 	            <p><?php the_field("work_subheader_text"); ?></p>
 	          </div>
 
@@ -67,7 +67,7 @@ get_header(); ?>
 
 	           <?php if(get_field('press')): ?>
 
-								<div class="col-sm-6">
+								<div class="col-md-6 press-col">
 								<h2>Press</h2>
 								<?php while(has_sub_field('press')): ?>
 
@@ -83,7 +83,7 @@ get_header(); ?>
 
 							 <?php if(get_field('awards')): ?>
 
-								<div class="col-sm-6">
+								<div class="col-md-6">
 									<h2>Awards</h2>
 									<?php while(has_sub_field('awards')): ?>
 

@@ -76,7 +76,7 @@ main {
 		&.single-hero {
 			padding: calc(400px + (534 - 400) * (100vw - 320px) / (1440 - 320)) 0 calc(24px + (80 - 24) * (100vw - 320px) / (1440 - 320));
 			@media (min-width: $bp-xlg-min) {
-				padding: 534px 80px;
+				padding: 534px 80px 80px;
 			}
 			h1 {
 				font-size: calc(32px + (64 - 32) * (100vw - 320px) / (1440 - 320));
@@ -141,6 +141,12 @@ main {
 					}
 				}
 			}
+			.press-col {
+				margin-bottom:90px;
+				@media (min-width: $bp-md-min) {
+					margin-bottom:0;
+				}
+			}
 		}
 		&.featured-products {
 			h2 {
@@ -153,6 +159,8 @@ main {
 				margin-bottom: 40px;
 			}
 			.work-row {
+				margin-left: -15px;
+				margin-right: -15px;
 				h2 {
 					margin-bottom: 15px;
 				}
@@ -182,6 +190,9 @@ main {
 				.work-cats {
 					color: $footer-gray;
 				}
+			}
+			.more-link-wrapper {
+				/*padding-left:0;*/
 			}
 		}
 
@@ -344,8 +355,6 @@ main {
 				}
 			}
 		}
-
-
 	}
 
 	.work-grid {
@@ -363,6 +372,9 @@ main {
 				&.work-row-twothirds-onethird + .work-row-onethird-twothirds .work-row {
 					@include align-items(flex-end);
 					margin-bottom:50px;
+					@media (min-width: $bp-sm-min) {
+						margin-bottom:100px;
+					}
 				}
 			}
 			@media (min-width: $bp-md-min) {
@@ -372,7 +384,7 @@ main {
 			}
 			.container {
 				padding:0;
-				@media (min-width: $bp-sm-min) {
+				@media (min-width: $bp-md-min) {
 					padding-right: 15px;
   				padding-left: 15px;
 				}
@@ -383,6 +395,8 @@ main {
 				padding-right: 0;
 				@media (min-width: $bp-sm-min) {
 					margin-bottom: 0;
+					padding-left: 15px;
+					padding-right: 15px;
 				}
 				img {
 					width: 100%;
