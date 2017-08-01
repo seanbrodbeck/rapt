@@ -1031,10 +1031,7 @@ footer {
     footer .menu li a {
       color: #FFFFFF; }
   footer .footer-top {
-    margin-top: 30px; }
-    @media (min-width: 768px) {
-      footer .footer-top {
-        margin-top: 80px; } }
+    margin-top: 80px; }
     footer .footer-top p {
       font-size: 16px;
       line-height: 1.5;
@@ -1045,10 +1042,10 @@ footer {
     line-height: 1.5;
     font-family: 'Fakt-Blond';
     color: #555555;
-    margin: 30px -15px 30px; }
+    margin: 30px -15px 15px; }
     @media (min-width: 768px) {
       footer .footer-bottom {
-        margin: 90px -15px 60px; } }
+        margin: 90px -15px 90px; } }
     footer .footer-bottom .footer-contact-addresses {
       display: none; }
       @media (min-width: 768px) {
@@ -1060,8 +1057,7 @@ footer {
           display: block;
           float: right; } }
     footer .footer-bottom .footer-social {
-      float: none;
-      margin-top: 40px; }
+      float: none; }
       @media (min-width: 961px) {
         footer .footer-bottom .footer-social {
           float: left;
@@ -1098,6 +1094,7 @@ footer {
           -ms-flex-pack: space-between;
           height: 100%; } }
       footer .footer-bottom .footer-social ul li {
+        font-size: calc(12px + (16 - 12) * (100vw - 320px) / (1440 - 320));
         display: inline-block;
         line-height: 1.6; }
         @media (min-width: 961px) {
@@ -1113,11 +1110,16 @@ footer {
         color: #FFFFFF;
         font-weight: normal;
         -webkit-font-smoothing: antialiased; }
+  footer .footer-subscribe {
+    margin-top: 56px; }
+    @media (min-width: 961px) {
+      footer .footer-subscribe {
+        margin-top: 0; } }
   footer .footer-subscribe input {
     background: transparent;
     color: #FFFFFF !important;
     flex-basis: 80%;
-    font-size: 16px;
+    font-size: calc(12px + (16 - 12) * (100vw - 320px) / (1440 - 320));
     line-height: 1.5;
     font-family: 'Fakt-Blond';
     border: none;
@@ -1125,7 +1127,8 @@ footer {
     padding: 0 8px 0 0; }
   footer .footer-subscribe p {
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    font-size: calc(12px + (16 - 12) * (100vw - 320px) / (1440 - 320)); }
   footer .footer-subscribe a {
     color: white;
     opacity: 1; }
