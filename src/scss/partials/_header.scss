@@ -206,7 +206,7 @@ header .nav-wrap #site-navigation {
 	header {
 		.nav-wrap {
 			#site-navigation {
-				padding: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 36px;
+				padding: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
 				position: fixed;
 				left: 0;
 				top: -30px;
