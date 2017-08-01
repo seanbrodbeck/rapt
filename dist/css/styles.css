@@ -1236,7 +1236,11 @@ footer {
           display: block;
           float: right; } }
     footer .footer-bottom .footer-social {
-      float: none; }
+      float: none;
+      margin-top: 30px; }
+      @media (min-width: 768px) {
+        footer .footer-bottom .footer-social {
+          margin-top: 30px; } }
       @media (min-width: 961px) {
         footer .footer-bottom .footer-social {
           float: left;
@@ -1312,9 +1316,9 @@ footer {
     color: white;
     opacity: 1; }
 
-.home footer, .single-work_post_type footer {
+.home footer, .single-work_post_type footer, .single-things_post_type footer {
   margin-top: 0; }
-  .home footer .footer-top, .single-work_post_type footer .footer-top {
+  .home footer .footer-top, .single-work_post_type footer .footer-top, .single-things_post_type footer .footer-top {
     border-top: 1px solid #4c4c4c;
     margin-top: 0;
     padding-top: 80px; }

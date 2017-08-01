@@ -61,6 +61,10 @@ footer {
   	}
   	.footer-social {
 			float:none;
+			margin-top:30px;
+			@media (min-width: $bp-sm-min) {
+				margin-top:30px;
+			}
 			@media (min-width: $bp-sm3-min) {
 				float:left;
 				margin-top: 0;
@@ -133,7 +137,7 @@ footer {
 	}
 }
 
-.home, .single-work_post_type {
+.home, .single-work_post_type, .single-things_post_type {
 	footer {
 		margin-top: 0;
 		.footer-top {
