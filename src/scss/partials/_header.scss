@@ -3,7 +3,9 @@ header {
 		padding: 0;
 	}
 	.nav-wrap {
-		padding: 35px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 105px;
+		padding: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 105px;
+		position: relative;
+		height: 140px;
 		#site-navigation {
 			position: relative;
 			transform: translate3d(0,0,0);
@@ -45,33 +47,36 @@ header {
 			}
 		}
 		&.toggled {
-			#primary-menu {
-				position:fixed!important;
-				left: 0;
-				right: 0;
-				top: 0;
-				bottom: 0;
-				background:$black;
-				padding: 16px;
-				@media screen and (min-width: 37.5em) {
-					display:block;
+			@media (max-width: $bp-sm3-min) {
+				#primary-menu {
+					position:fixed !important;
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					height: auto;
+					background:$black;
+					padding: 16px;
+					@media screen and (min-width: 37.5em) {
+						display:block;
+					}
+					@media (min-width: $bp-sm3-min) {
+						position:static;
+					}
 				}
-				@media (min-width: $bp-sm3-min) {
-					position:static;
+				.mobile-nav-close {
+					display: block;
+					svg {
+						width: 100%;
+						height: 100%;
+					}
 				}
-			}
-			.mobile-nav-close {
-				display: block;
-				svg {
-					width: 100%;
-					height: 100%;
+				.mobile-nav-locations {
+					opacity: 1;
+					visibility: visible;
+					pointer-events: auto;
+					transition: .2s;
 				}
-			}
-			.mobile-nav-locations {
-				opacity: 1;
-				visibility: visible;
-				pointer-events: auto;
-				transition: .2s;
 			}
 		}
 		#primary-menu {
@@ -136,11 +141,16 @@ header {
 
 
 .rapt-logo-wrap {
-	float:right;
+	position: fixed;
+	right: 16px;
+	top: 16px;
+	z-index: 21;
+
 	@media (min-width: $bp-sm3-min) {
 		display: block;
 		position: fixed;
 		bottom: 60px;
+		top: auto;
 		right: 31px;
 		z-index: 20;
 		float:none;
@@ -157,15 +167,17 @@ header {
 
 
 .home {
-	header {
-		.nav-wrap {
-			padding: 100px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
-		}
-		.main-navigation {
-			#primary-menu {
-				li {
-					a {
-						color: $black;
+	@media (min-width: $bp-sm3-min) {
+		header {
+			.nav-wrap {
+				padding: 100px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
+			}
+			.main-navigation {
+				#primary-menu {
+					li {
+						a {
+							color: $black;
+						}
 					}
 				}
 			}
@@ -173,12 +185,28 @@ header {
 	}
 }
 
-.is-nav-fixed,
-body:not(.home) {
+header .nav-wrap #site-navigation {
+	&.toggled {
+		padding: 31px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 36px;
+		position: fixed;
+		transform: translate3d(0,30px,0);
+		width: 100%;
+		background: white;
+		z-index: 20;
+		top:-30px;
+		bottom:0;
+		left:0;
+		right:0;
+		height: 100vh;
+		z-index: 40 !important;
+	}
+}
+
+.is-nav-fixed {
 	header {
 		.nav-wrap {
 			#site-navigation {
-				padding: 31px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 36px;
+				padding: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 36px;
 				position: fixed;
 				left: 0;
 				top: -30px;
@@ -191,6 +219,7 @@ body:not(.home) {
 					bottom:0;
 					left:0;
 					right:0;
+					height: 100vh;
 				}
 			}
 		}

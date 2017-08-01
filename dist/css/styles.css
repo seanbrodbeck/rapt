@@ -542,7 +542,9 @@ header.entry-header {
   padding: 0; }
 
 header .nav-wrap {
-  padding: 35px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 105px; }
+  padding: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 105px;
+  position: relative;
+  height: 140px; }
   header .nav-wrap #site-navigation {
     position: relative;
     transform: translate3d(0, 0, 0);
@@ -577,30 +579,33 @@ header .main-navigation {
       font-size: 14px; }
     header .main-navigation .mobile-nav-locations p:nth-of-type(2) {
       color: #777777; }
-  header .main-navigation.toggled #primary-menu {
-    position: fixed !important;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: #000000;
-    padding: 16px; }
-    @media screen and (min-width: 37.5em) {
-      header .main-navigation.toggled #primary-menu {
-        display: block; } }
-    @media (min-width: 961px) {
-      header .main-navigation.toggled #primary-menu {
-        position: static; } }
-  header .main-navigation.toggled .mobile-nav-close {
-    display: block; }
-    header .main-navigation.toggled .mobile-nav-close svg {
-      width: 100%;
-      height: 100%; }
-  header .main-navigation.toggled .mobile-nav-locations {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transition: .2s; }
+  @media (max-width: 961px) {
+    header .main-navigation.toggled #primary-menu {
+      position: fixed !important;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      height: auto;
+      background: #000000;
+      padding: 16px; } }
+  @media screen and (max-width: 961px) and (min-width: 37.5em) {
+    header .main-navigation.toggled #primary-menu {
+      display: block; } }
+  @media (max-width: 961px) and (min-width: 961px) {
+    header .main-navigation.toggled #primary-menu {
+      position: static; } }
+  @media (max-width: 961px) {
+    header .main-navigation.toggled .mobile-nav-close {
+      display: block; }
+      header .main-navigation.toggled .mobile-nav-close svg {
+        width: 100%;
+        height: 100%; }
+    header .main-navigation.toggled .mobile-nav-locations {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: .2s; } }
   header .main-navigation #primary-menu li {
     display: block;
     float: none;
@@ -656,12 +661,16 @@ header .main-navigation {
       display: none; } }
 
 .rapt-logo-wrap {
-  float: right; }
+  position: fixed;
+  right: 16px;
+  top: 16px;
+  z-index: 21; }
   @media (min-width: 961px) {
     .rapt-logo-wrap {
       display: block;
       position: fixed;
       bottom: 60px;
+      top: auto;
       right: 31px;
       z-index: 20;
       float: none; } }
@@ -673,15 +682,28 @@ header .main-navigation {
         width: 18px;
         height: auto; } }
 
-.home header .nav-wrap {
-  padding: 100px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)); }
+@media (min-width: 961px) {
+  .home header .nav-wrap {
+    padding: 100px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)); }
+  .home header .main-navigation #primary-menu li a {
+    color: #000000; } }
 
-.home header .main-navigation #primary-menu li a {
-  color: #000000; }
-
-.is-nav-fixed header .nav-wrap #site-navigation,
-body:not(.home) header .nav-wrap #site-navigation {
+header .nav-wrap #site-navigation.toggled {
   padding: 31px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 36px;
+  position: fixed;
+  transform: translate3d(0, 30px, 0);
+  width: 100%;
+  background: white;
+  z-index: 20;
+  top: -30px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 40 !important; }
+
+.is-nav-fixed header .nav-wrap #site-navigation {
+  padding: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 36px;
   position: fixed;
   left: 0;
   top: -30px;
@@ -689,12 +711,12 @@ body:not(.home) header .nav-wrap #site-navigation {
   width: 100%;
   background: white;
   z-index: 20; }
-  .is-nav-fixed header .nav-wrap #site-navigation.toggled,
-  body:not(.home) header .nav-wrap #site-navigation.toggled {
+  .is-nav-fixed header .nav-wrap #site-navigation.toggled {
     top: -30px;
     bottom: 0;
     left: 0;
-    right: 0; }
+    right: 0;
+    height: 100vh; }
 
 .is-nav-fixed header .nav-wrap #site-navigation {
   background: white; }

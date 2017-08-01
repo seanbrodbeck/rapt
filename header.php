@@ -61,13 +61,10 @@
 						<?php the_field('footer_location_3', 'option'); ?>
 					</div>
 				</div>
-				<a class="rapt-logo-wrap mobile-only" href="/">
-					<img class="rapt-logo" src="/wp-content/themes/rapt/dist/images/logo.svg" width="18" height="auto" />
-				</a>
 			</nav><!-- #site-navigation -->
 			</div>
 
-			<a class="rapt-logo-wrap desktop-only" href="/">
+			<a class="rapt-logo-wrap" href="/">
 				<img class="rapt-logo" src="/wp-content/themes/rapt/dist/images/logo.svg" width="18" height="auto" />
 			</a>
 
