@@ -17,7 +17,9 @@ main {
 		}
 
 		&.home-about {
-
+			.more-link-wrapper {
+				margin: 0;
+			}
 		}
 
 		&.work-row-full {

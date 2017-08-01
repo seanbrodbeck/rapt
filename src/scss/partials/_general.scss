@@ -65,7 +65,7 @@ a {
 
 
 .more-link-wrapper {
-	text-align: center;
+	text-align: left;
 	margin: 50px 0 0;
 	.more-link {
 		font-family: 'noe-display';
@@ -79,7 +79,7 @@ a {
 .black-bkg {
 	.more-link {
 		color: $white;
-		opacity: .2;
+		opacity: .5;
 	}
 }
 

@@ -181,7 +181,7 @@ get_header('home'); ?>
 									wp_reset_postdata();?>
 						</div>
 						<div class="clearfix"></div>
-						<div class="more-link-wrapper"><a class="more-link" href="/perspectives">More</a></div>
+						<div class="more-link-wrapper col-sm-8"><a class="more-link" href="/perspectives">More</a></div>
 
 					</div>
 
@@ -203,7 +203,7 @@ get_header('home'); ?>
 
 						<div class="clearfix"></div>
 
-						<div class="more-link-wrapper"><a class="more-link" href="/studio">More</a></div>
+						<div class="more-link-wrapper col-sm-8"><a class="more-link" href="/studio">More</a></div>
 
 					</div>
 
