@@ -31,13 +31,6 @@ function animateTransition() {
     }
     animateTransition();
   })
-
-  setTimeout(function(){
-    el_transition.classList.add('is-off')
-    setTimeout(function(){
-      cancelAnimationFrame(transitionRAF);
-    },1000)
-  },1500)
 }
 
 (function($) {
@@ -51,6 +44,14 @@ function animateTransition() {
   var isActive = false;
 
   function initIntroScript() {
+
+    setTimeout(function(){
+      el_transition.classList.add('is-off')
+      setTimeout(function(){
+        cancelAnimationFrame(transitionRAF);
+      },1000)
+    },Math.floor(Math.random() * 2000 + 500))
+
     Array.prototype.map.call(questions, function(q, i) {
       if (i < questions.length) {
         addImageHover(i);
