@@ -209,6 +209,8 @@ a {
 	.close-filter-overlay, .close-search-overlay {
 		float: right;
 		cursor: pointer;
+		position: relative;
+		z-index: 2;
 	}
 	.container {
 		margin-top:60px;
@@ -250,7 +252,7 @@ a {
 		height: auto;
 		.filter-listing {
 			margin-bottom:30px;
-			@media (min-width: $bp-sm-min) { 
+			@media (min-width: $bp-sm-min) {
 				margin-bottom:80px;
 			}
 			h2 {

@@ -370,7 +370,9 @@ a {
   padding: 70px 0; }
   .search-filter-overlay .close-filter-overlay, .search-filter-overlay .close-search-overlay {
     float: right;
-    cursor: pointer; }
+    cursor: pointer;
+    position: relative;
+    z-index: 2; }
   .search-filter-overlay .container {
     margin-top: 60px; }
   .search-filter-overlay .filter-options .filter-option {
