@@ -14,24 +14,64 @@ header {
 		width:auto;
 		float:left;
 		@media (min-width: $bp-sm3-min) {
-			width:100%;
-			float:none;
+			width: 100%;
+			float: none;
+		}
+		.mobile-nav-close {
+			width: 18px;
+			height: 18px;
+			position: absolute;
+			right: 16px;
+			top: 20px;
+			display: none;
+		}
+		.mobile-nav-locations {
+			visibility: hidden;
+			opacity: 0;
+			position: absolute;
+			bottom: 20px;
+			left: 16px;
+			pointer-events: none;
+			.footer-location {
+				display: flex;
+			}
+			p {
+				margin-right: 10px;
+				color: white;
+				font-size: 14px;
+			}
+			p:nth-of-type(2) {
+				color: $grayAlt;
+			}
 		}
 		&.toggled {
 			#primary-menu {
 				position:fixed!important;
-				left:0;
-				right:0;
-				top:0;
-				bottom:0;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
 				background:$black;
-				padding:30px;
+				padding: 16px;
 				@media screen and (min-width: 37.5em) {
 					display:block;
 				}
 				@media (min-width: $bp-sm3-min) {
 					position:static;
 				}
+			}
+			.mobile-nav-close {
+				display: block;
+				svg {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.mobile-nav-locations {
+				opacity: 1;
+				visibility: visible;
+				pointer-events: auto;
+				transition: .2s;
 			}
 		}
 		#primary-menu {

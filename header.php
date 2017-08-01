@@ -41,6 +41,26 @@
 						'menu_id'        => 'primary-menu',
 					) );
 				?>
+				<div class="mobile-nav-close mobile-only">
+					<svg width="35" height="33" viewBox="0 0 35 33">
+				    <g fill="none" fill-rule="evenodd" stroke="#979797" stroke-width="2" stroke-linecap="square">
+				      <path d="M33.649.351L1.673 32.327M1.351.351l31.976 31.976"/>
+				    </g>
+					</svg>
+				</div>
+				<div class="mobile-nav-locations mobile-only">
+					<div class="footer-location footer-bottom-column">
+						<?php the_field('footer_location_1', 'option'); ?>
+					</div>
+
+					<div class="footer-location footer-bottom-column">
+						<?php the_field('footer_location_2', 'option'); ?>
+					</div>
+
+					<div class="footer-location footer-bottom-column">
+						<?php the_field('footer_location_3', 'option'); ?>
+					</div>
+				</div>
 				<a class="rapt-logo-wrap mobile-only" href="/">
 					<img class="rapt-logo" src="/wp-content/themes/rapt/dist/images/logo.svg" width="18" height="auto" />
 				</a>
@@ -51,7 +71,7 @@
 				<img class="rapt-logo" src="/wp-content/themes/rapt/dist/images/logo.svg" width="18" height="auto" />
 			</a>
 
-			
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
