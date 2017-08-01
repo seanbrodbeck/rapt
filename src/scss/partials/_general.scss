@@ -375,6 +375,13 @@ a {
 					padding:0;
 				}
 			}
+			.category-list {
+				padding-left:15px;
+				padding-right:15px;
+				@media (min-width: $bp-sm-min) {
+					padding:0;
+				}
+			}
 		}
 	}
 	&#search-overlay {

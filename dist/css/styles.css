@@ -517,6 +517,12 @@ a {
         @media (min-width: 768px) {
           .search-filter-overlay .filter-listings .filter-listing .work-cats {
             padding: 0; } }
+      .search-filter-overlay .filter-listings .filter-listing .category-list {
+        padding-left: 15px;
+        padding-right: 15px; }
+        @media (min-width: 768px) {
+          .search-filter-overlay .filter-listings .filter-listing .category-list {
+            padding: 0; } }
   .search-filter-overlay#search-overlay input {
     display: block;
     font-family: 'noe-display';
