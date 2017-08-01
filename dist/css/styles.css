@@ -664,10 +664,18 @@ header .main-navigation {
   position: fixed;
   right: 16px;
   top: 16px;
-  z-index: 21; }
+  z-index: 21;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: .2s ease-out;
+  transform: translate3d(0, -20px, 0); }
   @media (min-width: 961px) {
     .rapt-logo-wrap {
       display: block;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
       position: fixed;
       bottom: 60px;
       top: auto;
@@ -701,6 +709,11 @@ header .nav-wrap #site-navigation.toggled {
   right: 0;
   height: 100vh;
   z-index: 40 !important; }
+
+.is-nav-fixed .rapt-logo-wrap {
+  opacity: 1 !important;
+  visibility: visible;
+  transform: translate3d(0, 0, 0); }
 
 .is-nav-fixed header .nav-wrap #site-navigation {
   padding: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));

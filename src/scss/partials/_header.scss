@@ -145,9 +145,17 @@ header {
 	right: 16px;
 	top: 16px;
 	z-index: 21;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: .2s ease-out;
+	transform: translate3d(0, -20px, 0);
 
 	@media (min-width: $bp-sm3-min) {
 		display: block;
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
 		position: fixed;
 		bottom: 60px;
 		top: auto;
@@ -203,6 +211,11 @@ header .nav-wrap #site-navigation {
 }
 
 .is-nav-fixed {
+	.rapt-logo-wrap {
+		opacity: 1 !important;
+		visibility: visible;
+		transform: translate3d(0, 0, 0);
+	}
 	header {
 		.nav-wrap {
 			#site-navigation {
