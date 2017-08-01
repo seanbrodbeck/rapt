@@ -366,6 +366,8 @@ main {
 					color: $black;
 					font-family: 'noe-display';
 					padding: 0 15px;
+					margin-top:25px;
+					margin-bottom:8px;
 					@media (min-width: $bp-sm-min) {
 						padding: 0;
 					}
