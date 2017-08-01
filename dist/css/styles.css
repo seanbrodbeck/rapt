@@ -223,7 +223,7 @@ a {
     text-decoration: none; }
 
 #page {
-  /*overflow: hidden;*/ }
+  overflow: hidden; }
 
 .nopad {
   padding: 0; }

@@ -1,5 +1,4 @@
 main {
-
 	section {
 
 		padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400));
@@ -32,7 +31,7 @@ main {
 			@media (min-width: $bp-sm-min) {
 				padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400));
 			}
-		
+
 			h1 {
 				color:$black;
 			}
@@ -595,6 +594,6 @@ main {
 			.nav-previous {
 				display:none;
 			}
-		}	
+		}
 	}
 }
