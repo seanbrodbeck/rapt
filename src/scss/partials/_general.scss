@@ -275,6 +275,10 @@ a {
 		z-index: 2;
 		width:18px;
 		height:auto;
+		transition: .2s ease-out;
+		&:hover {
+			transform: rotate(90deg);
+		}
 		@media (min-width: $bp-sm-min) {
 			float: right;
 			cursor: pointer;

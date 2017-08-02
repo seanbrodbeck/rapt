@@ -127,7 +127,9 @@ function animateTransition() {
         revealRaptLogo()
       } else {
         document.body.classList.remove('is-nav-fixed')
-        hideRaptLogo()
+        if (scrollTop > 200) {
+          hideRaptLogo()
+        }
       }
     }
   }

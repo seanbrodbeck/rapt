@@ -95,13 +95,9 @@ header {
 				@media (min-width: $bp-sm-min) {
 					font-size: 40px;
 					line-height: 1.2;
-					opacity: 1;
-					visibility: visible;
 				}
 				a, a:visited {
 					color: $white;
-					opacity: 0;
-					visibility: hidden;
 					transition: .3s;
 					&:hover {
 						color: $white;

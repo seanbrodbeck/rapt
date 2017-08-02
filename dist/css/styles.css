@@ -437,7 +437,10 @@ a {
     right: 15px;
     z-index: 2;
     width: 18px;
-    height: auto; }
+    height: auto;
+    transition: .2s ease-out; }
+    .search-filter-overlay .close-filter-overlay:hover, .search-filter-overlay .close-search-overlay:hover {
+      transform: rotate(90deg); }
     @media (min-width: 680px) {
       .search-filter-overlay .close-filter-overlay, .search-filter-overlay .close-search-overlay {
         float: right;
@@ -648,13 +651,9 @@ header .main-navigation {
     @media (min-width: 680px) {
       header .main-navigation #primary-menu li {
         font-size: 40px;
-        line-height: 1.2;
-        opacity: 1;
-        visibility: visible; } }
+        line-height: 1.2; } }
     header .main-navigation #primary-menu li a, header .main-navigation #primary-menu li a:visited {
       color: #FFFFFF;
-      opacity: 0;
-      visibility: hidden;
       transition: .3s; }
       header .main-navigation #primary-menu li a:hover, header .main-navigation #primary-menu li a:visited:hover {
         color: #FFFFFF; }
