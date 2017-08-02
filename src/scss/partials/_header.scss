@@ -66,6 +66,10 @@ header {
 					@media (min-width: $bp-sm3-min) {
 						position:static;
 					}
+					li a {
+						opacity: 1;
+						visibility: visible;
+					}
 				}
 				.mobile-nav-close {
 					display: block;
@@ -91,9 +95,14 @@ header {
 				@media (min-width: $bp-sm-min) {
 					font-size: 40px;
 					line-height: 1.2;
+					opacity: 1;
+					visibility: visible;
 				}
 				a, a:visited {
 					color: $white;
+					opacity: 0;
+					visibility: hidden;
+					transition: .3s;
 					&:hover {
 						color: $white;
 					}
@@ -166,12 +175,27 @@ header {
 		z-index: 20;
 		float:none;
 	}
-	img {
-		width:15px;
-		height:auto;
-		@media (min-width: $bp-sm3-min) {
-			width:18px;
-			height:auto;
+	svg polyline {
+		transition: .1s ease-out;
+		transform: scaleX(0);
+		transform-origin: 0 0;
+		&:nth-of-type(even) {
+			transform-origin: 100% 0;
+		}
+		&:nth-of-type(2) {
+			transition-delay: .1s;
+		}
+		&:nth-of-type(3) {
+			transition-delay: .2s;
+		}
+		&:nth-of-type(4) {
+			transition-delay: .3s;
+		}
+		&:nth-of-type(5) {
+			transition-delay: .4s;
+		}
+		&:nth-of-type(6) {
+			transition-delay: .5s;
 		}
 	}
 }
@@ -224,6 +248,7 @@ header .nav-wrap #site-navigation {
 		opacity: 1 !important;
 		visibility: visible;
 		transform: translate3d(0, 0, 0);
+		pointer-events: auto;
 	}
 	header {
 		.nav-wrap {

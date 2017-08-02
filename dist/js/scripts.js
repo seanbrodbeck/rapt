@@ -50,8 +50,9 @@ function animateTransition() {
       el_transition.classList.add('is-off')
       setTimeout(function(){
         cancelAnimationFrame(transitionRAF);
+        revealRaptLogo();
       },1000)
-    },Math.floor(Math.random() * 2000 + 500))
+    }, Math.floor(Math.random() * 2000 + 500))
 
     Array.prototype.map.call(questions, function(q, i) {
       if (i < questions.length) {
@@ -123,8 +124,10 @@ function animateTransition() {
     if (Math.abs(scrollAmount) > 4) {
       if (oldScrollTop > scrollTop + 4 && document.querySelector('#masthead').getBoundingClientRect().bottom < 0) {
         document.body.classList.add('is-nav-fixed')
+        revealRaptLogo()
       } else {
         document.body.classList.remove('is-nav-fixed')
+        hideRaptLogo()
       }
     }
   }
@@ -172,6 +175,13 @@ function animateTransition() {
   });
 
   // FILTER SEARCH
+  $('#search-overlay .quicksearch').on('keyup',function(){
+    if ($('#search-overlay .quicksearch').val() != '') {
+      $('.search-filter-overlay .container').addClass('active')
+    } else {
+      $('.search-filter-overlay .container').removeClass('active')
+    }
+  })
   $( ".filter-search-btn" ).click(function() {
     $( "#search-overlay" ).fadeIn( "fast", "linear" );
     $(".quicksearch").focus();
@@ -249,6 +259,17 @@ function animateTransition() {
         clientLogos.eq(i).addClass('active')
       }
     }
+  }
+
+  function revealRaptLogo() {
+    $('.rapt-logo polyline').css({
+      transform: 'scaleX(1)'
+    })
+  }
+  function hideRaptLogo() {
+    $('.rapt-logo polyline').css({
+      transform: 'scaleX(0)'
+    })
   }
 
 })( jQuery );

@@ -450,7 +450,11 @@ a {
   .search-filter-overlay .container {
     margin-top: 60px;
     padding-right: 0px;
-    padding-left: 0px; }
+    padding-left: 0px;
+    opacity: 0;
+    transition: .3s; }
+    .search-filter-overlay .container.active {
+      opacity: 1; }
     @media (min-width: 680px) {
       .search-filter-overlay .container {
         padding-right: 15px;
@@ -623,6 +627,9 @@ header .main-navigation {
     header .main-navigation.toggled #primary-menu {
       position: static; } }
   @media (max-width: 960px) {
+      header .main-navigation.toggled #primary-menu li a {
+        opacity: 1;
+        visibility: visible; }
     header .main-navigation.toggled .mobile-nav-close {
       display: block; }
       header .main-navigation.toggled .mobile-nav-close svg {
@@ -641,9 +648,14 @@ header .main-navigation {
     @media (min-width: 680px) {
       header .main-navigation #primary-menu li {
         font-size: 40px;
-        line-height: 1.2; } }
+        line-height: 1.2;
+        opacity: 1;
+        visibility: visible; } }
     header .main-navigation #primary-menu li a, header .main-navigation #primary-menu li a:visited {
-      color: #FFFFFF; }
+      color: #FFFFFF;
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s; }
       header .main-navigation #primary-menu li a:hover, header .main-navigation #primary-menu li a:visited:hover {
         color: #FFFFFF; }
   @media screen and (min-width: 37.5em) {
@@ -709,13 +721,22 @@ header .main-navigation {
       right: 31px;
       z-index: 20;
       float: none; } }
-  .rapt-logo-wrap img {
-    width: 15px;
-    height: auto; }
-    @media (min-width: 960px) {
-      .rapt-logo-wrap img {
-        width: 18px;
-        height: auto; } }
+  .rapt-logo-wrap svg polyline {
+    transition: .1s ease-out;
+    transform: scaleX(0);
+    transform-origin: 0 0; }
+    .rapt-logo-wrap svg polyline:nth-of-type(even) {
+      transform-origin: 100% 0; }
+    .rapt-logo-wrap svg polyline:nth-of-type(2) {
+      transition-delay: .1s; }
+    .rapt-logo-wrap svg polyline:nth-of-type(3) {
+      transition-delay: .2s; }
+    .rapt-logo-wrap svg polyline:nth-of-type(4) {
+      transition-delay: .3s; }
+    .rapt-logo-wrap svg polyline:nth-of-type(5) {
+      transition-delay: .4s; }
+    .rapt-logo-wrap svg polyline:nth-of-type(6) {
+      transition-delay: .5s; }
 
 @media (min-width: 960px) {
   .home header .nav-wrap {
@@ -748,7 +769,8 @@ header .nav-wrap #site-navigation.toggled {
 .is-nav-fixed .rapt-logo-wrap {
   opacity: 1 !important;
   visibility: visible;
-  transform: translate3d(0, 0, 0); }
+  transform: translate3d(0, 0, 0);
+  pointer-events: auto; }
 
 .is-nav-fixed header .nav-wrap #site-navigation {
   padding: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
