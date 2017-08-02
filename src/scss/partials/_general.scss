@@ -30,15 +30,26 @@ a {
 
 .container {
 	width: auto;
+	padding:0;
 	@media (min-width: $bp-sm-min) {
 		width: auto;
 	}
 	@media (min-width: $bp-md-min) {
-		width: 960px;
+		width: auto;
 	}
 	@media (min-width: $bp-lg-min) {
-		width: 1280px;
+		width: 100%;
+    max-width: 1280px;
 	}
+	@media (min-width: $bp-xlg-min) {
+		width: 100%;
+    max-width: 1280px;
+	}
+}
+
+.row {
+	margin-left:0;
+	margin-right:0;
 }
 
 .full-width-wrap {
@@ -48,11 +59,6 @@ a {
 	}
 }
 
-.container {
-	@media (min-width: $bp-xlg-min) {
-		width: 1290px;
-	}
-}
 
 .peach-bkg {
 	background: $peach;
@@ -88,7 +94,7 @@ a {
 	text-align: left;
 	margin: 0 auto;
 	max-width:1290px;
-	padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400));
+	padding: calc(15px + (80 - 15) * (100vw - 400px) / (1440 - 400));
 	padding-left:15px;
 	@media (min-width: $bp-xlg-min) {
 		padding: 80px;
@@ -133,9 +139,13 @@ a {
 
 .primary-articles {
 	padding:0;
-	@media (min-width: $bp-sm-min) {
+	@media (min-width: $bp-lg-min) {
 		padding-right: 15px;
     padding-left: 15px;
+	}
+	img {
+		width:100%;
+		height:auto;
 	}
 	p {
 		font-family: 'noe-display';

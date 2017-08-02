@@ -11,7 +11,7 @@
     <div class="work-row work-row-full" style="background:url('<?php the_post_thumbnail_url("full"); ?>') no-repeat center;background-size:cover;">
       <div class="container">
         <div class="row clearfix">
-          <div class="col-md-5 col-sm-7">
+          <div class="col-lg-5 col-md-6 col-sm-7">
             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> <span><?php the_field('work_excerpt'); ?></span></a></h2>
 
             <?php $terms = get_the_terms( get_the_ID(), 'work_categories' );

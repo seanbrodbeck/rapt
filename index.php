@@ -20,10 +20,8 @@ get_header(); ?>
 			<div class="full-width-wrap">
 
 				<div class="filters row clearfix">
-					<div class="col-sm-12">
-						<span class="filter-toggle">Filter</span>
-						<img class="filter-search-btn" src="/wp-content/themes/rapt/dist/images/search.svg" width="32" height="auto"/>
-					</div>
+					<span class="filter-toggle">Filter</span>
+					<img class="filter-search-btn" src="/wp-content/themes/rapt/dist/images/search.svg" width="32" height="auto"/>
 				</div>
 
 			</div>

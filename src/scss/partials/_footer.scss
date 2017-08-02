@@ -3,9 +3,9 @@ footer {
 	background: $black;
 	margin-top: 30px;
 	padding-top: 0;
-	/* padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400)); */
 	@media (min-width: $bp-sm-min) {
 		margin-top: 90px;
+		padding: calc(15px + (80 - 15) * (100vw - 400px) / (1440 - 400));
 	}
 	a, a:visited {
 		color: $white;
@@ -50,7 +50,7 @@ footer {
   	line-height: 1.5;
   	font-family: 'Fakt-Blond';
   	color: $footer-gray;
-  	margin: 30px -15px 15px;
+  	margin: 30px 0 15px;
   	@media (min-width: $bp-sm-min) {
   		margin: 90px -15px 90px;
   	}
@@ -79,6 +79,10 @@ footer {
 		}
 
   	.footer-social {
+  		@media (min-width: $bp-sm-min) {
+				padding-left:30px;
+				padding-right:30px;
+			}
 			ul {
 				margin: 0;
 				padding: 0;
