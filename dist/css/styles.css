@@ -111,7 +111,6 @@ a:hover, a:active {
 
 .intro {
   width: 100vw;
-  height: 100vh;
   overflow: hidden;
   font-family: 'noe-display-medium';
   font-size: calc(25px + (64 - 25) * (100vw - 400px) / (1440 - 400));
