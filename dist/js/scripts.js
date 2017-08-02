@@ -144,6 +144,7 @@ function animateTransition() {
   initIntroScript();
 
   // Toggle Search and Filter
+
   $( ".filter-toggle" ).click(function() {
     $( "#filter-overlay" ).fadeIn( "fast", "linear" );
 
@@ -231,6 +232,24 @@ function animateTransition() {
     $( ".team-members div" ).fadeIn().removeClass('active');
     $('.team-members .team-member-group:first').addClass("active");
   });
+
+  // Logo Carousel
+  var clientLogos = $('.clients .carousel .carousel-item');
+  if (clientLogos.length > 4) {
+    var clientGroup = 0;
+    cycleClientLogos();
+    setInterval(cycleClientLogos,5000)
+    function cycleClientLogos(){
+      clientGroup++;
+      if (clientGroup > Math.floor(clientLogos.length/4)) {
+        clientGroup = 1;
+      }
+      clientLogos.removeClass('active')
+      for (var i = clientGroup * 4 - 4; i < clientGroup * 4; i++) {
+        clientLogos.eq(i).addClass('active')
+      }
+    }
+  }
 
 })( jQuery );
 

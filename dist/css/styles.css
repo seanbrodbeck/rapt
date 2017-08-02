@@ -1004,6 +1004,21 @@ main section {
       color: #000000; }
   main section.clients h2 {
     color: #000000; }
+  main section.clients .carousel-item {
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s; }
+    main section.clients .carousel-item:nth-of-type(4n+1) {
+      transition-delay: .15s; }
+    main section.clients .carousel-item:nth-of-type(4n+2) {
+      transition-delay: .3s; }
+    main section.clients .carousel-item:nth-of-type(4n+3) {
+      transition-delay: .45s; }
+    main section.clients .carousel-item:nth-of-type(4n) {
+      transition-delay: .6s; }
+  main section.clients .carousel-item.active {
+    opacity: 1;
+    visibility: visible; }
   main section.services h2 {
     margin-bottom: 44px;
     color: #000000; }
