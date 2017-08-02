@@ -289,6 +289,7 @@ function resizeHandler() { // NEEDS TO NOT BREAK ON RESIZE
         clearInterval(detectRenderInterval);
         el_primary_list = document.querySelector('.blog .primary-articles');
         el_secondary_list = document.querySelector('.blog .secondary-articles');
+        el_secondary_list.style.transform = 'translate3d(0, 0, 0)'
         scrollHeight = document.body.offsetHeight - WIN_H;
         primaryHeight = el_primary_list.offsetHeight;
         secondaryHeight = el_secondary_list.offsetHeight;
