@@ -209,9 +209,13 @@ main {
 		&.team {
 			h1 {
 				color: $black;
+				margin: 0 0 30px;
 			}
 			.team-sort {
 				position:relative;
+				margin-top: 30px;
+				margin-left: -15px;
+				margin-right: -15px;
 				.team-sort-links {
 
 					@media (min-width: $bp-md-min) {
@@ -246,36 +250,39 @@ main {
 						.team-member {
 							&:first-child {
 								@media (min-width: $bp-md-min) {
-									margin-left: 33.3333%;
+
 								}
 							}
 						}
 					}
 					.team-member {
+						padding: 0;
 						margin-bottom: 30px;
 						.inner {
 							position:relative;
+							img {
+								width: 100%;
+							}
 							&:hover {
 								.team-member-info {
 									opacity: 1;
 								}
 							}
 							.team-member-info {
-								position: absolute;
-								top: 0;
-								left: 0;
-								padding: 20px;
-								opacity: 0;
+								position: relative;
+								padding: 20px 0;
+								text-align: center;
+								width: 100%;
 								@include transition(opacity .5s ease);
 								h3 {
 									margin: 0;
-									font-size: 18px;
+									font-size: 20px;
 									line-height: 1.33;
 								}
 								p {
 									color: $light-gray;
 									margin: 0;
-									font-size: 18px;
+									font-size: 14px;
 									line-height: 1.5;
 								}
 							}
@@ -286,6 +293,7 @@ main {
 		}
 
 		&.we {
+			background: $off-white;
 			.we-wrapper {
 				position: relative;
 				.we-large-text {

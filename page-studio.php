@@ -24,15 +24,15 @@ get_header(); ?>
 			<section class="team">
 				<div class="container">
 					<div class="row clearfix">
-						<div class="col-md-6">
+						<div class="col-md-5">
 							<h1><?php the_field('team_header'); ?></h1>
+						</div>
+						<div class="col-md-6 col-md-offset-1 team-sort-links">
+							<?php the_field('team_filter_list'); ?>
 						</div>
 					</div>
 					<div class="row team-sort clearfix">
-						<div class="col-md-6 team-sort-links">
-							<?php the_field('team_filter_list'); ?>
-						</div>
-						<div class="col-md-9 col-md-offset-3 team-members">
+						<div class="col-md-12 team-members">
 								<!-- <div class="col-sm-4"></div> -->
 
 								<?php if( have_rows('team_member_groups') ): ?>
@@ -91,7 +91,7 @@ get_header(); ?>
 				</div>
 			</section>
 
-			<section class="clients light-gray-bkg">
+			<section class="clients">
 				<div class="container">
 					<div class="row clearfix">
 						<div class="col-sm-12">
@@ -101,7 +101,7 @@ get_header(); ?>
 								<div id="client_logo_row">
 									<?php while( have_rows('client_logo_row') ): the_row(); ?>
 
-									<div class="carousel-row">		
+									<div class="carousel-row">
 										<?php if( have_rows('client_logos') ): ?>
 											<div class="carousel clearfix">
 											<?php while( have_rows('client_logos') ): the_row();?>
@@ -109,12 +109,12 @@ get_header(); ?>
 											<?php endwhile; ?>
 											</div>
 										<?php endif; ?>
-									</div>	
+									</div>
 
 									<?php endwhile; ?>
 								</div>
 								<?php endif; ?>
-								
+
 						</div>
 					</div>
 

@@ -948,9 +948,13 @@ main section {
       main section.studio-hero {
         padding: 320px; } }
   main section.team h1 {
-    color: #000000; }
+    color: #000000;
+    margin: 0 0 30px; }
   main section.team .team-sort {
-    position: relative; }
+    position: relative;
+    margin-top: 30px;
+    margin-left: -15px;
+    margin-right: -15px; }
     @media (min-width: 960px) {
       main section.team .team-sort .team-sort-links {
         position: absolute;
@@ -974,57 +978,58 @@ main section {
           main section.team .team-sort .team-members .team-member-group {
             margin-left: 0px;
             margin-right: 0px; } }
-      @media (min-width: 960px) {
-        main section.team .team-sort .team-members .active .team-member:first-child {
-          margin-left: 33.3333%; } }
       main section.team .team-sort .team-members .team-member {
+        padding: 0;
         margin-bottom: 30px; }
         main section.team .team-sort .team-members .team-member .inner {
           position: relative; }
+          main section.team .team-sort .team-members .team-member .inner img {
+            width: 100%; }
           main section.team .team-sort .team-members .team-member .inner:hover .team-member-info {
             opacity: 1; }
           main section.team .team-sort .team-members .team-member .inner .team-member-info {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 20px;
-            opacity: 0;
+            position: relative;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
             -moz-transition: opacity 0.5s ease;
             -o-transition: opacity 0.5s ease;
             -webkit-transition: opacity 0.5s ease;
             transition: opacity 0.5s ease; }
             main section.team .team-sort .team-members .team-member .inner .team-member-info h3 {
               margin: 0;
-              font-size: 18px;
+              font-size: 20px;
               line-height: 1.33; }
             main section.team .team-sort .team-members .team-member .inner .team-member-info p {
               color: #a5a8a8;
               margin: 0;
-              font-size: 18px;
+              font-size: 14px;
               line-height: 1.5; }
-  main section.we .we-wrapper {
-    position: relative; }
-    main section.we .we-wrapper .we-large-text {
-      margin-bottom: 30px; }
-      @media (min-width: 960px) {
-        main section.we .we-wrapper .we-large-text {
-          position: absolute;
-          top: 0;
-          left: 0;
-          margin-bottom: 0; } }
-    main section.we .we-wrapper .we-block {
-      margin-bottom: 30px;
-      padding: 0; }
-      @media (min-width: 960px) {
-        main section.we .we-wrapper .we-block {
-          padding-right: 15px;
-          padding-left: 15px; } }
-  main section.we h2 {
-    color: #000000; }
-  main section.we p {
-    color: #a5a8a8; }
-    main section.we p strong {
+  main section.we {
+    background: #f9f9f9; }
+    main section.we .we-wrapper {
+      position: relative; }
+      main section.we .we-wrapper .we-large-text {
+        margin-bottom: 30px; }
+        @media (min-width: 960px) {
+          main section.we .we-wrapper .we-large-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-bottom: 0; } }
+      main section.we .we-wrapper .we-block {
+        margin-bottom: 30px;
+        padding: 0; }
+        @media (min-width: 960px) {
+          main section.we .we-wrapper .we-block {
+            padding-right: 15px;
+            padding-left: 15px; } }
+    main section.we h2 {
       color: #000000; }
+    main section.we p {
+      color: #a5a8a8; }
+      main section.we p strong {
+        color: #000000; }
   main section.clients h2 {
     color: #000000; }
   main section.clients .carousel-item {
