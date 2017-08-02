@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'noe-display-medium';
   src: url("/wp-content/themes/rapt/dist/fonts/noe-display-medium.otf"); }
@@ -950,23 +951,20 @@ main section {
   main section.team h1 {
     color: #000000;
     margin: 0 0 30px; }
+  main section.team .team-sort-links p {
+    color: #a5a8a8; }
+    main section.team .team-sort-links p a, main section.team .team-sort-links p a:visited {
+      color: #a5a8a8; }
+      main section.team .team-sort-links p a:hover, main section.team .team-sort-links p a.active, main section.team .team-sort-links p a:visited:hover, main section.team .team-sort-links p a:visited.active {
+        color: #000000; }
+  main section.team .team-sort-links .show-everyone::before {
+    content: '↪';
+    margin-right: 5px; }
   main section.team .team-sort {
     position: relative;
     margin-top: 30px;
     margin-left: -15px;
     margin-right: -15px; }
-    @media (min-width: 960px) {
-      main section.team .team-sort .team-sort-links {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2; } }
-    main section.team .team-sort .team-sort-links p {
-      color: #a5a8a8; }
-      main section.team .team-sort .team-sort-links p a, main section.team .team-sort .team-sort-links p a:visited {
-        color: #a5a8a8; }
-        main section.team .team-sort .team-sort-links p a:hover, main section.team .team-sort .team-sort-links p a.active, main section.team .team-sort .team-sort-links p a:visited:hover, main section.team .team-sort .team-sort-links p a:visited.active {
-          color: #000000; }
     main section.team .team-sort .team-members {
       position: relative;
       z-index: 1; }
