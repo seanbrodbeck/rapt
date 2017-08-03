@@ -32,7 +32,7 @@ a {
 	width: auto;
 	padding:0;
 	@media (min-width: $bp-sm-min) {
-		padding: 0 calc(15px + (80 - 14) * (100vw - 320px) / (1440 - 320));
+		padding: 0 calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
 		width: 100%;
 		max-width: 1470px;
 	}
@@ -47,9 +47,11 @@ a {
 }
 
 .full-width-wrap {
-	padding: 0 calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
+	padding: 0 calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
+	max-width: 1470px;
+	margin: auto;
 	@media (min-width: $bp-xlg-min) {
-		padding: 0 70px;
+		padding: 0 80px;
 	}
 }
 
@@ -88,7 +90,7 @@ a {
 	text-align: left;
 	margin: 0 auto;
 	/*max-width:1290px;*/
-	padding: calc(15px + (80 - 15) * (100vw - 400px) / (1440 - 400));
+	padding: calc(18px + (80 - 18) * (100vw - 400px) / (1440 - 400));
 	padding-left:15px;
 	@media (min-width: $bp-xlg-min) {
 		padding: 80px;
@@ -185,15 +187,15 @@ a {
 }
 
 .secondary-articles {
-	padding-left:15px;
-	padding-right:15px;
+	padding-left: 15px;
+	padding-right: 15px;
 	@media (min-width: $bp-sm-min) {
-		padding-left:0;
-		padding-right:0;
+		padding-left: 0;
+		padding-right: 0;
 	}
 	@media (min-width: $bp-md-min) {
-		padding-left:15px;
-		padding-right:15px;
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 	.entry-header {
 		padding: 20px 0 0;
@@ -205,20 +207,20 @@ a {
 		margin: 0;
 	}
 	article {
-		width:100%;
+		width: 100%;
 		@media (min-width: $bp-sm-min) {
-			width:50%;
-			float:left;
-			padding:0 15px;
+			width: 50%;
+			float: left;
+			padding: 0 15px;
 		}
 		@media (min-width: $bp-sm3-min) {
-			width:100%;
-			float:none;
-			padding:0
+			width: 100%;
+			float: none;
+			padding: 0
 		}
 		img {
-			width:100%;
-			height:auto;
+			width: 100%;
+			height: auto;
 		}
 	}
 }
@@ -229,6 +231,9 @@ a {
 
 .filters {
 	margin-bottom: 55px;
+	@media (min-width: $bp-xlg-min) {
+		padding: 0 15px;
+	}
 	.filter-toggle {
 		display: inline-block;
 		float: left;
@@ -295,15 +300,10 @@ a {
 	}
 	.container {
 		margin-top:60px;
-		padding-right: 0px;
-  	padding-left: 0px;
+		padding: 0 calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
   	transition: .3s;
-  	&.active {
-  		opacity: 1;
-  	}
-		@media (min-width: $bp-sm-min) {
-			padding-right: 15px;
-  		padding-left: 15px;
+		@media (min-width: $bp-xlg-min) {
+			padding: 0 80px;
 		}
 		.col-sm-12 {
 			padding-right: 0px;
@@ -412,6 +412,9 @@ a {
 	&#search-overlay {
 		.container {
 			opacity: 0;
+			&.active {
+				opacity: 1;
+			}
 		}
 		input {
 			display: block;

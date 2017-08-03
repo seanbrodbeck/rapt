@@ -1,7 +1,7 @@
 main {
 	section {
 
-		padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400)) 0;
+		padding: calc(18px + (80 - 18) * (100vw - 400px) / (1440 - 400)) 0;
 		@media (min-width: $bp-xlg-min) {
 			padding: 80px 0;
 		}
@@ -32,7 +32,7 @@ main {
 			background: $peach;
 			padding: 30px 0;
 			@media (min-width: $bp-sm-min) {
-				padding: calc(15px + (80 - 15) * (100vw - 400px) / (1440 - 400)) 0;
+				padding: calc(18px + (80 - 18) * (100vw - 400px) / (1440 - 400)) 0;
 			}
 			@media (min-width: $bp-xlg-min) {
 				padding: 80px 0;
@@ -95,7 +95,7 @@ main {
 				padding-right:0;
 			}
 			@media (min-width: $bp-lg-min) {
-				padding:calc(15px + (80 - 14) * (100vw - 320px) / (1440 - 320)) 0;
+				padding:calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)) 0;
 			}
 			.more-link-wrapper {
 				margin: 0;
@@ -598,13 +598,17 @@ main {
 		.container {
 			@media (min-width: $bp-sm-min) {
 				width: 100%;
-				padding: 0 calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
+				padding: 0 calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
+			}
+			@media (min-width: $bp-xlg-min) {
+				width: 100%;
+				padding: 0 80px;
 			}
 		}
 		.secondary-articles {
 			@media (min-width: $bp-sm3-min) {
 				position: fixed;
-				right: calc((100vw - 1290px) / 2);
+				right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
 				width: calc(1290px * .25);
 			}
 			@media (max-width: $bp-sm3-min) {

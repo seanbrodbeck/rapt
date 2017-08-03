@@ -1,14 +1,17 @@
 header {
-	padding: 0 calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
+	padding: 0 calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
 	&.entry-header {
 		padding: 0;
 	}
 	.nav-wrap {
 		padding: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) 0 105px;
-		max-width: 1260px;
+		max-width: 1310px;
 		margin: auto;
 		@media (min-width: $bp-sm3-min) {
 			padding: 35px 0 105px;
+		}
+		@media (min-width: $bp-xlg-min) {
+			padding: 35px 15px 105px;
 		}
 		position: relative;
 		height: 140px;
@@ -155,7 +158,8 @@ header {
 
 .rapt-logo-wrap {
 	position: fixed;
-	right: calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
+	right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
+	margin-right: 15px;
 	top: 22px;
 	z-index: 21;
 	opacity: 0;
@@ -169,7 +173,6 @@ header {
 		visibility: visible;
 		pointer-events: auto;
 		top: 25px;
-		right: calc((100vw - 1260px) / 2);
 		z-index: 20;
 		float:none;
 	}
@@ -203,7 +206,7 @@ header {
 	@media (min-width: $bp-sm3-min) {
 		header {
 			.nav-wrap {
-				padding: 100px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 0;
+				padding: 100px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)) 0;
 				@media (min-width: $bp-xlg-min) {
 					padding: 100px 0;
 				}
@@ -224,9 +227,9 @@ header {
 header .nav-wrap #site-navigation {
 	width: 100%;
 	&.toggled {
-		padding: 31px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 36px;
+		padding: 31px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)) 36px;
 		@media (min-width: $bp-xlg-min) {
-			padding: 31px 70px;
+			padding: 31px 80px;
 		}
 		position: fixed;
 		transform: translate3d(0,30px,0);
@@ -251,9 +254,9 @@ header .nav-wrap #site-navigation {
 	header {
 		.nav-wrap {
 			#site-navigation {
-				padding: calc(26px + (35 - 26) * (100vw - 320px) / (1440 - 320)) calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
+				padding: calc(26px + (35 - 26) * (100vw - 320px) / (1440 - 320)) calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
 				@media (min-width: $bp-xlg-min) {
-					padding: 35px calc((100vw - 1260px) / 2);
+					padding: 35px calc((100vw - 1280px) / 2);
 				}
 				position: fixed;
 				left: 0;
