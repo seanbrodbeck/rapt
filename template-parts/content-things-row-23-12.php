@@ -2,7 +2,7 @@
 
   <div class="container">
 
-    <div class="row clearfix work-row">
+    <div class="row clearfix work-row-inner">
 
         <div class="col-sm-7 grid-item">
 
