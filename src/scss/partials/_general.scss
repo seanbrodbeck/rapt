@@ -32,9 +32,12 @@ a {
 	width: auto;
 	padding:0;
 	@media (min-width: $bp-sm-min) {
-		padding:0 calc(15px + (80 - 14) * (100vw - 320px) / (1440 - 320));
-		width:100%;
-		max-width: 1536px;
+		padding: 0 calc(15px + (80 - 14) * (100vw - 320px) / (1440 - 320));
+		width: 100%;
+		max-width: 1470px;
+	}
+	@media (min-width: $bp-xlg-min) {
+		padding: 0 80px;
 	}
 }
 
