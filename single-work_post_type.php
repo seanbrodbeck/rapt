@@ -169,7 +169,9 @@ get_header(); ?>
 
 						endwhile; endif; ?>
 				</div>
-        <div class="more-link-wrapper"><a class="more-link" href="/work">More</a></div>
+				<div class="container">
+        	<div class="more-link-wrapper"><a class="more-link" href="/work">More</a></div>
+     	 	</div>
 	    </section>
 
 		</main><!-- #main -->

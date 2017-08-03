@@ -215,7 +215,9 @@ get_header('home'); ?>
 						<div class="clearfix"></div>
 					</div>
 				</div>
-				<div class="more-link-wrapper"><a class="more-link" href="/perspectives">More</a></div>
+				<div class="container">
+					<div class="more-link-wrapper"><a class="more-link" href="/perspectives">More</a></div>
+				</div>
 
 			</section>
 
