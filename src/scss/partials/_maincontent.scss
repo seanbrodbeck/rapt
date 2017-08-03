@@ -320,10 +320,17 @@ main {
 					}
 					.active {
 						.team-member {
-							&:first-child {
-								@media (min-width: $bp-md-min) {
-
-								}
+							&:nth-of-type(1) {
+								transition-delay: .5s;
+							}
+							&:nth-of-type(2) {
+								transition-delay: .58s;
+							}
+							&:nth-of-type(3) {
+								transition-delay: .66s;
+							}
+							&:nth-of-type(4) {
+								transition-delay: .74s;
 							}
 						}
 					}

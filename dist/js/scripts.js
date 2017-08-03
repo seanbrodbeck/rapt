@@ -250,7 +250,7 @@ function animateTransition() {
   if (clientLogos.length > 4) {
     var clientGroup = 0;
     cycleClientLogos();
-    setInterval(cycleClientLogos,5000)
+    setInterval(cycleClientLogos,4000)
     function cycleClientLogos(){
       clientGroup++;
       if (clientGroup > Math.floor(clientLogos.length/4)) {

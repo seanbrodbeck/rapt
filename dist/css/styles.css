@@ -608,15 +608,21 @@ header {
       width: 18px;
       height: 18px;
       position: absolute;
-      right: 16px;
-      top: 20px;
-      display: none; }
+      right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
+      top: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) 0 105px;
+      display: none;
+      cursor: pointer; }
+      header .main-navigation .mobile-nav-close svg {
+        transition: .2s ease-out;
+        transform: rotate(0deg); }
+      header .main-navigation .mobile-nav-close:hover svg {
+        transform: rotate(90deg); }
     header .main-navigation .mobile-nav-locations {
       visibility: hidden;
       opacity: 0;
       position: absolute;
-      bottom: 20px;
-      left: 16px;
+      bottom: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320));
+      left: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
       pointer-events: none; }
       header .main-navigation .mobile-nav-locations .footer-location {
         display: flex; }
@@ -635,7 +641,7 @@ header {
         bottom: 0;
         height: auto;
         background: #000000;
-        padding: 16px; } }
+        padding: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) 0 105px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)); } }
   @media screen and (max-width: 960px) and (min-width: 37.5em) {
     header .main-navigation.toggled #primary-menu {
       display: block; } }
@@ -660,7 +666,8 @@ header {
       display: block;
       float: none;
       font-size: 32px;
-      font-family: 'noe-display'; }
+      font-family: 'noe-display';
+      max-width: 60%; }
       @media (min-width: 680px) {
         header .main-navigation #primary-menu li {
           font-size: 40px;
@@ -1061,6 +1068,14 @@ main section {
             main section.team .team-sort .team-members .team-member-group {
               margin-left: 0px;
               margin-right: 0px; } }
+        main section.team .team-sort .team-members .active .team-member:nth-of-type(1) {
+          transition-delay: .5s; }
+        main section.team .team-sort .team-members .active .team-member:nth-of-type(2) {
+          transition-delay: .58s; }
+        main section.team .team-sort .team-members .active .team-member:nth-of-type(3) {
+          transition-delay: .66s; }
+        main section.team .team-sort .team-members .active .team-member:nth-of-type(4) {
+          transition-delay: .74s; }
         main section.team .team-sort .team-members .team-member {
           padding: 0;
           margin-bottom: 30px; }
