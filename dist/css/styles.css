@@ -1120,27 +1120,36 @@ main section {
     padding-right: 0; }
     main section.clients h2 {
       color: #000000; }
+    main section.clients #client_logo_row {
+      position: relative;
+      height: 300px; }
+    main section.clients .carousel-row {
+      position: absolute;
+      top: 0;
+      left: 0; }
     main section.clients .carousel-item {
       opacity: 0;
       visibility: hidden;
-      transition: .3s; }
-      main section.clients .carousel-item:nth-of-type(4n+1) {
-        transition-delay: .15s; }
-      main section.clients .carousel-item:nth-of-type(4n+2) {
-        transition-delay: .3s; }
-      main section.clients .carousel-item:nth-of-type(4n+3) {
-        transition-delay: .45s; }
-      main section.clients .carousel-item:nth-of-type(4n) {
-        transition-delay: .6s; }
+      transition: .7s; }
     main section.clients .carousel-item.active {
       opacity: 1;
       visibility: visible; }
+      main section.clients .carousel-item.active:nth-of-type(1) {
+        transition-delay: .5s; }
+      main section.clients .carousel-item.active:nth-of-type(2) {
+        transition-delay: .58s; }
+      main section.clients .carousel-item.active:nth-of-type(3) {
+        transition-delay: .66s; }
+      main section.clients .carousel-item.active:nth-of-type(4) {
+        transition-delay: .74s; }
   main section.services {
     padding-left: 0;
     padding-right: 0; }
     main section.services h2 {
       margin-bottom: 44px;
       color: #000000; }
+    main section.services p {
+      color: #a5a8a8; }
   main section.contact-info {
     padding-left: 0;
     padding-right: 0; }
