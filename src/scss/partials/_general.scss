@@ -294,7 +294,6 @@ a {
 		margin-top:60px;
 		padding-right: 0px;
   	padding-left: 0px;
-  	opacity: 0;
   	transition: .3s;
   	&.active {
   		opacity: 1;
@@ -408,6 +407,9 @@ a {
 		}
 	}
 	&#search-overlay {
+		.container {
+			opacity: 0;
+		}
 		input {
 			display: block;
 			font-family: 'noe-display';

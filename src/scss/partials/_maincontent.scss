@@ -1,9 +1,9 @@
 main {
 	section {
 
-		padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400));
+		padding: calc(14px + (80 - 14) * (100vw - 400px) / (1440 - 400)) 0;
 		@media (min-width: $bp-xlg-min) {
-			padding: 80px;
+			padding: 80px 0;
 		}
 
 		&.home-work {
@@ -34,12 +34,8 @@ main {
 			@media (min-width: $bp-sm-min) {
 				padding: calc(15px + (80 - 15) * (100vw - 400px) / (1440 - 400)) 0;
 			}
-			/*@media (min-width: $bp-md-min) {
-				padding: calc(15px + (80 - 15) * (100vw - 400px) / (1440 - 400)) 0;
-			}*/
-
-			.container {
-				/*padding:0;*/
+			@media (min-width: $bp-xlg-min) {
+				padding: 80px 0;
 			}
 
 			h1 {
@@ -119,7 +115,7 @@ main {
 		}
 
 		&.work-row-full {
-			padding:0;
+			padding: 0;
 		}
 
 		&.single-hero {
@@ -128,7 +124,7 @@ main {
 			padding: calc(400px + (534 - 400) * (100vw - 320px) / (1440 - 320)) calc(24px + (80 - 24) * (100vw - 320px) / (1440 - 320));
 			padding-bottom:70px;
 			@media (min-width: $bp-xlg-min) {
-				padding: 534px 80px 80px;
+				padding: 534px 0 80px;
 			}
 			h1 {
 				font-size: calc(32px + (64 - 32) * (100vw - 320px) / (1440 - 320));

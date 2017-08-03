@@ -1,11 +1,14 @@
 header {
+	padding: 0 calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
 	&.entry-header {
 		padding: 0;
 	}
 	.nav-wrap {
-		padding: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 105px;
-		@media (min-width: $bp-xlg-min) {
-			padding: 35px 70px;
+		padding: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) 0 105px;
+		max-width: 1260px;
+		margin: auto;
+		@media (min-width: $bp-sm3-min) {
+			padding: 35px 0 105px;
 		}
 		position: relative;
 		height: 140px;
@@ -109,11 +112,13 @@ header {
 			}
 			@media (min-width: $bp-sm3-min) {
 				@include flexbox;
-				text-align:center;
-				@include justify-content(space-between);
+				text-align: left;
 				li {
 					font-size: 20px;
 					font-family: 'Fakt-Blond';
+					@media (min-width: $bp-sm3-min) {
+						margin-right: 150px;
+					}
 					a, a:visited {
 						color: #999999;
 						&:hover {
@@ -150,24 +155,21 @@ header {
 
 .rapt-logo-wrap {
 	position: fixed;
-	right: 16px;
-	top: 16px;
+	right: calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
+	top: 22px;
 	z-index: 21;
 	opacity: 0;
 	visibility: hidden;
 	pointer-events: none;
 	transition: .2s ease-out;
-	transform: translate3d(0, -20px, 0);
 
-	@media (min-width: $bp-sm3-min) {
+	@media (min-width: $bp-xlg-min) {
 		display: block;
 		opacity: 1;
 		visibility: visible;
 		pointer-events: auto;
-		position: fixed;
-		bottom: 60px;
-		top: auto;
-		right: 31px;
+		top: 25px;
+		right: calc((100vw - 1260px) / 2);
 		z-index: 20;
 		float:none;
 	}
@@ -201,9 +203,9 @@ header {
 	@media (min-width: $bp-sm3-min) {
 		header {
 			.nav-wrap {
-				padding: 100px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
+				padding: 100px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 0;
 				@media (min-width: $bp-xlg-min) {
-					padding: 100px 70px;
+					padding: 100px 0;
 				}
 			}
 			.main-navigation {
@@ -220,6 +222,7 @@ header {
 }
 
 header .nav-wrap #site-navigation {
+	width: 100%;
 	&.toggled {
 		padding: 31px calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320)) 36px;
 		@media (min-width: $bp-xlg-min) {
@@ -243,15 +246,14 @@ header .nav-wrap #site-navigation {
 	.rapt-logo-wrap {
 		opacity: 1 !important;
 		visibility: visible;
-		transform: translate3d(0, 0, 0);
 		pointer-events: auto;
 	}
 	header {
 		.nav-wrap {
 			#site-navigation {
-				padding: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
+				padding: calc(26px + (35 - 26) * (100vw - 320px) / (1440 - 320)) calc(16px + (70 - 16) * (100vw - 320px) / (1440 - 320));
 				@media (min-width: $bp-xlg-min) {
-					padding: 24px 70px;
+					padding: 35px calc((100vw - 1260px) / 2);
 				}
 				position: fixed;
 				left: 0;
