@@ -159,6 +159,12 @@ header {
 .rapt-logo-wrap {
 	position: fixed;
 	right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
+	@media (min-width: $bp-xlg-min) {
+		right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
+	}
+	@media (min-width: $bp-xxlg-min) {
+		margin-right: calc((100vw - 1440px) / 2);
+	}
 	margin-right: 15px;
 	top: 22px;
 	z-index: 21;

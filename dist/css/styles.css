@@ -722,6 +722,12 @@ header {
   transition: .2s ease-out; }
   @media (min-width: 1320px) {
     .rapt-logo-wrap {
+      right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)); } }
+  @media (min-width: 1440px) {
+    .rapt-logo-wrap {
+      margin-right: calc((100vw - 1440px) / 2); } }
+  @media (min-width: 1320px) {
+    .rapt-logo-wrap {
       display: block;
       opacity: 1;
       visibility: visible;
