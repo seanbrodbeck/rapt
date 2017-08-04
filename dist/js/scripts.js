@@ -79,6 +79,7 @@ function animateTransition() {
     scrollTop = document.body.scrollTop; // REDUNDANT;
     navScrollHandler(e);
     articlesScrollHandler(e)
+    caseScrollHandler(e)
   }
 
   function addImageHover(i) {
@@ -273,6 +274,14 @@ function animateTransition() {
       transform: 'scaleX(0)'
     })
   }
+
+  // Case Study Scroll Locking
+
+  // function caseScrollHandler(e) {
+  //   var lockedTops = [];
+  //   for (var i=0;i<$(''))
+
+  // }
 
 })( jQuery );
 

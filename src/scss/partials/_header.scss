@@ -244,21 +244,20 @@ header {
 header .nav-wrap #site-navigation {
 	width: 100%;
 	&.toggled {
-		padding: 31px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)) 36px;
-		@media (min-width: $bp-xlg-min) {
-			padding: 31px 80px;
+		@media (max-width: $bp-sm3-min) {
+			padding: 31px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)) 36px;
+			position: fixed;
+			transform: translate3d(0,30px,0);
+			width: 100%;
+			background: white;
+			z-index: 20;
+			top:-30px;
+			bottom:0;
+			left:0;
+			right:0;
+			height: 100vh;
+			z-index: 40 !important;
 		}
-		position: fixed;
-		transform: translate3d(0,30px,0);
-		width: 100%;
-		background: white;
-		z-index: 20;
-		top:-30px;
-		bottom:0;
-		left:0;
-		right:0;
-		height: 100vh;
-		z-index: 40 !important;
 	}
 }
 
@@ -283,11 +282,13 @@ header .nav-wrap #site-navigation {
 				background: white;
 				z-index: 20;
 				&.toggled {
-					top:-30px;
-					bottom:0;
-					left:0;
-					right:0;
-					height: 100vh;
+					@media (max-width: $bp-sm3-min) {
+						top:-30px;
+						bottom:0;
+						left:0;
+						right:0;
+						height: 100vh;
+					}
 				}
 			}
 		}

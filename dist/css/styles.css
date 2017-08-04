@@ -772,22 +772,20 @@ header {
 
 header .nav-wrap #site-navigation {
   width: 100%; }
-  header .nav-wrap #site-navigation.toggled {
-    padding: 31px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)) 36px;
-    position: fixed;
-    transform: translate3d(0, 30px, 0);
-    width: 100%;
-    background: white;
-    z-index: 20;
-    top: -30px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    z-index: 40 !important; }
-    @media (min-width: 1320px) {
-      header .nav-wrap #site-navigation.toggled {
-        padding: 31px 80px; } }
+  @media (max-width: 960px) {
+    header .nav-wrap #site-navigation.toggled {
+      padding: 31px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)) 36px;
+      position: fixed;
+      transform: translate3d(0, 30px, 0);
+      width: 100%;
+      background: white;
+      z-index: 20;
+      top: -30px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      z-index: 40 !important; } }
 
 .is-nav-fixed .rapt-logo-wrap {
   opacity: 1 !important;
@@ -806,12 +804,13 @@ header .nav-wrap #site-navigation {
   @media (min-width: 1320px) {
     .is-nav-fixed header .nav-wrap #site-navigation {
       padding: 35px calc((100vw - 1280px) / 2); } }
-  .is-nav-fixed header .nav-wrap #site-navigation.toggled {
-    top: -30px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100vh; }
+  @media (max-width: 960px) {
+    .is-nav-fixed header .nav-wrap #site-navigation.toggled {
+      top: -30px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100vh; } }
 
 .is-nav-fixed header .nav-wrap #site-navigation {
   background: white; }
