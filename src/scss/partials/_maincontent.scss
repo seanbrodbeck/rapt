@@ -121,7 +121,7 @@ main {
 		&.single-hero {
 			padding-left:0;
 			padding-right:0;
-			padding: calc(400px + (534 - 400) * (100vw - 320px) / (1440 - 320)) calc(24px + (80 - 24) * (100vw - 320px) / (1440 - 320));
+			padding: calc(400px + (534 - 400) * (100vw - 320px) / (1440 - 320)) 0;
 			padding-bottom:70px;
 			@media (min-width: $bp-xlg-min) {
 				padding: 534px 0 80px;

@@ -216,7 +216,7 @@ get_header('home'); ?>
 					</div>
 				</div>
 				<div class="container">
-					<div class="more-link-wrapper"><a class="more-link" href="/perspectives">More</a></div>
+					<div class="more-link-wrapper"><a class="more-link" href="/thoughts">More</a></div>
 				</div>
 
 			</section>
