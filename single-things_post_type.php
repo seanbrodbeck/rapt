@@ -56,7 +56,9 @@ get_header(); ?>
 
 	    <section class="grid-content">
 	      <div class="container">
-	      	<?php echo get_laygrid(); ?>
+	      	<div class="col-sm-12">
+	      		<?php echo get_laygrid(); ?>
+	      	</div>
 	      </div>
 	    </section>
 
