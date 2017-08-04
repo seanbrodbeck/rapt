@@ -31,42 +31,67 @@ get_header(); ?>
 				<div class="row article-feed clearfix">
 
 					<div class="primary-articles col-md-7">
+
+
 						<?php
+						  // set up or arguments for our custom query
+						  $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+						  $query_args = array(
+						    'post_type' => 'post',
+						    'category_name' => 'Primary',
+						    'posts_per_page' => 3,
+						    'paged' => $paged
+						  );
+						  // create a new instance of WP_Query
+						  $the_query = new WP_Query( $query_args );
+						?>
 
-							global $post;
-							$args = array( 'posts_per_page' => 10, 'order'=> 'ASC', 'orderby' => 'date', 'category' => 3 );
-
-							$myposts = get_posts( $args );
-							foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
-									<div class="entry-text">
-										<header class="entry-header">
-											<div class="category-list">
-												<ul>
-													<?php
-														$categories = get_the_category();
-														$separator = ' · ';
-														$output = '';
-														if($categories){
-														    foreach($categories as $category) {
-														if($category->name !== 'Primary'){
-														        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
-														    }
-														echo trim($output, $separator);
-														}
-													?>
-												</ul>
-											</div>
-											<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-										</header>
-										<div class="entry-content">
-											<?php the_excerpt(); ?>
+						<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); // run the loop ?>
+						  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
+								<div class="entry-text">
+									<header class="entry-header">
+										<div class="category-list">
+											<ul>
+												<?php
+													$categories = get_the_category();
+													$separator = ' · ';
+													$output = '';
+													if($categories){
+													    foreach($categories as $category) {
+													if($category->name !== 'Primary'){
+													        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
+													    }
+													echo trim($output, $separator);
+													}
+												?>
+											</ul>
 										</div>
+										<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+									</header>
+									<div class="entry-content">
+										<?php the_excerpt(); ?>
 									</div>
+								</div>
 								</article>
-							<?php endforeach;
-							wp_reset_postdata();?>
+						<?php endwhile; ?>
+
+						<?php if ($the_query->max_num_pages > 1)  { // check if the max number of pages is greater than 1  ?>
+
+						  <nav class="prev-next-posts">
+						    <div class="prev-posts-link">
+
+						    	<?php echo '<div class="more-link-wrapper" style="margin-left:0;"><a class="more-link misha_loadmore">More</a></div>'; // you can use <a> as well ?>  
+						    </div>
+						  </nav>
+						<?php } ?>
+
+						<?php else: ?>
+						  
+						<?php endif; ?>
+
+
+
 				</div>
 
 				<div class="secondary-articles col-md-3 col-md-offset-2">
