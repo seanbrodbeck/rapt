@@ -56,10 +56,25 @@
 						'after'  => '</div>',
 					) );
 				?>
-			</div><!-- .entry-content -->
+			</div>
 
-		
-		</article><!-- #post-<?php the_ID(); ?> -->
+		</article>
+
+<!-- 
+		 <?php 
+		 	//$next_post = get_adjacent_post( true, '', false); 
+		 	//$nextthumbnail = get_the_post_thumbnail($next_post->ID);
+		 ?>
+		 <article id="post-<?php //the_ID(); ?>" <?php //post_class(); ?>>
+			 <?php //if ( is_a( $next_post, 'WP_Post' ) ) {  ?>
+			 <?php //next_post_link($nextthumbnail); ?>
+			 <header class="entry-header">
+			 		<h1 class="entry-title"><?php //echo get_the_title( $next_post->ID ); ?></h1>
+			 	</header>
+			 	<?php //echo $next_post->post_content; ?>
+			 <?php //} ?>
+		</article> 
+-->
 
 	</div>
 
