@@ -77,10 +77,10 @@ header {
 					background:$black;
 					padding: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) 0 105px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320);
 					@media screen and (min-width: 37.5em) {
-						display:block;
+						display: block;
 					}
 					@media (min-width: $bp-sm3-min) {
-						position:static;
+						position: static;
 					}
 					li a {
 						opacity: 1;
@@ -131,7 +131,7 @@ header {
 					font-size: 20px;
 					font-family: 'Fakt-Blond';
 					@media (min-width: $bp-sm3-min) {
-						margin-right: 150px;
+						margin-right: 162px;
 					}
 					a, a:visited {
 						color: #999999;
@@ -251,10 +251,10 @@ header .nav-wrap #site-navigation {
 			width: 100%;
 			background: white;
 			z-index: 20;
-			top:-30px;
-			bottom:0;
-			left:0;
-			right:0;
+			top: -30px;
+			bottom: 0;
+			left: 0;
+			right: 0;
 			height: 100vh;
 			z-index: 40 !important;
 		}
@@ -283,10 +283,10 @@ header .nav-wrap #site-navigation {
 				z-index: 20;
 				&.toggled {
 					@media (max-width: $bp-sm3-min) {
-						top:-30px;
-						bottom:0;
-						left:0;
-						right:0;
+						top: -30px;
+						bottom: 0;
+						left: 0;
+						right: 0;
 						height: 100vh;
 					}
 				}
@@ -309,7 +309,7 @@ header .nav-wrap #site-navigation {
 	header {
 		.nav-wrap {
 			#site-navigation {
-				background:$peach!important;
+				background: $peach !important;
 			}
 		}
 	}
