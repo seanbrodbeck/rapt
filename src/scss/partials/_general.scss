@@ -146,7 +146,10 @@ a {
 	p {
 		font-family: 'noe-display';
 		color: $black;
-		font-size: 24px;
+		font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1440 - 320));
+		@media (min-width: $bp-xlg-min) {
+			font-size: 24px;
+		}
 		line-height: 1.33;
 	}
 	.entry-header {
@@ -177,7 +180,10 @@ a {
 		li {
 			display: inline-block;
 			margin: 0;
-			font-size: 14px;
+			font-size: calc(12px + (14 - 12) * (100vw - 320px) / (1440 - 320));
+			@media (min-width: $bp-xlg-min) {
+				font-size: 14px;
+			}
 			color: $light-gray;
 			a {
 				color: $light-gray;
@@ -257,7 +263,10 @@ a {
 
 .work-cats {
 	margin: 0;
-	font-size: 14px;
+	font-size: calc(12px + (14 - 12) * (100vw - 320px) / (1440 - 320));
+	@media (min-width: $bp-xlg-min) {
+		font-size: 14px;
+	}
 	color: $light-gray;
 }
 
@@ -376,7 +385,10 @@ a {
 				}
 			}
 			h2 {
-				font-size: 24px;
+				font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320));
+				@media (min-width: $bp-xlg-min) {
+					font-size: 20px;
+				}
 				margin-bottom:0;
 				padding-left:15px;
 				padding-right:15px;

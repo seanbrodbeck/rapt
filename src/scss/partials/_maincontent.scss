@@ -61,16 +61,7 @@ main {
 				}
 			}
 			.secondary-articles {
-				/*padding-left: 0;
-    		padding-right: 0px;
-    		margin-left:0px;
-    		margin-right:0px;
-    		@media (min-width: $bp-sm-min) {
-					padding-left: 15px;
-    			padding-right: 15px;
-    			margin-left:-15px;
-    			margin-right:-15px;
-				}*/
+
 				@media (min-width: $bp-md-min) {
 				/*	margin-left: 16.66666667%;*/
 				}
@@ -148,7 +139,10 @@ main {
 				margin-top:0;
 			}
 			.work-cats {
-				font-size: 18px;
+				font-size: calc(12px + (16 - 12) * (100vw - 320px) / (1440 - 320));
+				@media (min-width: $bp-xlg-min) {
+					font-size: 16px;
+				}
 			}
 			.single-intro-row {
 				position:relative;
@@ -186,7 +180,10 @@ main {
 				}
 				h4 {
 					font-family: 'noe-display';
-					font-size: 20px;
+					font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320));
+					@media (min-width: $bp-xlg-min) {
+						font-size: 20px;
+					}
 					margin: 0;
 
 					a {
@@ -355,13 +352,19 @@ main {
 								@include transition(opacity .5s ease);
 								h3 {
 									margin: 0;
-									font-size: 20px;
+									font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320));
+									@media (min-width: $bp-xlg-min) {
+										font-size: 20px;
+									}
 									line-height: 1.33;
 								}
 								p {
 									color: $light-gray;
 									margin: 0;
-									font-size: 14px;
+									font-size: calc(12px + (14 - 12) * (100vw - 320px) / (1440 - 320));
+									@media (min-width: $bp-xlg-min) {
+										font-size: 14px;
+									}
 									line-height: 1.5;
 								}
 							}
@@ -467,7 +470,10 @@ main {
 			}
 			h4 {
 				color: $light-gray;
-				font-size: 20px;
+				font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320));
+				@media (min-width: $bp-xlg-min) {
+					font-size: 20px;
+				}
   			line-height: 1.6;
   			margin-bottom: 10px;
 			}
@@ -539,7 +545,10 @@ main {
 					height: auto;
 				}
 				h2 {
-					font-size: 22px;
+					font-size: calc(16px + (22 - 16) * (100vw - 320px) / (1440 - 320));
+					@media (min-width: $bp-xlg-min) {
+						font-size: 22px;
+					}
 					color: $black;
 					font-family: 'noe-display';
 					padding: 0 15px;
@@ -629,6 +638,9 @@ main {
 				position: fixed;
 				right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
 				width: calc(1290px * .25);
+				@media (min-width: $bp-xxlg-min) {
+					margin-right: calc((100vw - 1470px) / 2);
+				}
 			}
 			@media (max-width: $bp-sm3-min) {
 				/* OVERRIDE JAVASCRIPT */
@@ -681,7 +693,10 @@ main {
 				}
 				h2 {
 					font-family: 'noe-display';
-					font-size: 24px;
+					font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1440 - 320));
+					@media (min-width: $bp-xlg-min) {
+						font-size: 24px;
+					}
 					color: $black;
 					margin: 0 0 40px;
 					line-height: 1.33;
@@ -698,7 +713,10 @@ main {
 						margin:0 -100px 30px 30px;
 					}
 	  			p {
-	  				font-size: 32px;
+	  				font-size: calc(20px + (32 - 20) * (100vw - 320px) / (1440 - 320));
+	  				@media (min-width: $bp-xlg-min) {
+	  					font-size: 32px;
+	  				}
 	  				line-height: 1.25;
 	  				font-family: 'noe-display';
 	  			}

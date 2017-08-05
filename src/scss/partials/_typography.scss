@@ -20,10 +20,12 @@
 
 body {
 	font-family: Fakt-Blond;
-  font-size: 20px;
   line-height: 1.6;
   text-align: left;
-  font-size: 20px;
+  font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320));
+  @media (min-width: $bp-xlg-min) {
+    font-size: 20px;
+  }
   -webkit-font-smoothing: antialiased;
 }
 
@@ -64,7 +66,10 @@ h2 {
 
 h3 {
 	font-family: 'Fakt-Blond';
-	font-size: 22px;
+	font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320));
+  @media (min-width: $bp-xlg-min) {
+    font-size: 20px;
+  }
 	a, a:visited {
 		color:$black;
 	}
@@ -78,7 +83,10 @@ h4 {
 }
 
 p {
-	font-size: 20px;
+	font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320));
+  @media (min-width: $bp-xlg-min) {
+    font-size: 20px;
+  }
   line-height: 1.6;
   color:$black;
   font-family: 'Fakt-Blond';

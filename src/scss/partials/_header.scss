@@ -106,9 +106,9 @@ header {
 			li {
 				display:block;
 				float:none;
-				font-size: 32px;
 				font-family: 'noe-display';
 				max-width: 60%;
+				font-size: 32px;
 				@media (min-width: $bp-sm-min) {
 					font-size: 40px;
 					line-height: 1.2;
@@ -166,6 +166,31 @@ header {
 	}
 }
 
+.rapt-logo {
+	polyline {
+		transition: .1s ease-out;
+		transform: scaleX(0);
+		transform-origin: 0 0;
+		&:nth-of-type(even) {
+			transform-origin: 100% 0;
+		}
+		&:nth-of-type(2) {
+			transition-delay: .1s;
+		}
+		&:nth-of-type(3) {
+			transition-delay: .2s;
+		}
+		&:nth-of-type(4) {
+			transition-delay: .3s;
+		}
+		&:nth-of-type(5) {
+			transition-delay: .4s;
+		}
+		&:nth-of-type(6) {
+			transition-delay: .5s;
+		}
+	}
+}
 
 .rapt-logo-wrap {
 	position: fixed;
@@ -192,29 +217,6 @@ header {
 		top: 25px;
 		z-index: 20;
 		float:none;
-	}
-	svg polyline {
-		transition: .1s ease-out;
-		transform: scaleX(0);
-		transform-origin: 0 0;
-		&:nth-of-type(even) {
-			transform-origin: 100% 0;
-		}
-		&:nth-of-type(2) {
-			transition-delay: .1s;
-		}
-		&:nth-of-type(3) {
-			transition-delay: .2s;
-		}
-		&:nth-of-type(4) {
-			transition-delay: .3s;
-		}
-		&:nth-of-type(5) {
-			transition-delay: .4s;
-		}
-		&:nth-of-type(6) {
-			transition-delay: .5s;
-		}
 	}
 }
 

@@ -45,17 +45,29 @@ function animateTransition() {
   var isActive = false;
 
   function initIntroScript() {
+    var title = document.title.substr(0, document.title.indexOf(' Rapt') - 2);
+    var transitionText = title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title + ' ' + title;
+
+    $('.transition-wipe h1 span').html(transitionText)
+
+    $('.logo-loader .rapt-logo polyline').css({
+      transform: 'scaleX(1)'
+    })
 
     setTimeout(function(){
+      if ($('.logo-loader')) {
+        $('.logo-loader').addClass('is-off')
+        $('.intro').addClass('is-active')
+      }
       el_transition.classList.add('is-off')
       setTimeout(function(){
         cancelAnimationFrame(transitionRAF);
         revealRaptLogo();
-      },1000)
+      },2000)
     }, Math.floor(Math.random() * 2000 + 500))
 
     Array.prototype.map.call(questions, function(q, i) {
-      if (i < questions.length) {
+      if (i < questions.length - 1) {
         addImageHover(i);
         addTextClick(i);
       }
