@@ -252,20 +252,60 @@ function animateTransition() {
       $("#"+idname).delay(300).fadeIn(300).addClass('active').siblings().fadeOut(300);
       e.preventDefault();
       $(this).addClass('active').siblings().removeClass('active');
+      $('.team-members').removeClass('is-all')
   });
   $( ".show-everyone" ).click(function() {
     $( ".team-members div" ).fadeIn().removeClass('active');
+    $('.team-members').addClass('is-all')
     $('.team-members .team-member-group:first').addClass("active");
   });
 
+  // Team Member Carousel
+  var teamMemberOrder = new Array(0,1,2)
+
+  for (var i=0;i<$('.team-member-group').length;i++) {
+    cycleTeamMembers(i)
+  }
+
+  function cycleTeamMembers(num) {
+    var currentTeamMember = 0;
+    var currentTeamMemberIndex = 0;
+    var currentTeam = $('.team-member-group').eq(num)
+    var activeTeamMembers = new Array();
+    for (var i=0;i<3;i++) {
+      currentTeam.find('.team-member').eq(i).addClass('is-active');
+      currentTeamMember++;
+      activeTeamMembers[teamMemberOrder[i]] = currentTeam.find('.team-member').eq(i);
+      currentTeam.find('.team-member').eq(i).css({
+        left: (teamMemberOrder[i]*33.333) + '%'
+      })
+    }
+    if (currentTeam.find('.team-member').length > 3) {
+      setInterval(function(){cycleTeamMember(num)},2000);
+      function cycleTeamMember(num){
+        if (!$('.team-members').hasClass('is-all')) {
+          activeTeamMembers[teamMemberOrder[currentTeamMemberIndex]].removeClass('is-active')
+          activeTeamMembers[teamMemberOrder[currentTeamMemberIndex]] = currentTeam.find('.team-member').eq(currentTeamMember);
+          currentTeam.find('.team-member').eq(currentTeamMember).addClass('is-active')
+          currentTeam.find('.team-member').eq(currentTeamMember).css({
+            left: (teamMemberOrder[currentTeamMemberIndex]*33.333) + '%'
+          })
+          currentTeamMember = currentTeamMember < currentTeam.find('.team-member').length-1 ? currentTeamMember+1 : 0;
+          currentTeamMemberIndex = currentTeamMemberIndex < 2 ? currentTeamMemberIndex+1 : 0;
+        }
+      }
+    }
+  }
+
   // Logo Carousel
   var clientLogos = $('.client-logos-row .client-logo');
-  var currentLogos = new Array();
+  var activeLogos = new Array();
   var logoOrder = new Array(1,2,0,3)
+  var currentClientLogo = 0;
   for (var i=0;i<4;i++) {
     clientLogos.eq(i).addClass('is-active');
     currentClientLogo++;
-    currentLogos[logoOrder[i]] = clientLogos.eq(i);
+    activeLogos[logoOrder[i]] = clientLogos.eq(i);
     clientLogos.eq(i).css({
       left: (logoOrder[i]*25) + '%'
     })
@@ -275,24 +315,14 @@ function animateTransition() {
     var currentClientIndex = 0;
     setInterval(cycleClientLogo,1000);
     function cycleClientLogo(){
-      // hide active logos in the currentClientIndex position
-      // show the currentClientLogo in the vacated index
-      currentLogos[logoOrder[currentClientIndex]].removeClass('is-active')
-      currentLogos[logoOrder[currentClientIndex]] = clientLogos.eq(currentClientLogo);
+      activeLogos[logoOrder[currentClientIndex]].removeClass('is-active')
+      activeLogos[logoOrder[currentClientIndex]] = clientLogos.eq(currentClientLogo);
       clientLogos.eq(currentClientLogo).addClass('is-active')
       clientLogos.eq(currentClientLogo).css({
         left: (logoOrder[currentClientIndex]*25) + '%'
       })
-      if (currentClientLogo < clientLogos.length-1) {
-        currentClientLogo++;
-      } else {
-        currentClientLogo = 0;
-      }
-      if (currentClientIndex < 3) {
-        currentClientIndex++;
-      } else {
-        currentClientIndex = 0;
-      }
+      currentClientLogo = currentClientLogo < clientLogos.length-1 ? currentClientLogo+1 : 0;
+      currentClientIndex = currentClientIndex < 3 ? currentClientIndex+1 : 0;
     }
   }
 
