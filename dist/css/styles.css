@@ -416,7 +416,7 @@ a {
   .category-list ul li {
     display: inline-block;
     margin: 0;
-    font-size: calc(12px + (14 - 12) * (100vw - 320px) / (1440 - 320));
+    font-size: calc(10px + (14 - 10) * (100vw - 320px) / (1440 - 320));
     color: #a5a8a8; }
     @media (min-width: 1320px) {
       .category-list ul li {
@@ -483,7 +483,7 @@ a {
 
 .work-cats {
   margin: 0;
-  font-size: calc(12px + (14 - 12) * (100vw - 320px) / (1440 - 320));
+  font-size: calc(10px + (14 - 10) * (100vw - 320px) / (1440 - 320));
   color: #a5a8a8; }
   @media (min-width: 1320px) {
     .work-cats {
@@ -787,6 +787,7 @@ header {
 
 .rapt-logo polyline {
   transition: .1s ease-out;
+  transition-delay: .1s;
   transform: scaleX(0);
   transform-origin: 0 0; }
   .rapt-logo polyline:nth-of-type(even) {
@@ -801,6 +802,15 @@ header {
     transition-delay: .4s; }
   .rapt-logo polyline:nth-of-type(6) {
     transition-delay: .5s; }
+
+.rapt-logo.is-active {
+  opacity: 1; }
+  .rapt-logo.is-active polyline {
+    transform: scaleX(1); }
+
+.rapt-logo.is-off {
+  opacity: 0;
+  transition: .2s; }
 
 .rapt-logo-wrap {
   position: fixed;
@@ -994,7 +1004,7 @@ main section {
         main section.single-intro h2 {
           font-size: 48px; } }
     main section.single-intro .work-cats {
-      font-size: calc(12px + (16 - 12) * (100vw - 320px) / (1440 - 320)); }
+      font-size: calc(10px + (16 - 10) * (100vw - 320px) / (1440 - 320)); }
       @media (min-width: 1320px) {
         main section.single-intro .work-cats {
           font-size: 16px; } }
@@ -1207,25 +1217,26 @@ main section {
     main section.clients #client_logo_row {
       position: relative;
       height: 300px; }
-    main section.clients .carousel-row {
+    main section.clients .client-logos-row {
       position: absolute;
       top: 0;
       left: 0; }
-    main section.clients .carousel-item {
+    main section.clients .client-logo {
       opacity: 0;
-      visibility: hidden;
-      transition: .7s; }
-    main section.clients .carousel-item.active {
+      transition: .7s opacity,visibility;
+      position: absolute;
+      top: 0; }
+      main section.clients .client-logo:nth-of-type(4n+1) {
+        left: 0; }
+      main section.clients .client-logo:nth-of-type(4n+2) {
+        left: 25%; }
+      main section.clients .client-logo:nth-of-type(4n+3) {
+        left: 50%; }
+      main section.clients .client-logo:nth-of-type(4n+4) {
+        left: 75%; }
+    main section.clients .client-logo.is-active {
       opacity: 1;
-      visibility: visible; }
-      main section.clients .carousel-item.active:nth-of-type(1) {
-        transition-delay: .5s; }
-      main section.clients .carousel-item.active:nth-of-type(2) {
-        transition-delay: .58s; }
-      main section.clients .carousel-item.active:nth-of-type(3) {
-        transition-delay: .66s; }
-      main section.clients .carousel-item.active:nth-of-type(4) {
-        transition-delay: .74s; }
+      transition-delay: .5s; }
   main section.services {
     padding-left: 0;
     padding-right: 0; }

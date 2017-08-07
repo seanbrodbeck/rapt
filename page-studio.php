@@ -98,19 +98,13 @@ get_header(); ?>
 							<h2 class="large"><?php the_field('client_section_header'); ?></h2>
 
 								<?php if( have_rows('client_logo_row') ): ?>
-								<div id="client_logo_row">
+								<div class="client-logos-row" id="client_logo_row">
 									<?php while( have_rows('client_logo_row') ): the_row(); ?>
-
-									<div class="carousel-row">
 										<?php if( have_rows('client_logos') ): ?>
-											<div class="carousel clearfix">
 											<?php while( have_rows('client_logos') ): the_row();?>
-												<div class="carousel-item col-md-3 col-sm-6 col-xs-6"><img src="<?php the_sub_field('client_logo'); ?>"/></div>
+												<div class="client-logo col-md-3 col-sm-6 col-xs-6"><img src="<?php the_sub_field('client_logo'); ?>"/></div>
 											<?php endwhile; ?>
-											</div>
 										<?php endif; ?>
-									</div>
-
 									<?php endwhile; ?>
 								</div>
 								<?php endif; ?>

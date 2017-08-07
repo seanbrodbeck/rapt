@@ -169,6 +169,7 @@ header {
 .rapt-logo {
 	polyline {
 		transition: .1s ease-out;
+		transition-delay: .1s;
 		transform: scaleX(0);
 		transform-origin: 0 0;
 		&:nth-of-type(even) {
@@ -189,6 +190,16 @@ header {
 		&:nth-of-type(6) {
 			transition-delay: .5s;
 		}
+	}
+	&.is-active {
+		opacity: 1;
+		polyline {
+			transform: scaleX(1);
+		}
+	}
+	&.is-off {
+		opacity: 0;
+		transition: .2s;
 	}
 }
 

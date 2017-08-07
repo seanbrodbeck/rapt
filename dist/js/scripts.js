@@ -259,41 +259,59 @@ function animateTransition() {
   });
 
   // Logo Carousel
-  var clientLogos = $('.clients .carousel .carousel-item');
+  var clientLogos = $('.client-logos-row .client-logo');
+  var currentLogos = new Array();
+  var logoOrder = new Array(1,2,0,3)
+  for (var i=0;i<4;i++) {
+    clientLogos.eq(i).addClass('is-active');
+    currentClientLogo++;
+    currentLogos[logoOrder[i]] = clientLogos.eq(i);
+    clientLogos.eq(i).css({
+      left: (logoOrder[i]*25) + '%'
+    })
+  }
   if (clientLogos.length > 4) {
-    var clientGroup = 0;
-    cycleClientLogos();
-    setInterval(cycleClientLogos,4000)
-    function cycleClientLogos(){
-      clientGroup++;
-      if (clientGroup > Math.floor(clientLogos.length/4)) {
-        clientGroup = 1;
+    var currentClientLogo = 0;
+    var currentClientIndex = 0;
+    setInterval(cycleClientLogo,1000);
+    function cycleClientLogo(){
+      // hide active logos in the currentClientIndex position
+      // show the currentClientLogo in the vacated index
+      currentLogos[logoOrder[currentClientIndex]].removeClass('is-active')
+      currentLogos[logoOrder[currentClientIndex]] = clientLogos.eq(currentClientLogo);
+      clientLogos.eq(currentClientLogo).addClass('is-active')
+      clientLogos.eq(currentClientLogo).css({
+        left: (logoOrder[currentClientIndex]*25) + '%'
+      })
+      if (currentClientLogo < clientLogos.length-1) {
+        currentClientLogo++;
+      } else {
+        currentClientLogo = 0;
       }
-      clientLogos.removeClass('active')
-      for (var i = clientGroup * 4 - 4; i < clientGroup * 4; i++) {
-        clientLogos.eq(i).addClass('active')
+      if (currentClientIndex < 3) {
+        currentClientIndex++;
+      } else {
+        currentClientIndex = 0;
       }
     }
   }
 
   function revealRaptLogo() {
-    $('.rapt-logo polyline').css({
-      transform: 'scaleX(1)'
-    })
+    $('.rapt-logo').addClass('is-active')
+    $('.rapt-logo').removeClass('is-off')
   }
   function hideRaptLogo() {
-    $('.rapt-logo polyline').css({
-      transform: 'scaleX(0)'
-    })
+    $('.rapt-logo').removeClass('is-active')
+    $('.rapt-logo').addClass('is-off')
   }
 
   // Case Study Scroll Locking
 
-  // function caseScrollHandler(e) {
-  //   var lockedTops = [];
-  //   for (var i=0;i<$(''))
+  function caseScrollHandler(e) {
+    // var lockedTops = [];
+    // for (var i=0;i<$(''))
 
-  // }
+  }
 
 })( jQuery );
 

@@ -139,7 +139,7 @@ main {
 				margin-top:0;
 			}
 			.work-cats {
-				font-size: calc(12px + (16 - 12) * (100vw - 320px) / (1440 - 320));
+				font-size: calc(10px + (16 - 10) * (100vw - 320px) / (1440 - 320));
 				@media (min-width: $bp-xlg-min) {
 					font-size: 16px;
 				}
@@ -418,31 +418,32 @@ main {
 				position: relative;
 				height: 300px;
 			}
-			.carousel-row {
+			.client-logos-row {
 				position: absolute;
 				top: 0;
 				left: 0;
 			}
-			.carousel-item {
+			.client-logo {
 				opacity: 0;
-				visibility: hidden;
-				transition: .7s;
+				transition: .7s opacity,visibility;
+				position: absolute;
+				top: 0;
+				&:nth-of-type(4n+1) {
+					left: 0;
+				}
+				&:nth-of-type(4n+2) {
+					left: 25%;
+				}
+				&:nth-of-type(4n+3) {
+					left: 50%;
+				}
+				&:nth-of-type(4n+4) {
+					left: 75%;
+				}
 			}
-			.carousel-item.active {
+			.client-logo.is-active {
 				opacity: 1;
-				visibility: visible;
-				&:nth-of-type(1) {
-					transition-delay: .5s;
-				}
-				&:nth-of-type(2) {
-					transition-delay: .58s;
-				}
-				&:nth-of-type(3) {
-					transition-delay: .66s;
-				}
-				&:nth-of-type(4) {
-					transition-delay: .74s;
-				}
+				transition-delay: .5s;
 			}
 		}
 		&.services {
