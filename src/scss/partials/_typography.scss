@@ -29,15 +29,21 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1 {
+h1  {
 	font-family: 'noe-display';
 	font-size: calc(24px + (48 - 24) * (100vw - 320px) / (1440 - 320));
-  @media (min-width: $bp-xlg-min) {
-    font-size: 48px;
-  }
+	  @media (min-width: $bp-xlg-min) {
+	    font-size: 48px;
+	  }
 	-webkit-font-smoothing: antialiased;
 	@media (min-width: $bp-sm-min) {
-
+	}
+	&._Large {
+		font-family: 'noe-display';
+		font-size: calc(24px + (48 - 24) * (100vw - 320px) / (1440 - 320));
+		  @media (min-width: $bp-xlg-min) {
+		    font-size: 48px;
+		  }
 	}
 }
 

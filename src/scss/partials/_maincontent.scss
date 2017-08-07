@@ -598,6 +598,7 @@ main {
 					margin-bottom: 0;
 				}
 				h2 {
+					font-family: 'noe-display';
 					font-size: calc(32px + (48 - 32) * (100vw - 320px) / (1440 - 320));
 					@media (min-width: $bp-xlg-min) {
 						font-size: 48px;
@@ -606,6 +607,9 @@ main {
 					padding: 0;
 					a {
 						color: $white;
+					}
+					span {
+						font-family: 'Fakt-Blond';
 					}
 				}
 				.work-cats {

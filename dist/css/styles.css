@@ -32,6 +32,12 @@ h1 {
   @media (min-width: 1320px) {
     h1 {
       font-size: 48px; } }
+  h1._Large {
+    font-family: 'noe-display';
+    font-size: calc(24px + (48 - 24) * (100vw - 320px) / (1440 - 320)); }
+    @media (min-width: 1320px) {
+      h1._Large {
+        font-size: 48px; } }
 
 h2 {
   font-family: 'Fakt-Blond';
@@ -390,6 +396,8 @@ a {
     padding: 20px 0 0; }
     .primary-articles .entry-header h2 {
       margin: 15px 0; }
+      .primary-articles .entry-header h2 span {
+        font-family: 'noe-display'; }
   .primary-articles .entry-content {
     margin: 0; }
   .primary-articles .entry-text {
@@ -1360,6 +1368,7 @@ main .work-grid .work-row {
     main .work-grid .work-row.work-row-full .div {
       margin-bottom: 0; }
     main .work-grid .work-row.work-row-full h2 {
+      font-family: 'noe-display';
       font-size: calc(32px + (48 - 32) * (100vw - 320px) / (1440 - 320));
       color: #FFFFFF;
       padding: 0; }
@@ -1368,6 +1377,8 @@ main .work-grid .work-row {
           font-size: 48px; } }
       main .work-grid .work-row.work-row-full h2 a {
         color: #FFFFFF; }
+      main .work-grid .work-row.work-row-full h2 span {
+        font-family: 'Fakt-Blond'; }
     main .work-grid .work-row.work-row-full .work-cats {
       color: #FFFFFF;
       padding: 0; }
