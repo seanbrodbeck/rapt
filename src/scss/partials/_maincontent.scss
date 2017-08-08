@@ -157,6 +157,9 @@ main {
 		&.grid-content {
 			padding-left:0;
 			padding-right:0;
+			.double-margin {
+				margin-bottom:16%;
+			}
 		}
 		&.awards-press {
 			padding-left:0;
@@ -412,6 +415,7 @@ main {
 				color: $light-gray;
 				strong {
 					color: $black;
+					font-weight: 400;
 				}
 			}
 		}

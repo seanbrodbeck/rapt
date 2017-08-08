@@ -103,6 +103,8 @@ get_header(); ?>
 	      </div>
 	    </section>
 
+	    <?php if( have_rows('things_grid_layout') ): ?>
+	
 	    <section class="featured-products">
 	      <div class="container">
 	        <div class="row clearfix">
@@ -112,31 +114,34 @@ get_header(); ?>
 	        </div>
 	      </div>
 	      <div class="work-grid">
-					<?php
-						if (have_posts()) : while (have_posts()) : the_post();
+			<?php
+				if (have_posts()) : while (have_posts()) : the_post();
 
-							if( have_rows('things_grid_layout') ):
+					if( have_rows('things_grid_layout') ):
 
-								while ( have_rows('things_grid_layout') ) : the_row();
+						while ( have_rows('things_grid_layout') ) : the_row();
 
-								// 1/3 2/3
-								if( get_row_layout() == 'things_row_13_23' )
-									get_template_part('template-parts/content', 'things-row-12-23');
+						// 1/3 2/3
+						if( get_row_layout() == 'things_row_13_23' )
+							get_template_part('template-parts/content', 'things-row-12-23');
 
-								// 2/3 1/3
-								if( get_row_layout() == 'things_row_23_13' )
-									get_template_part('template-parts/content', 'things-row-23-12');
+						// 2/3 1/3
+						if( get_row_layout() == 'things_row_23_13' )
+							get_template_part('template-parts/content', 'things-row-23-12');
 
-								// Full Width
-								// if( get_row_layout() == 'things_row_full_width' )
-								// 	get_template_part('template-parts/content', 'things-row-full');
+						// Full Width
+						// if( get_row_layout() == 'things_row_full_width' )
+						// 	get_template_part('template-parts/content', 'things-row-full');
 
-								endwhile;
-							endif;
+						endwhile;
+					endif;
 
-						endwhile; endif; ?>
+				endwhile; endif; ?>
 	      </div>
 	    </section>
+	    <?php endif; ?>
+
+	    <?php if( have_rows('work_grid_layout') ): ?>
 
 	     <section class="also-see black-bkg">
 	      <div class="container">
@@ -175,6 +180,7 @@ get_header(); ?>
         	<div class="more-link-wrapper"><a class="more-link" href="/work">More</a></div>
      	 	</div>
 	    </section>
+	    <?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

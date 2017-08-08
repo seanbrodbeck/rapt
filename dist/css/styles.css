@@ -1018,6 +1018,8 @@ main section {
   main section.grid-content {
     padding-left: 0;
     padding-right: 0; }
+    main section.grid-content .double-margin {
+      margin-bottom: 16%; }
   main section.awards-press {
     padding-left: 0;
     padding-right: 0; }
@@ -1214,7 +1216,8 @@ main section {
     main section.we p {
       color: #a5a8a8; }
       main section.we p strong {
-        color: #000000; }
+        color: #000000;
+        font-weight: 400; }
   main section.clients {
     padding-left: 0;
     padding-right: 0; }
