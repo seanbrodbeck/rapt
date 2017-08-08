@@ -55,11 +55,12 @@ function animateTransition() {
     })
 
     setTimeout(function(){
-      if ($('.logo-loader')) {
+      if (el_transition) {
+        el_transition.classList.add('is-off')
+      } else {
         $('.logo-loader').addClass('is-off')
         $('.intro').addClass('is-active')
       }
-      el_transition.classList.add('is-off')
       setTimeout(function(){
         cancelAnimationFrame(transitionRAF);
         revealRaptLogo();
