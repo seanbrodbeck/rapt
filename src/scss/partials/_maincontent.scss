@@ -518,7 +518,7 @@ main {
 
 	.work-grid {
 		.work-row {
-			margin-bottom: 0;
+			margin-bottom: calc(15px + (100 - 14) * (100vw - 320px) / (1440 - 320));
 			/*margin: 0;*/
 			@media (min-width: $bp-sm-min) {
 				margin-bottom: 0;
@@ -530,12 +530,16 @@ main {
 				}
 				&.work-row-onethird-twothirds + .work-row-twothirds-onethird .work-row-inner {
 					@include align-items(flex-end);
+					margin-bottom: 50px;
+					@media (min-width: $bp-sm-min) {
+						margin-bottom: calc(15px + (100 - 14) * (100vw - 320px) / (1440 - 320));;
+					}
 				}
 				&.work-row-twothirds-onethird + .work-row-onethird-twothirds .work-row-inner {
 					@include align-items(flex-end);
 					margin-bottom:50px;
 					@media (min-width: $bp-sm-min) {
-						margin-bottom:100px;
+						margin-bottom: calc(15px + (100 - 14) * (100vw - 320px) / (1440 - 320));
 					}
 				}
 			}
