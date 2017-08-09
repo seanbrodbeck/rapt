@@ -333,7 +333,8 @@ header .nav-wrap #site-navigation {
 	header {
 		.nav-wrap {
 			#site-navigation {
-				background: $peach !important;
+				transition: 1s background-color;
+				background-color: $tan;
 			}
 		}
 	}
@@ -343,7 +344,7 @@ header .nav-wrap #site-navigation {
 	header {
 		.nav-wrap {
 			#site-navigation {
-				background: #ffefdd !important;
+				background-color: $tan;
 			}
 		}
 	}

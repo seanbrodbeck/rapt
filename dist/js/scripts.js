@@ -168,7 +168,7 @@ function animateTransition() {
   }
 
   function bgColorScrollHandler() {
-    if ($('body').hasClass('blog')) {
+    if ($('body').hasClass('blog') || $('body').hasClass('post-template-default')) {
       var scrollPercent = (scrollTop/$('body').innerHeight()).toFixed(3);
       var colorsR = new Array(252,250,244,212)
       var colorsG = new Array(239,224,252,219)
@@ -180,6 +180,9 @@ function animateTransition() {
       b = colorsB[num];
       if (num <= 3) {
         $('body').css({
+          backgroundColor: 'rgb(' + r + ',' + g + ',' + b + ')'
+        })
+        $('#site-navigation').css({
           backgroundColor: 'rgb(' + r + ',' + g + ',' + b + ')'
         })
       }

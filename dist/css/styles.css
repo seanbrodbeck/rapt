@@ -462,7 +462,7 @@ a {
           font-size: 20px; } }
 
 .post-template-default {
-  background: #ffdfd9; }
+  background: #ffefdd; }
 
 .filters {
   margin-bottom: 55px; }
@@ -937,10 +937,11 @@ header .nav-wrap #site-navigation {
   background: white; }
 
 .single-post header .nav-wrap #site-navigation {
-  background: #ffdfd9 !important; }
+  transition: 1s background-color;
+  background-color: #ffefdd; }
 
 .blog header .nav-wrap #site-navigation {
-  background: #ffefdd !important; }
+  background-color: #ffefdd; }
 
 main section {
   padding: calc(18px + (80 - 18) * (100vw - 400px) / (1440 - 400)) 0; }
