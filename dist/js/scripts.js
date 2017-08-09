@@ -93,6 +93,7 @@ function animateTransition() {
     navScrollHandler(e);
     articlesScrollHandler(e)
     caseScrollHandler(e)
+    bgColorScrollHandler();
   }
 
   function addImageHover(i) {
@@ -163,6 +164,25 @@ function animateTransition() {
           el_secondary_list.style.transform = 'translate3d(0, ' + Math.floor(-secondaryTargY*scrollPercent) + 'px, 0)'
         }
       })
+    }
+  }
+
+  function bgColorScrollHandler() {
+    if ($('body').hasClass('blog')) {
+      var scrollPercent = (scrollTop/$('body').innerHeight()).toFixed(3);
+      var colorsR = new Array(252,250,244,212)
+      var colorsG = new Array(239,224,252,219)
+      var colorsB = new Array(223,218,255,210)
+      var r,g,b;
+      var num = Math.floor(scrollPercent*6);
+      r = colorsR[num];
+      g = colorsG[num];
+      b = colorsB[num];
+      if (num <= 3) {
+        $('body').css({
+          backgroundColor: 'rgb(' + r + ',' + g + ',' + b + ')'
+        })
+      }
     }
   }
 

@@ -275,6 +275,9 @@ a:hover, a:active {
   transition: 1s;
   transition-delay: 1s; }
 
+body {
+  transition: 1s; }
+
 a {
   -webkit-transition: color .3s ease;
   -moz-transition: color .3s ease;
