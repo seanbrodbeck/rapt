@@ -140,7 +140,6 @@ footer {
 	.footer-subscribe input {
 		background: transparent;
 		color: $white !important;
-		flex-basis: 80%;
 		font-size: calc(12px + (16 - 12) * (100vw - 320px) / (1440 - 320));
 		@media (min-width: $bp-xlg-min) {
 			font-size: 16px;
@@ -150,6 +149,11 @@ footer {
   	border: none;
   	outline: none;
   	padding: 0 8px 0 0;
+
+  	&:first-of-type {
+  		flex: 3;
+  		margin-right: 5px;
+  	}
 	}
 	.footer-subscribe p {
 		display: flex;

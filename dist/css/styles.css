@@ -1749,7 +1749,6 @@ footer {
   footer .footer-subscribe input {
     background: transparent;
     color: #FFFFFF !important;
-    flex-basis: 80%;
     font-size: calc(12px + (16 - 12) * (100vw - 320px) / (1440 - 320));
     line-height: 1.5;
     font-family: 'Fakt-Blond';
@@ -1759,6 +1758,9 @@ footer {
     @media (min-width: 1320px) {
       footer .footer-subscribe input {
         font-size: 16px; } }
+    footer .footer-subscribe input:first-of-type {
+      flex: 3;
+      margin-right: 5px; }
   footer .footer-subscribe p {
     display: flex;
     justify-content: space-between;

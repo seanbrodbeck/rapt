@@ -22,7 +22,20 @@
 					<?php wp_nav_menu( array( 'menu_id' => 'primary-menu', )); ?>
 				</div><!-- .site-info -->
 				<div class="col-md-3 col-sm-6 footer-subscribe">
-					<p><input type="text" placeholder="Join our newsletter"> <a href="#">Subscribe</a></p>
+					<!-- Begin MailChimp Signup Form -->
+
+					<form action="//raptstudio.us6.list-manage.com/subscribe/post?u=ffd971c82d8b0e37775847995&amp;id=57c3a03987" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+						<p class="mc-field-group">
+							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Join our newsletter">
+							<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+						</p>
+				    <div id="mce-responses" class="clear">
+				        <div class="response" id="mce-error-response" style="display:none"></div>
+				        <div class="response" id="mce-success-response" style="display:none"></div>
+				    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+				    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ffd971c82d8b0e37775847995_57c3a03987" tabindex="-1" value=""></div>
+					</form>
+					<!--End mc_embed_signup-->
 				</div>
 			</div>
 
