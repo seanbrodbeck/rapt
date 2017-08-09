@@ -838,14 +838,17 @@ header {
 
 .rapt-logo-wrap {
   position: fixed;
-  right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
-  margin-right: 15px;
-  top: 22px;
   z-index: 21;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: .2s ease-out opacity; }
+  transition: .2s ease-out opacity;
+  top: 12px;
+  width: 14px;
+  right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)); }
+  @media (min-width: 960px) {
+    .rapt-logo-wrap {
+      width: 18px; } }
   @media (min-width: 1320px) {
     .rapt-logo-wrap {
       right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)); } }
@@ -861,10 +864,14 @@ header {
       top: 25px;
       z-index: 20;
       float: none; } }
+  .rapt-logo-wrap svg {
+    width: 100%; }
 
 .home .rapt-logo-wrap {
   top: auto;
-  bottom: 20px; }
+  bottom: 30px;
+  opacity: 1;
+  visibility: visible; }
 
 @media (min-width: 960px) {
   .home header .nav-wrap {

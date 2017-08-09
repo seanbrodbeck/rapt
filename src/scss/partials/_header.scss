@@ -205,21 +205,23 @@ header {
 
 .rapt-logo-wrap {
 	position: fixed;
+	z-index: 21;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: .2s ease-out opacity;
+	top: 12px;
+	width: 14px;
 	right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
+	@media (min-width: $bp-sm3-min) {
+		width: 18px;
+	}
 	@media (min-width: $bp-xlg-min) {
 		right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
 	}
 	@media (min-width: $bp-xxlg-min) {
 		margin-right: calc((100vw - 1440px) / 2);
 	}
-	margin-right: 15px;
-	top: 22px;
-	z-index: 21;
-	opacity: 0;
-	visibility: hidden;
-	pointer-events: none;
-	transition: .2s ease-out opacity;
-
 	@media (min-width: $bp-xlg-min) {
 		display: block;
 		opacity: 1;
@@ -229,13 +231,18 @@ header {
 		z-index: 20;
 		float:none;
 	}
+	svg {
+		width: 100%;
+	}
 }
 
 
 .home {
 	.rapt-logo-wrap {
 		top: auto;
-		bottom: 20px;
+		bottom: 30px;
+		opacity: 1;
+		visibility: visible;
 	}
 	@media (min-width: $bp-sm3-min) {
 		header {
