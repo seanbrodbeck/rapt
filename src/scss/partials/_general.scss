@@ -481,4 +481,7 @@ a {
 	}
 }
 
-
+.is-search-overlay,
+.is-filter-overlay {
+	overflow: hidden;
+}

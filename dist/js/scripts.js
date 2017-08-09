@@ -171,6 +171,7 @@ function animateTransition() {
   // Toggle Search and Filter
 
   $( ".filter-toggle" ).click(function() {
+    $('body').addClass('is-filter-overlay')
     $( "#filter-overlay" ).fadeIn( "fast", "linear" );
 
     // init Isotope
@@ -197,6 +198,13 @@ function animateTransition() {
   });
 
   // FILTER SEARCH
+  $('#search-overlay').on('scroll',function(e) {
+    e.stopPropagation();
+    console.log('scroll')
+  })
+  $('#search-overlay').on('wheel',function(e) {
+    e.stopPropagation();
+  })
   $('#search-overlay .quicksearch').on('keyup',function(){
     if ($('#search-overlay .quicksearch').val() != '') {
       $('.search-filter-overlay .container').addClass('active')
@@ -205,6 +213,7 @@ function animateTransition() {
     }
   })
   $( ".filter-search-btn" ).click(function() {
+    $('body').addClass('is-search-overlay')
     $( "#search-overlay" ).fadeIn( "fast", "linear" );
     $(".quicksearch").focus();
     // Isotope Search
@@ -245,9 +254,11 @@ function animateTransition() {
   });
   $( ".close-filter-overlay" ).click(function() {
     $( "#filter-overlay" ).fadeOut( "fast", "linear" );
+    $('body').removeClass('is-filter-overlay')
   });
   $( ".close-search-overlay" ).click(function() {
     $( "#search-overlay" ).fadeOut( "fast", "linear" );
+    $('body').removeClass('is-search-overlay')
   });
 
 

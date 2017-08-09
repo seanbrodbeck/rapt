@@ -669,6 +669,10 @@ a {
         .search-filter-overlay#search-overlay input::placeholder {
           font-size: 48px; } }
 
+.is-search-overlay,
+.is-filter-overlay {
+  overflow: hidden; }
+
 header {
   padding: 0 calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)); }
   header.entry-header {
