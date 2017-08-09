@@ -526,9 +526,12 @@ a {
         width: 32px;
         height: auto; } }
   .search-filter-overlay .container {
-    margin-top: 60px;
+    margin-top: 20px;
     padding: 0 calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
     transition: .3s; }
+    @media (min-width: 680px) {
+      .search-filter-overlay .container {
+        margin-top: 60px; } }
     @media (min-width: 1320px) {
       .search-filter-overlay .container {
         padding: 0 80px; } }
@@ -581,12 +584,27 @@ a {
     .search-filter-overlay .filter-listings .filter-listing {
       padding-right: 0px;
       padding-left: 0px;
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+      padding-right: 15px;
+      min-height: 165px;
+      /*&:nth-child(odd) {
+				clear:left;
+				@media (min-width: $bp-sm-min) {
+    				clear:inherit;
+				}
+			}*/ }
       @media (min-width: 680px) {
         .search-filter-overlay .filter-listings .filter-listing {
           margin-bottom: 80px;
           padding-right: 15px;
-          padding-left: 15px; } }
+          padding-left: 15px;
+          min-height: auto; } }
+      .search-filter-overlay .filter-listings .filter-listing:nth-child(even) {
+        padding-right: 0; }
+        @media (min-width: 680px) {
+          .search-filter-overlay .filter-listings .filter-listing:nth-child(even) {
+            padding-right: 15px;
+            padding-left: 15px; } }
       .search-filter-overlay .filter-listings .filter-listing img {
         width: 100%;
         height: auto; }
@@ -597,8 +615,9 @@ a {
       .search-filter-overlay .filter-listings .filter-listing h2 {
         font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320));
         margin-bottom: 0;
-        padding-left: 15px;
-        padding-right: 15px; }
+        /*padding-left:15px;
+				padding-right:15px;*/
+        padding: 0; }
         @media (min-width: 1320px) {
           .search-filter-overlay .filter-listings .filter-listing h2 {
             font-size: 20px; } }
@@ -612,14 +631,16 @@ a {
         .search-filter-overlay .filter-listings .filter-listing a img {
           display: block; }
       .search-filter-overlay .filter-listings .filter-listing .work-cats {
-        padding-left: 15px;
-        padding-right: 15px; }
+        /*padding-left:15px;
+				padding-right:15px;*/
+        padding: 0; }
         @media (min-width: 680px) {
           .search-filter-overlay .filter-listings .filter-listing .work-cats {
             padding: 0; } }
       .search-filter-overlay .filter-listings .filter-listing .category-list {
-        padding-left: 15px;
-        padding-right: 15px; }
+        /*padding-left:15px;
+				padding-right:15px;*/
+        padding: 0; }
         @media (min-width: 680px) {
           .search-filter-overlay .filter-listings .filter-listing .category-list {
             padding: 0; } }
