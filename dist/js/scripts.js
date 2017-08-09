@@ -68,7 +68,7 @@ function animateTransition() {
     }, Math.floor(Math.random() * 2000 + 500))
 
     Array.prototype.map.call(questions, function(q, i) {
-      if (i < questions.length - 1) {
+      if (i < questions.length) {
         addImageHover(i);
         addTextClick(i);
       }
@@ -89,7 +89,7 @@ function animateTransition() {
 
   function scrollHandler(e) {
     oldScrollTop = scrollTop;
-    scrollTop = document.body.scrollTop; // REDUNDANT;
+    scrollTop = document.body.scrollTop;
     navScrollHandler(e);
     articlesScrollHandler(e)
     caseScrollHandler(e)
@@ -134,6 +134,12 @@ function animateTransition() {
   }
 
   function navScrollHandler(e) {
+    if ($('body').hasClass('home')) {
+      var logoTop = Math.max(-WIN_H + 92,(-scrollTop*.82));
+      $('.rapt-logo-wrap').css({
+        transform: 'translate3d(0,' + logoTop + 'px,0)'
+      })
+    }
     var scrollAmount = oldScrollTop - scrollTop;
     if (Math.abs(scrollAmount) > 4) {
       if (oldScrollTop > scrollTop + 4 && document.querySelector('#masthead').getBoundingClientRect().bottom < 0) {
@@ -141,7 +147,7 @@ function animateTransition() {
         revealRaptLogo()
       } else {
         document.body.classList.remove('is-nav-fixed')
-        if (scrollTop > 200) {
+        if (scrollTop > 200 && !$('body').hasClass('home')) {
           hideRaptLogo()
         }
       }

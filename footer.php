@@ -30,8 +30,8 @@
 							<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
 						</p>
 				    <div id="mce-responses" class="clear">
-				        <div class="response" id="mce-error-response" style="display:none"></div>
-				        <div class="response" id="mce-success-response" style="display:none"></div>
+				      <div class="response" id="mce-error-response" style="display:none"></div>
+				      <div class="response" id="mce-success-response" style="display:none"></div>
 				    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 				    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ffd971c82d8b0e37775847995_57c3a03987" tabindex="-1" value=""></div>
 					</form>

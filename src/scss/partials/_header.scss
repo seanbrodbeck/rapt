@@ -218,7 +218,7 @@ header {
 	opacity: 0;
 	visibility: hidden;
 	pointer-events: none;
-	transition: .2s ease-out;
+	transition: .2s ease-out opacity;
 
 	@media (min-width: $bp-xlg-min) {
 		display: block;
@@ -233,6 +233,10 @@ header {
 
 
 .home {
+	.rapt-logo-wrap {
+		top: auto;
+		bottom: 20px;
+	}
 	@media (min-width: $bp-sm3-min) {
 		header {
 			.nav-wrap {

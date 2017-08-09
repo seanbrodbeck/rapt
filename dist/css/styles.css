@@ -845,7 +845,7 @@ header {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: .2s ease-out; }
+  transition: .2s ease-out opacity; }
   @media (min-width: 1320px) {
     .rapt-logo-wrap {
       right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)); } }
@@ -861,6 +861,10 @@ header {
       top: 25px;
       z-index: 20;
       float: none; } }
+
+.home .rapt-logo-wrap {
+  top: auto;
+  bottom: 20px; }
 
 @media (min-width: 960px) {
   .home header .nav-wrap {
