@@ -7,7 +7,8 @@ a {
   -moz-transition: color .3s ease;
   -o-transition: color .3s ease;
   transition: color .3s ease;
-	&:hover {
+	&:hover,
+	&:active {
 		text-decoration: none;
 	}
 }

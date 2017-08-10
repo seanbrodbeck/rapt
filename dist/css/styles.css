@@ -283,7 +283,7 @@ a {
   -moz-transition: color .3s ease;
   -o-transition: color .3s ease;
   transition: color .3s ease; }
-  a:hover {
+  a:hover, a:active {
     text-decoration: none; }
 
 #page {
