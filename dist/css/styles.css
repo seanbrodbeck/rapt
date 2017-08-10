@@ -483,7 +483,8 @@ a {
   .filters .filter-search-btn {
     display: inline-block;
     float: right;
-    cursor: pointer; }
+    cursor: pointer;
+    margin-right: -4px; }
 
 .work-cats {
   margin: 0;
@@ -647,10 +648,6 @@ a {
         @media (min-width: 680px) {
           .search-filter-overlay .filter-listings .filter-listing .category-list {
             padding: 0; } }
-  .search-filter-overlay#search-overlay .container {
-    opacity: 0; }
-    .search-filter-overlay#search-overlay .container.active {
-      opacity: 1; }
   .search-filter-overlay#search-overlay input {
     display: block;
     font-family: 'noe-display';
@@ -861,7 +858,8 @@ header {
       right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)); } }
   @media (min-width: 1440px) {
     .rapt-logo-wrap {
-      margin-right: calc((100vw - 1440px) / 2); } }
+      margin-right: calc((100vw - 1440px) / 2);
+      right: 80px; } }
   @media (min-width: 1320px) {
     .rapt-logo-wrap {
       display: block;

@@ -221,6 +221,7 @@ header {
 	}
 	@media (min-width: $bp-xxlg-min) {
 		margin-right: calc((100vw - 1440px) / 2);
+		right: 80px;
 	}
 	@media (min-width: $bp-xlg-min) {
 		display: block;

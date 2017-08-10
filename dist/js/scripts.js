@@ -64,7 +64,7 @@ function animateTransition() {
       setTimeout(function(){
         cancelAnimationFrame(transitionRAF);
         revealRaptLogo();
-      },2000)
+      },500)
     }, Math.floor(Math.random() * 2000 + 500))
 
     Array.prototype.map.call(questions, function(q, i) {
@@ -73,7 +73,7 @@ function animateTransition() {
         addTextClick(i);
       }
     })
-    document.addEventListener('resize', resizeHandler);
+    $('document').on('resize', resizeHandler);
     document.addEventListener('wheel', scrollHandler)
     document.addEventListener('scroll', scrollHandler)
     window.addEventListener('click', function() {
@@ -223,17 +223,9 @@ function animateTransition() {
   // FILTER SEARCH
   $('#search-overlay').on('scroll',function(e) {
     e.stopPropagation();
-    console.log('scroll')
   })
   $('#search-overlay').on('wheel',function(e) {
     e.stopPropagation();
-  })
-  $('#search-overlay .quicksearch').on('keyup',function(){
-    if ($('#search-overlay .quicksearch').val() != '') {
-      $('.search-filter-overlay .container').addClass('active')
-    } else {
-      $('.search-filter-overlay .container').removeClass('active')
-    }
   })
   $( ".filter-search-btn" ).click(function() {
     $('body').addClass('is-search-overlay')
@@ -344,11 +336,18 @@ function animateTransition() {
   var logoOrder = new Array(1,2,0,3)
   var currentClientLogo = 0;
   for (var i=0;i<4;i++) {
+    var myLeft = (logoOrder[i]*25);
+    var myTop = 0;
+    if (WIN_W < 992) {
+      myLeft = ((logoOrder[i]%2)*50);
+      myTop = logoOrder[i] > 1 ? '100%' : 0;
+    }
     clientLogos.eq(i).addClass('is-active');
     currentClientLogo++;
     activeLogos[logoOrder[i]] = clientLogos.eq(i);
     clientLogos.eq(i).css({
-      left: (logoOrder[i]*25) + '%'
+      left: myLeft + '%',
+      transform: 'translate3d(0,' + myTop + ',0)'
     })
   }
   if (clientLogos.length > 4) {
@@ -359,8 +358,15 @@ function animateTransition() {
       activeLogos[logoOrder[currentClientIndex]].removeClass('is-active')
       activeLogos[logoOrder[currentClientIndex]] = clientLogos.eq(currentClientLogo);
       clientLogos.eq(currentClientLogo).addClass('is-active')
+      var myLeft = (logoOrder[currentClientIndex]*25);
+      var myTop = 0;
+      if (WIN_W < 992) {
+        myLeft = ((logoOrder[currentClientIndex]%2)*50);
+        myTop = logoOrder[currentClientIndex] > 1 ? '100%' : 0;
+      }
       clientLogos.eq(currentClientLogo).css({
-        left: (logoOrder[currentClientIndex]*25) + '%'
+        left: myLeft + '%',
+        transform: 'translate3d(0,' + myTop + ',0)'
       })
       currentClientLogo = currentClientLogo < clientLogos.length-1 ? currentClientLogo+1 : 0;
       currentClientIndex = currentClientIndex < 3 ? currentClientIndex+1 : 0;
@@ -383,32 +389,32 @@ function animateTransition() {
     // for (var i=0;i<$(''))
 
   }
+  function resizeHandler() { // NEEDS TO NOT BREAK ON RESIZE
+    console.log('resize')
+    WIN_W = window.innerWidth;
+    WIN_H = window.innerHeight;
+    if (window.innerWidth >= 960) {
+      if (document.querySelector('.blog .primary-articles')) {
+        var detectRenderInterval = setInterval(function(){
+          initScroll();
+        },300);
 
-})( jQuery );
-
-function resizeHandler() { // NEEDS TO NOT BREAK ON RESIZE
-  WIN_W = window.innerWidth;
-  WIN_H = window.innerHeight;
-  if (window.innerWidth >= 960) {
-    if (document.querySelector('.blog .primary-articles')) {
-      var detectRenderInterval = setInterval(function(){
-        initScroll();
-      },300);
-
-      function initScroll() {
-        clearInterval(detectRenderInterval);
-        el_primary_list = document.querySelector('.blog .primary-articles');
-        el_secondary_list = document.querySelector('.blog .secondary-articles');
-        el_secondary_list.style.transform = 'translate3d(0, 0, 0)'
-        scrollHeight = document.body.offsetHeight - WIN_H;
-        primaryHeight = el_primary_list.offsetHeight;
-        secondaryHeight = el_secondary_list.offsetHeight;
-        heightDifference = primaryHeight - secondaryHeight;
-        secondaryTargY = scrollHeight - heightDifference
-        oldY = 0;
-        newY = 0;
-        targY = 0;
+        function initScroll() {
+          clearInterval(detectRenderInterval);
+          el_primary_list = document.querySelector('.blog .primary-articles');
+          el_secondary_list = document.querySelector('.blog .secondary-articles');
+          el_secondary_list.style.transform = 'translate3d(0, 0, 0)'
+          scrollHeight = document.body.offsetHeight - WIN_H;
+          primaryHeight = el_primary_list.offsetHeight;
+          secondaryHeight = el_secondary_list.offsetHeight;
+          heightDifference = primaryHeight - secondaryHeight;
+          secondaryTargY = scrollHeight - heightDifference
+          oldY = 0;
+          newY = 0;
+          targY = 0;
+        }
       }
     }
   }
-}
+
+})( jQuery );
