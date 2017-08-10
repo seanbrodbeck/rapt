@@ -1063,6 +1063,19 @@ main section {
     padding-right: 0; }
     main section.grid-content .double-margin {
       margin-bottom: 16%; }
+    main section.grid-content .full-width {
+      margin-right: calc((33px + (95 - 33) * (100vw - 320px) / (1440 - 320)) / -1);
+      margin-left: calc((33px + (95 - 33) * (100vw - 320px) / (1440 - 320)) / -1);
+      width: calc(100vw + ((33px + (95 - 33) * (100vw - 320px) / (1440 - 320))));
+      max-width: none;
+      padding: 0 calc(33px + (95 - 33) * (100vw - 320px) / (1440 - 320)); }
+      @media (min-width: 1440px) {
+        main section.grid-content .full-width {
+          margin-right: calc((100vw - 1280px) / -2);
+          margin-left: calc((100vw - 1280px) / -2);
+          width: calc(100vw + ((100vw - 1280px) / 2));
+          max-width: none;
+          padding: 0 calc((100vw - 1280px) / 2); } }
   main section.awards-press {
     padding-left: 0;
     padding-right: 0; }

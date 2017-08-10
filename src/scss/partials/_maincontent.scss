@@ -160,6 +160,20 @@ main {
 			.double-margin {
 				margin-bottom:16%;
 			}
+			.full-width {
+				margin-right: calc((33px + (95 - 33) * (100vw - 320px) / (1440 - 320)) / -1);
+		    margin-left: calc((33px + (95 - 33) * (100vw - 320px) / (1440 - 320)) / -1);
+		    width: calc(100vw + ((33px + (95 - 33) * (100vw - 320px) / (1440 - 320)));
+		    max-width: none;
+		    padding: 0 calc(33px + (95 - 33) * (100vw - 320px) / (1440 - 320);
+				@media (min-width: $bp-xxlg-min) {
+					margin-right: calc((100vw - 1280px) / -2);
+			    margin-left: calc((100vw - 1280px) / -2);
+			    width: calc(100vw + ((100vw - 1280px) / 2));
+			    max-width: none;
+			    padding: 0 calc((100vw - 1280px) / 2);
+			  }
+			}
 		}
 		&.awards-press {
 			padding-left:0;
