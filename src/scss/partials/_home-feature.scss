@@ -101,13 +101,11 @@
   height: 100%;
   opacity: 0;
   visibility: hidden;
-  transform: scale(1.04);
   transition: .2s;
   z-index: 2;
 }
 
 .intro-image.is-active {
-  transform: scale(1);
   opacity: 1;
   visibility: visible;
   transition: .4s ease-out;
