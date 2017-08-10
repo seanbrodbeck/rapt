@@ -601,7 +601,7 @@ a {
           margin-bottom: 80px;
           padding-right: 15px;
           padding-left: 15px;
-          min-height: auto; } }
+          min-height: 280px; } }
       .search-filter-overlay .filter-listings .filter-listing:nth-child(even) {
         padding-right: 0; }
         @media (min-width: 680px) {

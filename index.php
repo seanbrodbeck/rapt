@@ -39,7 +39,7 @@ get_header(); ?>
 						  $query_args = array(
 						    'post_type' => 'post',
 						    'category_name' => 'Primary',
-						    'posts_per_page' => 3,
+						    'posts_per_page' => 5,
 						    'paged' => $paged
 						  );
 						  // create a new instance of WP_Query
@@ -50,9 +50,12 @@ get_header(); ?>
 
 
 								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-								
+
+								<?php if( get_field('post_link_external') ): ?>
+									<a href="<?php the_field('post_link_external'); ?>"><?php the_post_thumbnail("full"); ?></a>
+								<?php else: ?>
 									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
-					
+								<?php endif; ?>
 									<div class="entry-text">
 										<header class="entry-header">
 											<div class="category-list">
@@ -72,7 +75,7 @@ get_header(); ?>
 												</ul>
 											</div>
 											<?php if( get_field('post_link_external') ): ?>
-											<h2><a href="<?php the_field('post_link_external'); ?>"><span><?php the_field('perspectives_source'); ?></span></a> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+											<h2><a href="<?php the_field('post_link_external'); ?>"><span><?php the_field('perspectives_source'); ?></span> <?php the_title(); ?></a></h2>
 											<?php else: ?>
 											<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 											<?php endif; ?>
@@ -109,14 +112,23 @@ get_header(); ?>
 					<?php
 
 							global $post;
-							$args = array( 'posts_per_page' => 4, 'order'=> 'ASC', 'orderby' => 'date', 'category' => 4 );
+							$args = array( 'posts_per_page' => 5, 'order'=> 'ASC', 'orderby' => 'date', 'category' => 4 );
 
 							$myposts = get_posts( $args );
 							foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
+									<?php if( get_field('post_link_external') ): ?>
+										<a href="<?php the_field('post_link_external'); ?>"><?php the_post_thumbnail("full"); ?></a>
+									<?php else: ?>
+										<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
+									<?php endif; ?>
 									<header class="entry-header">
+										<?php if( get_field('post_link_external') ): ?>
+										<h3><a href="<?php the_field('post_link_external'); ?>"><span><?php the_field('perspectives_source'); ?></span> <?php the_title(); ?></a></h3>
+										<?php else: ?>
 										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+										<?php endif; ?>
+										
 										<div class="category-list">
 											<ul>
 												<?php

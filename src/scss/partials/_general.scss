@@ -369,9 +369,9 @@ a {
 		width: 100%;
 		height: auto;
 		margin-right: 0px;
-    margin-left: 0px;
-    display:flex;
-    flex-wrap: wrap;
+	    margin-left: 0px;
+	    display:flex;
+	    flex-wrap: wrap;
 		@media (min-width: $bp-sm-min) {
 			margin-right: -15px;
     	margin-left: -15px;
@@ -386,7 +386,7 @@ a {
 				margin-bottom:80px;
 				padding-right: 15px;
     			padding-left: 15px;
-    			min-height:auto;
+    			min-height:280px;
 			}
 			&:nth-child(even) {
 				padding-right:0;

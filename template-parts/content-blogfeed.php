@@ -10,9 +10,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-								
-	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
 
+<?php if( get_field('post_link_external') ): ?>
+	<a href="<?php the_field('post_link_external'); ?>"><?php the_post_thumbnail("full"); ?></a>
+<?php else: ?>
+	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
+<?php endif; ?>
 	<div class="entry-text">
 		<header class="entry-header">
 			<div class="category-list">
@@ -32,13 +35,14 @@
 				</ul>
 			</div>
 			<?php if( get_field('post_link_external') ): ?>
-			<h2><a href="<?php the_field('post_link_external'); ?>"><span><?php the_field('perspectives_source'); ?></span></a> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+			<h2><a href="<?php the_field('post_link_external'); ?>"><span><?php the_field('perspectives_source'); ?></span> <?php the_title(); ?></a></h2>
 			<?php else: ?>
 			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			<?php endif; ?>
 		</header>
 		<div class="entry-content">
-			<?php the_excerpt(); ?>
+			<?php //the_excerpt(); ?>
+			<p><?php the_field('intro_paragraph_text'); ?></p>
 		</div>
 	</div>
 </article>
