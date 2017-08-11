@@ -690,7 +690,7 @@ header {
     header .nav-wrap #site-navigation {
       position: relative;
       transform: translate3d(0, 0, 0);
-      transition: .2s transform ease-out; }
+      transition: .2s transform ease-out, 1s background-color; }
   header .main-navigation {
     width: auto;
     float: none; }
@@ -936,7 +936,7 @@ header .nav-wrap #site-navigation {
   background: white; }
 
 .single-post header .nav-wrap #site-navigation {
-  transition: 1s background-color;
+  transition: .2s transform ease-out, 1s background-color;
   background-color: #ffefdd; }
 
 .blog header .nav-wrap #site-navigation {

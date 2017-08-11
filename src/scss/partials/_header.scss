@@ -18,7 +18,7 @@ header {
 		#site-navigation {
 			position: relative;
 			transform: translate3d(0,0,0);
-			transition: .2s transform ease-out;
+			transition: .2s transform ease-out, 1s background-color;
 		}
 	}
 	.main-navigation {
@@ -337,7 +337,7 @@ header .nav-wrap #site-navigation {
 	header {
 		.nav-wrap {
 			#site-navigation {
-				transition: 1s background-color;
+				transition: .2s transform ease-out, 1s background-color;
 				background-color: $tan;
 			}
 		}
