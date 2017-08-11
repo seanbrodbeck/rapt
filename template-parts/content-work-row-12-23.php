@@ -16,7 +16,15 @@
             setup_postdata( $post ); 
 
             ?>
-              <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full'); ?></a>
+              <a href="<?php the_permalink(); ?>">
+                <?php
+                     // if (is_mobile()) {
+                     // the_post_thumbnail('thumbnail');
+                     // } else {
+                     // the_post_thumbnail('full');
+                  //} ?>
+                  <?php the_post_thumbnail('full'); ?>
+              </a>
               <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> <span><?php the_field('work_excerpt'); ?></span></a></h2>
                 <?php $terms = get_the_terms( get_the_ID(), 'work_categories' );
                                      
@@ -55,7 +63,15 @@
             setup_postdata( $post ); 
 
             ?>
-              <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full'); ?></a>
+              <a href="<?php the_permalink(); ?>">
+                <?php
+                     // if (is_mobile()) {
+                     // the_post_thumbnail('thumbnail');
+                     // } else {
+                     // the_post_thumbnail('full');
+                  //} ?>
+                  <?php the_post_thumbnail('full'); ?>
+              </a>
               <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> <span><?php the_field('work_excerpt'); ?></span></a></h2>
                 <?php $terms = get_the_terms( get_the_ID(), 'work_categories' );
                                      
