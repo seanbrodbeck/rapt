@@ -8,7 +8,8 @@ a {
   -o-transition: color .3s ease;
   transition: color .3s ease;
 	&:hover,
-	&:active {
+	&:active,
+	&:focus {
 		text-decoration: none;
 	}
 }
