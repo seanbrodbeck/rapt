@@ -98,6 +98,7 @@ a {
 		padding-left:15px;
 	}
 	.more-link {
+		cursor: pointer;
 		font-family: 'noe-display';
 		font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
 		@media (min-width: $bp-xlg-min) {
