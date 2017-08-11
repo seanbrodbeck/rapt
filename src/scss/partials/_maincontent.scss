@@ -158,7 +158,7 @@ main {
 			padding-left:0;
 			padding-right:0;
 			.double-margin {
-				margin-bottom:16%;
+				margin-bottom:16%!important;
 			}
 			.full-width {
 				margin-right: calc((33px + (95 - 33) * (100vw - 320px) / (1440 - 320)) / -1);
@@ -172,6 +172,18 @@ main {
 			    width: calc(100vw + ((100vw - 1280px) / 2));
 			    max-width: none;
 			    padding: 0 calc((100vw - 1280px) / 2);
+			  }
+			}
+			p {
+				font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320))!important;
+			  @media (min-width: $bp-xlg-min) {
+			    font-size: 20px!important;
+			  }
+			  &._Light {
+			  	font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320))!important;
+				  @media (min-width: $bp-xlg-min) {
+				    font-size: 20px!important;
+				  }
 			  }
 			}
 		}
@@ -760,6 +772,12 @@ main {
 	  				font-family: 'noe-display';
 	  				&:last-of-type {
 	  					margin-bottom: 0;
+	  				}
+	  				strong {
+	  					font-family: Fakt-Blond;
+	  					font-weight: normal;
+  						font-size: 20px;
+  						color:#a4a4a4;
 	  				}
 	  			}
 				}

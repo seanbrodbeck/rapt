@@ -381,7 +381,7 @@ a {
 		}
 		.filter-listing {
 			padding-right: 0px;
-    		padding-left: 0px;
+    	padding-left: 0px;
 			margin-bottom:30px;
 			padding-right:15px;
 			min-height:165px;
@@ -411,6 +411,9 @@ a {
 					width:auto;
 					height:auto;
 				}
+			}
+			.filter-search-text {
+				max-width: 300px;
 			}
 			h2 {
 				font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320));

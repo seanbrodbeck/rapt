@@ -1,4 +1,5 @@
 jQuery(function($){
+
 	$('.misha_loadmore').click(function(){
  
 		var button = $(this),
@@ -29,4 +30,5 @@ jQuery(function($){
 			}
 		});
 	});
+
 });
