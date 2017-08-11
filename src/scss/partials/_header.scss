@@ -248,7 +248,7 @@ header {
 	@media (min-width: $bp-sm3-min) {
 		header {
 			.nav-wrap {
-				padding: 100px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)) 0;
+				padding: 100px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
 				@media (min-width: $bp-xlg-min) {
 					padding: 100px 0;
 				}
@@ -295,8 +295,11 @@ header .nav-wrap #site-navigation {
 	header {
 		.nav-wrap {
 			#site-navigation {
-				padding: calc(26px + (35 - 26) * (100vw - 320px) / (1440 - 320)) calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
+				padding: calc(26px + (35 - 26) * (100vw - 320px) / (1440 - 320)) calc(33px + (95 - 33) * (100vw - 320px) / (1440 - 320));
 				@media (min-width: $bp-xlg-min) {
+					padding: 35px 95px;
+				}
+				@media (min-width: $bp-xxlg-min) {
 					padding: 35px calc((100vw - 1280px) / 2);
 				}
 				position: fixed;

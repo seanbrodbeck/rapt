@@ -878,7 +878,7 @@ header {
 
 @media (min-width: 960px) {
   .home header .nav-wrap {
-    padding: 100px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)) 0; } }
+    padding: 100px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)); } }
   @media (min-width: 960px) and (min-width: 1320px) {
     .home header .nav-wrap {
       padding: 100px 0; } }
@@ -910,7 +910,7 @@ header .nav-wrap #site-navigation {
   pointer-events: auto; }
 
 .is-nav-fixed header .nav-wrap #site-navigation {
-  padding: calc(26px + (35 - 26) * (100vw - 320px) / (1440 - 320)) calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
+  padding: calc(26px + (35 - 26) * (100vw - 320px) / (1440 - 320)) calc(33px + (95 - 33) * (100vw - 320px) / (1440 - 320));
   position: fixed;
   left: 0;
   top: -30px;
@@ -919,6 +919,9 @@ header .nav-wrap #site-navigation {
   background: white;
   z-index: 20; }
   @media (min-width: 1320px) {
+    .is-nav-fixed header .nav-wrap #site-navigation {
+      padding: 35px 95px; } }
+  @media (min-width: 1440px) {
     .is-nav-fixed header .nav-wrap #site-navigation {
       padding: 35px calc((100vw - 1280px) / 2); } }
   @media (max-width: 960px) {
