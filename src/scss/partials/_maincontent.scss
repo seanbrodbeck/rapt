@@ -735,6 +735,7 @@ main {
 				width: calc(1290px * .25);
 				@media (min-width: $bp-xxlg-min) {
 					margin-right: calc((100vw - 1470px) / 2);
+					right: 80px;
 				}
 			}
 			@media (max-width: $bp-sm3-min) {

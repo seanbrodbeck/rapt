@@ -199,10 +199,10 @@ a {
 }
 
 .secondary-articles {
-	padding-left: 8px;
-	padding-right: 8px;
 	display:flex;
 	flex-wrap: wrap;
+	padding-left: 8px;
+	padding-right: 8px;
 	@media (min-width: $bp-md-min) {
 		display: block;
 		padding-left: 15px;
