@@ -971,6 +971,9 @@ main section {
       @media (min-width: 680px) {
         main section.home-work .work-grid .work-row {
           margin-bottom: calc(15px + (100 - 14) * (100vw - 320px) / (1440 - 320)); } }
+      @media (min-width: 1320px) {
+        main section.home-work .work-grid .work-row {
+          margin-bottom: 100px; } }
       main section.home-work .work-grid .work-row:last-of-type {
         margin-bottom: 0; }
     main section.home-work .more-link-wrapper {
@@ -1123,7 +1126,7 @@ main section {
         main section.grid-content .full-width {
           margin-right: calc((100vw - 1280px) / -2);
           margin-left: calc((100vw - 1280px) / -2);
-          width: calc(100vw + ((100vw - 1280px) / 2));
+          width: 100vw;
           max-width: none;
           padding: 0 calc((100vw - 1280px) / 2); } }
     main section.grid-content p {
@@ -1442,6 +1445,10 @@ main .work-grid .work-row {
       main .work-grid .work-row.work-row-onethird-twothirds + .work-row-twothirds-onethird .work-row-inner,
       main .work-grid .work-row.work-row-twothirds-onethird + .work-row-onethird-twothirds .work-row-inner {
         margin-top: calc(-15px + (-100 + 15) * (100vw - 320px) / (1440 - 320)); } }
+    @media (min-width: 680px) and (min-width: 1320px) {
+      main .work-grid .work-row.work-row-onethird-twothirds + .work-row-twothirds-onethird .work-row-inner,
+      main .work-grid .work-row.work-row-twothirds-onethird + .work-row-onethird-twothirds .work-row-inner {
+        margin-top: -100px; } }
   @media (min-width: 680px) {
       main .work-grid .work-row.work-row-twothirds-onethird .work-row-inner,
       main .work-grid .work-row.work-row-onethird-twothirds .work-row-inner {
@@ -1450,6 +1457,10 @@ main .work-grid .work-row {
       main .work-grid .work-row.work-row-twothirds-onethird .work-row-inner,
       main .work-grid .work-row.work-row-onethird-twothirds .work-row-inner {
         margin-bottom: calc(15px + (100 - 15) * (100vw - 320px) / (1440 - 320)); } }
+    @media (min-width: 680px) and (min-width: 1320px) {
+      main .work-grid .work-row.work-row-twothirds-onethird .work-row-inner,
+      main .work-grid .work-row.work-row-onethird-twothirds .work-row-inner {
+        margin-bottom: 100px; } }
   @media (min-width: 960px) {
     main .work-grid .work-row {
       padding: 0; } }
@@ -1501,7 +1512,7 @@ main .work-grid .work-row {
         padding: 500px 0 80px; } }
     @media (min-width: 960px) {
       main .work-grid .work-row.work-row-full {
-        /*margin-bottom: 100px;*/
+        margin-bottom: 100px;
         padding: 500px 0 80px; } }
     main .work-grid .work-row.work-row-full .row {
       margin-left: 0;

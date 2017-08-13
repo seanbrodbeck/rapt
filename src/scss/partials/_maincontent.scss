@@ -18,6 +18,9 @@ main {
 					@media (min-width: $bp-sm-min) {
 						margin-bottom: calc(15px + (100 - 14) * (100vw - 320px) / (1440 - 320));
 					}
+					@media (min-width: $bp-xlg-min) {
+						margin-bottom: 100px;
+					}
 					&:last-of-type {
 						margin-bottom:0;
 					}
@@ -212,7 +215,7 @@ main {
 				@media (min-width: $bp-xxlg-min) {
 					margin-right: calc((100vw - 1280px) / -2);
 			    margin-left: calc((100vw - 1280px) / -2);
-			    width: calc(100vw + ((100vw - 1280px) / 2));
+			    width: 100vw;
 			    max-width: none;
 			    padding: 0 calc((100vw - 1280px) / 2);
 			  }
@@ -604,14 +607,21 @@ main {
 					@media (min-width: $bp-sm-min) {
 						margin-top: calc(-15px + (-100 + 15) * (100vw - 320px) / (1440 - 320));
 					}
+					@media (min-width: $bp-xlg-min) {
+						margin-top: -100px;
+					}
 				}
 
 				&.work-row-twothirds-onethird .work-row-inner,
 				&.work-row-onethird-twothirds .work-row-inner {
 					margin-bottom: 50px;
 					@media (min-width: $bp-sm-min) {
-						margin-bottom: calc(15px + (100 - 15) * (100vw - 320px) / (1440 - 320));;
+						margin-bottom: calc(15px + (100 - 15) * (100vw - 320px) / (1440 - 320));
 					}
+					@media (min-width: $bp-xlg-min) {
+						margin-bottom: 100px;
+					}
+
 				}
 			}
 			@media (min-width: $bp-md-min) {
@@ -674,7 +684,7 @@ main {
 					padding: 500px 0 80px;
 				}
 				@media (min-width: $bp-md-min) {
-					/*margin-bottom: 100px;*/
+					margin-bottom: 100px;
 					padding: 500px 0 80px;
 				}
 				.row {
