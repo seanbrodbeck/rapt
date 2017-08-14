@@ -575,6 +575,7 @@ a {
     padding: 0; }
   .search-filter-overlay .filter-options .filter-option {
     font-family: 'noe-display';
+    font-weight: normal !important;
     font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
     line-height: 1.15;
     color: #a5a8a8;
@@ -646,7 +647,7 @@ a {
             width: auto;
             height: auto; } }
       .search-filter-overlay .filter-listings .filter-listing .filter-search-text {
-        max-width: 300px; }
+        /*max-width: 300px;*/ }
       .search-filter-overlay .filter-listings .filter-listing h2 {
         font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320));
         margin-bottom: 0;

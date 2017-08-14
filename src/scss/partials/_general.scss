@@ -343,6 +343,7 @@ a {
 	.filter-options {
 		.filter-option {
 			font-family: 'noe-display';
+			font-weight:normal!important;
 			font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
 			@media (min-width: $bp-xlg-min) {
 				font-size: 48px;
@@ -423,7 +424,7 @@ a {
 				}
 			}
 			.filter-search-text {
-				max-width: 300px;
+				/*max-width: 300px;*/
 			}
 			h2 {
 				font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320));
