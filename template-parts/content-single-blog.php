@@ -70,13 +70,27 @@
 			 <?php next_post_link($nextthumbnail); ?>
 			 <header class="entry-header">
 			 	<div class="category-list">
+					<div class="category-list">
 					<ul>
-						<li>Get Next Post Categories Here</li>
+						<?php
+							$categories = get_the_category($next_post->ID);
+							$separator = ' · ';
+							$output = '';
+							if($categories){
+							    foreach($categories as $category) {
+							if($category->name !== 'Primary'){
+							        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
+							    }
+							echo trim($output, $separator);
+							}
+						?>
 					</ul>
+				</div>
 				</div>
 			 	<h1 class="entry-title"><?php echo get_the_title( $next_post->ID ); ?></h1>
 		 	</header>
-		 	<h2>Get Next Post Intro Paragraph Text Here</h2>
+
+		 	<h2><?php echo get_field('intro_paragraph_text', $next_post->ID); ?></h2>
 		 	<?php echo $next_post->post_content; ?>
 			 <?php } ?>
 		</article> 
