@@ -8,6 +8,10 @@
   src: url("/wp-content/themes/rapt/dist/fonts/noe-display-regular.ttf"); }
 
 @font-face {
+  font-family: 'noe-italic';
+  src: url("/wp-content/themes/rapt/dist/fonts/NoeDisplay-RegularItalic.otf"); }
+
+@font-face {
   font-family: 'Fakt-Blond';
   src: url("/wp-content/themes/rapt/dist/fonts/Fakt-Blond.otf"); }
 
