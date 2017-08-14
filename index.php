@@ -95,13 +95,13 @@ get_header(); ?>
 						  <nav class="prev-next-posts">
 						    <div class="prev-posts-link">
 
-						    	<?php echo '<div class="more-link-wrapper" style="margin-left:0;"><a class="more-link misha_loadmore">More</a></div>'; // you can use <a> as well ?>  
+						    	<?php echo '<div class="more-link-wrapper" style="margin-left:0;"><a class="more-link misha_loadmore">More</a></div>'; // you can use <a> as well ?>
 						    </div>
 						  </nav>
 						<?php } ?>
 
 						<?php else: ?>
-						  
+
 						<?php endif; ?>
 
 
@@ -128,7 +128,7 @@ get_header(); ?>
 										<?php else: ?>
 										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 										<?php endif; ?>
-										
+
 										<div class="category-list">
 											<ul>
 												<?php
@@ -158,7 +158,7 @@ get_header(); ?>
 		<div id="filter-overlay" class="search-filter-overlay" style="display:none">
 			<div class="full-width-wrap">
 				<img class="close-filter-overlay" src="/wp-content/themes/rapt/dist/images/close.svg" width="32" height="auto"/>
-				<div class="col-sm-10">
+				<div class="filter-options-container col-sm-10">
 					<div class="filter-options">
 
 						<?php

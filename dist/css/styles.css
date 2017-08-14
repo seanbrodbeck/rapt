@@ -532,6 +532,8 @@ a {
   @media (min-width: 680px) {
     .search-filter-overlay {
       padding: 70px 0; } }
+  .search-filter-overlay .full-width-wrap {
+    max-width: 1440px; }
   .search-filter-overlay .close-filter-overlay, .search-filter-overlay .close-search-overlay {
     cursor: pointer;
     position: absolute;
@@ -564,11 +566,13 @@ a {
         padding: 0 80px; } }
     .search-filter-overlay .container .col-sm-12 {
       padding-right: 0px;
-      padding-left: 0px; }
-      @media (min-width: 680px) {
-        .search-filter-overlay .container .col-sm-12 {
-          padding-right: 15px;
-          padding-left: 15px; } }
+      padding-left: 0px;
+      /* @media (min-width: $bp-sm-min) {
+				padding-right: 15px;
+	  		padding-left: 15px;
+			} */ }
+  .search-filter-overlay .filter-options-container {
+    padding: 0; }
   .search-filter-overlay .filter-options .filter-option {
     font-family: 'noe-display';
     font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
@@ -603,11 +607,11 @@ a {
     margin-right: 0px;
     margin-left: 0px;
     display: flex;
-    flex-wrap: wrap; }
-    @media (min-width: 680px) {
-      .search-filter-overlay .filter-listings {
-        margin-right: -15px;
-        margin-left: -15px; } }
+    flex-wrap: wrap;
+    /* @media (min-width: $bp-sm-min) {
+			margin-right: -15px;
+    	margin-left: -15px;
+		} */ }
     .search-filter-overlay .filter-listings .filter-listing {
       padding-right: 0px;
       padding-left: 0px;
@@ -633,7 +637,7 @@ a {
             padding-right: 15px;
             padding-left: 15px; } }
       .search-filter-overlay .filter-listings .filter-listing img {
-        width: 100%;
+        width: 100% !important;
         height: auto; }
         @media (min-width: 680px) {
           .search-filter-overlay .filter-listings .filter-listing img {
