@@ -27,6 +27,11 @@
   src: url('/wp-content/themes/rapt/dist/fonts/Fakt-BlondItalic.otf');
 }
 
+@font-face {
+  font-family: 'noe-display-italic';
+  src: url('/wp-content/themes/rapt/dist/fonts/noe-display-italic.otf');
+}
+
 body {
 	font-family: Fakt-Blond;
   line-height: 1.6;
@@ -36,6 +41,9 @@ body {
     font-size: 20px;
   }
   -webkit-font-smoothing: antialiased;
+  i {
+    font-family: 'Fakt-Blond-Italic';
+  }
 }
 
 h1  {
@@ -54,6 +62,9 @@ h1  {
 		    font-size: 48px;
 		  }
 	}
+  i {
+    font-family: 'noe-display-italic';
+  }
 }
 
 h2 {
@@ -74,9 +85,15 @@ h2 {
 		font-size: calc(24px + (48 - 24) * (100vw - 320px) / (1440 - 320));
     @media (min-width: $bp-xlg-min) {
     font-size: 48px;
+    i {
+      font-family: 'noe-display-italic';
+    }
   }
 		margin-top:0;
 	}
+  i {
+    font-family: 'Fakt-Blond-Italic';
+  }
 }
 
 h3 {
@@ -91,6 +108,9 @@ h3 {
 	@media (min-width: $bp-sm-min) {
 
 	}
+  i {
+    font-family: 'Fakt-Blond-Italic';
+  }
 }
 
 h4 {
@@ -109,6 +129,9 @@ p {
 	&.large {
 
 	}
+  i {
+    font-family: 'Fakt-Blond-Italic';
+  }
 }
 
 
