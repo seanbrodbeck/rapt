@@ -205,19 +205,49 @@ function animateTransition() {
         columnWidth: '.filter-listing-filter'
       },
     });
-    // bind filter button click
-    $('.filter-options').on( 'click', '.filter-option', function() {
-      var filterValue = $( this ).attr('data-filter');
-      $grid.isotope({ filter: filterValue });
+    // Updated Multi Select Code with Checkboxes
+    var $checkboxes = $('.filter-options input');
+
+    $checkboxes.change( function() {
+      var inclusives = [];
+      $checkboxes.each( function( i, elem ) {
+        if ( elem.checked ) {
+          inclusives.push( elem.value );
+        }
+      });
+
+      var filterValue = inclusives.length ? inclusives.join(', ') : '*';
+      
+      $( ".reset" ).click(function() {
+        $( ".filter-options label" ).removeClass('is-checked');
+        $('input').prop('checked', false);
+        $(this).removeClass('is-checked');
+      });
+      
+      $grid.isotope({ filter: filterValue })
     });
-    // change is-checked class on buttons
     $('.filter-options').each( function( i, buttonGroup ) {
-      var $buttonGroup = $( buttonGroup );
-      $buttonGroup.on( 'click', '.filter-option', function() {
-        $buttonGroup.find('.is-checked').removeClass('is-checked');
-        $( this ).addClass('is-checked');
+      console.log(i)
+      $('.filter-options .filter-option').on( 'mouseup', function(e){
+        $(this).toggleClass('is-checked')
+      });
+      $('.filter-options .filter-option').on( 'touchend', function(e){
+        $(this).toggleClass('is-checked')
       });
     });
+    // bind filter button click
+    // $('.filter-options').on( 'click', '.filter-option', function() {
+    //   var filterValue = $( this ).attr('data-filter');
+    //   $grid.isotope({ filter: filterValue });
+    // });
+    // change is-checked class on buttons
+    // $('.filter-options').each( function( i, buttonGroup ) {
+    //   var $buttonGroup = $( buttonGroup );
+    //   $buttonGroup.on( 'click', '.filter-option', function() {
+    //     $buttonGroup.find('.is-checked').removeClass('is-checked');
+    //     $( this ).addClass('is-checked');
+    //   });
+    // });
   });
 
   // FILTER SEARCH

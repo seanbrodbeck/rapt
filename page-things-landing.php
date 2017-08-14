@@ -69,7 +69,8 @@ get_header(); ?>
 							?>
 
 				        <?php foreach ( $terms as $term ) { ?>
-				            <span class="filter-option" data-filter=".<?php echo $term->slug; ?>"><?php echo $term->name; ?></span>
+				           <label class="filter-option"><input type="checkbox" value=".<?php echo $term->slug; ?>" /> <?php echo $term->name; ?></label>
+			           <!--  <span class="filter-option" data-filter=".<?php //echo $term->slug; ?>"><?php //echo $term->name; ?></span> -->
 				        <?php } ?>
 
 							<?php endif;?>
@@ -106,7 +107,7 @@ get_header(); ?>
 	                $work_cats_slugs = join( " ", $work_cat_slug );
 
 	                ?>
-									<div class="col-md-4 col-sm-6 col-xs-6 filter-listing filter-listing-filter <?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats_slugs ) ); ?>" data-category="<?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats_slugs ) ); ?>">
+									<div class="col-md-4 col-sm-6 col-xs-6 filter-listing filter-listing-filter <?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats_slugs ) ); ?>">
 							 				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('filter-thumb'); ?></a>
 							 				<div class="filter-search-text">
 								 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>

@@ -170,7 +170,8 @@ get_header(); ?>
 						?>
 
 			        <?php foreach ( $terms as $term ) { ?>
-			            <span class="filter-option" data-filter=".<?php echo $term->slug; ?>"><?php echo $term->name; ?></span>
+			            <label class="filter-option"><input type="checkbox" value=".<?php echo $term->slug; ?>" /> <?php echo $term->name; ?></label>
+			           <!--  <span class="filter-option" data-filter=".<?php //echo $term->slug; ?>"><?php //echo $term->name; ?></span> -->
 			        <?php } ?>
 
 						<?php endif;?>

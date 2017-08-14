@@ -581,6 +581,8 @@ a {
     @media (min-width: 1320px) {
       .search-filter-overlay .filter-options .filter-option {
         font-size: 48px; } }
+    .search-filter-overlay .filter-options .filter-option input {
+      display: none; }
     .search-filter-overlay .filter-options .filter-option:hover, .search-filter-overlay .filter-options .filter-option.is-checked {
       color: #000000;
       cursor: pointer; }

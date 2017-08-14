@@ -344,6 +344,9 @@ a {
 			line-height: 1.15;
 			color: $light-gray;
 			@include transition(color .4s ease);
+			input {
+				display:none;
+			}
 			&:hover, &.is-checked {
 				color: $black;
 				cursor: pointer;
