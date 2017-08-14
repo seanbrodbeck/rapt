@@ -17,13 +17,13 @@
 
             ?>
               <a href="<?php the_permalink(); ?>">
-                <?php
-                     // if (is_mobile()) {
-                     // the_post_thumbnail('thumbnail');
-                     // } else {
-                     // the_post_thumbnail('full');
-                  //} ?>
-                  <?php the_post_thumbnail('full'); ?>
+                <img src="<?php
+                     if (is_mobile()) {
+                     the_field('grid_thumbnail_23_width');
+                     } else {
+                     the_field('grid_thumbnail_13_width');
+                  } ?>"/>
+                  <?php //the_post_thumbnail('full'); ?>
               </a>
               <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> <span><?php the_field('work_excerpt'); ?></span></a></h2>
                 <?php $terms = get_the_terms( get_the_ID(), 'work_categories' );
@@ -64,13 +64,8 @@
 
             ?>
               <a href="<?php the_permalink(); ?>">
-                <?php
-                     // if (is_mobile()) {
-                     // the_post_thumbnail('thumbnail');
-                     // } else {
-                     // the_post_thumbnail('full');
-                  //} ?>
-                  <?php the_post_thumbnail('full'); ?>
+                <img src="<?php the_field('grid_thumbnail_23_width'); ?>"/>
+                  <?php //the_post_thumbnail('full'); ?>
               </a>
               <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> <span><?php the_field('work_excerpt'); ?></span></a></h2>
                 <?php $terms = get_the_terms( get_the_ID(), 'work_categories' );

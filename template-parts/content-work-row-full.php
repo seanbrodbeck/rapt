@@ -8,7 +8,7 @@
     setup_postdata( $post ); 
 
     ?>
-    <div class="work-row work-row-full" style="background:url('<?php //if (is_mobile()) { the_post_thumbnail_url("thumbnail"); } else { the_post_thumbnail_url("full"); } ?><?php the_post_thumbnail_url('full'); ?>') no-repeat center;background-size:cover;">
+    <div class="work-row work-row-full" style="background:url('<?php if (is_mobile()) { the_field('grid_thumbnail_13_width'); } else { the_field('grid_thumbnail_full_width'); } ?><?php //the_post_thumbnail_url('full'); ?>') no-repeat center;background-size:cover;">
       <div class="container">
         <div class="row clearfix">
           <div class="col-lg-5 col-md-6 col-sm-7">
