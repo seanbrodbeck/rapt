@@ -75,6 +75,7 @@ function animateTransition() {
     window.addEventListener('resize', resizeHandler);
     document.addEventListener('wheel', scrollHandler)
     document.addEventListener('scroll', scrollHandler)
+    $('.blog .more-link').on('click', resizeHandler);
     window.addEventListener('click', function() {
       isActive = false;
       Array.prototype.map.call(images, function(image, i) {
@@ -86,13 +87,14 @@ function animateTransition() {
     resizeHandler();
   }
 
-  function scrollHandler(e) {
+  function scrollHandler() {
     oldScrollTop = scrollTop;
     scrollTop = document.body.scrollTop;
-    navScrollHandler(e);
-    articlesScrollHandler(e)
-    caseScrollHandler(e)
+    navScrollHandler();
+    articlesScrollHandler()
+    caseScrollHandler()
     bgColorScrollHandler();
+    console.log('scrollhandler')
   }
 
   function addImageHover(i) {
@@ -143,7 +145,7 @@ function animateTransition() {
     cancelAnimationFrame(scrollRequest);
   }
 
-  function navScrollHandler(e) {
+  function navScrollHandler() {
     if ($('body').hasClass('home')) {
       var logoTop = Math.max(-WIN_H + 92,(-scrollTop*.82));
       $('.rapt-logo-wrap').css({
@@ -164,7 +166,7 @@ function animateTransition() {
     }
   }
 
-  function articlesScrollHandler(e) {
+  function articlesScrollHandler() {
     if (el_secondary_list) {
       requestAnimationFrame(function(){
         scrollPercent = scrollTop/scrollHeight;
@@ -423,18 +425,15 @@ function animateTransition() {
 
   // Case Study Scroll Locking
 
-  function caseScrollHandler(e) {
-    // var lockedTops = [];
-    // for (var i=0;i<$(''))
+  function caseScrollHandler() {
 
   }
   function resizeHandler() { // NEEDS TO NOT BREAK ON RESIZE
-    console.log('resize')
     WIN_W = window.innerWidth;
     WIN_H = window.innerHeight;
     if (window.innerWidth >= 960) {
       if (document.querySelector('.blog .primary-articles')) {
-        var detectRenderInterval = setTimeout(function(){
+        setTimeout(function(){
           initScroll();
         },300);
 
@@ -450,6 +449,7 @@ function animateTransition() {
           oldY = 0;
           newY = 0;
           targY = 0;
+          scrollHandler()
         }
       }
     }
