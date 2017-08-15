@@ -1,6 +1,6 @@
 jQuery(function($){
 
-	$('.misha_loadmore2').click(function(){
+	$('.misha_loadmore').click(function(){
  
 		var button = $(this),
 		    data = {

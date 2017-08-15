@@ -164,12 +164,12 @@ get_header(); ?>
 
 						<?php if ($the_query->max_num_pages > 1)  { // check if the max number of pages is greater than 1  ?>
 
-						  <nav class="prev-next-posts">
+						  <!-- <nav class="prev-next-posts">
 						    <div class="prev-posts-link">
 
-						    	<?php echo '<div class="more-link-wrapper" style="margin-left:0;"><a class="more-link misha_loadmore2">More</a></div>'; // you can use <a> as well ?>
+						    	<?php //echo '<div class="more-link-wrapper" style="margin-left:0;"><a class="more-link misha_loadmore2">More</a></div>'; // you can use <a> as well ?>
 						    </div>
-						  </nav>
+						  </nav> -->
 						<?php } ?>
 
 						<?php else: ?>
