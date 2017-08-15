@@ -72,7 +72,7 @@ function animateTransition() {
         addTextClick(i);
       }
     })
-    $('document').on('resize', resizeHandler);
+    window.addEventListener('resize', resizeHandler);
     document.addEventListener('wheel', scrollHandler)
     document.addEventListener('scroll', scrollHandler)
     window.addEventListener('click', function() {
@@ -434,12 +434,11 @@ function animateTransition() {
     WIN_H = window.innerHeight;
     if (window.innerWidth >= 960) {
       if (document.querySelector('.blog .primary-articles')) {
-        var detectRenderInterval = setInterval(function(){
+        var detectRenderInterval = setTimeout(function(){
           initScroll();
         },300);
 
         function initScroll() {
-          clearInterval(detectRenderInterval);
           el_primary_list = document.querySelector('.blog .primary-articles');
           el_secondary_list = document.querySelector('.blog .secondary-articles');
           el_secondary_list.style.transform = 'translate3d(0, 0, 0)'
