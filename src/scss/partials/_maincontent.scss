@@ -728,6 +728,9 @@ main {
 
 .blog {
 	#main {
+		.more-link-wrapper {
+			padding-left:0;
+		}
 		.container {
 			@media (min-width: $bp-sm-min) {
 				width: 100%;

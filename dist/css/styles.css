@@ -1578,6 +1578,8 @@ main .work-grid .work-row {
   /* * {
 			outline: 1px solid red;
 		} */ }
+  .blog #main .more-link-wrapper {
+    padding-left: 0; }
   @media (min-width: 680px) {
     .blog #main .container {
       width: 100%;
