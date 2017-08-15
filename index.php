@@ -39,7 +39,7 @@ get_header(); ?>
 						  $query_args = array(
 						    'post_type' => 'post',
 						    'category_name' => 'Primary',
-						    'posts_per_page' => 5,
+						    'posts_per_page' => 3,
 						    'paged' => $paged
 						  );
 						  // create a new instance of WP_Query
@@ -110,25 +110,36 @@ get_header(); ?>
 
 				<div class="secondary-articles col-md-3 col-md-offset-2">
 					<?php
+						  // set up or arguments for our custom query
+						  $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+						  $query_args = array(
+						    'post_type' => 'post',
+						    'category_name' => 'Secondary',
+						    'posts_per_page' => 3,
+						    'paged' => $paged
+						  );
+						  // create a new instance of WP_Query
+						  $the_query = new WP_Query( $query_args );
+						?>
 
-							global $post;
-							$args = array( 'posts_per_page' => 5, 'order'=> 'ASC', 'orderby' => 'date', 'category' => 4 );
+						<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); // run the loop ?>
 
-							$myposts = get_posts( $args );
-							foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-									<?php if( get_field('post_link_external') ): ?>
-										<a href="<?php the_field('post_link_external'); ?>"><?php the_post_thumbnail("full"); ?></a>
-									<?php else: ?>
-										<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
-									<?php endif; ?>
-									<header class="entry-header">
-										<?php if( get_field('post_link_external') ): ?>
-										<h3><a href="<?php the_field('post_link_external'); ?>"><span><?php the_field('perspectives_source'); ?></span> <?php the_title(); ?></a></h3>
-										<?php else: ?>
-										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-										<?php endif; ?>
 
+							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+								<?php if( get_field('post_link_external') ): ?>
+									<a href="<?php the_field('post_link_external'); ?>"><?php the_post_thumbnail("full"); ?></a>
+								<?php else: ?>
+									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
+								<?php endif; ?>
+									<div class="entry-text">
+										<header class="entry-header">
+											<?php if( get_field('post_link_external') ): ?>
+											<h3><a href="<?php the_field('post_link_external'); ?>"><span><?php the_field('perspectives_source'); ?></span> <?php the_title(); ?></a></h2>
+											<?php else: ?>
+											<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+											<?php endif; ?>
+										</header>
 										<div class="category-list">
 											<ul>
 												<?php
@@ -145,10 +156,25 @@ get_header(); ?>
 												?>
 											</ul>
 										</div>
-									</header>
+									</div>
 								</article>
-							<?php endforeach;
-							wp_reset_postdata();?>
+
+
+						<?php endwhile; ?>
+
+						<?php if ($the_query->max_num_pages > 1)  { // check if the max number of pages is greater than 1  ?>
+
+						  <nav class="prev-next-posts">
+						    <div class="prev-posts-link">
+
+						    	<?php echo '<div class="more-link-wrapper" style="margin-left:0;"><a class="more-link misha_loadmore2">More</a></div>'; // you can use <a> as well ?>
+						    </div>
+						  </nav>
+						<?php } ?>
+
+						<?php else: ?>
+
+						<?php endif; ?>
 				</div>
 
 			</div>
