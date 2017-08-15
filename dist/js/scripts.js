@@ -94,7 +94,6 @@ function animateTransition() {
     articlesScrollHandler()
     caseScrollHandler()
     bgColorScrollHandler();
-    console.log('scrollhandler')
   }
 
   function addImageHover(i) {
@@ -102,7 +101,6 @@ function animateTransition() {
     qScrollPositions[i] = 0;
     questions[i].addEventListener('mouseenter', function(){
       scrollQuestionText(i)
-      console.log('test')
     })
     questions[i].addEventListener('mouseleave', function(){
       stopScrollingQuestionText()
@@ -238,7 +236,6 @@ function animateTransition() {
       $grid.isotope({ filter: filterValue })
     });
     $('.filter-options').each( function( i, buttonGroup ) {
-      console.log(i)
       $('.filter-options .filter-option').on( 'mouseup', function(e){
         $(this).toggleClass('is-checked')
       });
