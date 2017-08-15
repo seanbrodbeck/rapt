@@ -66,7 +66,6 @@ function animateTransition() {
         revealRaptLogo();
       },500)
     }, Math.floor(Math.random() * 2000 + 500))
-
     Array.prototype.map.call(questions, function(q, i) {
       if (i < questions.length) {
         addImageHover(i);
@@ -101,9 +100,10 @@ function animateTransition() {
     qScrollPositions[i] = 0;
     questions[i].addEventListener('mouseenter', function(){
       scrollQuestionText(i)
+      console.log('test')
     })
     questions[i].addEventListener('mouseleave', function(){
-      cancelAnimationFrame(scrollRequest);
+      stopScrollingQuestionText()
     })
   }
 
@@ -125,6 +125,10 @@ function animateTransition() {
   }
 
   function scrollQuestionText(i) {
+    if (window.location.hash !== '#harsh') {
+      $(questions).addClass('is-inactive')
+      questions[i].classList.remove('is-inactive')
+    }
     var el_text = questions[i].querySelector('.intro-question-text');
     qScrollPositions[i] = qScrollPositions[i] - 5;
     if (qScrollPositions[i] < -el_text.clientWidth / 3 - 5) {
@@ -132,6 +136,11 @@ function animateTransition() {
     }
     el_text.style.transform = 'translate3d(' + qScrollPositions[i] + 'px,0,0)'
     scrollRequest = requestAnimationFrame( function() { scrollQuestionText(i)})
+  }
+
+  function stopScrollingQuestionText() {
+    $(questions).removeClass('is-inactive')
+    cancelAnimationFrame(scrollRequest);
   }
 
   function navScrollHandler(e) {
@@ -217,13 +226,13 @@ function animateTransition() {
       });
 
       var filterValue = inclusives.length ? inclusives.join(', ') : '*';
-      
+
       $( ".reset" ).click(function() {
         $( ".filter-options label" ).removeClass('is-checked');
         $('input').prop('checked', false);
         $(this).removeClass('is-checked');
       });
-      
+
       $grid.isotope({ filter: filterValue })
     });
     $('.filter-options').each( function( i, buttonGroup ) {
