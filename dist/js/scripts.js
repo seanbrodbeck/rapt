@@ -218,15 +218,13 @@ function animateTransition() {
       }
     }
     function loadListener(image) {
-      image.imagesLoaded().progress(onProgress)
-    }
-    function onProgress(imgLoad, image) {
-      if (image.isLoaded) {
-        $(image.img).addClass("loaded");
-      } else {
-        $(image.img).addClass("missing");
-      }
-
+      image.imagesLoaded()
+        .done( function() {
+          image.addClass("loaded");
+        })
+        .fail( function() {
+          image.addClass("missing");
+        })
     }
   } catch (e) {
     console.log('Error in script: ', e);
