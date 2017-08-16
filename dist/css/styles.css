@@ -412,11 +412,20 @@ a {
 
 img:not(.loaded) {
   display: block;
-  background: rgba(0, 0, 0, 0.05); }
+  background: rgba(0, 0, 0, 0.05);
+  position: relative; }
 
 img.loaded {
   width: 100% !important;
   height: auto !important; }
+
+.missing::after {
+  content: 'missing';
+  font-size: 10px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: rgba(0, 0, 0, 0.4); }
 
 .primary-articles {
   padding: 0; }

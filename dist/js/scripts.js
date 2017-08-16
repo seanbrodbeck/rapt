@@ -218,9 +218,15 @@ function animateTransition() {
       }
     }
     function loadListener(image) {
-      image.imagesLoaded(function(){
-        image.addClass("loaded");
-      })
+      image.imagesLoaded().progress(onProgress)
+    }
+    function onProgress(imgLoad, image) {
+      if (image.isLoaded) {
+        $(image.img).addClass("loaded");
+      } else {
+        $(image.img).addClass("missing");
+      }
+
     }
   } catch (e) {
     console.log('Error in script: ', e);
