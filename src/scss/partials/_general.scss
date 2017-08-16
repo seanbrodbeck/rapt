@@ -136,6 +136,16 @@ a {
 	background: $tan;
 }
 
+img:not(.loaded) {
+	display: block;
+	background: rgba(0,0,0,.05);
+}
+
+img.loaded {
+	width: 100% !important;
+	height: auto !important;
+}
+
 .primary-articles {
 	padding:0;
 	@media (min-width: $bp-lg-min) {
@@ -266,6 +276,8 @@ a {
 		float: right;
 		cursor: pointer;
 		margin-right: -4px;
+		background: transparent !important;
+		width: 32px !important;
 	}
 }
 
@@ -302,9 +314,10 @@ a {
 		top:15px;
 		right:15px;
 		z-index: 2;
-		width:18px;
-		height:auto;
+		width: 18px !important;
+		height: auto;
 		transition: .2s ease-out;
+		background: transparent !important;
 		&:hover {
 			transform: rotate(90deg);
 		}
@@ -314,7 +327,7 @@ a {
 			position: relative;
 			top:auto;
 			right:auto;
-			width:32px;
+			width: 32px !important;
 			height:auto;
 		}
 	}
