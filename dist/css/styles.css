@@ -1412,7 +1412,8 @@ main section {
       opacity: 0;
       transition: .7s opacity,visibility;
       position: absolute;
-      top: 0; }
+      top: 0;
+      background: transparent !important; }
       main section.clients .client-logo:nth-of-type(4n+1) {
         left: 0; }
       main section.clients .client-logo:nth-of-type(4n+2) {

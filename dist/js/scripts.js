@@ -76,14 +76,16 @@ function animateTransition() {
     document.addEventListener('wheel', scrollHandler)
     document.addEventListener('scroll', scrollHandler)
     $('.blog .more-link').on('click', resizeHandler);
-    window.addEventListener('click', function() {
-      isActive = false;
-      Array.prototype.map.call(images, function(image, i) {
-        images[i].classList.remove('is-active');
-        questions[i].classList.remove('is-active')
-        questions[i].classList.remove('is-off')
+    if (images.length > 0 && questions.length > 0) {
+      window.addEventListener('click', function() {
+        isActive = false;
+        Array.prototype.map.call(images, function(image, i) {
+          images[i].classList.remove('is-active');
+          questions[i].classList.remove('is-active');
+          questions[i].classList.remove('is-off');
+        })
       })
-    })
+    }
     resizeHandler();
   }
 
