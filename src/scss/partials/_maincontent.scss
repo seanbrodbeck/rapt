@@ -239,6 +239,11 @@ main {
 				  }
 			  }
 			}
+			.lg-contains-img {
+				.lg-placeholder {
+					padding-bottom:0!important;
+				}
+			}
 		}
 		&.awards-press {
 			padding-left:0;
