@@ -137,7 +137,7 @@ get_header('home'); ?>
 				<div class="container">
 
 					<div class="col-sm-12">
-						<h1>Perspectives</h1>
+						<h1>Thoughts</h1>
 					</div>
 
 					<div class="row clearfix">

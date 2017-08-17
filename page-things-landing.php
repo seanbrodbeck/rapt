@@ -57,7 +57,7 @@ get_header(); ?>
 			<div id="filter-overlay" class="search-filter-overlay" style="display:none">
 				<div class="full-width-wrap">
 					<img class="close-filter-overlay" src="/wp-content/themes/rapt/dist/images/close.svg" width="32" height="auto"/>
-					<div class="filter-options-container col-sm-10">
+					<div class="filter-options-container col-sm-12">
 						<div class="filter-options">
 
 							<?php

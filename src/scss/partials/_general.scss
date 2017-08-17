@@ -313,7 +313,7 @@ img.loaded {
 	padding: 50px 0;
 	overflow: scroll;
 	@media (min-width: $bp-sm-min) {
-		padding: 70px 0;
+		padding: 75px 0 70px;
 	}
 	.full-width-wrap {
 		max-width: 1440px;
@@ -321,8 +321,8 @@ img.loaded {
 	.close-filter-overlay, .close-search-overlay {
 		cursor: pointer;
 		position: absolute;
-		top:15px;
-		right:15px;
+		top: 15px;
+		right: 15px;
 		z-index: 2;
 		width: 18px !important;
 		height: auto;
@@ -332,13 +332,11 @@ img.loaded {
 			transform: rotate(90deg);
 		}
 		@media (min-width: $bp-sm-min) {
-			float: right;
 			cursor: pointer;
-			position: relative;
-			top:auto;
-			right:auto;
+			top: 32px;
+			right: 32px;
 			width: 32px !important;
-			height:auto;
+			height: auto;
 		}
 	}
 	.container {
