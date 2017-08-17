@@ -1,15 +1,15 @@
 .intro {
   width: 100vw;
-  height: calc(100vh - 136px);
+  height: calc(100vh - 90px);
   @media (min-width: $bp-sm-min) {
-    height: calc(100vh - 126px);
+    height: calc(100vh - 96px);
   }
   @media (min-width: $bp-sm3-min) {
-    height: calc(100vh - 160px);
+    height: calc(100vh - 120px);
   }
   font-family: 'noe-display-medium';
   font-size: calc(35px + (64 - 35) * (100vw - 400px) / (1440 - 400));
-  line-height: calc(2.5vw + 2.4vh);
+  line-height: calc(2.5vw + 1.6vh);
   padding: calc(15px + (0 - 15) * (100vw - 400px) / (1440 - 400)) 0;
   box-sizing: border-box;
   position:relative;
