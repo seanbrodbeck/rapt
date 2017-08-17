@@ -1203,6 +1203,18 @@ main section {
       padding-bottom: 0 !important; }
     main section.grid-content .lg-type-img .lg-placeholder {
       padding-bottom: 0 !important; }
+    @media (max-width: 960px) {
+      main section.grid-content .lg-textformat-parent.is-fixed {
+        transform: translate3d(0, 0, 0) !important; } }
+    @media (min-width: 960px) {
+      main section.grid-content .lg-textformat-parent.is-fixed {
+        position: fixed;
+        top: 120px;
+        transform: translate3d(0, 0, 0) !important; } }
+  @media (min-width: 960px) and (min-width: 1320px) {
+    main section.grid-content .lg-textformat-parent.is-fixed {
+      margin-left: 80px;
+      left: calc((100vw - 1440px) / 2); } }
   main section.awards-press {
     padding-left: 0;
     padding-right: 0; }
@@ -1421,8 +1433,7 @@ main section {
       opacity: 0;
       transition: .7s opacity,visibility;
       position: absolute;
-      top: 0;
-      background: transparent !important; }
+      top: 0; }
       main section.clients .client-logo:nth-of-type(4n+1) {
         left: 0; }
       main section.clients .client-logo:nth-of-type(4n+2) {
@@ -1431,6 +1442,8 @@ main section {
         left: 50%; }
       main section.clients .client-logo:nth-of-type(4n+4) {
         left: 75%; }
+      main section.clients .client-logo img {
+        background: transparent !important; }
     main section.clients .client-logo.is-active {
       opacity: 1;
       transition-delay: .5s; }

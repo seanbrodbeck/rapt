@@ -461,7 +461,36 @@ function animateTransition() {
   // Case Study Scroll Locking
 
   function caseScrollHandler() {
+    if ($('.scroll-lock-text').length > 0) {
+      $('.scroll-lock-text').each(function(i){
+        var el_text = $('.lg-textformat-parent', this);
+        var textHeight = el_text.innerHeight();
+        var textWidth = el_text.innerWidth();
 
+        var myTop = $(this).offset().top;
+        var myBottom = myTop + $(this).innerHeight();
+        var myHeight = myBottom - myTop;
+
+        var minTop = myTop - 120;
+        var maxTop = myBottom - textHeight - 60;
+
+        if (scrollTop > minTop && scrollTop < maxTop) {
+          el_text.css({width: textWidth})
+          el_text.addClass('is-fixed');
+        } else {
+          el_text.removeClass('is-fixed');
+          if (scrollTop > maxTop) {
+            el_text.css({
+              transform: 'translate3d(0,' + (myHeight - textHeight + 60) + 'px,0)'
+            })
+          } else {
+            el_text.css({
+              transform: 'translate3d(0,0,0)'
+            })
+          }
+        }
+      })
+    }
   }
   function resizeHandler() { // NEEDS TO NOT BREAK ON RESIZE
     WIN_W = window.innerWidth;
