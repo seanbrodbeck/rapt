@@ -72,6 +72,7 @@ function animateTransition() {
         addTextClick(i);
       }
     })
+    scrollQuestionText()
     window.addEventListener('resize', resizeHandler);
     document.addEventListener('wheel', scrollHandler)
     document.addEventListener('scroll', scrollHandler)
@@ -100,12 +101,13 @@ function animateTransition() {
 
   function addImageHover(i) {
     var testVar = 'whatever';
-    qScrollPositions[i] = 0;
+    qScrollPositions[i] = Math.floor(Math.random() * -200);
     questions[i].addEventListener('mouseenter', function(){
-      scrollQuestionText(i)
+      $(questions).addClass('is-inactive')
+      $(this).removeClass('is-inactive')
     })
     questions[i].addEventListener('mouseleave', function(){
-      stopScrollingQuestionText()
+      $(questions).removeClass('is-inactive')
     })
   }
 
@@ -126,21 +128,21 @@ function animateTransition() {
     })
   }
 
-  function scrollQuestionText(i) {
-    if (window.location.hash !== '#harsh') {
-      $(questions).addClass('is-inactive')
-      questions[i].classList.remove('is-inactive')
+  function scrollQuestionText() {
+    for (var i=0;i<$('.intro-question-text').length;i++) {
+      var el_text = questions[i].querySelector('.intro-question-text');
+      var activeSpeed = 0;
+
+      qScrollPositions[i] = qScrollPositions[i] - (i/2 + 2 + activeSpeed);
+      if (qScrollPositions[i] < -el_text.clientWidth / 3 - 5) {
+        qScrollPositions[i] = 0;
+      }
+      el_text.style.transform = 'translate3d(' + qScrollPositions[i] + 'px,0,0)'
     }
-    var el_text = questions[i].querySelector('.intro-question-text');
-    qScrollPositions[i] = qScrollPositions[i] - 5;
-    if (qScrollPositions[i] < -el_text.clientWidth / 3 - 5) {
-      qScrollPositions[i] = 0;
-    }
-    el_text.style.transform = 'translate3d(' + qScrollPositions[i] + 'px,0,0)'
-    scrollRequest = requestAnimationFrame( function() { scrollQuestionText(i)})
+    scrollRequest = requestAnimationFrame( function() { scrollQuestionText()})
   }
 
-  function stopScrollingQuestionText() {
+  function stopScrollingQuestionText(i) {
     $(questions).removeClass('is-inactive')
     cancelAnimationFrame(scrollRequest);
   }

@@ -159,7 +159,7 @@ a:hover, a:active {
   height: calc(100vh - 90px);
   font-family: 'noe-display-medium';
   font-size: calc(35px + (64 - 35) * (100vw - 400px) / (1440 - 400));
-  line-height: calc(2.5vw + 1.6vh);
+  line-height: calc(2.9vw + 1.8vh);
   padding: calc(15px + (0 - 15) * (100vw - 400px) / (1440 - 400)) 0;
   box-sizing: border-box;
   position: relative; }
@@ -183,7 +183,7 @@ a:hover, a:active {
   cursor: pointer;
   transition: .3s;
   white-space: nowrap;
-  padding: calc(5px + .6vw + 2.3vh) 0;
+  padding: calc(5px + .85vw + 1.8vh) 0;
   background: white;
   margin-top: calc(10px - 3.2vw - 1vh);
   backface-visibility: hidden;
@@ -227,7 +227,8 @@ a:hover, a:active {
   transform: rotate(-3deg); }
 
 .intro-question.is-off {
-  opacity: 0; }
+  opacity: 0 !important;
+  transition: none; }
 
 .intro-question.is-inactive .intro-question-text {
   opacity: .3 !important;
@@ -415,7 +416,7 @@ a {
 .blog {
   background: #ffefdd; }
 
-img:not(.loaded) {
+img:not(.loaded):not(.intro-image) {
   display: block;
   background: rgba(0, 0, 0, 0.05);
   position: relative; }
