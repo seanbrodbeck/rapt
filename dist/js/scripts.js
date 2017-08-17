@@ -245,6 +245,7 @@ function animateTransition() {
     var $grid = $('.filter-listings-filters').isotope({
       itemSelector: '.filter-listing-filter',
       percentPosition: true,
+      layoutMode: 'fitRows',
       masonry: {
         columnWidth: '.filter-listing-filter'
       },
@@ -313,6 +314,7 @@ function animateTransition() {
         $grid.isotope({
           itemSelector: '.filter-listing-search',
           percentPosition: true,
+          layoutMode: 'fitRows',
           masonry: {
             columnWidth: '.filter-listing-search'
           },
