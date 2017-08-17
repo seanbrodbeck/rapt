@@ -1201,6 +1201,8 @@ main section {
             font-size: 20px !important; } }
     main section.grid-content .lg-contains-img .lg-placeholder {
       padding-bottom: 0 !important; }
+    main section.grid-content .lg-type-img .lg-placeholder {
+      padding-bottom: 0 !important; }
   main section.awards-press {
     padding-left: 0;
     padding-right: 0; }
