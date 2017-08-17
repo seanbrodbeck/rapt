@@ -357,7 +357,7 @@ function animateTransition() {
   $('.team-members .team-member-group:first').css("display", "block");
 
   $(".team-sort-links a").click(function (e) {
-      var idname= $(this).data('divid');
+      var idname= $(this).data('group');
       $("#"+idname).delay(300).fadeIn(300).addClass('active').siblings().fadeOut(300);
       e.preventDefault();
       $(this).addClass('active').siblings().removeClass('active');
