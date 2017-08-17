@@ -47,9 +47,20 @@ get_header(); ?>
 
 													<div class="col-md-4 col-sm-4 col-xs-6 team-member">
 														<div class="inner">
-															<?php $image = get_sub_field('team_member_image'); if( !empty($image) ): ?>
-															<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-															<?php endif; ?>
+
+															 <?php
+							                     if (is_mobile()) {		
+								                    	echo "<img src='";				                    
+								                    	the_sub_field('team_member_image');
+								                    	echo "'/>";
+							                     } else {
+							                     		echo "<video width='100%' height='auto' autoplay loop>";	
+							                     		echo " <source src='";
+							                     		the_sub_field('team_member_video');
+							                     		echo "' type='video/mp4'>";
+							                     		echo "</video>";
+							                  } ?>
+															
 															<div class="team-member-info">
 																<h3><?php the_sub_field('team_member_name'); ?></h3>
 																<p><?php the_sub_field('team_member_title'); ?></p>
