@@ -248,9 +248,9 @@ header {
 	@media (min-width: $bp-sm3-min) {
 		header {
 			.nav-wrap {
-				padding: 100px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
+				padding: 50px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)) 100px;
 				@media (min-width: $bp-xlg-min) {
-					padding: 100px 0;
+					padding: 50px 0 100px;
 				}
 			}
 			.main-navigation {

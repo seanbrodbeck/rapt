@@ -1,11 +1,16 @@
 .intro {
   width: 100vw;
-  min-height: 100vh;
-  overflow: hidden;
+  height: calc(100vh - 136px);
+  @media (min-width: $bp-sm-min) {
+    height: calc(100vh - 126px);
+  }
+  @media (min-width: $bp-sm3-min) {
+    height: calc(100vh - 160px);
+  }
   font-family: 'noe-display-medium';
   font-size: calc(35px + (64 - 35) * (100vw - 400px) / (1440 - 400));
   line-height: calc(2.5vw + 2.4vh);
-  padding: calc(10px + (30 - 10) * (100vw - 400px) / (1440 - 400)) 0;
+  padding: calc(15px + (0 - 15) * (100vw - 400px) / (1440 - 400)) 0;
   box-sizing: border-box;
   position:relative;
 }

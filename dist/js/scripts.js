@@ -64,7 +64,7 @@ function animateTransition() {
       setTimeout(function(){
         cancelAnimationFrame(transitionRAF);
         revealRaptLogo();
-      },500)
+      },200)
     }, Math.floor(Math.random() * 2000 + 500))
     Array.prototype.map.call(questions, function(q, i) {
       if (i < questions.length) {
@@ -147,7 +147,7 @@ function animateTransition() {
 
   function navScrollHandler() {
     if ($('body').hasClass('home')) {
-      var logoTop = Math.max(-WIN_H + 92,(-scrollTop*.82));
+      var logoTop = Math.max(-WIN_H + 92,(-scrollTop));
       $('.rapt-logo-wrap').css({
         transform: 'translate3d(0,' + logoTop + 'px,0)'
       })

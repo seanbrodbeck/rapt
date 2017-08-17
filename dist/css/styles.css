@@ -156,14 +156,19 @@ a:hover, a:active {
 
 .intro {
   width: 100vw;
-  min-height: 100vh;
-  overflow: hidden;
+  height: calc(100vh - 136px);
   font-family: 'noe-display-medium';
   font-size: calc(35px + (64 - 35) * (100vw - 400px) / (1440 - 400));
   line-height: calc(2.5vw + 2.4vh);
-  padding: calc(10px + (30 - 10) * (100vw - 400px) / (1440 - 400)) 0;
+  padding: calc(15px + (0 - 15) * (100vw - 400px) / (1440 - 400)) 0;
   box-sizing: border-box;
   position: relative; }
+  @media (min-width: 680px) {
+    .intro {
+      height: calc(100vh - 126px); } }
+  @media (min-width: 960px) {
+    .intro {
+      height: calc(100vh - 160px); } }
 
 .intro-questions {
   position: relative;
@@ -938,10 +943,10 @@ header {
 
 @media (min-width: 960px) {
   .home header .nav-wrap {
-    padding: 100px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)); } }
+    padding: 50px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)) 100px; } }
   @media (min-width: 960px) and (min-width: 1320px) {
     .home header .nav-wrap {
-      padding: 100px 0; } }
+      padding: 50px 0 100px; } }
 
 @media (min-width: 960px) {
   .home header .main-navigation #primary-menu li a {
