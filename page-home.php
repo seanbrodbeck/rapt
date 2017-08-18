@@ -143,96 +143,114 @@ get_header('home'); ?>
 					<div class="row clearfix">
 
 						<div class="primary-articles col-md-7">
-								<?php
+								
+								<?php if(get_field('home_page_featured_primary_blog_posts')): ?>
+									<?php while(has_sub_field('home_page_featured_primary_blog_posts')): ?>
 
-									global $post;
-									$args = array( 'posts_per_page' => 1, 'order'=> 'ASC', 'orderby' => 'date', 'category' => 3 );
+											<?php $post_object = get_sub_field('home_primary_blog_post');
 
-									$myposts = get_posts( $args );
-									foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-										<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+												if( $post_object ): 
 
-										<?php if( get_field('post_link_external') ): ?>
-											<a href="<?php the_field('post_link_external'); ?>"><?php the_post_thumbnail("full"); ?></a>
-										<?php else: ?>
-											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
-										<?php endif; ?>
-											<div class="entry-text">
-												<header class="entry-header">
-													<div class="category-list">
-														<ul>
-															<?php
-																$categories = get_the_category();
-																$separator = ' · ';
-																$output = '';
-																if($categories){
-																    foreach($categories as $category) {
-																if($category->name !== 'Primary'){
-																        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
-																    }
-																echo trim($output, $separator);
-																}
-															?>
-														</ul>
-													</div>
-													<?php if( get_field('post_link_external') ): ?>
-													<h2><a href="<?php the_field('post_link_external'); ?>"><span><?php the_field('perspectives_source'); ?></span> <?php the_title(); ?></a></h2>
-													<?php else: ?>
-													<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-													<?php endif; ?>
-												</header>
-												<div class="entry-content">
-													<?php //the_excerpt(); ?>
-													<p><?php the_field('intro_paragraph_text'); ?></p>
-												</div>
-											</div>
-										</article>
-									<?php endforeach;
-									wp_reset_postdata();?>
+													$post = $post_object;
+													setup_postdata( $post ); 
+
+													?>
+												    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+															<?php if( get_field('post_link_external') ): ?>
+																<a href="<?php the_field('post_link_external'); ?>"><?php the_post_thumbnail("full"); ?></a>
+															<?php else: ?>
+																<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
+															<?php endif; ?>
+																<div class="entry-text">
+																	<header class="entry-header">
+																		<div class="category-list">
+																			<ul>
+																				<?php
+																					$categories = get_the_category();
+																					$separator = ' · ';
+																					$output = '';
+																					if($categories){
+																					    foreach($categories as $category) {
+																					if($category->name !== 'Primary'){
+																					        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
+																					    }
+																					echo trim($output, $separator);
+																					}
+																				?>
+																			</ul>
+																		</div>
+																		<?php if( get_field('post_link_external') ): ?>
+																		<h2><a href="<?php the_field('post_link_external'); ?>"><span><?php the_field('perspectives_source'); ?></span> <?php the_title(); ?></a></h2>
+																		<?php else: ?>
+																		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+																		<?php endif; ?>
+																	</header>
+																	<div class="entry-content">
+																		<p><?php the_field('intro_paragraph_text'); ?></p>
+																	</div>
+																</div>
+															</article>
+												    <?php wp_reset_postdata(); ?>
+												<?php endif; ?>
+
+										<?php endwhile; ?>
+
+									<?php endif; ?>
+
 						</div>
 
 						<div class="secondary-articles col-md-3 col-md-offset-2">
-							<?php
 
-									global $post;
-									$args = array( 'posts_per_page' => 2, 'order'=> 'ASC', 'orderby' => 'date', 'category' => 4 );
+							<?php if(get_field('home_page_featured_secondary_blog_posts')): ?>
+									<?php while(has_sub_field('home_page_featured_secondary_blog_posts')): ?>
 
-									$myposts = get_posts( $args );
-									foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-										<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-										<?php if( get_field('post_link_external') ): ?>
-											<a href="<?php the_field('post_link_external'); ?>"><?php the_post_thumbnail("full"); ?></a>
-										<?php else: ?>
-											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
-										<?php endif; ?>
-											<div class="entry-text">
-												<header class="entry-header">
-													<?php if( get_field('post_link_external') ): ?>
-													<h3><a href="<?php the_field('post_link_external'); ?>"><span><?php the_field('perspectives_source'); ?></span> <?php the_title(); ?></a></h2>
-													<?php else: ?>
-													<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-													<?php endif; ?>
-												</header>
-												<div class="category-list">
-													<ul>
-														<?php
-															$categories = get_the_category();
-															$separator = ' · ';
-															$output = '';
-															if($categories){
-															    foreach($categories as $category) {
-															if($category->name !== 'Secondary'){
-															        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
-															    }
-															echo trim($output, $separator);
-															}
-														?>
-													</ul>
-												</div>
-											</div>
-										</article>
-									<?php endforeach;
-									wp_reset_postdata();?>
+											<?php $post_object = get_sub_field('home_secondary_blog_post');
+
+												if( $post_object ): 
+
+													$post = $post_object;
+													setup_postdata( $post ); 
+
+													?>
+												    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+															<?php if( get_field('post_link_external') ): ?>
+																<a href="<?php the_field('post_link_external'); ?>"><?php the_post_thumbnail("full"); ?></a>
+															<?php else: ?>
+																<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
+															<?php endif; ?>
+																<div class="entry-text">
+																	<header class="entry-header">
+																		<?php if( get_field('post_link_external') ): ?>
+																		<h3><a href="<?php the_field('post_link_external'); ?>"><span><?php the_field('perspectives_source'); ?></span> <?php the_title(); ?></a></h2>
+																		<?php else: ?>
+																		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+																		<?php endif; ?>
+																	</header>
+																	<div class="category-list">
+																		<ul>
+																			<?php
+																				$categories = get_the_category();
+																				$separator = ' · ';
+																				$output = '';
+																				if($categories){
+																				    foreach($categories as $category) {
+																				if($category->name !== 'Secondary'){
+																				        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
+																				    }
+																				echo trim($output, $separator);
+																				}
+																			?>
+																		</ul>
+																	</div>
+																</div>
+															</article>
+												    <?php wp_reset_postdata(); ?>
+												<?php endif; ?>
+
+										<?php endwhile; ?>
+
+									<?php endif; ?>
+
 						</div>
 						<div class="clearfix"></div>
 					</div>
