@@ -39,7 +39,7 @@ get_header(); ?>
 						  $query_args = array(
 						    'post_type' => 'post',
 						    'category_name' => 'Primary',
-						    'posts_per_page' => 3,
+						    'posts_per_page' => -1,
 						    'paged' => $paged
 						  );
 						  // create a new instance of WP_Query
@@ -81,28 +81,12 @@ get_header(); ?>
 											<?php endif; ?>
 										</header>
 										<div class="entry-content">
-											<?php //the_excerpt(); ?>
 											<p><?php the_field('intro_paragraph_text'); ?></p>
 										</div>
 									</div>
 								</article>
 
-
-						<?php endwhile; ?>
-
-						<?php if ($the_query->max_num_pages > 1)  { // check if the max number of pages is greater than 1  ?>
-
-						  <nav class="prev-next-posts">
-						    <div class="prev-posts-link">
-
-						    	<?php echo '<div class="more-link-wrapper" style="margin-left:0;"><a class="more-link misha_loadmore">More</a></div>'; // you can use <a> as well ?>
-						    </div>
-						  </nav>
-						<?php } ?>
-
-						<?php else: ?>
-
-						<?php endif; ?>
+						<?php endwhile; ?><?php endif; ?>
 
 
 
@@ -115,7 +99,7 @@ get_header(); ?>
 						  $query_args = array(
 						    'post_type' => 'post',
 						    'category_name' => 'Secondary',
-						    'posts_per_page' => 3,
+						    'posts_per_page' => -1,
 						    'paged' => $paged
 						  );
 						  // create a new instance of WP_Query
@@ -160,21 +144,7 @@ get_header(); ?>
 								</article>
 
 
-						<?php endwhile; ?>
-
-						<?php if ($the_query->max_num_pages > 1)  { // check if the max number of pages is greater than 1  ?>
-
-						  <!-- <nav class="prev-next-posts">
-						    <div class="prev-posts-link">
-
-						    	<?php //echo '<div class="more-link-wrapper" style="margin-left:0;"><a class="more-link misha_loadmore2">More</a></div>'; // you can use <a> as well ?>
-						    </div>
-						  </nav> -->
-						<?php } ?>
-
-						<?php else: ?>
-
-						<?php endif; ?>
+						<?php endwhile; ?><?php endif; ?>
 				</div>
 
 			</div>
