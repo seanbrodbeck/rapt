@@ -157,7 +157,7 @@ get_header('home'); ?>
 													?>
 												    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 															<?php if( get_field('post_link_external') ): ?>
-																<a href="<?php the_field('post_link_external'); ?>"><?php the_post_thumbnail("full"); ?></a>
+																<a href="<?php the_field('post_link_external'); ?>" target=_"blank"><?php the_post_thumbnail("full"); ?></a>
 															<?php else: ?>
 																<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
 															<?php endif; ?>
@@ -214,7 +214,7 @@ get_header('home'); ?>
 													?>
 												    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 															<?php if( get_field('post_link_external') ): ?>
-																<a href="<?php the_field('post_link_external'); ?>"><?php the_post_thumbnail("full"); ?></a>
+																<a href="<?php the_field('post_link_external'); ?>" target=_"blank"><?php the_post_thumbnail("full"); ?></a>
 															<?php else: ?>
 																<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
 															<?php endif; ?>

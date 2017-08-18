@@ -52,7 +52,7 @@ get_header(); ?>
 								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 								<?php if( get_field('post_link_external') ): ?>
-									<a href="<?php the_field('post_link_external'); ?>"><?php the_post_thumbnail("full"); ?></a>
+									<a href="<?php the_field('post_link_external'); ?>" target=_"blank"><?php the_post_thumbnail("full"); ?></a>
 								<?php else: ?>
 									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
 								<?php endif; ?>
@@ -75,7 +75,7 @@ get_header(); ?>
 												</ul>
 											</div>
 											<?php if( get_field('post_link_external') ): ?>
-											<h2><a href="<?php the_field('post_link_external'); ?>"><span><?php the_field('perspectives_source'); ?></span> <?php the_title(); ?></a></h2>
+											<h2><a href="<?php the_field('post_link_external'); ?>" target=_"blank"><span><?php the_field('perspectives_source'); ?></span> <?php the_title(); ?></a></h2>
 											<?php else: ?>
 											<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 											<?php endif; ?>
@@ -112,14 +112,14 @@ get_header(); ?>
 							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 								<?php if( get_field('post_link_external') ): ?>
-									<a href="<?php the_field('post_link_external'); ?>"><?php the_post_thumbnail("full"); ?></a>
+									<a href="<?php the_field('post_link_external'); ?>" target=_"blank"><?php the_post_thumbnail("full"); ?></a>
 								<?php else: ?>
 									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
 								<?php endif; ?>
 									<div class="entry-text">
 										<header class="entry-header">
 											<?php if( get_field('post_link_external') ): ?>
-											<h3><a href="<?php the_field('post_link_external'); ?>"><span><?php the_field('perspectives_source'); ?></span> <?php the_title(); ?></a></h2>
+											<h3><a href="<?php the_field('post_link_external'); ?>" target=_"blank"><span><?php the_field('perspectives_source'); ?></span> <?php the_title(); ?></a></h2>
 											<?php else: ?>
 											<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 											<?php endif; ?>
