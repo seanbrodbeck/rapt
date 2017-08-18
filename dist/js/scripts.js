@@ -17,7 +17,8 @@ var WIN_H,
     secondaryHeight,
     heightDifference,
     newY,
-    targY;
+    targY,
+    zIndexes = [];
 
 animateTransition()
 function animateTransition() {
@@ -69,6 +70,7 @@ function animateTransition() {
     Array.prototype.map.call(questions, function(q, i) {
       if (i < questions.length) {
         addImageHover(i);
+        zIndexes[i] = $(questions[i]).css('z-index');
         addTextClick(i);
       }
     })
@@ -131,9 +133,8 @@ function animateTransition() {
   function scrollQuestionText() {
     for (var i=0;i<$('.intro-question-text').length;i++) {
       var el_text = questions[i].querySelector('.intro-question-text');
-      var activeSpeed = 0;
-
-      qScrollPositions[i] = qScrollPositions[i] - (i/2 + 2 + activeSpeed);
+      var zIndex = zIndexes[i];
+      qScrollPositions[i] = qScrollPositions[i] - 2 - zIndex/2;
       if (qScrollPositions[i] < -el_text.clientWidth / 3 - 5) {
         qScrollPositions[i] = 0;
       }
