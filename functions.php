@@ -47,7 +47,7 @@ function rapt_setup() {
 		'menu-1' => esc_html__( 'Primary', 'rapt' ),
 	) );
 
-	add_image_size( 'filter-thumb', 300, 160, true ); // 300 pixels wide
+	add_image_size( 'filter-thumb', 800, 417, true ); // 300 pixels wide
 	add_filter('jpeg_quality', function($arg){return 100;});
 
 	/*

@@ -106,7 +106,7 @@ get_header(); ?>
 
                 ?>
 								<div class="col-md-4 col-sm-6 col-xs-6 filter-listing filter-listing-filter <?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats_slugs ) ); ?>" >
-						 				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('filter-thumb'); ?><?php //the_field('grid_thumbnail_23_width'); ?></a>
+						 				<a href="<?php the_permalink(); ?>"><?php //the_post_thumbnail('filter-thumb'); ?><img src="<?php the_field('grid_thumbnail_23_width'); ?>"/></a>
 						 				<div class="filter-search-text">
 							 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			                <p class="work-cats category-list"><?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats ) ); ?></p>
@@ -155,7 +155,7 @@ get_header(); ?>
 
                 ?>
 								<div class="col-md-4 col-sm-6 col-xs-6 filter-listing filter-listing-search <?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats_slugs ) ); ?>">
-						 				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('filter-thumb'); ?><?php //the_field('grid_thumbnail_23_width'); ?></a>
+						 				<a href="<?php the_permalink(); ?>"><?php //the_post_thumbnail('filter-thumb'); ?><img src="<?php the_field('grid_thumbnail_23_width'); ?>"/></a>
 						 				<div class="filter-search-text">
 							 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			                <p class="work-cats category-list"><?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats ) ); ?></p>
