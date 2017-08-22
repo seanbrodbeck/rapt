@@ -120,7 +120,10 @@ main {
 			padding-left:0;
 			padding-right:0;
 			padding: calc(400px + (534 - 400) * (100vw - 320px) / (1440 - 320)) 0;
-			padding-bottom:70px;
+			padding-bottom:20px;
+			@media (min-width: $bp-sm-min) {
+				padding-bottom:70px;
+			}
 			@media (min-width: $bp-xlg-min) {
 				padding: 534px 0 80px;
 			}
@@ -179,6 +182,7 @@ main {
 		&.single-intro {
 			padding-left:0;
 			padding-right:0;
+			padding: calc(30px + (80 - 30) * (100vw - 400px) / (1440 - 400)) 0 calc(18px + (80 - 18) * (100vw - 400px) / (1440 - 400)) 0;
 			h2 {
 				color:$black;
 				font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
@@ -190,6 +194,10 @@ main {
 			}
 			.work-cats {
 				font-size: calc(10px + (16 - 10) * (100vw - 320px) / (1440 - 320));
+				margin-bottom:20px;
+				@media (min-width: $bp-sm-min) {
+					margin-bottom:0;
+				}
 				@media (min-width: $bp-xlg-min) {
 					font-size: 16px;
 				}

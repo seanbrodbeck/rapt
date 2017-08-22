@@ -61,6 +61,9 @@ h1  {
 		  @media (min-width: $bp-xlg-min) {
 		    font-size: 40px;
 		  }
+      @media (max-width: 680px) {
+        margin-bottom:5px!important;
+      }
 	}
   i {
     font-family: 'noe-display-italic';
