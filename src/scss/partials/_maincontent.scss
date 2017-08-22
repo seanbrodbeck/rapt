@@ -254,6 +254,9 @@ main {
 					padding-bottom:0!important;
 				}
 			}
+			.lg-type-html img {
+				margin-bottom: 80px;
+			}
 			@media (max-width: $bp-sm3-min) {
 				.lg-textformat-parent.is-fixed {
 					transform: translate3d(0,0,0) !important;
@@ -691,7 +694,7 @@ main {
 				}
 				@media (min-width: $bp-xlg-min) {
 					margin-bottom: 100px;
-				} 
+				}
 			}
 			.container {
 				@media (min-width: $bp-md-min) {

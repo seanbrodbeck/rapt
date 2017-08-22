@@ -1229,6 +1229,8 @@ main section {
       padding-bottom: 0 !important; }
     main section.grid-content .lg-type-img .lg-placeholder {
       padding-bottom: 0 !important; }
+    main section.grid-content .lg-type-html img {
+      margin-bottom: 80px; }
     @media (max-width: 960px) {
       main section.grid-content .lg-textformat-parent.is-fixed {
         transform: translate3d(0, 0, 0) !important; } }
