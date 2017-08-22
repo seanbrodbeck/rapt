@@ -16,9 +16,17 @@
             setup_postdata( $post ); 
 
             ?>
-              <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full'); ?></a>
-              <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> <span></span></a></h2>
-                <?php $terms = get_the_terms( get_the_ID(), 'product_categories' );
+              <a href="<?php the_permalink(); ?>">
+                <img src="<?php
+                     if (is_mobile()) {
+                     the_field('grid_thumbnail_23_width');
+                     } else {
+                     the_field('grid_thumbnail_13_width');
+                  } ?>"/>
+                  <?php //the_post_thumbnail('full'); ?>
+              </a>
+              <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> <span><?php the_field('work_excerpt'); ?></span></a></h2>
+                <?php $terms = get_the_terms( get_the_ID(), 'work_categories' );
                                      
                     if ( $terms && ! is_wp_error( $terms ) ) : 
                    
@@ -55,9 +63,12 @@
             setup_postdata( $post ); 
 
             ?>
-              <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full'); ?></a>
-              <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> <span></span></a></h2>
-                <?php $terms = get_the_terms( get_the_ID(), 'product_categories' );
+              <a href="<?php the_permalink(); ?>">
+                <img src="<?php the_field('grid_thumbnail_23_width'); ?>"/>
+                  <?php //the_post_thumbnail('full'); ?>
+              </a>
+              <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> <span><?php the_field('work_excerpt'); ?></span></a></h2>
+                <?php $terms = get_the_terms( get_the_ID(), 'work_categories' );
                                      
                     if ( $terms && ! is_wp_error( $terms ) ) : 
                    

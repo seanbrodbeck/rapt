@@ -141,6 +141,10 @@ get_header(); ?>
 						if( get_row_layout() == 'things_row_23_13' )
 							get_template_part('template-parts/content', 'things-row-23-13');
 
+						// Cluster
+						if( get_row_layout() == 'things_cluster_of_4' )
+							get_template_part('template-parts/content', 'things-row-cluster');
+
 						// Full Width
 						// if( get_row_layout() == 'things_row_full_width' )
 						// 	get_template_part('template-parts/content', 'things-row-full');
@@ -178,6 +182,10 @@ get_header(); ?>
 								// 2/3 1/3
 								if( get_row_layout() == 'work_row_23_13' )
 									get_template_part('template-parts/content', 'work-row-23-13');
+
+								// Cluster
+								if( get_row_layout() == 'cluster_of_4' )
+									get_template_part('template-parts/content', 'work-row-cluster');
 
 								// Full Width
 								// if( get_row_layout() == 'work_row_full_width' )

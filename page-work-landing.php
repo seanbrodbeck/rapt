@@ -42,7 +42,7 @@ get_header(); ?>
 							if( get_row_layout() == 'work_row_23_13' )
 								get_template_part('template-parts/content', 'work-row-23-13');
 
-							// Full Width
+							// Cluster
 							if( get_row_layout() == 'cluster_of_4' )
 								get_template_part('template-parts/content', 'work-row-cluster');
 
