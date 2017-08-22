@@ -181,6 +181,18 @@ function animateTransition() {
         el_secondary_list.style.transform = 'translate3d(0, ' + Math.floor(-secondaryTargY*scrollPercent) + 'px, 0)'
       })
     }
+    if ($('.post-social').length > 0) {
+      if (scrollTop > $('.single-related-posts article').eq(0).offset().top - 400 && WIN_W > 960) {
+        $('.post-social').css({
+          opacity: 0,
+          transition: '.2s'
+        })
+      } else {
+        $('.post-social').css({
+          opacity: 1
+        })
+      }
+    }
   }
 
   function bgColorScrollHandler() {
