@@ -1,17 +1,20 @@
 header {
-	padding: 0 calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
+	padding: 0 calc(18px + (95 - 18) * (100vw - 320px) / (1440 - 320));
+	@media (min-width: $bp-xlg-min) {
+		padding: 0 95px;
+	}
 	&.entry-header {
 		padding: 0;
 	}
 	.nav-wrap {
 		padding: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) 0 105px;
-		max-width: 1310px;
+		max-width: 1280px;
 		margin: auto;
 		@media (min-width: $bp-sm3-min) {
 			padding: 35px 0 105px;
 		}
 		@media (min-width: $bp-xlg-min) {
-			padding: 35px 15px 105px;
+			padding: 35px 0 105px;
 		}
 		position: relative;
 		height: 140px;
@@ -19,6 +22,12 @@ header {
 			position: relative;
 			transform: translate3d(0,0,0);
 			transition: .2s transform ease-out, 1s background-color;
+			display: flex;
+			align-items: center;
+			.menu-main-menu-container {
+				width: calc(100% - 18px);
+    		float: left;
+			}
 		}
 	}
 	.main-navigation {
@@ -33,7 +42,7 @@ header {
 			height: 18px;
 			position: absolute;
 			right: calc(23px + (80 - 23) * (100vw - 320px) / (1440 - 320));
-			top: calc(30px + (35 - 30) * (100vw - 320px) / (1440 - 320)) 0 105px;
+			top: calc(30px + (35 - 30) * (100vw - 320px) / (1440 - 320));
 			display: none;
 			cursor: pointer;
 			svg {
@@ -89,6 +98,9 @@ header {
 						visibility: visible;
 					}
 				}
+				.rapt-logo-wrap {
+					display: none !important;
+				}
 				.mobile-nav-close {
 					display: block;
 					svg {
@@ -133,6 +145,9 @@ header {
 					font-size: 20px;
 					font-family: 'Fakt-Blond';
 					@media (min-width: $bp-sm3-min) {
+						margin-right: calc(80px + (162 - 80) * (100vw - 960px) / (1440 - 960));
+					}
+					@media (min-width: $bp-xlg-min) {
 						margin-right: 162px;
 					}
 					a, a:visited {
@@ -153,6 +168,7 @@ header {
 }
 
 .menu-toggle {
+	position: absolute;
 	width: 24px;
 	height: 17px;
 	padding: 0;
@@ -206,31 +222,22 @@ header {
 }
 
 .rapt-logo-wrap {
-	position: fixed;
-	z-index: 21;
-	opacity: 0;
-	visibility: hidden;
-	pointer-events: none;
+	position: relative;
 	transition: .2s ease-out opacity;
-	top: 12px;
+	top: 0;
 	width: 14px;
-	right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
+	margin-left: auto;
+	display: flex !important;
+  align-items: center;
+  justify-content: center;
 	@media (min-width: $bp-sm3-min) {
 		width: 18px;
-	}
-	@media (min-width: $bp-xlg-min) {
-		right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
-	}
-	@media (min-width: $bp-xxlg-min) {
-		margin-right: calc((100vw - 1440px) / 2);
-		right: 80px;
 	}
 	@media (min-width: $bp-xlg-min) {
 		display: block;
 		opacity: 1;
 		visibility: visible;
 		pointer-events: auto;
-		top: 25px;
 		z-index: 20;
 		float:none;
 	}
@@ -241,12 +248,12 @@ header {
 
 
 .home {
-	.rapt-logo-wrap {
+/* 	.rapt-logo-wrap {
 		top: auto;
 		bottom: 30px;
 		opacity: 1;
 		visibility: visible;
-	}
+	} */
 	@media (min-width: $bp-sm3-min) {
 		header {
 			.nav-wrap {
@@ -289,15 +296,10 @@ header .nav-wrap #site-navigation {
 }
 
 .is-nav-fixed {
-	.rapt-logo-wrap {
-		opacity: 1 !important;
-		visibility: visible;
-		pointer-events: auto;
-	}
 	header {
 		.nav-wrap {
 			#site-navigation {
-				padding: calc(26px + (35 - 26) * (100vw - 320px) / (1440 - 320)) calc(33px + (95 - 33) * (100vw - 320px) / (1440 - 320));
+				padding: calc(26px + (35 - 26) * (100vw - 320px) / (1440 - 320)) calc(18px + (95 - 18) * (100vw - 320px) / (1440 - 320));
 				@media (min-width: $bp-xlg-min) {
 					padding: 35px 95px;
 				}

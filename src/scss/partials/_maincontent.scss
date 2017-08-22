@@ -7,11 +7,7 @@ main {
 		}
 
 		&.home-work {
-			padding:0;
-			padding-bottom:30px;
-			@media (min-width: $bp-sm-min) {
-				padding-bottom:90px;
-			}
+			padding: 0;
 			.work-grid {
 				.work-row {
 					margin-bottom:0;
@@ -22,23 +18,23 @@ main {
 						margin-bottom: 100px;
 					}
 					&:last-of-type {
-						margin-bottom:0;
+						margin-bottom: 0;
 					}
 				}
 			}
 			.more-link-wrapper {
-				padding-left:15px;
+				padding-left: 16px;
 			}
 		}
 
 		&.home-perspectives {
 			background: $peach;
-			padding: 30px 0;
+			padding: 0;
 			@media (min-width: $bp-sm-min) {
 				padding: calc(18px + (80 - 18) * (100vw - 400px) / (1440 - 400)) 0;
 			}
 			@media (min-width: $bp-xlg-min) {
-				padding: 80px 0;
+				padding: 80px 0 0;
 			}
 
 			h1 {
@@ -53,21 +49,18 @@ main {
 			}
 			article {
 				.entry-header, .entry-content {
-					padding:0 15px;
-					@media (min-width: $bp-sm-min) {
-						padding:0;
-					}
+					padding:0;
 				}
 				.entry-header {
-					margin-top:15px;
+					margin-top: 15px;
 				}
 			}
 			.primary-articles {
-				padding-left:0;
-				padding-right:0;
+				padding-left: 0;
+				padding-right: 0;
 				@media (min-width: $bp-sm-min) {
-					padding-left:15px;
-					padding-right:15px;
+					padding-left: 16px;
+					padding-right: 16px;
 				}
 			}
 			.secondary-articles {
@@ -81,16 +74,16 @@ main {
 				}
 			}
 			.more-link-wrapper {
-				padding-left: 15px;
+				padding-left: 16px;
 				@media (min-width: $bp-sm-min) {
-					padding-left: 15px;
+					padding-left: 16px;
 				}
 			}
 		}
 
 		&.home-about {
-			padding-left: 15px;
-			padding-right: 15px;
+			padding-left: 16px;
+			padding-right: 16px;
 			@media (min-width: $bp-sm-min) {
 				padding-left:0;
 				padding-right:0;
@@ -99,19 +92,19 @@ main {
 				padding:calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)) 0;
 			}
 			.more-link-wrapper {
-				margin: 60px 0 34px;
+				margin: 0 0 34px;
 				text-align: left;
 				padding-left:0;
 			}
 			.col-sm-8 {
 				padding:0;
 				@media (min-width: $bp-sm-min) {
-					padding-left:15px;
-					padding-right:15px;
+					padding-left: 16px;
+					padding-right: 16px;
 				}
 			}
 			h1 {
-				margin: .3em 0;
+				margin: .3em 0 0;
 				line-height: 1;
 			}
 			.container {
@@ -188,9 +181,9 @@ main {
 			padding-right:0;
 			h2 {
 				color:$black;
-				font-size: calc(24px + (48 - 24) * (100vw - 320px) / (1440 - 320));
+				font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
 				@media (min-width: $bp-xlg-min) {
-					font-size: 48px;
+					font-size: 40px;
 				}
 				font-family: 'noe-display';
 				margin-top:0;
@@ -516,8 +509,8 @@ main {
 					margin-bottom: 30px;
 					padding: 0;
 					@media (min-width: $bp-md-min) {
-						padding-right: 15px;
-    				padding-left: 15px;
+						padding-right: 16px;
+    				padding-left: 16px;
 					}
 				}
 			}
@@ -678,8 +671,8 @@ main {
 				padding-right: 0;
 				@media (min-width: $bp-sm-min) {
 					margin-bottom: 0;
-					padding-left: 15px;
-					padding-right: 15px;
+					padding-left: 16px;
+					padding-right: 16px;
 				}
 				img {
 					width: 100%;
@@ -692,10 +685,9 @@ main {
 					}
 					color: $black;
 					font-family: 'noe-display';
-					padding: 0 15px;
+					padding: 0 16px;
 					margin-top:25px;
 					margin-bottom:8px;
-					padding: 0 15px;
 					@media (min-width: $bp-sm-min) {
 						padding: 0;
 					}
@@ -709,7 +701,7 @@ main {
 					}
 				}
 				p {
-					padding: 0 15px;
+					padding: 0 16px;
 					@media (min-width: $bp-sm-min) {
 						padding: 0;
 					}
@@ -740,9 +732,9 @@ main {
 				}
 				h2 {
 					font-family: 'noe-display';
-					font-size: calc(32px + (48 - 32) * (100vw - 320px) / (1440 - 320));
+					font-size: calc(32px + (40 - 32) * (100vw - 320px) / (1440 - 320));
 					@media (min-width: $bp-xlg-min) {
-						font-size: 48px;
+						font-size: 40px;
 					}
 					color: $white;
 					padding: 0;
@@ -817,25 +809,21 @@ main {
 	    		}
 	    	}
 	    	@media (min-width: $bp-sm-min) {
-					padding-right: 15px;
-	    		padding-left: 15px;
+					padding-right: 16px;
+	    		padding-left: 16px;
 				}
 				.entry-header, .entry-content {
-					padding-right: 15px;
-	    		padding-left: 15px;
-	    		@media (min-width: $bp-sm-min) {
-						padding-right: 0;
-		    		padding-left: 0;
-					}
+					padding-right: 0;
+	    		padding-left: 0;
 				}
 				.category-list {
 					margin-top: 20px;
 				}
 				h1 {
 					font-family: 'Fakt-Blond';
-					font-size: calc(32px + (48 - 32) * (100vw - 320px) / (1440 - 320));
+					font-size: calc(32px + (40 - 32) * (100vw - 320px) / (1440 - 320));
 					@media (min-width: $bp-xlg-min) {
-						font-size: 48px;
+						font-size: 40px;
 					}
 					color: $black;
 					margin: 20px 0;
@@ -933,7 +921,7 @@ main {
 		}
 		.post-navigation {
 			margin-top:100px;
-			padding:0 15px;
+			padding:0 16px;
 			@media (min-width: $bp-md-min) {
 				margin-top:300px;
 				padding:0;
@@ -942,7 +930,7 @@ main {
 				width:100%;
 				float:none;
 				text-align: left;
-				margin-left:15px;
+				margin-left: 16px;
 				a {
 					font-family: 'noe-display';
 					font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));

@@ -149,21 +149,25 @@ function animateTransition() {
   }
 
   function navScrollHandler() {
-    if ($('body').hasClass('home')) {
-      var logoTop = Math.max(-WIN_H + 92,(-scrollTop));
-      $('.rapt-logo-wrap').css({
-        transform: 'translate3d(0,' + logoTop + 'px,0)'
-      })
-    }
+    // if ($('body').hasClass('home')) {
+    //   var topMax = 94;
+    //   if (WIN_W > 960) {
+    //     topMax = 104;
+    //   }
+    //   var logoTop = Math.max(-WIN_H + topMax,(-scrollTop));
+    //   $('.rapt-logo-wrap').css({
+    //     transform: 'translate3d(0,' + logoTop + 'px,0)'
+    //   })
+    // }
     var scrollAmount = oldScrollTop - scrollTop;
     if (Math.abs(scrollAmount) > 4) {
       if (oldScrollTop > scrollTop + 4 && document.querySelector('#masthead').getBoundingClientRect().bottom < 0) {
         document.body.classList.add('is-nav-fixed')
-        revealRaptLogo()
+        // revealRaptLogo()
       } else {
         document.body.classList.remove('is-nav-fixed')
         if (scrollTop > 200 && !$('body').hasClass('home')) {
-          hideRaptLogo()
+          // hideRaptLogo()
         }
       }
     }

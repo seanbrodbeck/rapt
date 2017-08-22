@@ -93,15 +93,16 @@ a {
 	margin: 0 auto;
 	/*max-width:1290px;*/
 	padding: calc(18px + (80 - 18) * (100vw - 400px) / (1440 - 400));
-	padding-left:15px;
+	padding-left: 16px;
 	@media (min-width: $bp-xlg-min) {
 		padding: 80px;
-		padding-left:15px;
+		padding-left: 16px;
 	}
 	.more-link {
 		cursor: pointer;
 		font-family: 'noe-display';
 		font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
+		line-height: 1.2;
 		@media (min-width: $bp-xlg-min) {
 			font-size: 40px;
 		}
@@ -159,8 +160,8 @@ img.loaded {
 .primary-articles {
 	padding:0;
 	@media (min-width: $bp-lg-min) {
-		padding-right: 15px;
-    padding-left: 15px;
+		padding-right: 16px;
+    padding-left: 16px;
 	}
 	img {
 		width:100%;
@@ -188,8 +189,8 @@ img.loaded {
 		margin: 0;
 	}
 	.entry-text {
-		padding-right: 15px;
-	  padding-left: 15px;
+		padding-right: 16px;
+	  padding-left: 16px;
 		@media (min-width: $bp-sm-min) {
 			padding-right: 0;
 	    padding-left: 0;
@@ -225,8 +226,8 @@ img.loaded {
 	padding-right: 8px;
 	@media (min-width: $bp-md-min) {
 		display: block;
-		padding-left: 15px;
-		padding-right: 15px;
+		padding-left: 16px;
+		padding-right: 16px;
 	}
 	.entry-header {
 		padding: 20px 0 0;
@@ -265,7 +266,7 @@ img.loaded {
 .filters {
 	margin-bottom: 55px;
 	@media (min-width: $bp-xlg-min) {
-		padding: 0 15px;
+		padding: 0 16px;
 	}
 	.filter-toggle {
 		display: inline-block;
@@ -322,7 +323,7 @@ img.loaded {
 		cursor: pointer;
 		position: absolute;
 		top: 15px;
-		right: 15px;
+		right: 16px;
 		z-index: 2;
 		width: 18px !important;
 		height: auto;
@@ -365,9 +366,9 @@ img.loaded {
 		.filter-option {
 			font-family: 'noe-display';
 			font-weight:normal!important;
-			font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
+			font-size: calc(30px + (40 - 30) * (100vw - 320px) / (1440 - 320));
 			@media (min-width: $bp-xlg-min) {
-				font-size: 48px;
+				font-size: 40px;
 			}
 			line-height: 1.15;
 			color: $light-gray;
@@ -414,20 +415,20 @@ img.loaded {
 		.filter-listing {
 			padding-right: 0px;
     	padding-left: 0px;
-			margin-bottom:30px;
-			padding-right:15px;
+			margin-bottom: 30px;
+			padding-right: 16px;
 			min-height:165px;
 			@media (min-width: $bp-sm-min) {
 				margin-bottom:80px;
-				padding-right: 15px;
-    			padding-left: 15px;
+				padding-right: 16px;
+    			padding-left: 16px;
     			min-height:280px;
 			}
 			&:nth-child(even) {
 				padding-right:0;
 				@media (min-width: $bp-sm-min) {
-					padding-right: 15px;
-    				padding-left: 15px;
+					padding-right: 16px;
+    			padding-left: 16px;
 				}
 			}
 			/*&:nth-child(odd) {
@@ -491,9 +492,9 @@ img.loaded {
 		input {
 			display: block;
 			font-family: 'noe-display';
-			font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
+			font-size: calc(30px + (40 - 30) * (100vw - 320px) / (1440 - 320));
 			@media (min-width: $bp-xlg-min) {
-				font-size: 48px;
+				font-size: 40px;
 			}
 			line-height: 1.15;
 			color: $black;
@@ -502,9 +503,9 @@ img.loaded {
 			width: 70%;
 			&::placeholder {
 				font-family: 'noe-display';
-				font-size: calc(30px + (48 - 30) * (100vw - 320px) / (1440 - 320));
+				font-size: calc(30px + (40 - 30) * (100vw - 320px) / (1440 - 320));
 				@media (min-width: $bp-xlg-min) {
-					font-size: 48px;
+					font-size: 40px;
 				}
 				line-height: 1.15;
 				color: $light-gray;

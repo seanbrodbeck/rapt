@@ -18,7 +18,7 @@ footer {
 
 	.menu {
 		font-family: 'noe-display';
-  	font-size: calc(24px + (48 - 24) * (100vw - 320px) / (1440 - 320));
+  	font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
   	@media (min-width: $bp-xlg-min) {
   		font-size: 40px;
   	}
@@ -133,7 +133,7 @@ footer {
 	}
 	.footer-subscribe {
 		margin-top: 56px;
-		@media (min-width: $bp-sm3-min) {
+		@media (min-width: $bp-sm-min) {
 			margin-top: 0;
 		}
 	}
@@ -144,7 +144,6 @@ footer {
     padding: 0;
 		@media (min-width: $bp-xlg-min) {
 			font-size: 16px;
-      padding: 0 8px 0 0;
 		}
   	line-height: 1.5;
   	font-family: 'Fakt-Blond';
@@ -160,6 +159,8 @@ footer {
 		display: flex;
 		justify-content: space-between;
 		font-size: calc(12px + (16 - 12) * (100vw - 320px) / (1440 - 320));
+    padding-bottom: .5rem;
+    border-bottom: 1px solid rgba(255,255,255,.2);
 		@media (min-width: $bp-xlg-min) {
 			font-size: 16px;
 		}
