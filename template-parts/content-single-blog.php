@@ -106,27 +106,27 @@
 		</div>
 		<div class="single-related-posts">
 
-
+			
 			<?php
-				//for use in the loop, list 5 post titles related to first tag on current post
-				$tags = wp_get_post_tags($post->ID);
-				if ($tags) {
-				echo '';
-				$first_tag = $tags[0]->term_id;
-				$args=array(
-				'tag__in' => array($first_tag),
-				'post__not_in' => array($post->ID),
-				'posts_per_page'=>3,
-				'caller_get_posts'=>1
-				);
-				$my_query = new WP_Query($args);
-				if( $my_query->have_posts() ) {
-				while ($my_query->have_posts()) : $my_query->the_post(); ?>
+				$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 3, 'post__not_in' => array($post->ID) ) );
+				if( $related ) foreach( $related as $post ) {
+				setup_postdata($post); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+				<?php if( get_field('post_link_external') ): ?>
+					<a href="<?php the_field('post_link_external'); ?>" target=_"blank"><?php the_post_thumbnail("full"); ?></a>
+				<?php else: ?>
 					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
-					<header class="entry-header">
-						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+				<?php endif; ?>
+					<div class="entry-text">
+						<header class="entry-header">
+							<?php if( get_field('post_link_external') ): ?>
+							<h3><a href="<?php the_field('post_link_external'); ?>" target=_"blank"><span><?php the_field('perspectives_source'); ?></span> <?php the_title(); ?></a></h2>
+							<?php else: ?>
+							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+							<?php endif; ?>
+						</header>
 						<div class="category-list">
 							<ul>
 								<?php
@@ -143,15 +143,12 @@
 								?>
 							</ul>
 						</div>
-					</header>
+					</div>
 				</article>
 
-				<?php
-				endwhile;
-				}
-				wp_reset_query();
-				}
-				?>
+				<?php }
+				wp_reset_postdata(); ?>
+			
 		</div>
 	</div>
 
