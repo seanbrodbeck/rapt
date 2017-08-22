@@ -177,10 +177,8 @@ function animateTransition() {
     if (el_secondary_list) {
       requestAnimationFrame(function(){
         scrollPercent = scrollTop/scrollHeight;
-        if (primaryHeight > secondaryHeight) {
-          el_secondary_list.style.willChange = "transform";
-          el_secondary_list.style.transform = 'translate3d(0, ' + Math.floor(-secondaryTargY*scrollPercent) + 'px, 0)'
-        }
+        el_secondary_list.style.willChange = "transform";
+        el_secondary_list.style.transform = 'translate3d(0, ' + Math.floor(-secondaryTargY*scrollPercent) + 'px, 0)'
       })
     }
   }

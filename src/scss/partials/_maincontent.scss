@@ -901,10 +901,14 @@ main {
 					text-align: center;
 					margin-bottom:100px;
 					@media (min-width: $bp-sm3-min) {
-						@include align-self(flex-start);
-						width:100%;
-						@include flex-grow(1);
-						margin-bottom:0;
+						position: fixed;
+						right: calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320));
+					}
+					@media (min-width: $bp-xlg-min) {
+						right: 90px;
+					}
+					@media (min-width: $bp-xxlg-min) {
+						right: calc((100vw - 1280px - 14px) / 2);
 					}
 					a {
 						display: inline-block;
@@ -914,6 +918,9 @@ main {
 							float: right;
 							clear: right;
 							margin: 0 0 25px;
+						}
+						img {
+							background: transparent !important;
 						}
 					}
 				}
