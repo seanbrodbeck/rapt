@@ -1328,15 +1328,17 @@ main section {
     main section.team h1 {
       color: #000000;
       margin: 0 0 30px; }
-    main section.team .team-sort-links p {
-      color: #a5a8a8; }
-      main section.team .team-sort-links p a, main section.team .team-sort-links p a:visited {
+    main section.team .team-sort-links {
+      margin-bottom: 40px; }
+      main section.team .team-sort-links p {
         color: #a5a8a8; }
-        main section.team .team-sort-links p a:hover, main section.team .team-sort-links p a.active, main section.team .team-sort-links p a:visited:hover, main section.team .team-sort-links p a:visited.active {
-          color: #000000; }
-    main section.team .team-sort-links .show-everyone::before {
-      content: '↪';
-      margin-right: 5px; }
+        main section.team .team-sort-links p a, main section.team .team-sort-links p a:visited {
+          color: #a5a8a8; }
+          main section.team .team-sort-links p a:hover, main section.team .team-sort-links p a.active, main section.team .team-sort-links p a:visited:hover, main section.team .team-sort-links p a:visited.active {
+            color: #000000; }
+      main section.team .team-sort-links .show-everyone::before {
+        content: '↪';
+        margin-right: 5px; }
     main section.team .team-sort {
       position: relative;
       margin-top: 30px;
