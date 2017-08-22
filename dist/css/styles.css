@@ -1502,6 +1502,55 @@ main section {
         main section.contact-info .contact-info-wrapper .contact-info-listing p {
           margin-bottom: 0; }
 
+main .work-grid .work-cluster {
+  margin-bottom: 80px; }
+  @media (min-width: 680px) {
+    main .work-grid .work-cluster .work-row {
+      margin-bottom: 0;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: flex-start;
+      -moz-align-items: flex-start;
+      -ms-align-items: flex-start;
+      align-items: flex-start; }
+      main .work-grid .work-cluster .work-row .work-row-inner {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: flex-start;
+        -moz-align-items: flex-start;
+        -ms-align-items: flex-start;
+        align-items: flex-start; }
+      main .work-grid .work-cluster .work-row.work-row-twothirds-onethird .work-row-inner,
+      main .work-grid .work-cluster .work-row.work-row-onethird-twothirds .work-row-inner {
+        /* margin-bottom: 50px;
+						@media (min-width: $bp-sm-min) {
+							margin-bottom: calc(15px + (100 - 15) * (100vw - 320px) / (1440 - 320));
+						}
+						@media (min-width: $bp-xlg-min) {
+							margin-bottom: 100px;
+						} */ }
+      main .work-grid .work-cluster .work-row.work-row-onethird-twothirds + .work-row-twothirds-onethird .work-row-inner,
+      main .work-grid .work-cluster .work-row.work-row-twothirds-onethird + .work-row-onethird-twothirds .work-row-inner {
+        -webkit-align-items: flex-end;
+        -moz-align-items: flex-end;
+        -ms-align-items: flex-end;
+        align-items: flex-end;
+        margin-top: -50px; } }
+    @media (min-width: 680px) and (min-width: 680px) {
+      main .work-grid .work-cluster .work-row.work-row-onethird-twothirds + .work-row-twothirds-onethird .work-row-inner,
+      main .work-grid .work-cluster .work-row.work-row-twothirds-onethird + .work-row-onethird-twothirds .work-row-inner {
+        margin-top: calc(-15px + (-100 + 15) * (100vw - 320px) / (1440 - 320)); } }
+    @media (min-width: 680px) and (min-width: 1320px) {
+      main .work-grid .work-cluster .work-row.work-row-onethird-twothirds + .work-row-twothirds-onethird .work-row-inner,
+      main .work-grid .work-cluster .work-row.work-row-twothirds-onethird + .work-row-onethird-twothirds .work-row-inner {
+        margin-top: -100px; } }
+
 main .work-grid .work-row {
   margin-bottom: calc(15px + (100 - 14) * (100vw - 320px) / (1440 - 320));
   /*margin: 0;*/ }
@@ -1526,34 +1575,7 @@ main .work-grid .work-row {
         -webkit-align-items: flex-start;
         -moz-align-items: flex-start;
         -ms-align-items: flex-start;
-        align-items: flex-start; }
-      main .work-grid .work-row.work-row-twothirds-onethird .work-row-inner,
-      main .work-grid .work-row.work-row-onethird-twothirds .work-row-inner {
-        margin-bottom: 50px; } }
-    @media (min-width: 680px) and (min-width: 680px) {
-      main .work-grid .work-row.work-row-twothirds-onethird .work-row-inner,
-      main .work-grid .work-row.work-row-onethird-twothirds .work-row-inner {
-        margin-bottom: calc(15px + (100 - 15) * (100vw - 320px) / (1440 - 320)); } }
-    @media (min-width: 680px) and (min-width: 1320px) {
-      main .work-grid .work-row.work-row-twothirds-onethird .work-row-inner,
-      main .work-grid .work-row.work-row-onethird-twothirds .work-row-inner {
-        margin-bottom: 100px; } }
-  @media (min-width: 680px) {
-      main .work-grid .work-row.work-row-onethird-twothirds + .work-row-twothirds-onethird .work-row-inner,
-      main .work-grid .work-row.work-row-twothirds-onethird + .work-row-onethird-twothirds .work-row-inner {
-        -webkit-align-items: flex-end;
-        -moz-align-items: flex-end;
-        -ms-align-items: flex-end;
-        align-items: flex-end;
-        margin-top: -50px; } }
-    @media (min-width: 680px) and (min-width: 680px) {
-      main .work-grid .work-row.work-row-onethird-twothirds + .work-row-twothirds-onethird .work-row-inner,
-      main .work-grid .work-row.work-row-twothirds-onethird + .work-row-onethird-twothirds .work-row-inner {
-        margin-top: calc(-15px + (-100 + 15) * (100vw - 320px) / (1440 - 320)); } }
-    @media (min-width: 680px) and (min-width: 1320px) {
-      main .work-grid .work-row.work-row-onethird-twothirds + .work-row-twothirds-onethird .work-row-inner,
-      main .work-grid .work-row.work-row-twothirds-onethird + .work-row-onethird-twothirds .work-row-inner {
-        margin-top: -100px; } }
+        align-items: flex-start; } }
   @media (min-width: 960px) {
     main .work-grid .work-row {
       padding: 0; } }

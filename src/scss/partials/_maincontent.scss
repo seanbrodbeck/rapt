@@ -333,6 +333,7 @@ main {
 					margin-bottom: 15px;
 				}
 			}
+
 		}
 
 		&.also-see{
@@ -622,6 +623,43 @@ main {
 	}
 
 	.work-grid {
+		.work-cluster {
+			margin-bottom: 80px;
+			.work-row {
+				@media (min-width: $bp-sm-min) {
+					margin-bottom: 0;
+					@include flexbox;
+					@include align-items(flex-start);
+					.work-row-inner {
+						@include flexbox;
+						@include align-items(flex-start);
+					}
+
+					&.work-row-twothirds-onethird .work-row-inner,
+					&.work-row-onethird-twothirds .work-row-inner {
+						/* margin-bottom: 50px;
+						@media (min-width: $bp-sm-min) {
+							margin-bottom: calc(15px + (100 - 15) * (100vw - 320px) / (1440 - 320));
+						}
+						@media (min-width: $bp-xlg-min) {
+							margin-bottom: 100px;
+						} */
+					}
+
+					&.work-row-onethird-twothirds + .work-row-twothirds-onethird .work-row-inner,
+					&.work-row-twothirds-onethird + .work-row-onethird-twothirds .work-row-inner {
+						@include align-items(flex-end);
+						margin-top: -50px;
+						@media (min-width: $bp-sm-min) {
+							margin-top: calc(-15px + (-100 + 15) * (100vw - 320px) / (1440 - 320));
+						}
+						@media (min-width: $bp-xlg-min) {
+							margin-top: -100px;
+						}
+					}
+				}
+			}
+		}
 		.work-row {
 			margin-bottom: calc(15px + (100 - 14) * (100vw - 320px) / (1440 - 320));
 			/*margin: 0;*/
@@ -632,29 +670,6 @@ main {
 				.work-row-inner {
 					@include flexbox;
 					@include align-items(flex-start);
-				}
-
-				&.work-row-twothirds-onethird .work-row-inner,
-				&.work-row-onethird-twothirds .work-row-inner {
-					margin-bottom: 50px;
-					@media (min-width: $bp-sm-min) {
-						margin-bottom: calc(15px + (100 - 15) * (100vw - 320px) / (1440 - 320));
-					}
-					@media (min-width: $bp-xlg-min) {
-						margin-bottom: 100px;
-					}
-				}
-
-				&.work-row-onethird-twothirds + .work-row-twothirds-onethird .work-row-inner,
-				&.work-row-twothirds-onethird + .work-row-onethird-twothirds .work-row-inner {
-					@include align-items(flex-end);
-					margin-top: -50px;
-					@media (min-width: $bp-sm-min) {
-						margin-top: calc(-15px + (-100 + 15) * (100vw - 320px) / (1440 - 320));
-					}
-					@media (min-width: $bp-xlg-min) {
-						margin-top: -100px;
-					}
 				}
 			}
 			@media (min-width: $bp-md-min) {
