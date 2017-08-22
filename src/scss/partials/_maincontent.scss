@@ -676,6 +676,15 @@ main {
 			@media (min-width: $bp-md-min) {
 				padding:0;
 			}
+			&.work-row-twothirds-onethird .work-row-inner {
+				 margin-bottom: 50px;
+				@media (min-width: $bp-sm-min) {
+					margin-bottom: calc(15px + (100 - 15) * (100vw - 320px) / (1440 - 320));
+				}
+				@media (min-width: $bp-xlg-min) {
+					margin-bottom: 100px;
+				} 
+			}
 			.container {
 				@media (min-width: $bp-md-min) {
 					width: 100%;

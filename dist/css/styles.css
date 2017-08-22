@@ -1581,6 +1581,14 @@ main .work-grid .work-row {
   @media (min-width: 960px) {
     main .work-grid .work-row {
       padding: 0; } }
+  main .work-grid .work-row.work-row-twothirds-onethird .work-row-inner {
+    margin-bottom: 50px; }
+    @media (min-width: 680px) {
+      main .work-grid .work-row.work-row-twothirds-onethird .work-row-inner {
+        margin-bottom: calc(15px + (100 - 15) * (100vw - 320px) / (1440 - 320)); } }
+    @media (min-width: 1320px) {
+      main .work-grid .work-row.work-row-twothirds-onethird .work-row-inner {
+        margin-bottom: 100px; } }
   @media (min-width: 960px) {
     main .work-grid .work-row .container {
       width: 100%; } }
