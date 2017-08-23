@@ -49,18 +49,18 @@ get_header(); ?>
 														<div class="inner">
 
 															 <?php
-							                     if (is_mobile()) {		
-								                    	echo "<img src='";				                    
+							                     if (is_mobile()) {
+								                    	echo "<img src='";
 								                    	the_sub_field('team_member_image');
 								                    	echo "'/>";
 							                     } else {
-							                     		echo "<video width='100%' height='auto' autoplay loop>";	
+							                     		echo "<video width='100%' height='auto' autoplay loop>";
 							                     		echo " <source src='";
 							                     		the_sub_field('team_member_video');
 							                     		echo "' type='video/mp4'>";
 							                     		echo "</video>";
 							                  } ?>
-															
+
 															<div class="team-member-info">
 																<h3><?php the_sub_field('team_member_name'); ?></h3>
 																<p><?php the_sub_field('team_member_title'); ?></p>
@@ -134,7 +134,7 @@ get_header(); ?>
 							<?php while(has_sub_field('services')): ?>
 
 							<div class="col-sm-4">
-								<h2 class="large"><?php the_sub_field('service_category_header'); ?></h2>
+								<p class="cat-header"><?php the_sub_field('service_category_header'); ?></p>
 								<?php the_sub_field('service_list'); ?>
 							</div>
 

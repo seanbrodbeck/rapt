@@ -1044,10 +1044,10 @@ header .nav-wrap #site-navigation {
   color: #000000; }
 
 main section {
-  padding: calc(18px + (80 - 18) * (100vw - 400px) / (1440 - 400)) 0; }
+  padding: calc(18px + (110 - 18) * (100vw - 400px) / (1440 - 400)) 0; }
   @media (min-width: 1320px) {
     main section {
-      padding: 80px 0; } }
+      padding: 110px 0; } }
   main section.home-work {
     padding: 0; }
     main section.home-work .work-grid .work-row {
@@ -1215,7 +1215,7 @@ main section {
     main section.grid-content .full-width {
       margin-right: calc((33px + (95 - 33) * (100vw - 320px) / (1440 - 320)) / -1);
       margin-left: calc((33px + (95 - 33) * (100vw - 320px) / (1440 - 320)) / -1);
-      width: calc(100vw + ((33px + (95 - 33) * (100vw - 320px) / (1440 - 320))));
+      width: 100vw;
       max-width: none;
       padding: 0 calc(33px + (95 - 33) * (100vw - 320px) / (1440 - 320)); }
       @media (min-width: 1440px) {
@@ -1380,7 +1380,9 @@ main section {
           margin-left: -15px;
           margin-right: -15px;
           width: calc(100% - 30px);
-          position: relative; }
+          position: relative;
+          background-color: #FAFAFA;
+          padding-top: 29.8%; }
           @media (min-width: 680px) {
             main section.team .team-sort .team-members .team-member-group {
               margin-left: 0px;
@@ -1491,8 +1493,7 @@ main section {
   main section.services {
     padding-left: 0;
     padding-right: 0; }
-    main section.services h2 {
-      margin-bottom: 44px;
+    main section.services .cat-header {
       color: #000000; }
     main section.services p {
       color: #a5a8a8; }

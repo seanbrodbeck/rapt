@@ -1,9 +1,9 @@
 main {
 	section {
 
-		padding: calc(18px + (80 - 18) * (100vw - 400px) / (1440 - 400)) 0;
+		padding: calc(18px + (110 - 18) * (100vw - 400px) / (1440 - 400)) 0;
 		@media (min-width: $bp-xlg-min) {
-			padding: 80px 0;
+			padding: 110px 0;
 		}
 
 		&.home-work {
@@ -218,7 +218,7 @@ main {
 			.full-width {
 				margin-right: calc((33px + (95 - 33) * (100vw - 320px) / (1440 - 320)) / -1);
 		    margin-left: calc((33px + (95 - 33) * (100vw - 320px) / (1440 - 320)) / -1);
-		    width: calc(100vw + ((33px + (95 - 33) * (100vw - 320px) / (1440 - 320)));
+		    width: 100vw;
 		    max-width: none;
 		    padding: 0 calc(33px + (95 - 33) * (100vw - 320px) / (1440 - 320);
 				@media (min-width: $bp-xxlg-min) {
@@ -432,6 +432,8 @@ main {
 						margin-right: -15px;
 						width: calc(100% - 30px);
 						position: relative;
+						background-color: #FAFAFA;
+						padding-top: 29.8%;
 						@media (min-width: $bp-sm-min) {
 							margin-left: 0px;
 							margin-right: 0px;
@@ -580,8 +582,7 @@ main {
 		&.services {
 			padding-left:0;
 			padding-right:0;
-			h2 {
-				margin-bottom: 44px;
+			.cat-header {
 				color: $black;
 			}
 			p {
