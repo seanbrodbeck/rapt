@@ -58,11 +58,9 @@ h1  {
 	&._Large {
 		font-family: 'noe-display';
 		font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
-		  @media (min-width: $bp-xlg-min) {
-		    font-size: 40px;
-		  }
-      @media (max-width: 680px) {
-        margin-bottom:5px!important;
+    margin-bottom:5px!important;
+      @media (min-width: $bp-xlg-min) {
+        font-size: 40px;
       }
 	}
   i {

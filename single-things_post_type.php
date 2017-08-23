@@ -73,7 +73,7 @@ get_header(); ?>
 								<?php while(has_sub_field('press')): ?>
 
 								<div class="awards-press-entry">
-									<h4><a href="<?php the_sub_field('press_url'); ?>"><?php the_sub_field('press_title'); ?> <span><?php the_sub_field('press_text'); ?></span></a></h4>
+									<h4><a href="<?php the_sub_field('press_url'); ?>" target="_blank"><?php the_sub_field('press_title'); ?> <span><?php the_sub_field('press_text'); ?></span></a></h4>
 								</div>
 
 								<?php endwhile; ?>
@@ -89,7 +89,7 @@ get_header(); ?>
 									<?php while(has_sub_field('awards')): ?>
 
 									<div class="awards-press-entry">
-										<h4><a href="<?php the_sub_field('award_url'); ?>"><?php the_sub_field('award_title'); ?> <span><?php the_sub_field('award_text'); ?></span></a></h4>
+										<h4><a href="<?php the_sub_field('award_url'); ?>" target="_blank"><?php the_sub_field('award_title'); ?> <span><?php the_sub_field('award_text'); ?></span></a></h4>
 									</div>
 
 									<?php endwhile; ?>

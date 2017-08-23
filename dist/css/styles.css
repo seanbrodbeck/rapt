@@ -48,13 +48,11 @@ h1 {
       font-size: 40px; } }
   h1._Large {
     font-family: 'noe-display';
-    font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320)); }
+    font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
+    margin-bottom: 5px !important; }
     @media (min-width: 1320px) {
       h1._Large {
         font-size: 40px; } }
-    @media (max-width: 680px) {
-      h1._Large {
-        margin-bottom: 5px !important; } }
   h1 i {
     font-family: 'noe-display-italic'; }
 
