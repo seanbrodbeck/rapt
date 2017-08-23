@@ -274,7 +274,6 @@ main {
 		&.awards-press {
 			padding-left:0;
 			padding-right:0;
-			padding:calc(18px + (80 - 18) * (100vw - 400px) / (1440 - 400)) 0 calc(30px + (120 - 30) * (100vw - 400px) / (1440 - 400));
 			h2 {
 				font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
 				@media (min-width: $bp-xlg-min) {
@@ -458,6 +457,11 @@ main {
 						}
 						.inner {
 							position:relative;
+							video {
+								backround: #FAFAFA;
+								border: 1px solid #FAFAFA;
+								border-bottom: none;
+							}
 							img {
 								width: 100%;
 							}

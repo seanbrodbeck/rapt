@@ -1255,8 +1255,7 @@ main section {
       left: calc((100vw - 1440px) / 2); } }
   main section.awards-press {
     padding-left: 0;
-    padding-right: 0;
-    padding: calc(18px + (80 - 18) * (100vw - 400px) / (1440 - 400)) 0 calc(30px + (120 - 30) * (100vw - 400px) / (1440 - 400)); }
+    padding-right: 0; }
     main section.awards-press h2 {
       font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
       color: #000000;
@@ -1400,6 +1399,10 @@ main section {
             transition-delay: .3s; }
           main section.team .team-sort .team-members .team-member .inner {
             position: relative; }
+            main section.team .team-sort .team-members .team-member .inner video {
+              backround: #FAFAFA;
+              border: 1px solid #FAFAFA;
+              border-bottom: none; }
             main section.team .team-sort .team-members .team-member .inner img {
               width: 100%; }
             main section.team .team-sort .team-members .team-member .inner:hover .team-member-info {
