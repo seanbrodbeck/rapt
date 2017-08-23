@@ -141,16 +141,16 @@ get_header('home'); ?>
 					<div class="row clearfix">
 
 						<div class="primary-articles col-md-7">
-								
+
 								<?php if(get_field('home_page_featured_primary_blog_posts')): ?>
 									<?php while(has_sub_field('home_page_featured_primary_blog_posts')): ?>
 
 											<?php $post_object = get_sub_field('home_primary_blog_post');
 
-												if( $post_object ): 
+												if( $post_object ):
 
 													$post = $post_object;
-													setup_postdata( $post ); 
+													setup_postdata( $post );
 
 													?>
 												    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -204,10 +204,10 @@ get_header('home'); ?>
 
 											<?php $post_object = get_sub_field('home_secondary_blog_post');
 
-												if( $post_object ): 
+												if( $post_object ):
 
 													$post = $post_object;
-													setup_postdata( $post ); 
+													setup_postdata( $post );
 
 													?>
 												    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -265,7 +265,7 @@ get_header('home'); ?>
 
 					<div class="row clearfix">
 
-						<div class="col-sm-8">
+						<div class="col-sm-12 col-md-8">
 
 							<h1>Rapt is a group of designers, architects and strategists who believe everything is connected, and that anything is possible.</h1>
 
