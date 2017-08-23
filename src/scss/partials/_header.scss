@@ -7,17 +7,18 @@ header {
 		padding: 0;
 	}
 	.nav-wrap {
-		padding: calc(24px + (35 - 24) * (100vw - 320px) / (1440 - 320)) 0 105px;
+		padding: calc(12px + (35 - 12) * (100vw - 320px) / (1440 - 320)) 0 95px;
 		max-width: 1280px;
 		margin: auto;
+		position: relative;
+		height: 110px;
 		@media (min-width: $bp-sm3-min) {
 			padding: 35px 0 105px;
+			height: 140px;
 		}
 		@media (min-width: $bp-xlg-min) {
 			padding: 35px 0 105px;
 		}
-		position: relative;
-		height: 140px;
 		#site-navigation {
 			position: relative;
 			transform: translate3d(0,0,0);
@@ -174,6 +175,7 @@ header {
 	padding: 0;
 	background: none;
 	border: none;
+	border-radius: 0 !important;
 	outline: none;
 	float:left;
 	@media screen and (min-width: 37.5em) {
