@@ -24,7 +24,8 @@
 							$output = '';
 							if($categories){
 							    foreach($categories as $category) {
-							if($category->name !== 'Primary'){
+							if($category->name !== 'Primary')
+							if($category->name !== 'Secondary'){
 							        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
 							    }
 							echo trim($output, $separator);
