@@ -24,8 +24,7 @@
 							$output = '';
 							if($categories){
 							    foreach($categories as $category) {
-							if($category->name !== 'Primary')
-							if($category->name !== 'Secondary'){
+							if($category->name !== 'Primary' && 'Secondary'){
 							        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
 							    }
 							echo trim($output, $separator);
@@ -66,8 +65,8 @@
 		 	$next_post = get_adjacent_post( true, '', false); 
 		 	$nextthumbnail = get_the_post_thumbnail($next_post->ID);
 		 ?>
-		 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			 <?php if ( is_a( $next_post, 'WP_Post' ) ) {  ?>
+			 <article class="next-article">
 			 <?php next_post_link($nextthumbnail); ?>
 			 <header class="entry-header">
 			 	<div class="category-list">
@@ -79,7 +78,7 @@
 							$output = '';
 							if($categories){
 							    foreach($categories as $category) {
-							if($category->name !== 'Primary'){
+							if($category->name !== 'Primary' && 'Secondary'){
 							        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
 							    }
 							echo trim($output, $separator);
@@ -93,8 +92,11 @@
 
 		 	<h2><?php echo get_field('intro_paragraph_text', $next_post->ID); ?></h2>
 		 	<?php echo $next_post->post_content; ?>
-			 <?php } ?>
+			 
 		</article> 
+
+		<?php }
+				wp_reset_postdata(); ?>
 
 
 	</div>
@@ -136,7 +138,7 @@
 									$output = '';
 									if($categories){
 									    foreach($categories as $category) {
-									if($category->name !== 'Secondary'){
+									if($category->name !== 'Primary' && 'Secondary'){
 									        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
 									    }
 									echo trim($output, $separator);
