@@ -1863,11 +1863,11 @@ main .work-grid .work-row {
       background: transparent !important; }
 
 .single-post .main-blog-wrap .post-navigation {
-  margin-top: 100px;
   padding: 0 16px; }
   @media (min-width: 960px) {
     .single-post .main-blog-wrap .post-navigation {
       margin-top: 100px;
+      margin-bottom: 0;
       padding: 0; } }
   .single-post .main-blog-wrap .post-navigation .nav-next {
     width: 100%;
@@ -1894,7 +1894,7 @@ footer {
   z-index: 2; }
   @media (min-width: 680px) {
     footer {
-      margin-top: 90px;
+      margin-top: 80px;
       /*padding: calc(15px + (80 - 15) * (100vw - 400px) / (1440 - 400));*/ } }
   footer a, footer a:visited {
     color: #FFFFFF; }

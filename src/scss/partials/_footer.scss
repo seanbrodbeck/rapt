@@ -5,7 +5,7 @@ footer {
 	padding-top: 0;
   z-index: 2;
 	@media (min-width: $bp-sm-min) {
-		margin-top: 90px;
+		margin-top: 80px;
 		/*padding: calc(15px + (80 - 15) * (100vw - 400px) / (1440 - 400));*/
 	}
 	a, a:visited {

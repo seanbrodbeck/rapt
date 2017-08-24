@@ -980,10 +980,10 @@ main {
 			}
 		}
 		.post-navigation {
-			margin-top: 100px;
 			padding: 0 16px;
 			@media (min-width: $bp-md-min) {
 				margin-top: 100px;
+				margin-bottom: 0;
 				padding: 0;
 			}
 			.nav-next {
