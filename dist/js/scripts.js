@@ -18,7 +18,11 @@ var WIN_H,
     heightDifference,
     newY,
     targY,
-    zIndexes = [];
+    zIndexes = [],
+    currentQRow,
+    currentQCol,
+    currentFont = 0,
+    fontWeights = ['noe-display','noe-display-medium','noe-display-bold','noe-display-black'];
 
 animateTransition()
 function animateTransition() {
@@ -74,7 +78,14 @@ function animateTransition() {
         addTextClick(i);
       }
     })
-    scrollQuestionText()
+    spanQuestionLetters();
+    changeQuestionFont()
+
+    $('.intro-question').on('mousemove',function(e){
+      currentQRow = $(this).index()
+      currentQCol = Math.floor(e.pageX/WIN_W * 50)
+      changeQuestionFont();
+    })
     window.addEventListener('resize', resizeHandler);
     document.addEventListener('wheel', scrollHandler)
     document.addEventListener('scroll', scrollHandler)
@@ -102,15 +113,15 @@ function animateTransition() {
   }
 
   function addImageHover(i) {
-    var testVar = 'whatever';
-    qScrollPositions[i] = Math.floor(Math.random() * -200);
-    questions[i].addEventListener('mouseenter', function(){
-      $(questions).addClass('is-inactive')
-      $(this).removeClass('is-inactive')
-    })
-    questions[i].addEventListener('mouseleave', function(){
-      $(questions).removeClass('is-inactive')
-    })
+    // var testVar = 'whatever';
+    // qScrollPositions[i] = Math.floor(Math.random() * -200);
+    // questions[i].addEventListener('mouseenter', function(){
+    //   $(questions).addClass('is-inactive')
+    //   $(this).removeClass('is-inactive')
+    // })
+    // questions[i].addEventListener('mouseleave', function(){
+    //   $(questions).removeClass('is-inactive')
+    // })
   }
 
   function addTextClick(i) {
@@ -129,18 +140,25 @@ function animateTransition() {
       }
     })
   }
-
-  function scrollQuestionText() {
+  function spanQuestionLetters() {
     for (var i=0;i<$('.intro-question-text').length;i++) {
-      var el_text = questions[i].querySelector('.intro-question-text');
-      var zIndex = zIndexes[i];
-      qScrollPositions[i] = qScrollPositions[i] - 2 - zIndex/2;
-      if (qScrollPositions[i] < -el_text.clientWidth / 3 - 5) {
-        qScrollPositions[i] = 0;
-      }
-      el_text.style.transform = 'translate3d(' + qScrollPositions[i] + 'px,0,0)'
+      var text = $('.intro-question-text').eq(i).text();
+      text = text.replace(/./g, "<span>$&</span>");
+      $('.intro-question-text').eq(i).html(text);
     }
-    scrollRequest = requestAnimationFrame( function() { scrollQuestionText()})
+  }
+  var fontChange = 1;
+  function changeQuestionFont() {
+    for (var i=0;i<$('.intro-question-text').length;i++) {
+      var el_text = $('.intro-question-text').eq(i);
+      currentFont = Math.min(3,Math.max(0, Math.abs(i-currentQRow)))
+      console.log(currentFont)
+      el_text.css({
+        fontFamily: fontWeights[currentFont],
+        // letterSpacing: (3-currentFont)*1.3 + 'px',
+      })
+    }
+    // scrollRequest = setTimeout(changeQuestionFont,80) //requestAnimationFrame( function() { scrollQuestionText()})
   }
 
   function stopScrollingQuestionText(i) {

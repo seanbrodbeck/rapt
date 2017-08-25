@@ -29,9 +29,6 @@
   cursor: pointer;
   transition: .3s;
   white-space: nowrap;
-  padding: calc(5px + .85vw + 1.8vh) 0;
-  background: white;
-  margin-top: calc(10px - 3.2vw - 1vh);
   backface-visibility: hidden;
   will-change: transform, color, background;
   flex-shrink: 2;
@@ -46,43 +43,9 @@
   position: relative;
   display: inline-block;
   transition: .5s opacity;
-}
-
-.intro-question:nth-of-type(1) {
-  transform: rotate(-1deg);
-  z-index: 3;
-}
-.intro-question:nth-of-type(2) {
-  transform: rotate(1deg);
-  z-index: 7;
-}
-.intro-question:nth-of-type(3) {
-  transform: rotate(2deg);
-  z-index: 4;
-}
-.intro-question:nth-of-type(4) {
-  transform: rotate(-3deg);
-  z-index: 2;
-}
-.intro-question:nth-of-type(5) {
-  transform: rotate(0);
-  z-index: 8;
-}
-.intro-question:nth-of-type(6) {
-  transform: rotate(-3deg);
-  z-index: 1;
-}
-.intro-question:nth-of-type(7) {
-  transform: rotate(5deg);
-  z-index: 6;
-}
-.intro-question:nth-of-type(8) {
-  transform: rotate(2deg);
-  z-index: 5;
-}
-.intro-question:nth-of-type(9) {
-  transform: rotate(-3deg);
-  z-index: 9;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'noe-display-black';
 }
 
 .intro-question.is-off {
