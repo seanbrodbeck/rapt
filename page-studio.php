@@ -55,9 +55,10 @@ get_header(); ?>
 								                    	echo "'/>";
 							                     } else {
 							                     		echo "<video width='100%' height='auto' autoplay loop>";
-							                     		echo " <source src='";
+							                     		echo " <source src='null";
+							                     		echo "' type='video/mp4' data-src='";
 							                     		the_sub_field('team_member_video');
-							                     		echo "' type='video/mp4'>";
+							                     		echo "'>";
 							                     		echo "</video>";
 							                  } ?>
 

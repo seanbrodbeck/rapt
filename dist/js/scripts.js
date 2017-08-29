@@ -408,7 +408,9 @@ function animateTransition() {
   var teamMemberOrder = new Array(0,1,2)
 
   for (var i=0;i<$('.team-member-group').length;i++) {
-    cycleTeamMembers(i)
+    if ($('.team-member-group').eq(i).css('display') != 'none') {
+      cycleTeamMembers(i)
+    }
   }
 
   function cycleTeamMembers(num) {
@@ -417,10 +419,13 @@ function animateTransition() {
     var currentTeam = $('.team-member-group').eq(num)
     var activeTeamMembers = new Array();
     for (var i=0;i<3;i++) {
-      currentTeam.find('.team-member').eq(i).addClass('is-active');
+      var teamMember = currentTeam.find('.team-member').eq(i)
+      teamMember.addClass('is-active');
+      teamMember.find('source').attr('src',teamMember.find('source').attr('data-src'))
+      teamMember.find('video').get(0).play();
       currentTeamMember++;
       activeTeamMembers[teamMemberOrder[i]] = currentTeam.find('.team-member').eq(i);
-      currentTeam.find('.team-member').eq(i).css({
+      teamMember.css({
         left: (teamMemberOrder[i]*33.333) + '%'
       })
     }
@@ -428,10 +433,15 @@ function animateTransition() {
       setInterval(function(){cycleTeamMember(num)},2000);
       function cycleTeamMember(num){
         if (!$('.team-members').hasClass('is-all')) {
+          var teamMember = currentTeam.find('.team-member').eq(currentTeamMember);
+          teamMember.find('source').attr('src',teamMember.find('source').attr('data-src'))
+          teamMember.find('video').get(0).load();
+          teamMember.find('video').get(0).play();
+          activeTeamMembers[teamMemberOrder[currentTeamMemberIndex]].find('source').attr('src','null')
           activeTeamMembers[teamMemberOrder[currentTeamMemberIndex]].removeClass('is-active')
           activeTeamMembers[teamMemberOrder[currentTeamMemberIndex]] = currentTeam.find('.team-member').eq(currentTeamMember);
-          currentTeam.find('.team-member').eq(currentTeamMember).addClass('is-active')
-          currentTeam.find('.team-member').eq(currentTeamMember).css({
+          teamMember.addClass('is-active')
+          teamMember.css({
             left: (teamMemberOrder[currentTeamMemberIndex]*33.333) + '%'
           })
           currentTeamMember = currentTeamMember < currentTeam.find('.team-member').length-1 ? currentTeamMember+1 : 0;
