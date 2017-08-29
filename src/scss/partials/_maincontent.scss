@@ -426,21 +426,16 @@ main {
 					position: relative;
 					z-index: 1;
 					.team-member-group {
-						display: none;
+						display:none;
 						margin-left: -15px;
 						margin-right: -15px;
 						width: calc(100% - 30px);
-						position: absolute;
+						position: relative;
 						background-color: #FAFAFA;
 						padding-top: 29.8%;
 						@media (min-width: $bp-sm-min) {
 							margin-left: 0px;
 							margin-right: 0px;
-						}
-						video {
-							position: absolute;
-							display: none;
-							left: 9999px;
 						}
 					}
 					.team-member {
@@ -451,7 +446,10 @@ main {
 						position: absolute;
 						left: 0;
 						top: 0;
-						display: none;
+						&.is-active {
+							opacity: 1;
+							transition-delay: .3s;
+						}
 						.inner {
 							position:relative;
 							video {
@@ -490,16 +488,6 @@ main {
 									}
 									line-height: 1.5;
 								}
-							}
-						}
-						&.is-active {
-							opacity: 1;
-							transition-delay: .3s;
-							display: block;
-							video {
-								display: block;
-								position: relative;
-								left: 0;
 							}
 						}
 					}
