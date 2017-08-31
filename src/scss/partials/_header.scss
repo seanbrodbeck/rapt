@@ -283,11 +283,11 @@ header .nav-wrap #site-navigation {
 		@media (max-width: $bp-sm3-min) {
 			padding: 31px calc(18px + (80 - 18) * (100vw - 320px) / (1440 - 320)) 36px;
 			position: fixed;
-			transform: translate3d(0,30px,0);
+			transform: translate3d(0,100px,0);
 			width: 100%;
 			background: white;
 			z-index: 20;
-			top: -30px;
+			top: -100px;
 			bottom: 0;
 			left: 0;
 			right: 0;
@@ -310,8 +310,8 @@ header .nav-wrap #site-navigation {
 				}
 				position: fixed;
 				left: 0;
-				top: -30px;
-				transform: translate3d(0,30px,0);
+				top: -100px;
+				transform: translate3d(0,100px,0);
 				width: 100%;
 				background: white;
 				z-index: 20;

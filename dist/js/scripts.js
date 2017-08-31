@@ -1,3 +1,5 @@
+var userAgent = window.navigator.userAgent.toLowerCase(),
+safari = userAgent.indexOf('safari') != -1 && userAgent.indexOf('chrome') == -1;
 
 // Page Transition Wipe
 var transitionWipeX = 0;
@@ -20,9 +22,7 @@ var WIN_H,
     targY,
     zIndexes = [],
     currentQRow,
-    currentQCol,
-    currentFont = 0,
-    fontWeights = ['noe-display','noe-display-medium','noe-display-bold','noe-display-black'];
+    currentQCol
 
 animateTransition()
 function animateTransition() {
@@ -74,17 +74,8 @@ function animateTransition() {
     Array.prototype.map.call(questions, function(q, i) {
       if (i < questions.length) {
         addImageHover(i);
-        zIndexes[i] = $(questions[i]).css('z-index');
         addTextClick(i);
       }
-    })
-    spanQuestionLetters();
-    changeQuestionFont()
-
-    $('.intro-question').on('mousemove',function(e){
-      currentQRow = $(this).index()
-      currentQCol = Math.floor(e.pageX/WIN_W * 50)
-      changeQuestionFont();
     })
     window.addEventListener('resize', resizeHandler);
     document.addEventListener('wheel', scrollHandler)
@@ -109,19 +100,20 @@ function animateTransition() {
     navScrollHandler();
     articlesScrollHandler()
     caseScrollHandler()
-    bgColorScrollHandler();
+    if (!safari) {
+      bgColorScrollHandler();
+    }
   }
 
   function addImageHover(i) {
-    // var testVar = 'whatever';
-    // qScrollPositions[i] = Math.floor(Math.random() * -200);
-    // questions[i].addEventListener('mouseenter', function(){
-    //   $(questions).addClass('is-inactive')
-    //   $(this).removeClass('is-inactive')
-    // })
-    // questions[i].addEventListener('mouseleave', function(){
-    //   $(questions).removeClass('is-inactive')
-    // })
+    var testVar = 'whatever';
+    qScrollPositions[i] = 0;
+    questions[i].addEventListener('mouseenter', function(){
+      scrollQuestionText(i)
+    })
+    questions[i].addEventListener('mouseleave', function(){
+      stopScrollingQuestionText()
+    })
   }
 
   function addTextClick(i) {
@@ -140,25 +132,19 @@ function animateTransition() {
       }
     })
   }
-  function spanQuestionLetters() {
-    for (var i=0;i<$('.intro-question-text').length;i++) {
-      var text = $('.intro-question-text').eq(i).text();
-      text = text.replace(/./g, "<span>$&</span>");
-      $('.intro-question-text').eq(i).html(text);
+
+  function scrollQuestionText(i) {
+    if (window.location.hash !== '#harsh') {
+      $(questions).addClass('is-inactive')
+      questions[i].classList.remove('is-inactive')
     }
-  }
-  var fontChange = 1;
-  function changeQuestionFont() {
-    for (var i=0;i<$('.intro-question-text').length;i++) {
-      var el_text = $('.intro-question-text').eq(i);
-      currentFont = Math.min(3,Math.max(0, Math.abs(i-currentQRow)))
-      console.log(currentFont)
-      el_text.css({
-        fontFamily: fontWeights[currentFont],
-        // letterSpacing: (3-currentFont)*1.3 + 'px',
-      })
+    var el_text = questions[i].querySelector('.intro-question-text');
+    qScrollPositions[i] = qScrollPositions[i] - 5;
+    if (qScrollPositions[i] < -el_text.clientWidth / 3 - 5) {
+      qScrollPositions[i] = 0;
     }
-    // scrollRequest = setTimeout(changeQuestionFont,80) //requestAnimationFrame( function() { scrollQuestionText()})
+    el_text.style.transform = 'translate3d(' + qScrollPositions[i] + 'px,0,0)'
+    scrollRequest = requestAnimationFrame( function() { scrollQuestionText(i)})
   }
 
   function stopScrollingQuestionText(i) {
@@ -193,11 +179,10 @@ function animateTransition() {
 
   function articlesScrollHandler() {
     if (el_secondary_list) {
-      requestAnimationFrame(function(){
-        scrollPercent = scrollTop/scrollHeight;
-        el_secondary_list.style.willChange = "transform";
-        el_secondary_list.style.transform = 'translate3d(0, ' + Math.floor(-secondaryTargY*scrollPercent) + 'px, 0)'
-      })
+      scrollPercent = scrollTop/scrollHeight;
+      el_secondary_list.style.willChange = "transform";
+      el_secondary_list.style.backfaceVisibility = "hidden";
+      el_secondary_list.style.transform = 'translateY(' + Math.floor(-secondaryTargY*scrollPercent) + 'px)'
     }
     if ($('.post-social').length > 0) {
       if (scrollTop > $('.single-related-posts article').eq(0).offset().top - 400 && WIN_W > 960) {
@@ -505,6 +490,14 @@ function animateTransition() {
 
   // Case Study Scroll Locking
 
+  var scrollLockTops = new Array();
+  var scrollLockBots = new Array();
+  var scrollLockHeights = new Array();
+  $('.scroll-lock-text').each(function(i){
+    scrollLockTops[i] = $(this).offset().top;
+    scrollLockBots[i] = scrollLockTops[i] + $(this).innerHeight();
+    scrollLockHeights[i] = scrollLockBots[i] - scrollLockTops[i];
+  })
   function caseScrollHandler() {
     if ($('.scroll-lock-text').length > 0) {
       $('.scroll-lock-text').each(function(i){
@@ -512,12 +505,8 @@ function animateTransition() {
         var textHeight = el_text.innerHeight();
         var textWidth = el_text.innerWidth();
 
-        var myTop = $(this).offset().top;
-        var myBottom = myTop + $(this).innerHeight();
-        var myHeight = myBottom - myTop;
-
-        var minTop = myTop - 120;
-        var maxTop = myBottom - textHeight - 60;
+        var minTop = scrollLockTops[i] - 120;
+        var maxTop = scrollLockBots[i] - textHeight - 60;
 
         if (scrollTop > minTop && scrollTop < maxTop) {
           el_text.css({width: textWidth})
@@ -526,7 +515,7 @@ function animateTransition() {
           el_text.removeClass('is-fixed');
           if (scrollTop > maxTop) {
             el_text.css({
-              transform: 'translate3d(0,' + (myHeight - textHeight + 60) + 'px,0)'
+              transform: 'translate3d(0,' + (scrollLockHeights[i] - textHeight + 60) + 'px,0)'
             })
           } else {
             el_text.css({

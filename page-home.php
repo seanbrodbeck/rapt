@@ -33,7 +33,7 @@ get_header('home'); ?>
 				<?php while(has_sub_field('home_page_word_wall')): ?>
 					<div class="intro-question">
 						<div class="intro-question-text">
-							<?php the_sub_field('word_wall_item_text'); ?>
+							<?php the_sub_field('word_wall_item_text'); ?> <?php the_sub_field('word_wall_item_text'); ?> <?php the_sub_field('word_wall_item_text'); ?>
 						</div>
 					</div>
 				<?php endwhile; ?>
