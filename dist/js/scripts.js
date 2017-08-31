@@ -107,7 +107,8 @@ function animateTransition() {
 
   function addImageHover(i) {
     var testVar = 'whatever';
-    qScrollPositions[i] = 0;
+    qScrollPositions[i] = Math.floor(Math.random() * -200);
+    questions[i].querySelector('.intro-question-text').style.transform = 'translate3d(' + qScrollPositions[i] + 'px,0,0)';
     questions[i].addEventListener('mouseenter', function(){
       scrollQuestionText(i)
     })
@@ -139,7 +140,7 @@ function animateTransition() {
       questions[i].classList.remove('is-inactive')
     }
     var el_text = questions[i].querySelector('.intro-question-text');
-    qScrollPositions[i] = qScrollPositions[i] - 5;
+    qScrollPositions[i] = qScrollPositions[i] - Math.floor(2 + WIN_W/400);
     if (qScrollPositions[i] < -el_text.clientWidth / 3 - 5) {
       qScrollPositions[i] = 0;
     }

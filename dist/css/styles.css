@@ -179,9 +179,9 @@ a:hover, a:active {
   width: 100vw;
   height: calc(100vh - 90px);
   font-family: 'noe-display-medium';
-  font-size: calc(35px + (64 - 35) * (100vw - 400px) / (1440 - 400));
-  line-height: calc(2.9vw + 1.8vh);
-  padding: calc(15px + (0 - 15) * (100vw - 400px) / (1440 - 400)) 0;
+  font-size: calc(54px + (64 - 54) * (100vw - 400px) / (1440 - 400));
+  line-height: 1;
+  padding: 15px 0;
   box-sizing: border-box;
   position: relative; }
   @media (min-width: 680px) {
@@ -204,13 +204,12 @@ a:hover, a:active {
   cursor: pointer;
   transition: .3s;
   white-space: nowrap;
-  padding: calc(5px + .85vw + 1.8vh) 0;
-  margin-top: calc(10px - 3.2vw - 1vh);
+  padding: 0;
   backface-visibility: hidden;
   will-change: transform, color, background;
   flex-shrink: 2;
   opacity: 0;
-  transition: .5s opacity;
+  transition: opacity .5s, transform 1s ease-out;
   z-index: 2; }
 
 .intro-question-text {
@@ -272,7 +271,8 @@ a:hover, a:active {
     opacity: .4; } }
 
 .intro.is-active .intro-question {
-  opacity: 1; }
+  opacity: 1;
+  transform: translate3d(-30px, 0, 0); }
 
 .intro.is-active .intro-question:nth-of-type(1) {
   transition-delay: .1s; }
@@ -887,15 +887,18 @@ header {
             color: #000000; } }
 
 .menu-toggle {
-  position: absolute;
+  position: relative;
   width: 24px;
-  height: 17px;
+  height: 18px;
   padding: 0;
   background: none;
   border: none;
   border-radius: 0 !important;
   outline: none;
   float: left; }
+  .menu-toggle svg {
+    width: 24px;
+    height: 17px; }
   @media screen and (min-width: 37.5em) {
     .menu-toggle {
       display: block; } }
@@ -1005,7 +1008,7 @@ header .nav-wrap #site-navigation {
       padding: 35px calc((100vw - 1280px) / 2); } }
   @media (max-width: 960px) {
     .is-nav-fixed header .nav-wrap #site-navigation.toggled {
-      top: -30px;
+      top: -100px;
       bottom: 0;
       left: 0;
       right: 0;

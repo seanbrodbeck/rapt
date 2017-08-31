@@ -169,15 +169,19 @@ header {
 }
 
 .menu-toggle {
-	position: absolute;
+	position: relative;
 	width: 24px;
-	height: 17px;
+	height: 18px;
 	padding: 0;
 	background: none;
 	border: none;
 	border-radius: 0 !important;
 	outline: none;
 	float:left;
+	svg {
+		width: 24px;
+		height: 17px;
+	}
 	@media screen and (min-width: 37.5em) {
 		display:block;
 	}
@@ -318,7 +322,7 @@ header .nav-wrap #site-navigation {
 				z-index: 20;
 				&.toggled {
 					@media (max-width: $bp-sm3-min) {
-						top: -30px;
+						top: -100px;
 						bottom: 0;
 						left: 0;
 						right: 0;

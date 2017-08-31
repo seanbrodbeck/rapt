@@ -8,9 +8,9 @@
     height: calc(100vh - 120px);
   }
   font-family: 'noe-display-medium';
-  font-size: calc(35px + (64 - 35) * (100vw - 400px) / (1440 - 400));
-  line-height: calc(2.9vw + 1.8vh);
-  padding: calc(15px + (0 - 15) * (100vw - 400px) / (1440 - 400)) 0;
+  font-size: calc(54px + (64 - 54) * (100vw - 400px) / (1440 - 400));
+  line-height: 1;
+  padding: 15px 0;
   box-sizing: border-box;
   position:relative;
 }
@@ -29,13 +29,12 @@
   cursor: pointer;
   transition: .3s;
   white-space: nowrap;
-  padding: calc(5px + .85vw + 1.8vh) 0;
-  margin-top: calc(10px - 3.2vw - 1vh);
+  padding: 0;
   backface-visibility: hidden;
   will-change: transform, color, background;
   flex-shrink: 2;
   opacity: 0;
-  transition: .5s opacity;
+  transition: opacity .5s, transform 1s ease-out;
   z-index: 2;
 }
 
@@ -111,6 +110,7 @@
 .intro.is-active {
   .intro-question {
     opacity: 1;
+    transform: translate3d(-30px,0,0);
   }
   .intro-question:nth-of-type(1) {
     transition-delay: .1s;
