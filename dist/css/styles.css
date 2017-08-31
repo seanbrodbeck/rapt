@@ -1024,11 +1024,11 @@ header .nav-wrap #site-navigation {
 .blog header .nav-wrap #site-navigation {
   background-color: #ffefdd; }
 
-.single-work_post_type .main-navigation #primary-menu li#menu-item-30 a {
-  color: #999999; }
-
-.single-work_post_type .main-navigation #primary-menu li#menu-item-31 a {
-  color: #000000; }
+@media (min-width: 960px) {
+  .single-work_post_type .main-navigation #primary-menu li#menu-item-30 a {
+    color: #999999; }
+  .single-work_post_type .main-navigation #primary-menu li#menu-item-31 a {
+    color: #000000; } }
 
 main section {
   padding: calc(18px + (110 - 18) * (100vw - 400px) / (1440 - 400)) 0; }
