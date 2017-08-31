@@ -165,7 +165,7 @@ function animateTransition() {
     // }
     var scrollAmount = oldScrollTop - scrollTop;
     if (Math.abs(scrollAmount) > 4) {
-      if (oldScrollTop > scrollTop + 4 && document.querySelector('#masthead').getBoundingClientRect().bottom < 0) {
+      if (oldScrollTop > scrollTop + 4 && document.querySelector('#masthead').getBoundingClientRect().top <= 0) {
         document.body.classList.add('is-nav-fixed')
         // revealRaptLogo()
       } else {

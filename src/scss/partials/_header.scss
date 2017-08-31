@@ -22,7 +22,7 @@ header {
 		#site-navigation {
 			position: relative;
 			transform: translate3d(0,0,0);
-			transition: .2s transform ease-out, 1s background-color;
+			transition: 1s background-color;
 			display: flex;
 			align-items: center;
 			.menu-main-menu-container {
@@ -301,6 +301,7 @@ header .nav-wrap #site-navigation {
 	header {
 		.nav-wrap {
 			#site-navigation {
+				transition: .2s transform ease-out, 1s background-color;
 				padding: calc(26px + (35 - 26) * (100vw - 320px) / (1440 - 320)) calc(18px + (95 - 18) * (100vw - 320px) / (1440 - 320));
 				@media (min-width: $bp-xlg-min) {
 					padding: 35px 95px;
