@@ -51,12 +51,6 @@
   transition: none;
 }
 
-.intro-question.is-inactive .intro-question-text {
-  opacity: .3 !important;
-  transition: .2s opacity !important;
-  transition-delay: 0s !important;
-}
-
 .intro-question.is-active {
   background: transparent;
   color: white;

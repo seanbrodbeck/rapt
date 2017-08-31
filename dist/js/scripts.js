@@ -136,8 +136,6 @@ function animateTransition() {
 
   function scrollQuestionText(i) {
     if (window.location.hash !== '#harsh') {
-      $(questions).addClass('is-inactive')
-      questions[i].classList.remove('is-inactive')
     }
     var el_text = questions[i].querySelector('.intro-question-text');
     qScrollPositions[i] = qScrollPositions[i] - Math.floor(2 + WIN_W/400);
@@ -149,7 +147,6 @@ function animateTransition() {
   }
 
   function stopScrollingQuestionText(i) {
-    $(questions).removeClass('is-inactive')
     cancelAnimationFrame(scrollRequest);
   }
 
