@@ -26,9 +26,7 @@ get_header(); ?>
 					<div class="row clearfix">
 						<div class="col-md-5">
 							<h1><?php the_field('team_header'); ?></h1>
-						</div>
-						<div class="col-md-6 col-md-offset-1 team-sort-links">
-							<?php the_field('team_filter_list'); ?>
+							<a class="“show-everyone”" href="“#”">↪︎ Just show me everyone.</a>
 						</div>
 					</div>
 					<div class="row team-sort clearfix">
@@ -149,6 +147,9 @@ get_header(); ?>
 			<section class="video-section">
 				<div class="container">
 					<div class="row clearfix">
+						<div class="col-md-5 contact-info-header">
+							<h2 class="large"><?php the_field('contact_section_header'); ?></h2>
+						</div>
 						<div class="col-sm-10 col-sm-offset-1">
 							<?php the_field('upload_section'); ?>
 						</div>
@@ -159,9 +160,6 @@ get_header(); ?>
 			<section class="contact-info">
 				<div class="container">
 					<div class="row contact-info-wrapper clearfix">
-						<div class="col-md-5 contact-info-header">
-							<h2 class="large"><?php the_field('contact_section_header'); ?></h2>
-						</div>
 						<div class="col-md-8 col-md-offset-4">
 							<div class="row clearfix">
 								<div class="col-md-6 col-sm-12"></div>

@@ -136,6 +136,13 @@ main {
 				color:$white;
 			}
 			&.video {
+				.contact-info-header {
+					@media (min-width: $bp-md-min) {
+						position:absolute;
+						top: 0;
+						left: 0;
+					}
+				}
 				@media (min-width: $bp-sm-min) {
 					position:relative;
 					overflow:hidden;
@@ -397,25 +404,19 @@ main {
 				color: $black;
 				margin: 0 0 30px;
 			}
-			.team-sort-links {
-				margin-bottom: 40px;
-				p {
+			.show-everyone {
+				color: $light-gray;
+				a, a:visited {
 					color: $light-gray;
-					a, a:visited {
-						color: $light-gray;
-						&:hover, &.active {
-							color: $black;
-						}
+					&:hover, &.active {
+						color: $black;
 					}
 				}
-				.show-everyone::before {
-					content: '↪';
-					margin-right: 5px;
-				}
 			}
+
 			.team-sort {
 				position:relative;
-				margin-top: 30px;
+				margin-top: 64px;
 				margin-left: -15px;
 				margin-right: -15px;
 				height: calc(300px + (620 - 300) * (100vw - 320px) / (1440 - 320));
@@ -463,6 +464,7 @@ main {
 							&:hover {
 								.team-member-info {
 									opacity: 1;
+									visibility: visible;
 								}
 							}
 							.team-member-info {
@@ -470,6 +472,8 @@ main {
 								padding: 20px 0;
 								text-align: center;
 								width: 100%;
+								opacity: 0;
+								visibility: hidden;
 								@include transition(opacity .5s ease);
 								h3 {
 									margin: 0;
@@ -505,7 +509,6 @@ main {
 		&.we {
 			padding-left:0;
 			padding-right:0;
-			background: $off-white;
 			.we-wrapper {
 				position: relative;
 				.we-large-text {
@@ -540,6 +543,7 @@ main {
 		&.clients {
 			padding-left:0;
 			padding-right:0;
+			background: $off-white;
 			h2 {
 				color: $black;
 			}
@@ -611,13 +615,6 @@ main {
 			}
 			.contact-info-wrapper {
 				position:relative;
-				.contact-info-header {
-					@media (min-width: $bp-md-min) {
-						position:absolute;
-						top: 0;
-						left: 0;
-					}
-				}
 				.contact-info-listing {
 					margin-bottom: 30px;
 					@media (min-width: $bp-md-min) {

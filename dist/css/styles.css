@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: 'noe-display';
   src: url("/wp-content/themes/rapt/dist/fonts/NoeDisplay-Regular.otf"); }
@@ -1126,6 +1125,11 @@ main section {
       @media (min-width: 1320px) {
         main section.single-hero h1 {
           font-size: 64px; } }
+    @media (min-width: 960px) {
+      main section.single-hero.video .contact-info-header {
+        position: absolute;
+        top: 0;
+        left: 0; } }
     @media (min-width: 680px) {
       main section.single-hero.video {
         position: relative;
@@ -1333,20 +1337,15 @@ main section {
     main section.team h1 {
       color: #000000;
       margin: 0 0 30px; }
-    main section.team .team-sort-links {
-      margin-bottom: 40px; }
-      main section.team .team-sort-links p {
+    main section.team .show-everyone {
+      color: #a5a8a8; }
+      main section.team .show-everyone a, main section.team .show-everyone a:visited {
         color: #a5a8a8; }
-        main section.team .team-sort-links p a, main section.team .team-sort-links p a:visited {
-          color: #a5a8a8; }
-          main section.team .team-sort-links p a:hover, main section.team .team-sort-links p a.active, main section.team .team-sort-links p a:visited:hover, main section.team .team-sort-links p a:visited.active {
-            color: #000000; }
-      main section.team .team-sort-links .show-everyone::before {
-        content: '↪';
-        margin-right: 5px; }
+        main section.team .show-everyone a:hover, main section.team .show-everyone a.active, main section.team .show-everyone a:visited:hover, main section.team .show-everyone a:visited.active {
+          color: #000000; }
     main section.team .team-sort {
       position: relative;
-      margin-top: 30px;
+      margin-top: 64px;
       margin-left: -15px;
       margin-right: -15px;
       height: calc(300px + (620 - 300) * (100vw - 320px) / (1440 - 320)); }
@@ -1388,12 +1387,15 @@ main section {
             main section.team .team-sort .team-members .team-member .inner img {
               width: 100%; }
             main section.team .team-sort .team-members .team-member .inner:hover .team-member-info {
-              opacity: 1; }
+              opacity: 1;
+              visibility: visible; }
             main section.team .team-sort .team-members .team-member .inner .team-member-info {
               position: relative;
               padding: 20px 0;
               text-align: center;
               width: 100%;
+              opacity: 0;
+              visibility: hidden;
               -moz-transition: opacity 0.5s ease;
               -o-transition: opacity 0.5s ease;
               -webkit-transition: opacity 0.5s ease;
@@ -1419,8 +1421,7 @@ main section {
           opacity: 1 !important; }
   main section.we {
     padding-left: 0;
-    padding-right: 0;
-    background: #f9f9f9; }
+    padding-right: 0; }
     main section.we .we-wrapper {
       position: relative; }
       main section.we .we-wrapper .we-large-text {
@@ -1447,7 +1448,8 @@ main section {
         font-weight: 400; }
   main section.clients {
     padding-left: 0;
-    padding-right: 0; }
+    padding-right: 0;
+    background: #f9f9f9; }
     main section.clients h2 {
       color: #000000; }
     main section.clients #client_logo_row {
@@ -1500,11 +1502,6 @@ main section {
           font-size: 20px; } }
     main section.contact-info .contact-info-wrapper {
       position: relative; }
-      @media (min-width: 960px) {
-        main section.contact-info .contact-info-wrapper .contact-info-header {
-          position: absolute;
-          top: 0;
-          left: 0; } }
       main section.contact-info .contact-info-wrapper .contact-info-listing {
         margin-bottom: 30px; }
         @media (min-width: 960px) {
