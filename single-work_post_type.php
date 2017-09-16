@@ -116,7 +116,7 @@ get_header(); ?>
 	    </section>
 
 	    <?php if( have_rows('things_grid_layout') ): ?>
-	
+
 	    <section class="featured-products">
 	      <div class="container">
 	        <div class="row clearfix">
@@ -196,9 +196,9 @@ get_header(); ?>
 
 						endwhile; endif; ?>
 				</div>
-				<div class="container">
+<!-- 				<div class="container">
         	<div class="more-link-wrapper"><a class="more-link" href="/work">More</a></div>
-     	 	</div>
+     	 	</div> -->
 	    </section>
 	    <?php endif; ?>
 

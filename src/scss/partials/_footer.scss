@@ -34,7 +34,10 @@ footer {
 	}
 
 	.footer-top {
-		margin-top: 78px;
+		margin-top: 18px;
+    @media (min-width: $bp-md-min) {
+      margin-top: 50px;
+    }
 		@media (min-width: $bp-xlg-min) {
 			margin-top: 80px;
 		}
@@ -47,6 +50,16 @@ footer {
 	  	font-family: 'Fakt-Blond';
 	  	color: $footer-gray;
 		}
+
+    @media (min-width: 680px) {
+      .col-sm-6 {
+          width: 50%;
+          float: left;
+      }
+      .col-sm-6 {
+          width: 50%;
+      }
+    }
 	}
 
 	.footer-bottom {

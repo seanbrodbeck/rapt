@@ -1,6 +1,6 @@
 .intro {
   width: 100vw;
-  height: calc(100vh - 90px);
+  height: calc(100vh - 136px);
   @media (min-width: $bp-sm-min) {
     height: calc(100vh - 96px);
   }
@@ -8,7 +8,7 @@
     height: calc(100vh - 120px);
   }
   font-family: 'noe-display-medium';
-  font-size: calc(54px + (64 - 54) * (100vw - 400px) / (1440 - 400));
+  font-size: calc(12px + 1.5vw + 4.4vh);
   line-height: 1;
   padding: 15px 0;
   box-sizing: border-box;
@@ -70,7 +70,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100vh + 30px);
   overflow: hidden;
 }
 .intro-image {
@@ -136,5 +136,21 @@
   .intro-question:nth-of-type(10) {
     transition: 1s;
     transition-delay: 1s;
+  }
+}
+
+
+.is-scrolling {
+  .menu-item a {
+    color: white !important;
+  }
+  .rapt-logo polyline {
+    fill: white;
+  }
+  .intro {
+    .intro-question {
+      transition-delay: 0s !important;
+      transition-duration: 0s !important;
+    }
   }
 }

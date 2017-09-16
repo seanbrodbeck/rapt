@@ -71,26 +71,31 @@ function animateTransition() {
         revealRaptLogo();
       },200)
     }, Math.floor(Math.random() * 2000 + 500))
-    Array.prototype.map.call(questions, function(q, i) {
-      if (i < questions.length) {
-        addImageHover(i);
-        addTextClick(i);
+
+    if ($('body').hasClass('home')) {
+      Array.prototype.map.call(questions, function(q, i) {
+        if (i < questions.length) {
+          addImageHover(i);
+          addTextClick(i);
+        }
+      })
+      if (images.length > 0 && questions.length > 0) {
+        window.addEventListener('click', function() {
+          isActive = false;
+          $('body').removeClass('is-scrolling');
+          Array.prototype.map.call(images, function(image, i) {
+            stopScrollingQuestionText();
+            images[i].classList.remove('is-active');
+            questions[i].classList.remove('is-active');
+            questions[i].classList.remove('is-off');
+          })
+        })
       }
-    })
+    }
     window.addEventListener('resize', resizeHandler);
     document.addEventListener('wheel', scrollHandler)
     document.addEventListener('scroll', scrollHandler)
     $('.blog .more-link').on('click', resizeHandler);
-    if (images.length > 0 && questions.length > 0) {
-      window.addEventListener('click', function() {
-        isActive = false;
-        Array.prototype.map.call(images, function(image, i) {
-          images[i].classList.remove('is-active');
-          questions[i].classList.remove('is-active');
-          questions[i].classList.remove('is-off');
-        })
-      })
-    }
     resizeHandler();
   }
 
@@ -110,10 +115,14 @@ function animateTransition() {
     qScrollPositions[i] = Math.floor(Math.random() * -200);
     questions[i].querySelector('.intro-question-text').style.transform = 'translate3d(' + qScrollPositions[i] + 'px,0,0)';
     questions[i].addEventListener('mouseenter', function(){
-      scrollQuestionText(i)
+      if (!isActive) {
+        scrollQuestionText(i)
+      }
     })
     questions[i].addEventListener('mouseleave', function(){
-      stopScrollingQuestionText()
+      if (!isActive) {
+        stopScrollingQuestionText();
+      }
     })
   }
 
@@ -122,12 +131,14 @@ function animateTransition() {
       if (!isActive) {
         e.stopPropagation()
         isActive = true;
+        $('body').addClass('is-scrolling');
         images[i].classList.add('is-active');
         Array.prototype.map.call(questions, function(q, j) {
           if (i != j) {
             questions[j].classList.add('is-off');
           } else {
             questions[j].classList.add('is-active');
+            scrollQuestionText(i);
           }
         })
       }
@@ -135,8 +146,7 @@ function animateTransition() {
   }
 
   function scrollQuestionText(i) {
-    if (window.location.hash !== '#harsh') {
-    }
+    cancelAnimationFrame(scrollRequest);
     var el_text = questions[i].querySelector('.intro-question-text');
     qScrollPositions[i] = qScrollPositions[i] - Math.floor(2 + WIN_W/400);
     if (qScrollPositions[i] < -el_text.clientWidth / 3 - 5) {
@@ -162,6 +172,11 @@ function animateTransition() {
     //   })
     // }
     var scrollAmount = oldScrollTop - scrollTop;
+    if (scrollTop > 0 ) {
+      document.body.classList.add('is-scrolled');
+    } else {
+      document.body.classList.remove('is-scrolled');
+    }
     if (Math.abs(scrollAmount) > 4) {
       if (oldScrollTop > scrollTop + 4 && document.querySelector('#masthead').getBoundingClientRect().top <= 0) {
         document.body.classList.add('is-nav-fixed')
@@ -372,7 +387,6 @@ function animateTransition() {
 
 
   // Team Sort
-  $('.team-members .team-member-group:first').css("display", "block");
 
   $(".team-sort-links a").click(function (e) {
       var idname= $(this).data('group');
@@ -384,96 +398,81 @@ function animateTransition() {
   $( ".show-everyone" ).click(function() {
     $( ".team-members div" ).fadeIn().removeClass('active');
     $('.team-members').addClass('is-all')
-    $('.team-members .team-member-group:first').addClass("active");
   });
 
-  // Team Member Carousel
-  var teamMemberOrder = new Array(0,1,2)
-
-  for (var i=0;i<$('.team-member-group').length;i++) {
-    if ($('.team-member-group').eq(i).css('display') != 'none') {
-      cycleTeamMembers(i)
-    }
-  }
-
-  function cycleTeamMembers(num) {
+  if ($('body').hasClass('page-template-page-studio')) {
     var currentTeamMember = 0;
-    var currentTeamMemberIndex = 0;
-    var currentTeam = $('.team-member-group').eq(num)
-    var activeTeamMembers = new Array();
-    for (var i=0;i<3;i++) {
-      var teamMember = currentTeam.find('.team-member').eq(i)
-      teamMember.addClass('is-active');
-      teamMember.find('source').attr('src',teamMember.find('source').attr('data-src'))
-      teamMember.find('video').get(0).play();
-      currentTeamMember++;
-      activeTeamMembers[teamMemberOrder[i]] = currentTeam.find('.team-member').eq(i);
-      teamMember.css({
-        left: (teamMemberOrder[i]*33.333) + '%'
-      })
-    }
-    if (currentTeam.find('.team-member').length > 3) {
-      setInterval(function(){cycleTeamMember(num)},2000);
-      function cycleTeamMember(num){
-        if (!$('.team-members').hasClass('is-all')) {
-          var teamMember = currentTeam.find('.team-member').eq(currentTeamMember);
-          teamMember.find('source').attr('src',teamMember.find('source').attr('data-src'))
-          teamMember.find('video').get(0).load();
-          teamMember.find('video').get(0).play();
-          activeTeamMembers[teamMemberOrder[currentTeamMemberIndex]].find('source').attr('src','null')
-          activeTeamMembers[teamMemberOrder[currentTeamMemberIndex]].removeClass('is-active')
-          activeTeamMembers[teamMemberOrder[currentTeamMemberIndex]] = currentTeam.find('.team-member').eq(currentTeamMember);
-          teamMember.addClass('is-active')
-          teamMember.css({
-            left: (teamMemberOrder[currentTeamMemberIndex]*33.333) + '%'
-          })
-          currentTeamMember = currentTeamMember < currentTeam.find('.team-member').length-1 ? currentTeamMember+1 : 0;
-          currentTeamMemberIndex = currentTeamMemberIndex < 2 ? currentTeamMemberIndex+1 : 0;
-        }
+
+    setInterval(function(){
+      cycleTeamMembers(i)
+    },2000)
+
+    function cycleTeamMembers() {
+      var teamMember = $('.team-member').eq(currentTeamMember)
+      if (currentTeamMember > 2) {
+        $('.team-member').eq(currentTeamMember-3).removeClass('is-active');
+      } else if (currentTeamMember == 0) {
+        $('.team-member').eq($('.team-member').length - 3).removeClass('is-active');
+      } else if (currentTeamMember == 1) {
+        $('.team-member').eq($('.team-member').length - 2).removeClass('is-active');
+      } else if (currentTeamMember == 2) {
+        $('.team-member').eq($('.team-member').length - 1).removeClass('is-active');
+      }
+      if (teamMember.find('video').get(0)) {
+        teamMember.addClass('is-active');
+        teamMember.find('source').attr('src',teamMember.find('source').attr('data-src'))
+        teamMember.find('video').get(0).play();
+      } else {
+        cycleTeamMembers();
+      }
+      if (currentTeamMember == $('.team-member').length - 1) {
+        currentTeamMember = 0;
+      } else {
+        currentTeamMember++;
       }
     }
-  }
 
-  // Logo Carousel
-  var clientLogos = $('.client-logos-row .client-logo');
-  var activeLogos = new Array();
-  var logoOrder = new Array(1,2,0,3)
-  var currentClientLogo = 0;
-  for (var i=0;i<4;i++) {
-    var myLeft = (logoOrder[i]*25);
-    var myTop = 0;
-    if (WIN_W < 992) {
-      myLeft = ((logoOrder[i]%2)*50);
-      myTop = logoOrder[i] > 1 ? '100%' : 0;
-    }
-    clientLogos.eq(i).addClass('is-active');
-    currentClientLogo++;
-    activeLogos[logoOrder[i]] = clientLogos.eq(i);
-    clientLogos.eq(i).css({
-      left: myLeft + '%',
-      transform: 'translate3d(0,' + myTop + ',0)'
-    })
-  }
-  if (clientLogos.length > 4) {
+    // Logo Carousel
+    var clientLogos = $('.client-logos-row .client-logo');
+    var activeLogos = new Array();
+    var logoOrder = new Array(1,2,0,3)
     var currentClientLogo = 0;
-    var currentClientIndex = 0;
-    setInterval(cycleClientLogo,1000);
-    function cycleClientLogo(){
-      activeLogos[logoOrder[currentClientIndex]].removeClass('is-active')
-      activeLogos[logoOrder[currentClientIndex]] = clientLogos.eq(currentClientLogo);
-      clientLogos.eq(currentClientLogo).addClass('is-active')
-      var myLeft = (logoOrder[currentClientIndex]*25);
+    for (var i=0;i<4;i++) {
+      var myLeft = (logoOrder[i]*25);
       var myTop = 0;
       if (WIN_W < 992) {
-        myLeft = ((logoOrder[currentClientIndex]%2)*50);
-        myTop = logoOrder[currentClientIndex] > 1 ? '100%' : 0;
+        myLeft = ((logoOrder[i]%2)*50);
+        myTop = logoOrder[i] > 1 ? '100%' : 0;
       }
-      clientLogos.eq(currentClientLogo).css({
+      clientLogos.eq(i).addClass('is-active');
+      currentClientLogo++;
+      activeLogos[logoOrder[i]] = clientLogos.eq(i);
+      clientLogos.eq(i).css({
         left: myLeft + '%',
         transform: 'translate3d(0,' + myTop + ',0)'
       })
-      currentClientLogo = currentClientLogo < clientLogos.length-1 ? currentClientLogo+1 : 0;
-      currentClientIndex = currentClientIndex < 3 ? currentClientIndex+1 : 0;
+    }
+    if (clientLogos.length > 4) {
+      var currentClientLogo = 0;
+      var currentClientIndex = 0;
+      setInterval(cycleClientLogo,1000);
+      function cycleClientLogo(){
+        activeLogos[logoOrder[currentClientIndex]].removeClass('is-active')
+        activeLogos[logoOrder[currentClientIndex]] = clientLogos.eq(currentClientLogo);
+        clientLogos.eq(currentClientLogo).addClass('is-active')
+        var myLeft = (logoOrder[currentClientIndex]*25);
+        var myTop = 0;
+        if (WIN_W < 992) {
+          myLeft = ((logoOrder[currentClientIndex]%2)*50);
+          myTop = logoOrder[currentClientIndex] > 1 ? '100%' : 0;
+        }
+        clientLogos.eq(currentClientLogo).css({
+          left: myLeft + '%',
+          transform: 'translate3d(0,' + myTop + ',0)'
+        })
+        currentClientLogo = currentClientLogo < clientLogos.length-1 ? currentClientLogo+1 : 0;
+        currentClientIndex = currentClientIndex < 3 ? currentClientIndex+1 : 0;
+      }
     }
   }
 
@@ -491,20 +490,38 @@ function animateTransition() {
   var scrollLockTops = new Array();
   var scrollLockBots = new Array();
   var scrollLockHeights = new Array();
-  $('.scroll-lock-text').each(function(i){
-    scrollLockTops[i] = $(this).offset().top;
-    scrollLockBots[i] = scrollLockTops[i] + $(this).innerHeight();
-    scrollLockHeights[i] = scrollLockBots[i] - scrollLockTops[i];
+  $('.scroll-lock-text').each(function(i) {
+    setScrollLocks($(this),i);
   })
+  function setScrollLocks(el,num) {
+    scrollLockTops[num] = el.offset().top;
+    scrollLockBots[num] = scrollLockTops[num] + el.innerHeight();
+    scrollLockHeights[num] = scrollLockBots[num] - scrollLockTops[num];
+  }
+  var caseScrollCount = 0;
   function caseScrollHandler() {
+    if ($('.single-hero').length > 0) {
+      $('.single-hero').css({
+        transform: 'translate3d(0,' + Math.floor(-scrollTop/8) + 'px,0)'
+      })
+    }
+    if ($('.studio-hero').length > 0) {
+      $('.studio-hero').css({
+        transform: 'translate3d(0,' + Math.floor(-scrollTop/8) + 'px,0)'
+      })
+    }
     if ($('.scroll-lock-text').length > 0) {
+      caseScrollCount++;
       $('.scroll-lock-text').each(function(i){
+        if (caseScrollCount % 10 == 0) {
+          setScrollLocks($(this),i);
+        }
         var el_text = $('.lg-textformat-parent', this);
         var textHeight = el_text.innerHeight();
         var textWidth = el_text.innerWidth();
 
         var minTop = scrollLockTops[i] - 120;
-        var maxTop = scrollLockBots[i] - textHeight - 60;
+        var maxTop = scrollLockBots[i] - textHeight - 180;
 
         if (scrollTop > minTop && scrollTop < maxTop) {
           el_text.css({width: textWidth})
@@ -513,7 +530,7 @@ function animateTransition() {
           el_text.removeClass('is-fixed');
           if (scrollTop > maxTop) {
             el_text.css({
-              transform: 'translate3d(0,' + (scrollLockHeights[i] - textHeight + 60) + 'px,0)'
+              transform: 'translate3d(0,' + (scrollLockHeights[i] - textHeight - 60) + 'px,0)'
             })
           } else {
             el_text.css({

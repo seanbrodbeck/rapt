@@ -19,12 +19,12 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<section class="studio-hero" style="background:url('<?php the_field("studio_hero"); ?>') no-repeat center;background-size:cover;"></section>
+			<section class="studio-hero" style="background:url('<?php the_field("studio_hero"); ?>') no-repeat center;background-size:cover;background-attachment: fixed;"></section>
 
 			<section class="team">
 				<div class="container">
 					<div class="row clearfix">
-						<div class="col-md-5">
+						<div class="col-md-6">
 							<h1><?php the_field('team_header'); ?></h1>
 							<a class="“show-everyone”" href="“#”">↪︎ Just show me everyone.</a>
 						</div>
@@ -37,40 +37,37 @@ get_header(); ?>
 
 									<?php while( have_rows('team_member_groups') ): the_row(); ?>
 
-										<div id="<?php the_sub_field('team_member_group_slug'); ?>" class="team-member-group active">
+										<?php if( have_rows('team_members') ): ?>
 
-											<?php if( have_rows('team_members') ): ?>
+											<?php while( have_rows('team_members') ): the_row(); ?>
 
-												<?php while( have_rows('team_members') ): the_row(); ?>
+												<div class="col-xs-4 team-member">
+													<div class="inner">
 
-													<div class="col-md-4 col-sm-4 col-xs-6 team-member">
-														<div class="inner">
+														 <?php
+						                     // if (is_mobile()) {
+							                    // 	echo "<img src='";
+							                    // 	the_sub_field('team_member_image');
+							                    // 	echo "'/>";
+						                     // } else {
+						                     		echo "<video width='100%' height='auto' autoplay loop>";
+						                     		echo " <source src='";
+						                     		the_sub_field('team_member_video');
+						                     		echo "' type='video/mp4'";
+						                     		echo "'>";
+						                     		echo "</video>";
+						                  // } ?>
 
-															 <?php
-							                     if (is_mobile()) {
-								                    	echo "<img src='";
-								                    	the_sub_field('team_member_image');
-								                    	echo "'/>";
-							                     } else {
-							                     		echo "<video width='100%' height='auto' autoplay loop>";
-							                     		echo " <source src='null";
-							                     		echo "' type='video/mp4' data-src='";
-							                     		the_sub_field('team_member_video');
-							                     		echo "'>";
-							                     		echo "</video>";
-							                  } ?>
-
-															<div class="team-member-info">
-																<h3><?php the_sub_field('team_member_name'); ?></h3>
-																<p><?php the_sub_field('team_member_title'); ?></p>
-															</div>
+														<div class="team-member-info">
+															<h3><?php the_sub_field('team_member_name'); ?></h3>
+															<p><?php the_sub_field('team_member_title'); ?></p>
 														</div>
 													</div>
+												</div>
 
-												<?php endwhile; ?>
+											<?php endwhile; ?>
 
-											<?php endif; ?>
-										</div>
+										<?php endif; ?>
 
 									<?php endwhile; ?>
 
@@ -84,7 +81,7 @@ get_header(); ?>
 			<section class="we">
 				<div class="container">
 					<div class="row we-wrapper clearfix">
-						<div class="col-md-7 we-large-text">
+						<div class="col-md-6 we-large-text">
 							<h2 class="large"><?php the_field('we_large_text'); ?></h2>
 						</div>
 						<div class="col-md-9 col-md-offset-3">
@@ -132,7 +129,7 @@ get_header(); ?>
 
 							<?php while(has_sub_field('services')): ?>
 
-							<div class="col-sm-4">
+							<div class="col-xs-4">
 								<p class="cat-header"><?php the_sub_field('service_category_header'); ?></p>
 								<?php the_sub_field('service_list'); ?>
 							</div>
@@ -147,10 +144,10 @@ get_header(); ?>
 			<section class="video-section">
 				<div class="container">
 					<div class="row clearfix">
-						<div class="col-md-5 contact-info-header">
+						<div class="col-md-6 contact-info-header">
 							<h2 class="large"><?php the_field('contact_section_header'); ?></h2>
 						</div>
-						<div class="col-sm-10 col-sm-offset-1">
+						<div class="col-sm-8 col-sm-offset-3">
 							<?php the_field('upload_section'); ?>
 						</div>
 					</div>
@@ -160,14 +157,13 @@ get_header(); ?>
 			<section class="contact-info">
 				<div class="container">
 					<div class="row contact-info-wrapper clearfix">
-						<div class="col-md-8 col-md-offset-4">
+						<div class="col-md-12">
 							<div class="row clearfix">
-								<div class="col-md-6 col-sm-12"></div>
 								<?php if(get_field('contact_info_grid')): ?>
 
 									<?php while(has_sub_field('contact_info_grid')): ?>
 
-									<div class="col-sm-6 contact-info-listing">
+									<div class="col-sm-3 contact-info-listing">
 										<h4><?php the_sub_field('contact_info_header'); ?></h4>
 										<?php the_sub_field('contact_info'); ?>
 									</div>
