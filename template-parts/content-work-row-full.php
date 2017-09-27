@@ -8,7 +8,7 @@
     setup_postdata( $post );
 
     ?>
-    <a href="<?php the_permalink(); ?>"><div class="work-row work-row-full" style="background:url('<?php if (is_mobile()) { the_field('grid_thumbnail_13_width'); } else { the_field('grid_thumbnail_full_width'); } ?><?php //the_post_thumbnail_url('full'); ?>') no-repeat center;background-size:cover;">
+    <a href="<?php the_permalink(); ?>"><div class="work-row work-row-full" style="background:url('<?php if (is_mobile()) { the_field('grid_thumbnail_13_width'); } else { the_field('grid_thumbnail_full_width'); } ?><?php //the_post_thumbnail_url('full'); ?>') no-repeat center 80%;background-size:cover;">
       <div class="container">
         <div class="row clearfix">
           <div class="col-lg-5 col-md-6 col-sm-7">

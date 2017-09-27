@@ -1,0 +1,59 @@
+body.is-lightbox {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.single .grid-content img {
+  cursor: pointer;
+}
+.lightbox .arrows {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem;
+  @media (min-width: $bp-md-min) {
+    padding: 2rem;
+  }
+}
+.lightbox .arrows svg {
+  width: 3.5rem;
+  padding: 1rem;
+  cursor: pointer;
+  opacity: .7;
+  &:hover {
+    opacity: 1;
+    transition: .2s;
+  }
+  @media (min-width: $bp-md-min) {
+    width: 4rem;
+  }
+}
+.lightbox .arrows .indicator {
+  align-self: flex-end;
+}
+.lightbox {
+  position: fixed;
+  background: white;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10vh 10vw;
+  z-index: 100;
+  opacity: 0;
+}
+.lightbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent !important;
+  transition: .4s ease-out;
+}

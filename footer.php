@@ -21,7 +21,7 @@
 				<div class="col-md-9 col-sm-6 footer-nav">
 					<?php wp_nav_menu( array( 'menu_id' => 'primary-menu', )); ?>
 				</div><!-- .site-info -->
-				<div class="col-md-3 col-sm-6 footer-subscribe">
+				<div class="col-md-3 col-md-offset-3 footer-subscribe">
 					<!-- Begin MailChimp Signup Form -->
 
 					<form action="//raptstudio.us6.list-manage.com/subscribe/post?u=ffd971c82d8b0e37775847995&amp;id=57c3a03987" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>

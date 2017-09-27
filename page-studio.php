@@ -19,14 +19,14 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<section class="studio-hero" style="background:url('<?php the_field("studio_hero"); ?>') no-repeat center;background-size:cover;background-attachment: fixed;"></section>
+			<section class="studio-hero" style="background:url('<?php the_field("studio_hero"); ?>') no-repeat center 80%;background-size:cover;"></section>
 
 			<section class="team">
 				<div class="container">
 					<div class="row clearfix">
 						<div class="col-md-6">
 							<h1><?php the_field('team_header'); ?></h1>
-							<a class="“show-everyone”" href="“#”">↪︎ Just show me everyone.</a>
+							<a class="show-everyone" href="#">↪︎ Just show me everyone.</a>
 						</div>
 					</div>
 					<div class="row team-sort clearfix">

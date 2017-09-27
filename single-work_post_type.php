@@ -13,7 +13,7 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<?php if( get_field('work_hero_video') ): ?>
-			<section class="single-hero video" style="background:url('<?php the_field("work_hero_video_fallback_image"); ?>') no-repeat center;background-size:cover;">
+			<section class="single-hero video" style="background:url('<?php the_field("work_hero_video_fallback_image"); ?>') no-repeat center 80%;background-size:cover;">
 	      <div class="container">
 	        <div class="row clearfix">
 	          <div class="col-md-5">
@@ -24,7 +24,7 @@ get_header(); ?>
 	      <video src="<?php the_field("work_hero_video"); ?>" poster="<?php the_field("work_hero_video_fallback_image"); ?>" autoplay muted loop>
 	    </section>
 	  	<?php else: ?>
-	    <section class="single-hero" style="background:url('<?php the_field("work_hero_image"); ?>') no-repeat center;background-size:cover;">
+	    <section class="single-hero" style="background:url('<?php the_field("work_hero_image"); ?>') no-repeat center 80%;background-size:cover;">
 	      <div class="container">
 	        <div class="row clearfix">
 	          <div class="col-md-5">

@@ -258,11 +258,14 @@ a:hover, a:active {
   visibility: visible;
   transition: .4s ease-out; }
 
-@-webkit-keyframes fade-in {
+.fade-in {
+  animation: fade-in .5s forwards; }
+
+@keyframes fade-in {
   0% {
     opacity: 0; }
   100% {
-    opacity: .4; } }
+    opacity: 1; } }
 
 .intro.is-active .intro-question {
   opacity: 1;
@@ -299,10 +302,10 @@ a:hover, a:active {
   transition: 1s;
   transition-delay: 1s; }
 
-.is-scrolling .menu-item a {
+.is-scrolling:not(.is-nav-fixed) .menu-item a {
   color: white !important; }
 
-.is-scrolling .rapt-logo polyline {
+.is-scrolling:not(.is-nav-fixed) .rapt-logo polyline {
   fill: white; }
 
 .is-scrolling .intro .intro-question {
@@ -310,7 +313,7 @@ a:hover, a:active {
   transition-duration: 0s !important; }
 
 body {
-  transition: 1s; }
+  /* transition: 1s; */ }
 
 a {
   -webkit-transition: color .3s ease;
@@ -796,7 +799,6 @@ header {
     header .nav-wrap #site-navigation {
       position: relative;
       transform: translate3d(0, 0, 0);
-      transition: 1s background-color;
       display: flex;
       align-items: center;
       z-index: 3; }
@@ -1025,7 +1027,7 @@ header .nav-wrap #site-navigation {
       z-index: 40 !important; } }
 
 .is-nav-fixed header .nav-wrap #site-navigation {
-  transition: .2s transform ease-out, 1s background-color;
+  transition: .2s transform ease-out, 0s background-color;
   padding: calc(26px + (35 - 26) * (100vw - 320px) / (1440 - 320)) calc(18px + (95 - 18) * (100vw - 320px) / (1440 - 320));
   position: fixed;
   left: 0;
@@ -1143,8 +1145,7 @@ main section {
     padding-right: 0;
     padding: calc(386px + (534 - 386) * (100vw - 320px) / (1440 - 320)) 0;
     padding-bottom: 20px;
-    background-attachment: fixed !important;
-    background-position: 50% 100%; }
+    background-position: 50% 80%; }
     @media (min-width: 680px) {
       main section.single-hero {
         padding-bottom: 70px; } }
@@ -1406,18 +1407,6 @@ main section {
           height: 100%;
           position: absolute;
           top: 0; }
-        main section.team .team-sort .team-members .team-member-group {
-          display: none;
-          margin-left: -15px;
-          margin-right: -15px;
-          width: calc(100% - 30px);
-          position: relative;
-          background-color: #FAFAFA;
-          padding-top: 29.8%; }
-          @media (min-width: 680px) {
-            main section.team .team-sort .team-members .team-member-group {
-              margin-left: 0px;
-              margin-right: 0px; } }
         main section.team .team-sort .team-members .team-member {
           position: absolute;
           padding: 0;
@@ -1470,10 +1459,22 @@ main section {
                 @media (min-width: 1320px) {
                   main section.team .team-sort .team-members .team-member .inner .team-member-info p {
                     font-size: 14px; } }
-        main section.team .team-sort .team-members.is-all .team-member {
-          position: relative;
-          left: 0 !important;
-          opacity: 1 !important; }
+        main section.team .team-sort .team-members.is-switching .team-member {
+          transition-duration: 0s !important; }
+        main section.team .team-sort .team-members.is-everyone {
+          padding-top: 0; }
+          main section.team .team-sort .team-members.is-everyone .team-member {
+            position: relative !important;
+            left: 0 !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            width: 100%; }
+            @media (min-width: 960px) {
+              main section.team .team-sort .team-members.is-everyone .team-member {
+                width: 50%; } }
+            @media (min-width: 1320px) {
+              main section.team .team-sort .team-members.is-everyone .team-member {
+                width: 33.333%; } }
   main section.we {
     padding-left: 0;
     padding-right: 0; }
@@ -1689,10 +1690,12 @@ main .work-grid .work-row {
     main .work-grid .work-row {
       padding: 0; } }
   @media (min-width: 680px) {
-    main .work-grid .work-row.work-row-twothirds-onethird .work-row-inner {
+    main .work-grid .work-row.work-row-twothirds-onethird .work-row-inner,
+    main .work-grid .work-row.work-row-onethird-twothirds .work-row-inner {
       margin-bottom: calc(15px + (100 - 15) * (100vw - 320px) / (1440 - 320)); } }
   @media (min-width: 1320px) {
-    main .work-grid .work-row.work-row-twothirds-onethird .work-row-inner {
+    main .work-grid .work-row.work-row-twothirds-onethird .work-row-inner,
+    main .work-grid .work-row.work-row-onethird-twothirds .work-row-inner {
       margin-bottom: 100px; } }
   @media (min-width: 960px) {
     main .work-grid .work-row .container {
@@ -1739,8 +1742,7 @@ main .work-grid .work-row {
       transform: translate3d(0, -4px, 0); }
   main .work-grid .work-row.work-row-full {
     margin-bottom: 0;
-    padding: 350px 0 30px;
-    background-attachment: fixed !important; }
+    padding: 350px 0 30px; }
     @media (min-width: 680px) {
       main .work-grid .work-row.work-row-full {
         margin-bottom: calc(15px + (100 - 14) * (100vw - 320px) / (1440 - 320));
@@ -2148,3 +2150,60 @@ footer {
     /*border-top:1px solid #4c4c4c;
 			margin-top: 0;
 			padding-top: 80px;*/ }
+
+body.is-lightbox {
+  height: 100vh;
+  overflow: hidden; }
+
+.single .grid-content img {
+  cursor: pointer; }
+
+.lightbox .arrows {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem; }
+  @media (min-width: 960px) {
+    .lightbox .arrows {
+      padding: 2rem; } }
+
+.lightbox .arrows svg {
+  width: 3.5rem;
+  padding: 1rem;
+  cursor: pointer;
+  opacity: .7; }
+  .lightbox .arrows svg:hover {
+    opacity: 1;
+    transition: .2s; }
+  @media (min-width: 960px) {
+    .lightbox .arrows svg {
+      width: 4rem; } }
+
+.lightbox .arrows .indicator {
+  align-self: flex-end; }
+
+.lightbox {
+  position: fixed;
+  background: white;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10vh 10vw;
+  z-index: 100;
+  opacity: 0; }
+
+.lightbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent !important;
+  transition: .4s ease-out; }

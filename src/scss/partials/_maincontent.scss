@@ -107,8 +107,7 @@ main {
 			padding-right:0;
 			padding: calc(386px + (534 - 386) * (100vw - 320px) / (1440 - 320)) 0;
 			padding-bottom:20px;
-			background-attachment: fixed !important;
-			background-position: 50% 100%;
+			background-position: 50% 80%;
 			@media (min-width: $bp-sm-min) {
 				padding-bottom:70px;
 			}
@@ -431,19 +430,6 @@ main {
 						position: absolute;
 						top: 0;
 					}
-					.team-member-group {
-						display:none;
-						margin-left: -15px;
-						margin-right: -15px;
-						width: calc(100% - 30px);
-						position: relative;
-						background-color: #FAFAFA;
-						padding-top: 29.8%;
-						@media (min-width: $bp-sm-min) {
-							margin-left: 0px;
-							margin-right: 0px;
-						}
-					}
 					.team-member {
 						position: absolute;
 						padding: 0;
@@ -506,11 +492,25 @@ main {
 							}
 						}
 					}
-					&.is-all {
+					&.is-switching {
 						.team-member {
-							position: relative;
+							transition-duration: 0s !important;
+						}
+					}
+					&.is-everyone {
+						padding-top: 0;
+						.team-member {
+							position: relative !important;
 							left: 0 !important;
 							opacity: 1 !important;
+							visibility: visible !important;
+							width: 100%;
+							@media (min-width: $bp-md-min) {
+								width: 50%;
+							}
+							@media (min-width: $bp-lg-min) {
+								width: 33.333%;
+							}
 						}
 					}
 				}
@@ -745,7 +745,8 @@ main {
 			@media (min-width: $bp-md-min) {
 				padding:0;
 			}
-			&.work-row-twothirds-onethird .work-row-inner {
+			&.work-row-twothirds-onethird .work-row-inner,
+			&.work-row-onethird-twothirds .work-row-inner {
 				@media (min-width: $bp-sm-min) {
 					margin-bottom: calc(15px + (100 - 15) * (100vw - 320px) / (1440 - 320));
 				}
@@ -812,7 +813,6 @@ main {
 			&.work-row-full {
 				margin-bottom: 0;
 				padding: 350px 0 30px;
-				background-attachment: fixed !important;
 				@media (min-width: $bp-sm-min) {
 					margin-bottom: calc(15px + (100 - 14) * (100vw - 320px) / (1440 - 320));
 					padding: 500px 0 80px;
