@@ -147,6 +147,13 @@ function rapt_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'rapt_scripts' );
 
+
+function load_custom_wp_admin_style() {
+        wp_register_script( 'custom_wp_admin_js', get_template_directory_uri() . '/dist/js/admin-scripts.js', array(), null , true );
+        wp_enqueue_script( 'custom_wp_admin_js' );
+}
+add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
+
 // Load More Enqueue
 
 // function misha_my_load_more_scripts() {
