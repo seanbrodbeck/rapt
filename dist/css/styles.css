@@ -1087,6 +1087,10 @@ main section {
       @media (min-width: 1320px) {
         main section.home-work .work-grid .work-row {
           margin-bottom: 100px; } }
+      main section.home-work .work-grid .work-row.work-row-twothirds-onethird:last-of-type, main section.home-work .work-grid .work-row.work-row-onethird-twothirds:last-of-type,
+      main section.home-work .work-grid .work-row.work-row-twothirds-onethird .work-row-inner,
+      main section.home-work .work-grid .work-row.work-row-onethird-twothirds .work-row-inner {
+        margin-bottom: 0 !important; }
     main section.home-work .more-link-wrapper {
       padding-left: 16px; }
   main section.home-perspectives {
@@ -1244,6 +1248,13 @@ main section {
           width: 100vw;
           max-width: none;
           padding: 0 calc((100vw - 1280px) / 2); } }
+      main section.grid-content .full-width.lg-contains-img {
+        min-height: 100vw; }
+        @media (min-width: 680px) {
+          main section.grid-content .full-width.lg-contains-img {
+            min-height: 75vh; } }
+      main section.grid-content .full-width.lg-contains-text {
+        padding-bottom: 80px; }
     main section.grid-content p {
       font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320)) !important; }
       @media (min-width: 1320px) {
@@ -1430,9 +1441,6 @@ main section {
               border-bottom: none; }
             main section.team .team-sort .team-members .team-member .inner img {
               width: 100%; }
-            main section.team .team-sort .team-members .team-member .inner:hover .team-member-info {
-              opacity: 1;
-              visibility: visible; }
             main section.team .team-sort .team-members .team-member .inner .team-member-info {
               position: relative;
               padding: 20px 0;
@@ -1469,6 +1477,9 @@ main section {
             opacity: 1 !important;
             visibility: visible !important;
             width: 100%; }
+            main section.team .team-sort .team-members.is-everyone .team-member .team-member-info {
+              opacity: 1;
+              visibility: visible; }
             @media (min-width: 960px) {
               main section.team .team-sort .team-members.is-everyone .team-member {
                 width: 50%; } }
@@ -1898,12 +1909,13 @@ main .work-grid .work-row {
 
 .single-post .main-blog-wrap .single-wrapper .single-sidebar .single-related-posts {
   display: flex;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column; }
+  flex-wrap: wrap; }
   @media (min-width: 960px) {
     .single-post .main-blog-wrap .single-wrapper .single-sidebar .single-related-posts {
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
       align-items: flex-end;
       justify-content: flex-end;
       height: 100%; } }

@@ -13,7 +13,7 @@
  */
 
 get_header(); ?>
-	<?php get_template_part('template-parts/transition'); ?>
+	<?php get_template_part('template-parts/logo-loader'); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main clearfix">
 

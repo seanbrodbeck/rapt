@@ -20,6 +20,12 @@ main {
 					/* &:last-of-type {
 						margin-bottom: 0;
 					} */
+					&.work-row-twothirds-onethird:last-of-type,
+					&.work-row-onethird-twothirds:last-of-type,
+					&.work-row-twothirds-onethird .work-row-inner,
+					&.work-row-onethird-twothirds .work-row-inner {
+						margin-bottom: 0 !important;
+					}
 				}
 			}
 			.more-link-wrapper {
@@ -219,6 +225,17 @@ main {
 			    max-width: none;
 			    padding: 0 calc((100vw - 1280px) / 2);
 			  }
+
+			  &.lg-contains-img {
+			  	min-height: 100vw;
+			  	@media (min-width: $bp-sm-min) {
+			  		min-height: 75vh;
+			  	}
+			  }
+			  &.lg-contains-text {
+			  	padding-bottom: 80px;
+			  }
+
 			}
 			p {
 				font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320))!important;
@@ -458,12 +475,6 @@ main {
 							img {
 								width: 100%;
 							}
-							&:hover {
-								.team-member-info {
-									opacity: 1;
-									visibility: visible;
-								}
-							}
 							.team-member-info {
 								position: relative;
 								padding: 20px 0;
@@ -505,6 +516,10 @@ main {
 							opacity: 1 !important;
 							visibility: visible !important;
 							width: 100%;
+							.team-member-info {
+								opacity: 1;
+								visibility: visible;
+							}
 							@media (min-width: $bp-md-min) {
 								width: 50%;
 							}
@@ -987,8 +1002,9 @@ main {
 				}
 				.single-related-posts {
 					display:flex;
-					@include flex-direction(column);
+					flex-wrap: wrap;
 					@media (min-width: $bp-sm3-min) {
+						@include flex-direction(column);
 						align-items: flex-end;
 						justify-content: flex-end;
 						height: 100%;

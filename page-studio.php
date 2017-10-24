@@ -15,7 +15,7 @@
  */
 
 get_header(); ?>
-	<?php get_template_part('template-parts/transition'); ?>
+	<?php get_template_part('template-parts/logo-loader'); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -46,16 +46,16 @@ get_header(); ?>
 
 														 <?php
 						                     // if (is_mobile()) {
-							                    // 	echo "<img src='";
-							                    // 	the_sub_field('team_member_image');
-							                    // 	echo "'/>";
+							                    	echo "<img class='team-member-video' width='100%' height='auto' src='";
+							                    	the_sub_field('team_member_image');
+							                    	echo "'/>";
 						                     // } else {
-						                     		echo "<video width='100%' height='auto' autoplay loop>";
-						                     		echo " <source src='";
-						                     		the_sub_field('team_member_video');
-						                     		echo "' type='video/mp4'";
-						                     		echo "'>";
-						                     		echo "</video>";
+						                     		// echo "<video width='100%' height='auto' autoplay loop>";
+						                     		// echo " <source src='";
+						                     		// the_sub_field('team_member_video');
+						                     		// echo "' type='video/mp4'";
+						                     		// echo "'>";
+						                     		// echo "</video>";
 						                  // } ?>
 
 														<div class="team-member-info">

@@ -60,40 +60,12 @@
 
 		</article>
 
- 
-		 <?php 
-		 	$next_post = get_adjacent_post( true, '', false); 
+
+		 <?php
+		 	$next_post = get_adjacent_post( true, '', false);
 		 	$nextthumbnail = get_the_post_thumbnail($next_post->ID);
 		 ?>
 			 <?php if ( is_a( $next_post, 'WP_Post' ) ) {  ?>
-			 <article class="next-article">
-			 <?php next_post_link($nextthumbnail); ?>
-			 <header class="entry-header">
-			 	<div class="category-list">
-					<div class="category-list">
-					<ul>
-						<?php
-							$categories = get_the_category($next_post->ID);
-							$separator = ' · ';
-							$output = '';
-							if($categories){
-							    foreach($categories as $category) {
-							if($category->name !== 'Primary' && 'Secondary'){
-							        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
-							    }
-							echo trim($output, $separator);
-							}
-						?>
-					</ul>
-				</div>
-				</div>
-			 	<h1 class="entry-title"><?php echo get_the_title( $next_post->ID ); ?></h1>
-		 	</header>
-
-		 	<h2><?php echo get_field('intro_paragraph_text', $next_post->ID); ?></h2>
-		 	<?php echo $next_post->post_content; ?>
-			 
-		</article> 
 
 		<?php }
 				wp_reset_postdata(); ?>
@@ -103,13 +75,13 @@
 
 	<div class="col-md-3 col-md-offset-2 single-sidebar">
 		<div class="post-social clearfix">
-			<a href="#"><img src="/wp-content/themes/rapt/dist/images/icon-twitter.svg" width="38" heith="auto"/></a>
-			<a href="#"><img src="/wp-content/themes/rapt/dist/images/icon-fb.svg" width="38" heith="auto"/></a>
-			<a href="#"><img src="/wp-content/themes/rapt/dist/images/icon-in.svg" width="38" heith="auto"/></a>
+			<a target="_blank" class="twitter-link"><img src="/wp-content/themes/rapt/dist/images/icon-twitter.svg" width="38" height="auto"/></a>
+			<a target="_blank" class="facebook-link"><img src="/wp-content/themes/rapt/dist/images/icon-fb.svg" width="38" height="auto"/></a>
+			<a target="_blank" class="in-link"><img src="/wp-content/themes/rapt/dist/images/icon-in.svg" width="38" height="auto"/></a>
 		</div>
 		<div class="single-related-posts">
 
-			
+
 			<?php
 				$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 3, 'post__not_in' => array($post->ID) ) );
 				if( $related ) foreach( $related as $post ) {
@@ -151,7 +123,7 @@
 
 				<?php }
 				wp_reset_postdata(); ?>
-			
+
 		</div>
 	</div>
 
