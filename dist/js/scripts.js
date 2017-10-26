@@ -133,7 +133,9 @@ var WIN_H,
 
   function addTextClick(i) {
     questions[i].addEventListener('click', function(e) {
-      if (!isActive) {
+      if (i === questions.length-1) {
+        window.location = '/studio'
+      } else if (!isActive) {
         e.stopPropagation()
         isActive = true;
         $('body').addClass('is-scrolling');
@@ -541,10 +543,20 @@ var WIN_H,
   });
 
   if ($('body').hasClass('page-template-page-studio')) {
-    var currentTeamMember = 0;
+    var randomStart = Math.floor(Math.random() * ($('.team-member').length - 2));
+    var currentTeamMember = randomStart + 3;
+    if (currentTeamMember > $('.team-member').length) {
+      currentTeamMember = $('.team-member').length - currentTeamMember;
+    }
+    console.log(randomStart);
+    $('.team-member').eq(randomStart).addClass('is-active');
+    $('.team-member').eq(randomStart + 1).addClass('is-active');
+    $('.team-member').eq(randomStart + 2).addClass('is-active');
 
-    setInterval(function(){
-      cycleTeamMembers(i)
+    setTimeout(function(){
+      setInterval(function(){
+        cycleTeamMembers(i)
+      },2000)
     },2000)
 
     function cycleTeamMembers() {
