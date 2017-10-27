@@ -622,6 +622,7 @@ main {
 		&.services {
 			padding-left:0;
 			padding-right:0;
+			padding-top: calc(36px + (80 - 36) * (100vw - 400px) / (1440 - 400));
 			.cat-header {
 				margin-bottom: 16px;
 				color: $black;
