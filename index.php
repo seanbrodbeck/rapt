@@ -203,9 +203,20 @@ get_header(); ?>
 
                 ?>
 								<div class="col-md-4 col-sm-6 col-xs-6 filter-listing filter-listing-filter <?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats_slugs ) ); ?>">
-						 				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('filter-thumb'); ?><?php //the_field('grid_thumbnail_23_width'); ?></a>
+						 				<?php if( get_field('post_link_external') ): ?>
+											<a href="<?php the_field('post_link_external'); ?>" target=_"blank"><?php the_post_thumbnail('filter-thumb'); ?></a>
+										<?php else: ?>
+											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('filter-thumb'); ?></a>
+										<?php endif; ?>
 						 				<div class="filter-search-text">
-							 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+							 				<h2>
+							 					<!-- <a href="<?php //the_permalink(); ?>"><?php //the_title(); ?></a> -->
+							 					<?php if( get_field('post_link_external') ): ?>
+													<a href="<?php the_field('post_link_external'); ?>" target=_"blank"><?php the_title(); ?></a>
+												<?php else: ?>
+													<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+												<?php endif; ?>
+							 				</h2>
 
 			                <div class="category-list">
 												<ul>
@@ -267,9 +278,23 @@ get_header(); ?>
 
                 ?>
 								<div class="col-md-4 col-sm-6 col-xs-6 filter-listing filter-listing-search <?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats_slugs ) ); ?>">
-						 				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('filter-thumb'); ?><?php //the_field('grid_thumbnail_23_width'); ?></a>
+						 				<!-- <a href="<?php //the_permalink(); ?>"><?php //the_post_thumbnail('filter-thumb'); ?><?php //the_field('grid_thumbnail_23_width'); ?></a> -->
+
+										<?php if( get_field('post_link_external') ): ?>
+											<a href="<?php the_field('post_link_external'); ?>" target=_"blank"><?php the_post_thumbnail('filter-thumb'); ?></a>
+										<?php else: ?>
+											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('filter-thumb'); ?></a>
+										<?php endif; ?>
+
 						 				<div class="filter-search-text">
-							 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+							 				<h2>
+							 					<!-- <a href="<?php //the_permalink(); ?>"><?php //the_title(); ?></a> -->
+							 					<?php if( get_field('post_link_external') ): ?>
+													<a href="<?php the_field('post_link_external'); ?>" target=_"blank"><?php the_title(); ?></a>
+												<?php else: ?>
+													<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+												<?php endif; ?>
+							 				</h2>
 
 			                <div class="category-list">
 												<ul>
