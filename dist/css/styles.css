@@ -1248,10 +1248,10 @@ main section {
           width: 100vw;
           max-width: none;
           padding: 0 calc((100vw - 1280px) / 2); } }
-      main section.grid-content .full-width.lg-contains-img {
+      main section.grid-content .full-width.lg-contains-bg {
         min-height: 100vw; }
         @media (min-width: 680px) {
-          main section.grid-content .full-width.lg-contains-img {
+          main section.grid-content .full-width.lg-contains-bg {
             min-height: 75vh; } }
       main section.grid-content .full-width.lg-contains-text {
         padding-bottom: 80px; }
@@ -1412,16 +1412,17 @@ main section {
         padding-top: 30.4%; }
         main section.team .team-sort .team-members:before {
           content: '';
-          background-color: #FAFAFA;
           left: -500px;
           right: -500px;
           height: 100%;
           position: absolute;
-          top: 0; }
+          background-color: #FAFAFA;
+          top: 0;
+          z-index: -2; }
         main section.team .team-sort .team-members .team-member {
           position: absolute;
           padding: 0;
-          margin-bottom: 30px;
+          margin-bottom: 0;
           opacity: 0;
           transition: .5s opacity;
           left: 0;
@@ -1443,7 +1444,7 @@ main section {
               width: 100%; }
             main section.team .team-sort .team-members .team-member .inner .team-member-info {
               position: relative;
-              padding: 20px 0;
+              padding: 20px 0 60px;
               text-align: center;
               width: 100%;
               opacity: 0;
@@ -1467,6 +1468,15 @@ main section {
                 @media (min-width: 1320px) {
                   main section.team .team-sort .team-members .team-member .inner .team-member-info p {
                     font-size: 14px; } }
+              main section.team .team-sort .team-members .team-member .inner .team-member-info:before {
+                content: '';
+                background: white;
+                width: 200vw;
+                height: 100%;
+                position: absolute;
+                left: -100vw;
+                top: 0;
+                z-index: -1; }
         main section.team .team-sort .team-members.is-switching .team-member {
           transition-duration: 0s !important; }
         main section.team .team-sort .team-members.is-everyone {
@@ -1476,13 +1486,10 @@ main section {
             left: 0 !important;
             opacity: 1 !important;
             visibility: visible !important;
-            width: 100%; }
+            width: 50%; }
             main section.team .team-sort .team-members.is-everyone .team-member .team-member-info {
               opacity: 1;
               visibility: visible; }
-            @media (min-width: 960px) {
-              main section.team .team-sort .team-members.is-everyone .team-member {
-                width: 50%; } }
             @media (min-width: 1320px) {
               main section.team .team-sort .team-members.is-everyone .team-member {
                 width: 33.333%; } }
