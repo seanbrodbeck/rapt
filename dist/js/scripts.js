@@ -311,6 +311,7 @@ var WIN_H,
   $( ".filter-toggle" ).click(function() {
     resizeHandler();
     $('body').addClass('is-filter-overlay')
+    $('html').addClass('is-filter-overlay')
     $( "#filter-overlay" ).fadeIn( "fast", "linear" );
 
     // init Isotope
@@ -477,6 +478,7 @@ var WIN_H,
   $( ".filter-search-btn" ).click(function() {
     resizeHandler();
     $('body').addClass('is-search-overlay')
+    $('html').addClass('is-search-overlay')
     $( "#search-overlay" ).fadeIn( "fast", "linear" );
     $(".quicksearch").focus();
     // Isotope Search
@@ -519,10 +521,13 @@ var WIN_H,
   $( ".close-filter-overlay" ).click(function() {
     $( "#filter-overlay" ).fadeOut( "fast", "linear" );
     $('body').removeClass('is-filter-overlay')
+    $('html').removeClass('is-filter-overlay')
   });
   $( ".close-search-overlay" ).click(function() {
     $( "#search-overlay" ).fadeOut( "fast", "linear" );
     $('body').removeClass('is-search-overlay')
+    $('html').removeClass('is-search-overlay')
+    console.log('close search')
   });
 
 
@@ -709,7 +714,7 @@ var WIN_H,
           el_text.addClass('is-fixed');
         } else {
           el_text.removeClass('is-fixed');
-          if (scrollTop > maxTop) {
+          if (scrollTop > maxTop && WIN_W > 960) {
             el_text.css({
               transform: 'translate3d(0,' + (scrollLockHeights[i] - textHeight - 60) + 'px,0)'
             })

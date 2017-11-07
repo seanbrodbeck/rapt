@@ -11,7 +11,11 @@ a {
 	&:hover,
 	&:active,
 	&:focus {
+		color: #999;
 		text-decoration: none;
+	}
+	&:hover {
+		color: #999;
 	}
 }
 
@@ -147,7 +151,6 @@ ol {
 
 img:not(.loaded):not(.intro-image) {
 	display: block;
-	background: rgba(0,0,0,.05);
 	position: relative;
 }
 
@@ -350,6 +353,7 @@ img.loaded {
 	z-index: 999;
 	padding: 50px 0;
 	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
 	@media (min-width: $bp-sm-min) {
 		padding: 75px 0 70px;
 	}
@@ -563,7 +567,12 @@ img.loaded {
 	}
 }
 
-.is-search-overlay,
-.is-filter-overlay {
+html.is-search-overlay,
+html.is-filter-overlay,
+body.is-search-overlay,
+body.is-filter-overlay {
 	overflow: hidden;
+	height: 100vh;
+	position: relative;
+	-webkit-overflow-scrolling: touch;
 }

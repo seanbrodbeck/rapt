@@ -69,6 +69,12 @@ get_header('home'); ?>
 								<polyline fill="#191911" points="5.468,29.7805 0,31.4106 0,37.7506 16.8282,32.7342 5.468,29.7805 "/>
 							</svg>
 						</a>
+						<svg class="close-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 viewBox="-979 980 40 41" enable-background="new -979 980 40 41" xml:space="preserve">
+						<path fill="#FAFAFA" d="M-959.147,1000.674l-6.564-6.588l-0.904,0.901l6.567,6.591l-6.567,6.591l0.904,0.901
+							l6.564-6.588l6.564,6.588l0.904-0.901l-6.567-6.591l6.567-6.591l-0.904-0.901L-959.147,1000.674z M-959,1021
+							c-11.046,0-20-8.987-20-20.073c0-11.086,8.954-20.073,20-20.073s20,8.987,20,20.073C-939,1012.013-947.954,1021-959,1021z"/>
+						</svg>
 						<div class="mobile-nav-close mobile-only">
 							<svg width="35" height="33" viewBox="0 0 35 33">
 						    <g fill="none" fill-rule="evenodd" stroke="#979797" stroke-width="2" stroke-linecap="square">

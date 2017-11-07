@@ -205,8 +205,14 @@ main {
 		&.grid-content {
 			padding-left:0;
 			padding-right:0;
+			.lg-row {
+				margin-bottom:8% !important;
+			}
+			.lg-row.full-width + .lg-row.full-width {
+				margin-top:-8% !important;
+			}
 			.double-margin {
-				margin-bottom:16%!important;
+				margin-bottom:16% !important;
 			}
 			.full-width {
 				margin-right: -15px;
@@ -226,7 +232,7 @@ main {
 			    padding: 0 calc((100vw - 1280px) / 2);
 			  }
 
-			  &.lg-contains-bg {
+			  &.lg-row-empty {
 			  	min-height: 100vw;
 			  	@media (min-width: $bp-sm-min) {
 			  		min-height: 75vh;
@@ -235,7 +241,6 @@ main {
 			  &.lg-contains-text {
 			  	padding-bottom: 80px;
 			  }
-
 			}
 			p {
 				font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320))!important;
@@ -249,7 +254,7 @@ main {
 				  }
 			  }
 			}
-			.lg-contains-img {
+			.lg-contains-img:not(.lg-contains-html5video) {
 				.lg-placeholder {
 					padding-bottom:0!important;
 				}
@@ -258,9 +263,19 @@ main {
 				.lg-placeholder {
 					padding-bottom:0!important;
 				}
+				img {
+					transform: none;
+					-webkit-transform: none;
+				}
 			}
 			.lg-type-html img {
 				margin-bottom: 80px;
+			}
+			.lg-desktop-grid .lg-col.lg-align-bottom.lg-type-img:last-of-type:not(:first-of-type) {
+				@media (max-width: 680px) {
+					margin-bottom: 0;
+					vertical-align: top;
+				}
 			}
 			@media (max-width: $bp-sm3-min) {
 				.lg-textformat-parent.is-fixed {
@@ -561,6 +576,11 @@ main {
 						padding-right: 16px;
     				padding-left: 16px;
     				margin-bottom: 70px;
+					}
+					@media (max-width: $bp-sm3-min) {
+						._Default {
+							font-size: 16px;
+						}
 					}
 				}
 			}

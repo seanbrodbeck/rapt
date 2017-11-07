@@ -1,11 +1,13 @@
 .intro {
   width: 100vw;
   height: calc(100vh - 136px);
-  @media (min-width: $bp-sm-min) {
+  display: none;
+  /* @media (min-width: $bp-sm-min) {
     height: calc(100vh - 96px);
-  }
+  } */
   @media (min-width: $bp-sm3-min) {
     height: calc(100vh - 120px);
+    display: block;
   }
   font-family: 'noe-display-medium';
   font-size: calc(12px + 1.5vw + 4.4vh);
@@ -138,19 +140,34 @@
     transition-delay: .9s;
   }
   .intro-question:nth-of-type(10) {
-    transition: 1s;
     transition-delay: 1s;
   }
 }
 
+.close-logo {
+  display: none;
+  position: absolute;
+  right: -11px;
+  top: -4px;
+  height: 40px;
+  cursor: pointer;
+}
 
 .is-scrolling {
   &:not(.is-nav-fixed) {
     .menu-item a {
       color: white !important;
     }
-    .rapt-logo polyline {
-      fill: white;
+    @media (min-width: $bp-sm3-min) {
+      .rapt-logo {
+        display: none;
+      }
+      .rapt-logo polyline {
+        fill: white;
+      }
+      .close-logo {
+        display: block;
+      }
     }
   }
   .intro {
