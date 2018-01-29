@@ -19,27 +19,40 @@ get_header('home'); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<section class="intro">
-			<?php if(get_field('home_page_word_wall')): ?>
-				<div class="intro-images">
-				<?php while(has_sub_field('home_page_word_wall')): ?>
-					<img src="<?php the_sub_field('word_wall_item_image'); ?>" class="intro-image" alt=""/>
-				<?php endwhile; ?>
-				</div>
+
+			<?php if( get_field('word_wall_or_video_hero') == 'words' ): ?>
+			
+				<section class="intro">
+					<?php if(get_field('home_page_word_wall')): ?>
+						<div class="intro-images">
+						<?php while(has_sub_field('home_page_word_wall')): ?>
+							<img src="<?php the_sub_field('word_wall_item_image'); ?>" class="intro-image" alt=""/>
+						<?php endwhile; ?>
+						</div>
+					<?php endif; ?>
+
+					<?php if(get_field('home_page_word_wall')): ?>
+						<div class="intro-questions">
+						<?php while(has_sub_field('home_page_word_wall')): ?>
+							<div class="intro-question">
+								<div class="intro-question-text">
+									<?php the_sub_field('word_wall_item_text'); ?> <?php the_sub_field('word_wall_item_text'); ?> <?php the_sub_field('word_wall_item_text'); ?> <?php the_sub_field('word_wall_item_text'); ?>
+								</div>
+							</div>
+						<?php endwhile; ?>
+						</div>
+					<?php endif; ?>
+				</section>
+
 			<?php endif; ?>
 
-			<?php if(get_field('home_page_word_wall')): ?>
-				<div class="intro-questions">
-				<?php while(has_sub_field('home_page_word_wall')): ?>
-					<div class="intro-question">
-						<div class="intro-question-text">
-							<?php the_sub_field('word_wall_item_text'); ?> <?php the_sub_field('word_wall_item_text'); ?> <?php the_sub_field('word_wall_item_text'); ?> <?php the_sub_field('word_wall_item_text'); ?>
+			<?php if( get_field('word_wall_or_video_hero') == 'vid' ): ?>		
+				<section class="vid-intro nopad">
+						<div class="videoWrapper">
+							<?php the_field('hero_video') ?>
 						</div>
-					</div>
-				<?php endwhile; ?>
-				</div>
+				</section>
 			<?php endif; ?>
-			</section>
 
 			<header id="masthead" class="site-header home-navigation">
 
@@ -273,7 +286,7 @@ get_header('home'); ?>
 
 						<div class="col-sm-12 col-md-8">
 
-							<h1>Rapt is a group of designers, architects and strategists who believe everything is connected, and that anything is possible.</h1>
+							<h1>Rapt Studio is a group of designers, architects and strategists who believe everything is connected, and that anything is possible.</h1>
 
 						</div>
 

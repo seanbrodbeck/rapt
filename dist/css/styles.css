@@ -428,10 +428,10 @@ ol {
 
 .videoWrapper {
   position: relative;
-  padding-bottom: 53.25%;
-  /* 16:9 */
-  padding-top: 25px;
-  height: 0; }
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto; }
   .videoWrapper iframe {
     position: absolute;
     top: 0;
@@ -2163,7 +2163,7 @@ footer {
       @media (min-width: 1320px) {
         footer .footer-bottom p {
           font-size: 16px; } }
-      footer .footer-bottom p strong {
+      footer .footer-bottom p a strong, footer .footer-bottom p strong {
         color: #FFFFFF;
         font-weight: normal;
         -webkit-font-smoothing: antialiased; }

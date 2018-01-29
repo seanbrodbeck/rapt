@@ -1,32 +1,18 @@
 {
-  "name": "rapt",
+  "name": "raptnew",
   "version": "1.0.0",
-  "sasster": {
-    "cwd": "src/scss",
-    "src": "**/*.scss",
-    "dest": "dist/css",
-    "options": {
-      "imagePath": "images",
-      "outputStyle": "nested",
-      "sourceMap": true,
-      "includePaths": []
-    }
-  },
-  "dependencies": {
-    "sasster": "^1.1.0"
-  },
-  "devDependencies": {
-    "sasster": "^1.1.0"
-  },
+  "description": "new package",
+  "main": "index.js",
   "scripts": {
-    "clean": "rimraf dist/css/*",
-    "watch:styles": "sasster -w",
-    "build:styles": "npm run clean && sasster --sourceMap=false --outputStyle=compressed",
-    "dev": "npm run watch:styles",
-    "prod": "npm run build:styles"
+    "test": "testme",
+    "build-css": "node-sass --include-path scss src/scss/styles.scss dist/css/styles.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "dev": "npm run watch-css"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/seanbrodbeck/rapt.git"
+  "author": "Sean Brodbeck",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.12.1"
   }
 }
