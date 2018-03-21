@@ -26,7 +26,7 @@ get_header(); ?>
 					<div class="row clearfix">
 						<div class="col-md-6">
 							<h1><?php the_field('team_header'); ?></h1>
-							<a class="show-everyone" href="#">↪︎ Just show me everyone.</a>
+							<a class="show-everyone" href="#"><img style="display:inline-block;width:20px!important;margin-right:8px;height:auto!important;position:relative;top:-4px;" src="/wp-content/themes/rapt/dist/images/show-more.svg"/> <span>Just show me everyone.</span></a>
 						</div>
 					</div>
 					<div class="row team-sort clearfix">

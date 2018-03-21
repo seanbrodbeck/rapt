@@ -540,10 +540,10 @@ var WIN_H,
     setTimeout(function(){
       $('.team-members').removeClass('is-switching');
     },1000)
-    if ($('.show-everyone').html() === '↪︎ Just show me everyone.'){
-      $('.show-everyone').html('↪︎ Don’t show me everyone.')
+    if ($('.show-everyone span').text() === 'Just show me everyone.'){
+      $('.show-everyone span').text('Don’t show me everyone.')
     } else {
-      $('.show-everyone').html('↪︎ Just show me everyone.')
+      $('.show-everyone span').text('Just show me everyone.')
     }
   });
 
@@ -639,7 +639,7 @@ var WIN_H,
     $('.rapt-logo').removeClass('is-active')
     $('.rapt-logo').addClass('is-off')
   }
-
+  
   // Case Study Scroll Locking
 
   var scrollLockTops = new Array();
@@ -754,5 +754,5 @@ var WIN_H,
     }
     setSizes();
   }
-
+  
 })( jQuery );

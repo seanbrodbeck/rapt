@@ -347,6 +347,14 @@ body:not(.is-scrolled) {
 	}
 }
 
+.home {
+	#masthead {
+		background:$white;
+		z-index: 9999;
+    position: relative;
+	}
+}
+
 .is-nav-fixed {
 	header {
 		.nav-wrap {

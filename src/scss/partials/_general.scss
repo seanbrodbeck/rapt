@@ -568,6 +568,65 @@ img.loaded {
 	}
 }
 
+.job-application {
+	h2 {
+		margin-bottom:30px;
+	}
+	form {
+		.row {
+			margin-bottom:20px;
+			margin-left: -15px;
+    	margin-right: -15px;
+			.form-control {
+				border-radius: 0;
+				height:auto;
+				padding:10px 15px;
+				&.wpcf7-select {
+					height:40px;
+					-webkit-appearance: none;
+					background:url(/wp-content/themes/rapt/dist/images/drop.svg) no-repeat right 10px top 50%;
+					background-size:11px auto;
+				}
+				&.wpcf7-submit {
+					cursor: pointer;
+					font-family: 'noe-display';
+					font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
+					line-height: 1;
+					background:none;
+					border:none;
+					-webkit-appearance: none;
+					text-align: left;
+					padding:0;
+					margin-top:10px;
+					-webkit-box-shadow:none;
+					-moz-box-shadow:none;
+					box-shadow:none;
+					border:1px solid $black;
+					padding:12px 20px 8px;
+					float:right;
+					width:auto;
+					&:hover {
+						background:$black;
+						color:$white;
+					}
+					@media (min-width: $bp-xlg-min) {
+						font-size: 40px;
+					}
+					display: inline-block;
+					color: $black;
+					/*opacity: .2;*/
+				}
+			}
+		}
+		.wpcf7-response-output {
+			background:$black!important;
+    	border: none!important;
+    	color: #FFF!important;
+    	margin:10px 0 0;
+		}
+	}
+}
+
 html.is-search-overlay,
 html.is-filter-overlay,
 body.is-search-overlay,

@@ -84,6 +84,36 @@ main {
 			}
 		}
 
+		&.vid-intro {
+			height:auto;
+			@media (min-width: $bp-md-min) {
+				height:calc(100vh - 150px);
+				width:100%;
+				overflow:hidden;
+				.videoWrapper {
+					background: #FFF;
+			    height: 100%;
+			    overflow: hidden;
+			    padding: 0;
+			    position: relative;
+					iframe {
+						box-sizing: border-box;
+				    height: 56.25vw;
+				    left: 50%;
+				    min-height: 100%;
+				    min-width: 100%;
+				    -webkit-transform: translate(-50%, -50%);
+				    transform: translate(-50%, -50%);
+				    position: absolute;
+				    top: 50%;
+				    width: 177.77777778vh;
+				    max-width: none;
+					}
+				}
+			}
+			
+		}
+
 		&.home-about {
 			padding-left: 0;
 			padding-right: 0;
@@ -199,6 +229,86 @@ main {
 					right:-45px;
 					top:5px;
 					padding:0;
+				}
+			}
+		}
+		&.jobs-content {
+			h2 {
+				color:$black;
+				font-family: 'noe-display';
+				font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
+				margin-bottom:20px;
+		      @media (min-width: $bp-xlg-min) {
+		        font-size: 40px;
+		      }
+			}
+			.job-posting {
+				line-height:1.5;
+				a {
+					font-family: 'noe-display';
+					font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
+			    margin-bottom:5px!important;
+			    color:$black;
+		      @media (min-width: $bp-xlg-min) {
+		        font-size: 40px;
+		      }
+		      &:hover {
+		      	color:#999;
+		      }
+		      span {
+		      	color:#999;
+		      	margin-left:8px;
+		      }
+				}
+			}
+		}
+		&.job-qualifications {
+			h2 {
+				color:$white;
+				font-family: 'noe-display';
+				font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
+				margin-bottom: calc(20px + (50 - 20) * (100vw - 320px) / (1440 - 320));
+	      @media (min-width: $bp-xlg-min) {
+	        font-size: 40px;
+	      }
+			}
+			.job-qualifications-text {
+				@media (min-width: $bp-md-min) {
+					/*-webkit-column-count: 2; 
+			    -moz-column-count: 2; 
+			    column-count: 2;
+			    -webkit-column-gap: 11.5em; 
+			    -moz-column-gap: 11.5em; 
+			    column-gap: 11.5em;*/
+				}
+				ul {
+					color:$white;
+					margin-left:15px;
+					li {
+						color:$white;
+					}
+				}
+				p {
+					color:$white;
+				}
+			}
+		}
+		&.about-rapt-careers {
+			h2 {
+				color:$black;
+				font-family: 'noe-display';
+				font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
+				margin-bottom:20px;
+		      @media (min-width: $bp-xlg-min) {
+		        font-size: 40px;
+		      }
+			}
+			p {
+				a, a:visited {
+					color:$black;
+					&:hover {
+						color:$gray;
+					}
 				}
 			}
 		}
