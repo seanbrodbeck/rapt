@@ -36,10 +36,10 @@
 }
 
 @mixin order($val) {
-  -webkit-box-ordinal-group: $val;  
-     -moz-box-ordinal-group: $val;     
-         -ms-flex-order: $val;     
-          -webkit-order: $val;  
+  -webkit-box-ordinal-group: $val;
+     -moz-box-ordinal-group: $val;
+         -ms-flex-order: $val;
+          -webkit-order: $val;
             order: $val;
 }
 
@@ -142,4 +142,50 @@
     -o-transition-delay:      $delay;
     -webkit-transition-delay: $delay;
     transition-delay:         $delay;
+}
+
+
+
+@mixin large-serif-header {
+  font-family: 'noe-display';
+  font-size: calc(25px + (40 - 25) * (100vw - 320px) / (1440 - 320));
+  line-height: 1.3;
+  @media (min-width: $bp-xlg-min) {
+    font-size: 40px;
+  }
+}
+
+@mixin xl-serif-header {
+  font-family: 'noe-display';
+  font-size: calc(35px + (65 - 35) * (100vw - 320px) / (1440 - 320));
+  line-height: 1.3;
+  @media (min-width: $bp-xlg-min) {
+    font-size: 65px;
+  }
+}
+
+@mixin serif-header {
+  font-family: 'noe-display';
+  font-size: calc(18px + (28 - 18) * (100vw - 320px) / (1440 - 320))!important;
+  @media (min-width: $bp-xlg-min) {
+    font-size:28px!important;
+  }
+}
+
+@mixin h2-spacing {
+  margin-bottom:20px;
+  @media (min-width: $bp-md-min) {
+    margin-bottom:80px;
+  }
+}
+
+@mixin p {
+  font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320));
+  @media (min-width: $bp-xlg-min) {
+    font-size: 20px;
+  }
+  line-height: 1.6;
+  color:$black;
+  font-family: 'Fakt-Blond';
+  -webkit-font-smoothing: antialiased;
 }

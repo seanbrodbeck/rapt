@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'noe-display';
-  src: url('/wp-content/themes/rapt/dist/fonts/NoeDisplay-Regular.otf');
+  src: url('/wp-content/themes/rapt/dist/fonts/Noe-Display-Regular.woff');
 }
 
 @font-face {
@@ -46,17 +46,17 @@
 
 @font-face {
   font-family: 'Fakt-Blond';
-  src: url('/wp-content/themes/rapt/dist/fonts/Fakt-Blond.otf');
+  src: url('/wp-content/themes/rapt/dist/fonts/Fakt-Blond.woff');
 }
 
 @font-face {
   font-family: 'Fakt-Semibold';
-  src: url('/wp-content/themes/rapt/dist/fonts/Fakt-SemiBold.otf');
+  src: url('/wp-content/themes/rapt/dist/fonts/Fakt-SemiBold.woff');
 }
 
 @font-face {
   font-family: 'Fakt-Blond-Italic';
-  src: url('/wp-content/themes/rapt/dist/fonts/Fakt-BlondItalic.otf');
+  src: url('/wp-content/themes/rapt/dist/fonts/Fakt-BlondItalic.woff');
 }
 
 body {
@@ -74,11 +74,12 @@ body {
 }
 
 h1  {
-	font-family: 'noe-display';
-	font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
-	  @media (min-width: $bp-xlg-min) {
-	    font-size: 40px;
-	  }
+	// font-family: 'noe-display';
+	// font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
+	//   @media (min-width: $bp-xlg-min) {
+	//     font-size: 40px;
+	//   }
+  @include large-serif-header;
 	-webkit-font-smoothing: antialiased;
 	@media (min-width: $bp-sm-min) {
 	}
@@ -108,20 +109,24 @@ h2 {
 	@media (min-width: $bp-sm-min) {
 
 	}
+  &.xl {
+    @include xl-serif-header;
+  }
 	&.large {
-		font-family: 'noe-display';
-		font-size: calc(24px + (40 - 24) * (100vw - 320px) / (1440 - 320));
-    @media (min-width: $bp-xlg-min) {
-    font-size: 40px;
+    @include large-serif-header;
+	  margin-top:0;
+    color:$black;
     i {
       font-family: 'noe-display-italic';
     }
-  }
-		margin-top:0;
 	}
   i {
     font-family: 'Fakt-Blond-Italic';
   }
+}
+
+.h2-space {
+  @include h2-spacing;
 }
 
 h3 {
@@ -143,6 +148,10 @@ h3 {
 
 h4 {
 
+}
+
+.text-black {
+  color:$black;
 }
 
 p {
@@ -178,3 +187,7 @@ a {
 		text-decoration: none;
 	}
 }
+
+// .large-serif-header {
+//
+// }

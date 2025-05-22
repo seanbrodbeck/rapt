@@ -42,6 +42,12 @@ ol {
 
 }
 
+.mb-mobile {
+	@media (max-width: $bp-sm-min) {
+		  margin-bottom: 1.5em;
+	}
+}
+
 .container {
 	width: auto;
 	padding:0;
@@ -71,6 +77,10 @@ ol {
 
 
 .peach-bkg {
+	background: $peach;
+}
+
+.bg-salmon {
 	background: $peach;
 }
 
@@ -124,6 +134,10 @@ ol {
 	}
 }
 
+.bg-gray {
+	background: #F9F9F9;
+}
+
 .black-bkg {
 	.more-link {
 		color: $white;
@@ -132,7 +146,7 @@ ol {
 }
 
 .videoWrapper {
-	position: relative; 
+	position: relative;
 	padding-bottom: 56.25%;
 	overflow: hidden;
 	max-width: 100%;
@@ -147,7 +161,10 @@ ol {
 }
 
 .blog {
-	background: $tan;
+	background: $white!important;
+	#site-navigation {
+		background: $white!important;
+	}
 }
 
 img:not(.loaded):not(.intro-image) {
@@ -635,4 +652,53 @@ body.is-filter-overlay {
 	height: 100vh;
 	position: relative;
 	-webkit-overflow-scrolling: touch;
+}
+
+/*---Hide reCaptcha v3 visible seal---*/
+.grecaptcha-badge {
+	opacity:0 !important;
+}
+
+.m-0 {
+	margin:0!important;
+}
+
+.post-password-form {
+	text-align: center;
+	max-width: 500px;
+	margin:0 auto;
+	padding:0 20px;
+	label {
+		font-family: "Fakt-Semibold" !important;
+		margin-bottom:5px;
+	}
+	input[type=password] {
+		font-size: 30px;
+		-webkit-appearance: none;
+		border: 1px solid #000;
+		background: none;
+		border-radius: 0;
+		font-family: noe-display;
+		padding: 10px;
+		text-align: center;
+	}
+	input[type=submit] {
+		font-size: 30px;
+		-webkit-appearance: none;
+		border: 1px solid #000;
+		background: none;
+		border-radius: 0;
+		font-family: noe-display;
+		padding: 15px 30px 10px;
+		display: inline-block;
+    margin: 20px auto;
+	}
+	p:nth-of-type(2) {
+		@include flexbox;
+		@include flex-direction(column);
+		label {
+			@include flexbox;
+			@include flex-direction(column);
+		}
+	}
 }

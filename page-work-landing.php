@@ -2,13 +2,6 @@
 /**
  * Template Name: Work Landing
  *
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package rapt
@@ -19,12 +12,17 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
+			<?php if(get_field('show_work_landing_filters')):?>
+
 			<div class="full-width-wrap">
 				<div class="filters row clearfix">
-						<span class="filter-toggle">Filter</span>
-						<img class="filter-search-btn" src="/wp-content/themes/rapt/dist/images/search.svg" width="32" height="auto"/>
+					<span class="filter-toggle">Filter</span>
+					<img class="filter-search-btn" src="/wp-content/themes/rapt/dist/images/search.svg" width="32" height="auto"/>
 				</div>
 			</div>
+
+			<?php endif; ?>
+
 
 			<div class="work-grid">
 				<?php
@@ -56,74 +54,81 @@ get_header(); ?>
 					endwhile; endif; ?>
 			</div>
 
-		<div id="filter-overlay" class="search-filter-overlay" style="display:none">
-			<div class="full-width-wrap">
-				<img class="close-filter-overlay" src="/wp-content/themes/rapt/dist/images/close.svg" width="32" height="auto"/>
-				<div class="filter-options-container col-sm-12">
-					<div class="filter-options">
+			<?php if(get_field('show_work_landing_filters')):?>
 
-						<?php
+			<div id="filter-overlay" class="search-filter-overlay" style="display:none">
+				<div class="full-width-wrap">
+					<img class="close-filter-overlay" src="/wp-content/themes/rapt/dist/images/close.svg" width="32" height="auto"/>
+					<div class="filter-options-container col-sm-12">
+						<div class="filter-options">
 
-						$taxonomy = 'work_categories';
-						$terms = get_terms($taxonomy);
+							<?php
 
-						if ( $terms && !is_wp_error( $terms ) ) :
-						?>
+							$taxonomy = 'work_categories';
+							$terms = get_terms($taxonomy);
 
-			        <?php foreach ( $terms as $term ) { ?>
-			       			<label class="filter-option"><input type="checkbox" value=".<?php echo $term->slug; ?>" /> <?php echo $term->name; ?></label>
-			           <!--  <span class="filter-option" data-filter=".<?php //echo $term->slug; ?>"><?php //echo $term->name; ?></span> -->
-			        <?php } ?>
+							if ( $terms && !is_wp_error( $terms ) ) :
+							?>
 
-						<?php endif;?>
+				        <?php foreach ( $terms as $term ) { ?>
+				           <label class="filter-option"><input type="checkbox" value=".<?php echo $term->slug; ?>" /> <?php echo $term->name; ?></label>
+				        <?php } ?>
 
-						<?php wp_reset_postdata();?>
+							<?php endif;?>
 
+							<?php wp_reset_postdata();?>
+
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="col-sm-12">
+						<div class="row filter-listings filter-listings-filters clearfix">
+							<?php
+
+								global $post;
+								$args = array( 'posts_per_page' => -1, 'order'=> 'ASC', 'orderby' => 'date', 'post_type' => 'work_post_type' );
+
+								$myposts = get_posts( $args );
+								foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+
+								<?php $terms = get_the_terms( get_the_ID(), 'work_categories' );
+
+	              if ( $terms && ! is_wp_error( $terms ) ) :
+
+	                $work_cat_list = array();
+	              	$work_cat_slug = array();
+
+	                foreach ( $terms as $term ) {
+	                    $work_cat_list[] = $term->name;
+	                    $work_cat_slug[] = $term->slug;
+	                }
+
+	                $work_cats = join( " · ", $work_cat_list );
+	                $work_cats_slugs = join( " ", $work_cat_slug );
+
+	                ?>
+									<div class="col-md-4 col-sm-6 col-xs-6 filter-listing filter-listing-filter <?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats_slugs ) ); ?>">
+							 				<a href="<?php the_permalink(); ?>"><img src="<?php the_field('grid_thumbnail_23_width'); ?>"/></a>
+							 				<div class="filter-search-text">
+								 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				                <p class="work-cats category-list"><?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats ) ); ?></p>
+			              	</div>
+
+								 	</div>
+								<?php endif; ?>
+								<?php
+									endforeach;
+									wp_reset_postdata();
+								?>
+								<div class="clearfix"></div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="container">
-				<div class="col-sm-12">
-					<div class="row filter-listings filter-listings-filters clearfix">
-						<?php
+		<?php endif;?>
 
-							global $post;
-							$args = array( 'posts_per_page' => -1, 'order'=> 'ASC', 'orderby' => 'date', 'post_type' => 'work_post_type' );
-
-							$myposts = get_posts( $args );
-							foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-
-							<?php $terms = get_the_terms( get_the_ID(), 'work_categories' );
-
-              if ( $terms && ! is_wp_error( $terms ) ) :
-
-                $work_cat_list = array();
-              	$work_cat_slug = array();
-
-                foreach ( $terms as $term ) {
-                    $work_cat_list[] = $term->name;
-                    $work_cat_slug[] = $term->slug;
-                }
-
-                $work_cats = join( " · ", $work_cat_list );
-                $work_cats_slugs = join( " ", $work_cat_slug );
-
-                ?>
-								<div class="col-md-4 col-sm-6 col-xs-6 filter-listing filter-listing-filter <?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats_slugs ) ); ?>" >
-						 				<a href="<?php the_permalink(); ?>"><?php //the_post_thumbnail('filter-thumb'); ?><img src="<?php the_field('grid_thumbnail_23_width'); ?>"/></a>
-						 				<div class="filter-search-text">
-							 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-			                <p class="work-cats category-list"><?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats ) ); ?></p>
-		              	</div>
-			              <?php endif; ?>
-							 	</div>
-							<?php endforeach;
-							wp_reset_postdata();?>
-							<div class="clearfix"></div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<?php if(get_field('show_work_landing_filters')):?>
 
 		<div id="search-overlay" class="search-filter-overlay" style="display:none;">
 			<div class="full-width-wrap">
@@ -142,7 +147,9 @@ get_header(); ?>
 							$myposts = get_posts( $args );
 							foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 
-							<?php $terms = get_the_terms( get_the_ID(), 'work_categories' );
+							<?php
+
+							$terms = get_the_terms( get_the_ID(), 'work_categories' );
 
               if ( $terms && ! is_wp_error( $terms ) ) :
 
@@ -159,22 +166,20 @@ get_header(); ?>
 
                 ?>
 								<div class="col-md-4 col-sm-6 col-xs-6 filter-listing filter-listing-search <?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats_slugs ) ); ?>">
-						 				<a href="<?php the_permalink(); ?>"><?php //the_post_thumbnail('filter-thumb'); ?><img src="<?php the_field('grid_thumbnail_23_width'); ?>"/></a>
+						 				<a href="<?php the_permalink(); ?>"><img src="<?php the_field('grid_thumbnail_23_width'); ?>"/></a>
 						 				<div class="filter-search-text">
 							 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			                <p class="work-cats category-list"><?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats ) ); ?></p>
 		              	</div>
-			              <?php endif; ?>
+
 							 	</div>
+							<?php endif; ?>
 							<?php endforeach;
 							wp_reset_postdata();?>
 							<div class="clearfix"></div>
 					</div>
 				</div>
-
-
-			</div>
-		</div>
+					<?php endif;?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

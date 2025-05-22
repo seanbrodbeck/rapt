@@ -1,18 +1,21 @@
 {
-  "name": "raptnew",
+  "name": "Rapt",
   "version": "1.0.0",
-  "description": "new package",
+  "description": "Project Description Here",
   "main": "index.js",
   "scripts": {
-    "test": "testme",
+    "start": "browser-sync start --proxy 'rapt.local' --files '**/*'",
     "build-css": "node-sass --include-path scss src/scss/styles.scss dist/css/styles.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
-    "dev": "npm run watch-css"
+    "watch": "npm run watch-css",
+    "prod": "node-sass --include-path scss src/scss/styles.scss dist/css/styles.css --output-style compressed",
+    "dev": "npm run watch & npm run start"
   },
   "author": "Sean Brodbeck",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.5.3",
-    "nodemon": "^1.12.1"
+    "browser-sync": "^3.0.2",
+    "node-sass": "^9.0.0",
+    "nodemon": "^2.0.16"
   }
 }

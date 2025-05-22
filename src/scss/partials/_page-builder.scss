@@ -1,0 +1,29 @@
+.page-builder {
+  &.stats {
+    padding-bottom:30px;
+    .col-md-4 {
+      @include h2-spacing;
+    }
+    p {
+      max-width: 80%;
+      margin-bottom:0;
+    }
+  }
+  &.running_text {
+    h2.xl {
+      margin-top:0;
+    }
+    p:last-of-type {
+      margin-bottom:0;
+    }
+    h3 {
+      @include large-serif-header;
+      margin-top:0;
+      color:$black;
+      margin-bottom:30px;
+    }
+  }
+  &.full_width_image {
+    padding:0;
+  }
+}

@@ -323,6 +323,7 @@ var WIN_H,
         columnWidth: '.filter-listing-filter'
       },
     });
+
     // Updated Multi Select Code with Checkboxes
     var $checkboxes = $('.filter-options input');
 
@@ -352,19 +353,6 @@ var WIN_H,
         $(this).toggleClass('is-checked')
       });
     });
-    // bind filter button click
-    // $('.filter-options').on( 'click', '.filter-option', function() {
-    //   var filterValue = $( this ).attr('data-filter');
-    //   $grid.isotope({ filter: filterValue });
-    // });
-    // change is-checked class on buttons
-    // $('.filter-options').each( function( i, buttonGroup ) {
-    //   var $buttonGroup = $( buttonGroup );
-    //   $buttonGroup.on( 'click', '.filter-option', function() {
-    //     $buttonGroup.find('.is-checked').removeClass('is-checked');
-    //     $( this ).addClass('is-checked');
-    //   });
-    // });
   });
 
   // Image Lightbox
@@ -468,6 +456,10 @@ var WIN_H,
     },10)
   }
 
+  var jobPostTitle = $('.single-jobs_post_type .single-hero h1').text();
+  $("#JobList option:contains("+jobPostTitle+")").attr("selected","selected");
+
+
   // FILTER SEARCH
   $('#search-overlay').on('scroll',function(e) {
     e.stopPropagation();
@@ -547,7 +539,7 @@ var WIN_H,
     }
   });
 
-  if ($('body').hasClass('page-template-page-studio')) {
+  // if ($('body').hasClass('page-template-page-studio')) {
     var randomStart = Math.floor(Math.random() * ($('.team-member').length - 2));
     var currentTeamMember = randomStart + 3;
     if (currentTeamMember > $('.team-member').length) {
@@ -629,7 +621,7 @@ var WIN_H,
         currentClientIndex = currentClientIndex < 3 ? currentClientIndex+1 : 0;
       }
     }
-  }
+  // }
 
   function revealRaptLogo() {
     $('.rapt-logo').addClass('is-active')
@@ -639,7 +631,7 @@ var WIN_H,
     $('.rapt-logo').removeClass('is-active')
     $('.rapt-logo').addClass('is-off')
   }
-  
+
   // Case Study Scroll Locking
 
   var scrollLockTops = new Array();
@@ -754,5 +746,41 @@ var WIN_H,
     }
     setSizes();
   }
-  
+
+
+
+  const myTimeout = setInterval(getCarouselHeight, 10);
+
+  function getCarouselHeight() {
+    var carouselImgHeight = $('.home-carousel-list-item img').outerHeight();
+    $('.slick-next').css('top', carouselImgHeight+50);
+  }
+
+  var total = $('.home-carousel-js .home-carousel-list-item').length,
+      rand = Math.floor( Math.random() * total ); // random number
+
+
+  $(".home-carousel-js").slick({
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed:5000,
+    fade:true,
+    slidesToShow: 1,
+    arrow:true,
+    pauseOnHover:true,
+    nextArrow:'<button type="button" class="slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="4" viewBox="0 0 23 4" fill="none"><path d="M22.1768 2.17677C22.2744 2.07914 22.2744 1.92085 22.1768 1.82322L20.5858 0.232231C20.4882 0.1346 20.3299 0.1346 20.2322 0.232231C20.1346 0.329862 20.1346 0.488154 20.2322 0.585785L21.6464 2L20.2322 3.41421C20.1346 3.51184 20.1346 3.67013 20.2322 3.76777C20.3299 3.8654 20.4882 3.8654 20.5858 3.76777L22.1768 2.17677ZM2.18557e-08 2.25L22 2.25L22 1.75L-2.18557e-08 1.75L2.18557e-08 2.25Z" fill="black"/></svg></button>'
+  });
+
+  $('.home-carousel-js').slick('slickGoTo', rand);
+
+  $(".page-template-page-generic form.post-password-form").attr('autocomplete', 'off');
+  $(".page-template-page-generic form.post-password-form input[name='post_password']").attr('autocomplete', 'off');
+
+  // alert(rand)
+
+
+
+  // $('.home-carousel-js')[0].slick.slickGoTo(rand);
+
+
 })( jQuery );

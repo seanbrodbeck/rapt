@@ -47,7 +47,12 @@ function rapt_setup() {
 		'menu-1' => esc_html__( 'Primary', 'rapt' ),
 	) );
 
-	add_image_size( 'filter-thumb', 600, 313, true ); // 600 pixels wide
+	add_image_size( 'preview', 200, 200, true );
+	add_image_size( 'filter-thumb', 600, 313, true );
+	add_image_size( 'client-logo', 500, 500, true );
+	add_image_size( 'carousel-split', 700, 815, true );
+	add_image_size( 'carousel-full', 1400, 800, true );
+	add_image_size( 'team', 600, 870, true );
 	add_filter('jpeg_quality', function($arg){return 100;});
 
 	/*
@@ -125,21 +130,25 @@ function rapt_scripts() {
 
 	wp_enqueue_style( 'rapt-underscores', get_stylesheet_uri(), array(), null, 'all' );
 
-	wp_enqueue_style( 'rapt-theme', get_template_directory_uri() . '/dist/css/styles.css', array(), null, 'all');
+	wp_enqueue_style( 'rapt-theme', get_template_directory_uri() . '/dist/css/styles.css', array(), '2.8', 'all');
 
 	wp_enqueue_script( 'rapt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'rapt-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'rapt-jquery', get_template_directory_uri() . '/dist/js/isotope.pkgd.min.js', array(), null , true );
+	// wp_enqueue_script( 'rapt-jquery', get_template_directory_uri() . '/dist/js/jquery-1.11.3.min.js', array(), null , true );
+
+	wp_enqueue_script( 'rapt-isotope', get_template_directory_uri() . '/dist/js/isotope.pkgd.min.js', array('jquery'), null , true );
 
 	wp_enqueue_script( 'rapt-images-loaded', get_template_directory_uri() . '/dist/js/imagesloaded.pkgd.min.js', array(), null , true );
 
-	wp_enqueue_script( 'rapt-isotope', get_template_directory_uri() . '/dist/js/bootstrap.min.js', array(), null , true );
+	wp_enqueue_script( 'rapt-bootstrap', get_template_directory_uri() . '/dist/js/bootstrap.min.js', array('jquery'), null , true );
 
 	wp_enqueue_script( 'rapt-waypoints', get_template_directory_uri() . '/dist/js/waypoint.js', array(), null , true );
 
-	wp_enqueue_script( 'rapt-theme-js', get_template_directory_uri() . '/dist/js/scripts.js?id=1', array(), null , true );
+	wp_enqueue_script( 'rapt-slick', get_template_directory_uri() . '/dist/js/slick.min.js', array(), null , true );
+
+	wp_enqueue_script( 'rapt-theme-js', get_template_directory_uri() . '/dist/js/scripts.js', array('jquery'), '1.1' , true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -153,123 +162,6 @@ function load_custom_wp_admin_style() {
         wp_enqueue_script( 'custom_wp_admin_js' );
 }
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
-
-// Load More Enqueue
-
-// function misha_my_load_more_scripts() {
-
-// 	global $wp_query;
-
-// 	// In most cases it is already included on the page and this line can be removed
-// 	wp_enqueue_script('jquery');
-
-// 	// register our main script but do not enqueue it yet
-// 	wp_register_script( 'my_loadmore', get_template_directory_uri() . '/dist/js/myloadmore.js', array('jquery') );
-
-// 	// now the most interesting part
-// 	// we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
-// 	// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
-// 	wp_localize_script( 'my_loadmore', 'misha_loadmore_params', array(
-// 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
-// 		'posts' => serialize( $wp_query->query_vars ), // everything about your loop is here
-// 		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
-// 		'max_page' => $wp_query->max_num_pages
-// 	) );
-
-//  	wp_enqueue_script( 'my_loadmore' );
-// }
-
-// add_action( 'wp_enqueue_scripts', 'misha_my_load_more_scripts' );
-
-
-// Get the Primary Posts
-
-// function misha_loadmore_ajax_handler(){
-
-// 	// prepare our arguments for the query
-// 	$args = unserialize( stripslashes( $_POST['query'] ) );
-// 	$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
-// 	$args['post_status'] = 'publish';
-// 	$args['category_name'] = 'Primary';
-
-// 	// it is always better to use WP_Query but not here
-// 	query_posts( $args );
-
-// 	if( have_posts() ) :
-
-// 		// run the loop
-// 		while ( have_posts() ) : the_post();
-
-// 				get_template_part( 'template-parts/content-blogfeed', get_post_format() );
-
-// 			endwhile;
-
-// 	endif;
-// 	die; // here we exit the script and even no wp_reset_query() required!
-// }
-
-// add_action('wp_ajax_loadmore', 'misha_loadmore_ajax_handler'); // wp_ajax_{action}
-// add_action('wp_ajax_nopriv_loadmore', 'misha_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
-
-
-
-// // Round 2 Load More Enqueue
-
-// function misha_my_load_more_scripts2() {
-
-// 	global $wp_query;
-
-// 	// In most cases it is already included on the page and this line can be removed
-// 	wp_enqueue_script('jquery');
-
-// 	// register our main script but do not enqueue it yet
-// 	wp_register_script( 'my_loadmore2', get_template_directory_uri() . '/dist/js/myloadmore2.js', array('jquery') );
-
-// 	// now the most interesting part
-// 	// we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
-// 	// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
-// 	wp_localize_script( 'my_loadmore2', 'misha_loadmore_params2', array(
-// 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
-// 		'posts' => serialize( $wp_query->query_vars ), // everything about your loop is here
-// 		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
-// 		'max_page' => $wp_query->max_num_pages
-// 	) );
-
-//  	wp_enqueue_script( 'my_loadmore2' );
-// }
-
-// add_action( 'wp_enqueue_scripts', 'misha_my_load_more_scripts2' );
-
-// // Get the Secondary Posts
-
-// function misha_loadmore_ajax_handler2(){
-
-// 	// prepare our arguments for the query
-// 	$args = unserialize( stripslashes( $_POST['query'] ) );
-// 	$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
-// 	$args['post_status'] = 'publish';
-// 	$args['category_name'] = 'Secondary';
-
-// 	// it is always better to use WP_Query but not here
-// 	query_posts( $args );
-
-// 	if( have_posts() ) :
-
-// 		// run the loop
-// 		while ( have_posts() ) : the_post();
-
-// 				get_template_part( 'template-parts/content-blogfeedsecondary', get_post_format() );
-
-// 			endwhile;
-
-// 	endif;
-// 	die; // here we exit the script and even no wp_reset_query() required!
-// }
-
-
-
-// add_action('wp_ajax_loadmore2', 'misha_loadmore_ajax_handler2'); // wp_ajax_{action}
-// add_action('wp_ajax_nopriv_loadmore2', 'misha_loadmore_ajax_handler2'); // wp_ajax_nopriv_{action}
 
 
 
@@ -575,14 +467,14 @@ if( function_exists('acf_add_options_page') ) {
 
 }
 
-add_theme_support('auto-load-next-post');
+// add_theme_support('auto-load-next-post');
 
-// Create post dropdown function for Contact Form 7
+// Create full time job post dropdown function for Contact Form 7
 
 add_action( 'wpcf7_init', 'postselect' );
 
 function postselect() {
-    wpcf7_add_form_tag( 'joblist', 'custom_post_select', array( 'name-attr' => true ) ); 
+    wpcf7_add_form_tag( 'joblist', 'custom_post_select', array( 'name-attr' => true ) );
 }
 function custom_post_select( $tag ) {
   $posttype = 'jobs_post_type';
@@ -593,13 +485,27 @@ function custom_post_select( $tag ) {
 	$posts = get_posts( $args );
 	//$output .= "<select class='wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control' name='" . $tag['JobList'] . "' id='" . $tag['JobList'] . "' onchange='document.getElementById(\"" . $tag['JobList'] . "\").value=this.value;'><option></option>";
 	$output .= "<select name='JobList' class='wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control' id='JobList' aria-required='true' aria-invalid='false' >";
-	$output .= '<option value="What position are you applying for?" selected>What position are you applying for?</option>';
+	$output .= '<option value="What position are you applying for?" selected>What position are you applying for?*</option>';
 	foreach ( $posts as $post ) {
             $postid = $post->ID;
 	    			$posttitle = get_the_title( $postid );
             $postslug = get_post_field( 'post_name', $postid );
     				$output .= '<option value="' . $posttitle . '">' . $posttitle . '</option>';
-	} 
+	}
 	$output .= "</select>";
     return $output;
-} 
+}
+
+// Customize Privacy Form
+// add_filter( 'the_password_form', 'custom_password_form' );
+// function custom_password_form() {
+//     global $post;
+//     $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+//     $o = '<form class="protected-post-form aligncenter" action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
+//     ' . __( "<h1 style='margin-bottom:10px;'>Password Protected Content</h1><p>Enter the password below to see the remainder of the page</p>" ) . '
+//     <input name="post_password" id="' . $label . '" type="password" class="form-control" style="display:block;background: #ffffff; border:1px solid #999; color:#333333; padding:10px;width:300px;margin:10px auto;" size="20" placeholder="Password" />
+//     <input type="submit" name="Submit" class="button" style="font-size: 30px;-webkit-appearance: none;border:1px solid #000;background:none;border-radius:0;font-family: noe-display;padding:15px 30px 10px;" value="' . esc_attr__( "Submit" ) . '" />
+//     </form><p style="font-size:14px;margin:0px;"></p>
+//     ';
+//     return $o;
+// }

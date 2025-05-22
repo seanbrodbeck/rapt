@@ -146,19 +146,23 @@ header {
 			@media (min-width: $bp-sm3-min) {
 				@include flexbox;
 				text-align: left;
+				@include justify-content(space-between);
+				// max-width:82%;
+				max-width:72%;
 				li {
 					font-size: 20px;
 					font-family: 'Fakt-Blond';
 					@media (min-width: $bp-sm3-min) {
-						margin-right: calc(80px + (162 - 80) * (100vw - 960px) / (1440 - 960));
+						// margin-right: calc(80px + (162 - 80) * (100vw - 960px) / (1440 - 960));
 					}
 					@media (min-width: $bp-xlg-min) {
-						margin-right: 162px;
+						// margin-right: 162px;
 					}
 					a, a:visited {
-						color: #999999;
+						color: $black;
 						&:hover {
-							color: $black;
+							// color: $black;
+							color: #999999;
 						}
 					}
 					&.current-menu-item, &.current_page_parent {

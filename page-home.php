@@ -14,14 +14,14 @@
  * @package rapt
  */
 
-get_header('home'); ?>
+get_header(); ?>
 	<?php get_template_part('template-parts/logo-loader'); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
 
 			<?php if( get_field('word_wall_or_video_hero') == 'words' ): ?>
-			
+
 				<section class="intro">
 					<?php if(get_field('home_page_word_wall')): ?>
 						<div class="intro-images">
@@ -44,106 +44,122 @@ get_header('home'); ?>
 					<?php endif; ?>
 				</section>
 
-			<?php endif; ?>
 
-			<?php if( get_field('word_wall_or_video_hero') == 'vid' ): ?>		
+
+			<?php elseif( get_field('word_wall_or_video_hero') == 'vid' ): ?>
 				<section class="vid-intro nopad">
 						<div class="videoWrapper">
 							<?php the_field('hero_video') ?>
 						</div>
 				</section>
+
+			<?php elseif( get_field('word_wall_or_video_hero') == 'splash' ): ?>
+
+				<section class="splash-text-hero">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 col-lg-10">
+									<h1 class="sr-only"><?php the_field('splash_title') ?></h1>
+									<p class="splash-content">
+										<?php if(get_field('splash_title')) :?><span class="splash_title" style="font-family: 'noe-display';font-weight: 300;"><?php the_field('splash_title') ?></span> <?php endif; ?><span class="splash_text"><?php the_field('splash_text') ?></span>
+									</p>
+								</div>
+							</div>
+						</div>
+				</section>
+
 			<?php endif; ?>
 
-			<header id="masthead" class="site-header home-navigation">
 
-				<div class="nav-wrap">
 
-					<nav id="site-navigation" class="main-navigation">
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-							<svg x="0px" y="0px" viewBox="0 0 24 17" enable-background="new 0 0 24 17" xml:space="preserve">
-							<rect width="24" height="1"/>
-							<rect y="8" width="24" height="1"/>
-							<rect y="16" width="24" height="1"/>
-							</svg>
-						</button>
-						<?php
-							wp_nav_menu( array(
-								'theme_location' => 'menu-1',
-								'menu_id'        => 'primary-menu',
-							) );
-						?>
-						<a class="rapt-logo-wrap" href="/">
-							<svg class="rapt-logo" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 18 37.7506" enable-background="new 0 0 18 37.7506" xml:space="preserve" width=18 height=38>
-								<polyline fill="#191911" points="0,0 0,6.4074 3.8427,6.4074 16.6299,0 0,0 "/>
-								<polyline fill="#191911" points="18,6.7053 18,0.4848 0.7296,9.1418 8.9132,11.2596 18,6.7053 "/>
-								<polyline fill="#191911" points="16.8377,14.3879 0,10.0337 0,16.3861 5.4225,17.7922 16.8368,14.3879 "/>
-								<polyline fill="#191911" points="18,21.4717 18,15.1336 0,20.4992 0,26.8373 18,21.4708 "/>
-								<polyline fill="#191911" points="18,31.959 18,25.6019 12.5509,24.1863 1.1604,27.5821 18,31.959 "/>
-								<polyline fill="#191911" points="5.468,29.7805 0,31.4106 0,37.7506 16.8282,32.7342 5.468,29.7805 "/>
-							</svg>
-						</a>
-						<svg class="close-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-							 viewBox="-979 980 40 41" enable-background="new -979 980 40 41" xml:space="preserve">
-						<path fill="#FAFAFA" d="M-959.147,1000.674l-6.564-6.588l-0.904,0.901l6.567,6.591l-6.567,6.591l0.904,0.901
-							l6.564-6.588l6.564,6.588l0.904-0.901l-6.567-6.591l6.567-6.591l-0.904-0.901L-959.147,1000.674z M-959,1021
-							c-11.046,0-20-8.987-20-20.073c0-11.086,8.954-20.073,20-20.073s20,8.987,20,20.073C-939,1012.013-947.954,1021-959,1021z"/>
-						</svg>
-						<div class="mobile-nav-close mobile-only">
-							<svg width="35" height="33" viewBox="0 0 35 33">
-						    <g fill="none" fill-rule="evenodd" stroke="#979797" stroke-width="2" stroke-linecap="square">
-						      <path d="M33.649.351L1.673 32.327M1.351.351l31.976 31.976"/>
-						    </g>
-							</svg>
-						</div>
-						<div class="mobile-nav-locations mobile-only">
-							<div class="footer-location footer-bottom-column">
-								<?php the_field('footer_location_1', 'option'); ?>
-							</div>
-
-							<div class="footer-location footer-bottom-column">
-								<?php the_field('footer_location_2', 'option'); ?>
-							</div>
-
-							<div class="footer-location footer-bottom-column">
-								<?php the_field('footer_location_3', 'option'); ?>
+				<?php if( have_rows('home_page_work_carousel') ): $i = 0; ?>
+					<section class="home-carousel">
+						<div class="container">
+					    <div class="home-carousel-list home-carousel-js">
+					    <?php while( have_rows('home_page_work_carousel') ): the_row();
+									$i++;
+					        $image = get_sub_field('image_1');
+									$image2 = get_sub_field('image_2');
+					        ?>
+					        <div class="home-carousel-list-item">
+										<a href="<?php the_sub_field('link'); ?>" <?php if(get_sub_field('new_tab')): ?>target="_blank"<?php endif;?> title="More About <?php the_sub_field('title'); ?>">
+											<?php if($image2) :?>
+												<div class="row">
+													<div class="col-xs-6"><?php echo wp_get_attachment_image( $image, 'carousel-split' ); ?></div>
+													<div class="col-xs-6"><?php echo wp_get_attachment_image( $image2, 'carousel-split' ); ?></div>
+												</div>
+											<?php else: ?>
+												<?php echo wp_get_attachment_image( $image, 'carousel-full' ); ?>
+											<?php endif; ?>
+											<div class="home-carousel-list-item-info">
+												<div class="left"><p class="m-0">Case No. <span class="case-number"><?php echo $i ?></span></p></div>
+												<div class="right">
+													<h3 class="m-0"><?php the_sub_field('title'); ?></h3>
+													<?php if(get_sub_field('teaser')): ?><h4><?php the_sub_field('teaser'); ?></h4><?php endif;?>
+												</div>
+											</div>
+										</a>
+					        </div>
+					    <?php endwhile; ?>
 							</div>
 						</div>
-					</nav><!-- #site-navigation -->
+					</section>
+			<?php endif; ?>
+
+
+			<section class="services bg-gray">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<h2 class="large"><?php the_field('services_section_header');?></h3>
+						</div>
+						<div class="col-md-4 left">
+							<h3><?php the_field('services_left_col_header');?></h3>
+							<?php the_field('services_left_col_content');?>
+						</div>
+						<div class="col-md-4 right">
+							<h3><?php the_field('services_right_col_header');?></h3>
+							<?php the_field('services_right_col_content_');?>
+
+						</div>
 					</div>
+				</div>
+			</section>
 
-			</header><!-- #masthead -->
 
 
-			<section class="home-work">
+
+			<!-- <section class="home-work">
 
 					<div class="work-grid">
 						<?php
-							if (have_posts()) : while (have_posts()) : the_post();
-
-								if( have_rows('work_grid_layout') ):
-
-									while ( have_rows('work_grid_layout') ) : the_row();
-
-									// 1/3 2/3
-									if( get_row_layout() == 'work_row_13_23' )
-										get_template_part('template-parts/content', 'work-row-13-23');
-
-									// 2/3 1/3
-									if( get_row_layout() == 'work_row_23_13' )
-										get_template_part('template-parts/content', 'work-row-23-13');
-
-									// Full Width
-									if( get_row_layout() == 'cluster_of_4' )
-										get_template_part('template-parts/content', 'work-row-cluster');
-
-									// Full Width
-									if( get_row_layout() == 'work_row_full_width' )
-										get_template_part('template-parts/content', 'work-row-full');
-
-									endwhile;
-								endif;
-
-							endwhile; endif; ?>
+							// if (have_posts()) : while (have_posts()) : the_post();
+							//
+							// 	if( have_rows('work_grid_layout') ):
+							//
+							// 		while ( have_rows('work_grid_layout') ) : the_row();
+							//
+							// 		// 1/3 2/3
+							// 		if( get_row_layout() == 'work_row_13_23' )
+							// 			get_template_part('template-parts/content', 'work-row-13-23');
+							//
+							// 		// 2/3 1/3
+							// 		if( get_row_layout() == 'work_row_23_13' )
+							// 			get_template_part('template-parts/content', 'work-row-23-13');
+							//
+							// 		// Full Width
+							// 		if( get_row_layout() == 'cluster_of_4' )
+							// 			get_template_part('template-parts/content', 'work-row-cluster');
+							//
+							// 		// Full Width
+							// 		if( get_row_layout() == 'work_row_full_width' )
+							// 			get_template_part('template-parts/content', 'work-row-full');
+							//
+							// 		endwhile;
+							// 	endif;
+							//
+							// endwhile; endif;
+							?>
 					</div>
 
 					<div class="clearfix"></div>
@@ -152,13 +168,13 @@ get_header('home'); ?>
 					</div>
 
 
-			</section>
+			</section> -->
 
 			<section class="home-perspectives peach-bkg">
 
 				<div class="container">
 					<div class="row clearfix">
-
+						<div class="col-md-12 press-title"><h2 class="large">Press</h3></div>
 						<div class="primary-articles col-md-7">
 
 								<?php if(get_field('home_page_featured_primary_blog_posts')): ?>
@@ -180,22 +196,22 @@ get_header('home'); ?>
 															<?php endif; ?>
 																<div class="entry-text">
 																	<header class="entry-header">
-																		<div class="category-list">
+																		<!-- <div class="category-list">
 																			<ul>
 																				<?php
-																					$categories = get_the_category();
-																					$separator = ' · ';
-																					$output = '';
-																					if($categories){
-																					    foreach($categories as $category) {
-																					if($category->name !== 'Primary'){
-																					        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
-																					    }
-																					echo trim($output, $separator);
-																					}
+																					// $categories = get_the_category();
+																					// $separator = ' · ';
+																					// $output = '';
+																					// if($categories){
+																					//     foreach($categories as $category) {
+																					// if($category->name !== 'Primary'){
+																					//         $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
+																					//     }
+																					// echo trim($output, $separator);
+																					// }
 																				?>
 																			</ul>
-																		</div>
+																		</div> -->
 																		<?php if( get_field('post_link_external') ): ?>
 																		<h2><a href="<?php the_field('post_link_external'); ?>"><span><?php the_field('perspectives_source'); ?></span> <?php the_title(); ?></a></h2>
 																		<?php else: ?>
@@ -243,22 +259,22 @@ get_header('home'); ?>
 																		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 																		<?php endif; ?>
 																	</header>
-																	<div class="category-list">
+																	<!-- <div class="category-list">
 																		<ul>
 																			<?php
-																				$categories = get_the_category();
-																				$separator = ' · ';
-																				$output = '';
-																				if($categories){
-																				    foreach($categories as $category) {
-																				if($category->name !== 'Secondary'){
-																				        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
-																				    }
-																				echo trim($output, $separator);
-																				}
+																				// $categories = get_the_category();
+																				// $separator = ' · ';
+																				// $output = '';
+																				// if($categories){
+																				//     foreach($categories as $category) {
+																				// if($category->name !== 'Secondary'){
+																				//         $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
+																				//     }
+																				// echo trim($output, $separator);
+																				// }
 																			?>
 																		</ul>
-																	</div>
+																	</div> -->
 																</div>
 															</article>
 												    <?php wp_reset_postdata(); ?>
@@ -273,7 +289,7 @@ get_header('home'); ?>
 					</div>
 				</div>
 				<div class="container">
-					<div class="more-link-wrapper"><a class="more-link" href="/thoughts">More</a></div>
+					<div class="more-link-wrapper"><a class="more-link" href="/press">More</a></div>
 				</div>
 
 			</section>
@@ -286,13 +302,13 @@ get_header('home'); ?>
 
 						<div class="col-sm-12 col-md-8">
 
-							<h1>Rapt Studio is a group of designers, architects and strategists who believe everything is connected, and that anything is possible.</h1>
+							<h1><a href="/studio" title="More about the studio."><?php the_field('home_page_footer_text'); ?></a></h1>
 
 						</div>
 
 						<div class="clearfix"></div>
 
-						<div class="more-link-wrapper col-sm-8"><a class="more-link" href="/studio">More</a></div>
+						<!-- <div class="more-link-wrapper col-sm-8"><a class="more-link" href="/studio">More</a></div> -->
 
 					</div>
 
@@ -305,4 +321,3 @@ get_header('home'); ?>
 
 <?php
 get_footer();
-

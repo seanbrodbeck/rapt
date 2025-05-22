@@ -35,34 +35,24 @@ get_header(); ?>
 	    </section>
 	    <?php endif; ?>
 
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	    <section class="single-intro">
+
+
+				<?php the_content(); ?>
+
+
+
 	      <div class="container">
 	        <div class="row single-intro-row clearfix">
 	          <div class="col-md-6">
-	            <h2><?php the_field("generic_page_work_header_text"); ?></h2>
-	            <?php $terms = get_the_terms( get_the_ID(), 'work_categories' );
-
-              if ( $terms && ! is_wp_error( $terms ) ) :
-
-                $work_cat_list = array();
-
-                foreach ( $terms as $term ) {
-                    $work_cat_list[] = $term->name;
-                }
-
-                $work_cats = join( " · ", $work_cat_list );
-                ?>
-
-                <p class="work-cats category-list">
-                    <?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $work_cats ) ); ?>
-                </p>
-
-              <?php endif; ?>
+	            <h2><?php if ( ! post_password_required() ) { the_field("generic_page_work_header_text");} ?></h2>
+							<!-- <h2><?php //the_field("generic_page_work_header_text"); ?></h2> -->
 	          </div>
 	          <div class="col-md-5 col-md-offset-1">
-	            <p><?php the_field("generic_page_work_subheader_text"); ?></p>
+	            <p><?php if ( ! post_password_required() ) { the_field("generic_page_work_subheader_text");} ?></p>
+							<!-- <p><?php //the_field("generic_page_work_subheader_text"); ?></p> -->
 	          </div>
-
 
 	      </div>
 	    </section>
@@ -70,50 +60,17 @@ get_header(); ?>
 	    <section class="grid-content">
 	      <div class="container">
 	      	<div class="col-sm-12">
-	      		<?php echo get_laygrid(); ?>
+	      		<?php if ( !  post_password_required() ) { the_laygrid();} ?>
+						<?php //the_laygrid(); ?>
 	      	</div>
 	      </div>
 	    </section>
 
-	    <section class="awards-press">
-	      <div class="container">
-	        <div class="row clearfix">
+		<?php endwhile; else : ?>
+			<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+		<?php endif; ?>
 
-	           <?php if(get_field('press')): ?>
 
-								<div class="col-md-6 press-col">
-								<h2>Press</h2>
-								<?php while(has_sub_field('press')): ?>
-
-								<div class="awards-press-entry">
-									<h4><a href="<?php the_sub_field('press_url'); ?>" target="_blank"><?php the_sub_field('press_title'); ?> <span><?php the_sub_field('press_text'); ?></span></a></h4>
-								</div>
-
-								<?php endwhile; ?>
-
-								</div>
-
-							<?php endif; ?>
-
-							 <?php if(get_field('awards')): ?>
-
-								<div class="col-md-6">
-									<h2>Awards</h2>
-									<?php while(has_sub_field('awards')): ?>
-
-									<div class="awards-press-entry">
-										<h4><a href="<?php the_sub_field('award_url'); ?>" target="_blank"><?php the_sub_field('award_title'); ?> <span><?php the_sub_field('award_text'); ?></span></a></h4>
-									</div>
-
-									<?php endwhile; ?>
-
-									</div>
-
-								<?php endif; ?>
-
-	        </div>
-	      </div>
-	    </section>
 
 	    <?php if( have_rows('things_grid_layout') ): ?>
 

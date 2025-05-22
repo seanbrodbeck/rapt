@@ -17,14 +17,14 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main clearfix">
 
-			<div class="full-width-wrap">
+			<!-- <div class="full-width-wrap">
 
 				<div class="filters row clearfix">
 					<span class="filter-toggle">Filter</span>
 					<img class="filter-search-btn" src="/wp-content/themes/rapt/dist/images/search.svg" width="32" height="auto"/>
 				</div>
 
-			</div>
+			</div> -->
 
 			<div class="container">
 
@@ -58,22 +58,22 @@ get_header(); ?>
 								<?php endif; ?>
 									<div class="entry-text">
 										<header class="entry-header">
-											<div class="category-list">
+											<!-- <div class="category-list">
 												<ul>
 													<?php
-														$categories = get_the_category();
-														$separator = ' · ';
-														$output = '';
-														if($categories){
-														    foreach($categories as $category) {
-														if($category->name !== 'Primary'){
-														        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
-														    }
-														echo trim($output, $separator);
-														}
+														// $categories = get_the_category();
+														// $separator = ' · ';
+														// $output = '';
+														// if($categories){
+														//     foreach($categories as $category) {
+														// if($category->name !== 'Primary'){
+														//         $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
+														//     }
+														// echo trim($output, $separator);
+														// }
 													?>
 												</ul>
-											</div>
+											</div> -->
 											<?php if( get_field('post_link_external') ): ?>
 											<h2><a href="<?php the_field('post_link_external'); ?>" target=_"blank"><span><?php the_field('perspectives_source'); ?></span> <?php the_title(); ?></a></h2>
 											<?php else: ?>
@@ -124,22 +124,22 @@ get_header(); ?>
 											<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 											<?php endif; ?>
 										</header>
-										<div class="category-list">
+										<!-- <div class="category-list">
 											<ul>
 												<?php
-													$categories = get_the_category();
-													$separator = ' · ';
-													$output = '';
-													if($categories){
-													    foreach($categories as $category) {
-													if($category->name !== 'Secondary'){
-													        $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
-													    }
-													echo trim($output, $separator);
-													}
+													// $categories = get_the_category();
+													// $separator = ' · ';
+													// $output = '';
+													// if($categories){
+													//     foreach($categories as $category) {
+													// if($category->name !== 'Secondary'){
+													//         $output .= '<li>'.$category->cat_name.'</li>'.$separator;}
+													//     }
+													// echo trim($output, $separator);
+													// }
 												?>
 											</ul>
-										</div>
+										</div> -->
 									</div>
 								</article>
 

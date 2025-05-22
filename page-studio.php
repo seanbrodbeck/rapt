@@ -19,8 +19,17 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<section class="studio-hero" style="background:url('<?php the_field("studio_hero"); ?>') no-repeat center 80%;background-size:cover;"></section>
+			<section class="single-hero" style="background:url('<?php the_field("studio_hero"); ?>') no-repeat center 80%;background-size:cover;">
+				<div class="container">
+	        <div class="row clearfix">
+	          <div class="col-md-5">
+	            <h1><?php the_title();?></h1>
+	          </div>
+	        </div>
+	      </div>
+			</section>
 
+			<?php if(get_field('hide_team_members')):?>
 			<section class="team">
 				<div class="container">
 					<div class="row clearfix">
@@ -45,7 +54,7 @@ get_header(); ?>
 													<div class="inner">
 
 														 <?php
-						                     // if (is_mobile()) {
+						                     // if (wp_is_mobile()) {
 							                    	echo "<img class='team-member-video' width='100%' height='auto' src='";
 							                    	the_sub_field('team_member_image');
 							                    	echo "'/>";
@@ -77,6 +86,7 @@ get_header(); ?>
 					</div>
 				</div>
 			</section>
+			<?php endif;?>
 
 			<section class="we">
 				<div class="container">
@@ -95,6 +105,25 @@ get_header(); ?>
 								<?php the_field('we_tell_your_truth'); ?>
 							</div>
 						</div>
+				</div>
+			</section>
+
+			<section class="services bg-gray">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<h2 class="large"><?php the_field('studio_services_section_header');?></h3>
+						</div>
+						<div class="col-md-4 left">
+							<h3><?php the_field('studio_services_left_col_header');?></h3>
+							<?php the_field('studio_services_left_col_content');?>
+						</div>
+						<div class="col-md-4 right">
+							<h3><?php the_field('studio_services_right_col_header');?></h3>
+							<?php the_field('studio_services_right_col_content');?>
+
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -121,13 +150,12 @@ get_header(); ?>
 
 				</div>
 			</section>
-
+			<?php if(get_field('studio_services')): ?>
 			<section class="services">
 				<div class="container">
 					<div class="row clearfix">
-						<?php if(get_field('services')): ?>
 
-							<?php while(has_sub_field('services')): ?>
+							<?php while(has_sub_field('studio_services')): ?>
 
 							<div class="col-xs-4">
 								<p class="cat-header"><?php the_sub_field('service_category_header'); ?></p>
@@ -136,11 +164,12 @@ get_header(); ?>
 
 							<?php endwhile; ?>
 
-						<?php endif; ?>
 					</div>
 				</div>
 			</section>
+			<?php endif; ?>
 
+			<?php if (get_field('upload_section')):?>
 			<section class="video-section">
 				<div class="container">
 					<div class="row clearfix">
@@ -153,13 +182,15 @@ get_header(); ?>
 					</div>
 				</div>
 			</section>
+			<?php endif; ?>
 
+			<?php if(get_field('contact_info_grid')): ?>
 			<section class="contact-info">
 				<div class="container">
 					<div class="row contact-info-wrapper clearfix">
 						<div class="col-md-12">
 							<div class="row clearfix">
-								<?php if(get_field('contact_info_grid')): ?>
+
 
 									<?php while(has_sub_field('contact_info_grid')): ?>
 
@@ -170,12 +201,13 @@ get_header(); ?>
 
 									<?php endwhile; ?>
 
-								<?php endif; ?>
+
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
+			<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

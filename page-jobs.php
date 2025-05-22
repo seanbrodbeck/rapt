@@ -70,10 +70,8 @@ get_header(); ?>
 	     <section class="jobs-content">
 	      <div class="container">
 	      	<div class="col-sm-6">
-	      		<?php the_field("careers_info_block"); ?>
-	      	</div>
-	      	<div class="col-sm-5 col-sm-offset-1">
-	      		<h2>Open Positions</h2>
+	      		<h2 class="job-posts-header">Open Positions</h2>
+
 	      		<?php
 	      		$query = new WP_Query(array(
 						    'post_type' => 'jobs_post_type',
@@ -85,19 +83,32 @@ get_header(); ?>
 						while ($query->have_posts()) {
 						    $query->the_post();
 						    $post_title = get_the_title();
-						    $post_link = get_the_permalink();
-						    echo "<div class='job-posting'><a href='";
-						    echo $post_link;
-						    echo "'>";
+						    $post_link = get_field('job_application_url');
+								$post_location = get_field('job_location');
+								$post_category = get_field('job_category');
+								$post_id = get_field('lever_job_post_id');
+
+								$str = "$post_category";
+
+						    echo "<div class='job-posting'><a href='https://jobs.lever.co/RaptStudio/";
+						    echo $post_id;
+						    echo "?lever-origin=applied&lever-source%5B%5D=Rapt%20Website' target='_blank'>";
 						    echo $post_title;
-						    echo " <span>";
-						    echo the_field('job_location');
-						    echo "</span>";
+								// echo "<br><span>";
+								// echo htmlspecialchars_decode($str);
+								// echo "</span>";
+						    echo " <p style='margin-bottom:0;'>";
+						    echo $post_location;
+						    echo "</p>";
+
 						    echo "</a></div>";
 						}
 
 						wp_reset_query();
 	      		?>
+	      	</div>
+					<div class="col-sm-5 col-md-offset-1 rapt-offerings">
+	      		<?php the_field("careers_info_block"); ?>
 	      	</div>
 	      </div>
 	    </section>
