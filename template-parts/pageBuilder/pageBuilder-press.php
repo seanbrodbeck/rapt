@@ -2,7 +2,7 @@
 
 	<div class="container">
 		<div class="row clearfix">
-			<div class="col-md-12 press-title"><h2 class="large">Press</h3></div>
+			<div class="col-md-12 press-title"><h2 class="xl text-black">Press</h3></div>
 			<div class="primary-articles col-md-7">
 
 					<?php if(get_sub_field('primary_blog_post')): ?>

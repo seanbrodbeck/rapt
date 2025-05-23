@@ -130,7 +130,7 @@ function rapt_scripts() {
 
 	wp_enqueue_style( 'rapt-underscores', get_stylesheet_uri(), array(), null, 'all' );
 
-	wp_enqueue_style( 'rapt-theme', get_template_directory_uri() . '/dist/css/styles.css', array(), '2.8', 'all');
+	wp_enqueue_style( 'rapt-theme', get_template_directory_uri() . '/dist/css/styles.css', array(), '2.9', 'all');
 
 	wp_enqueue_script( 'rapt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
